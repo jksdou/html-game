@@ -75,10 +75,10 @@
 	btGame.playLogoAdv();
 </script>
 <script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080/';
+		var mebtnopenurl = 'http://uinote.com/html-game/';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/cdd.png",
-		        "timeLineLink": "http://localhost:8080/games/cdd/",
+		        "imgUrl": "http://uinote.com/html-game/icon/cdd.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/cdd/",
 		        "tTitle": "吃豆豆",
 		        "tContent": "吃豆豆"
 		};
@@ -88,7 +88,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/";
+				window.location = "http://uinote.com/html-game/";
 			 }
 			 else{
 				goHome();
@@ -138,7 +138,7 @@
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "cdd" };
-			//window.shareData.timeLineLink = "http://localhost:8080/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			//window.shareData.timeLineLink = "http://uinote.com/html-game/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName = "吃豆豆吃了"+score+"分";

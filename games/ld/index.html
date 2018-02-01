@@ -6,13 +6,13 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<script type="text/javascript" src="http://localhost:8080/games/qw/jquery.min.js"></script>
+	<script type="text/javascript" src="http://uinote.com/html-game/games/qw/jquery.min.js"></script>
       <script type="text/javascript">
 	  
         var dataForWeixin = {
               appId: "gh_ff79a97cd7f3",
-              TLImg: "http://localhost:8080/games/ld/logo.jpg",
-              url: "http://localhost:8080/games/ld/",
+              TLImg: "http://uinote.com/html-game/games/ld/logo.jpg",
+              url: "http://uinote.com/html-game/games/ld/",
               title: "Classic  game <lightning>, please share your friends!  Circle  friends wechat!",
               desc: "please share your friends!  Circle  friends wechat!"
         };
@@ -30,7 +30,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc 
                 });
-         setTimeout(function () {location.href = "http://localhost:8080/games/ld/";}, 1500); 
+         setTimeout(function () {location.href = "http://uinote.com/html-game/games/ld/";}, 1500); 
             });
             WeixinJSBridge.on('menu:share:timeline', function(argv){
                 var infos = $("#infos").text();             
@@ -43,7 +43,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc
                 });
-		setTimeout(function () {location.href = "http://localhost:8080/games/ld/";}, 1500);  
+		setTimeout(function () {location.href = "http://uinote.com/html-game/games/ld/";}, 1500);  
             });
         };
         if(document.addEventListener){

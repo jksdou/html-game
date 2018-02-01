@@ -148,17 +148,17 @@ $(document).ready(function() {
     var ga = document.createElement('script');
     ga.type = 'text/javascript';
     ga.async = true;
-    ga.src = 'http://localhost:8080/games/';
+    ga.src = 'http://uinote.com/html-game/games/';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(ga, s);
     ga.onload = function() {
         ga.parentNode.removeChild(ga)
     }
 })();
-var mebtnopenurl = 'http://localhost:8080/';
+var mebtnopenurl = 'http://uinote.com/html-game/';
 window.shareData = {
-    "imgUrl": "http://localhost:8080/games/selang/icon.png",
-    "timeLineLink": "http://localhost:8080/games/selang/",
+    "imgUrl": "http://uinote.com/html-game/games/selang/icon.png",
+    "timeLineLink": "http://uinote.com/html-game/games/selang/",
     "tTitle": "小心色狼-游戏中心游戏",
     "tContent": "小女生和怪蜀黍一起出游发生的事情"
 };
@@ -173,7 +173,7 @@ function failHandler(t) {
     helpCount++;
     if (helpCount > 2) {
         if (confirm("是不是没有想象的那么简单？您有【一次机会】获得提示，点击关注公众号并回复【小心色狼怎么过】可以得到提示，是否需要提示？")) {
-            location.href = "https://uinote.com/"
+            location.href = "https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c"
         };
         helpCount = 0
     }
@@ -187,7 +187,7 @@ function xuanyaoHandler(t) {
     dp_share(t)
 };
 function moreHandler() {
-    window.location.href = "http://localhost:8080/"
+    window.location.href = "http://uinote.com/html-game/"
 };
 function dp_shareHelp(t) {
     $("#share img").attr("src", "share.png");

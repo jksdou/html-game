@@ -87,7 +87,7 @@ function addShareWX() {
 	t.style.cssText = "text-align:right;padding-left:10px;";
 	e.appendChild(t);
 	var n = document.createElement("img");
-	n.src = "http://localhost:8080/games/jgfx/static/share.jpg";
+	n.src = "http://uinote.com/html-game/games/jgfx/static/share.jpg";
 	n.id = "share-wx-img";
 	n.style.cssText = "max-width:280px;padding-right:25px;";
 	t.appendChild(n);
@@ -161,12 +161,12 @@ function isMobile() {
 function isIOS() {
 	return navigator.userAgent.match(/iphone|ipod|ios/i)
 }
-var HOME_PATH = HOME_PATH || "http://localhost:8080/games/",
+var HOME_PATH = HOME_PATH || "http://uinote.com/html-game/games/",
 RESOURCE_IMG_PATH = RESOURCE_IMG_PATH || "../resources/images/",
 HORIZONTAL = HORIZONTAL || false,
 COVER_SHOW_TIME = COVER_SHOW_TIME || 2e3;
-var imgUrl = "http://localhost:8080/games/jgfx/static/icon.png";
-var lineLink = "http://localhost:8080/games/jgfx/";
+var imgUrl = "http://uinote.com/html-game/games/jgfx/static/icon.png";
+var lineLink = "http://uinote.com/html-game/games/jgfx/";
 var descContent = "快来跟我一起玩！";
 var shareTitle = "最好玩的小游戏就在菜鸟游戏！";
 var appid = "";

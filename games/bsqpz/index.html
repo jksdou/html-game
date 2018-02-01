@@ -254,7 +254,7 @@ $(function(){
 			$(".share").append(newPic);		
 			mainImgUrl = newPic.src;
 		}else{
-			var url = 'http://localhost:8080/index.html';
+			var url = 'http://uinote.com/html-game/index.html';
 			$.ajax({
 				type: 'post',
 				url: url,
@@ -386,7 +386,7 @@ $(function(){
 		try{
 			var mainTitle="99%的人都被逼疯了，制作新消息头像，一起逼死强迫症！",
 				mainDesc="99%的人都被逼疯了",
-				mainURL= "http://localhost:8080/games/bsqpz/";
+				mainURL= "http://uinote.com/html-game/games/bsqpz/";
 			
 			//转发朋友圈
 			WeixinJSBridge.on("menu:share:timeline", function(e) {
@@ -441,9 +441,9 @@ $(function(){
 		if(URL.getQueryString('f') == 'fans'){
 			return false;
 		}
-		var t = confirm('组团逼死强迫症，快来关注我!游戏中心:158369_weixin');
+		var t = confirm('组团逼死强迫症，快来关注我!游戏中心:uinote_weixin');
 		if(t){
-			window.location.href = 'https://uinote.com/';
+			window.location.href = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 		}
 	}
 	

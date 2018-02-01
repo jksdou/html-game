@@ -18,8 +18,8 @@ function play68_submitScore(score) {
 }
 
 function updateShare(bestScore) {
-	imgUrl ="http://localhost:8080/icon/mishi.png";
-	lineLink ="http://localhost:8080/games/mishi/index.html";
+	imgUrl ="http://uinote.com/html-game/icon/mishi.png";
+	lineLink ="http://uinote.com/html-game/games/mishi/index.html";
 	descContent = "你觉得你反应很快吗？试试就知道！";
 	updateShareScore(bestScore);
 	appid = '';
@@ -152,7 +152,7 @@ function updateShareScore(bestScore) {
 document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 	WeixinJSBridge.call('showOptionMenu');
 });
-new Image().src = 'http://localhost:8080/';
+new Image().src = 'http://uinote.com/html-game/';
 </script>
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=34915524" charset="UTF-8"></script>
 </head>
@@ -161,7 +161,7 @@ new Image().src = 'http://localhost:8080/';
 <canvas id="jsGameScreen"></canvas> 
 </div>
 <script type="text/javascript">
-var mebtnopenurl = 'http://localhost:8080/';
+var mebtnopenurl = 'http://uinote.com/html-game/';
 function shareFriend() {
 	WeixinJSBridge.invoke("sendAppMessage", {
 		appid: appid,
@@ -279,12 +279,12 @@ function isMobile() {
 function isIOS() {
 	return navigator.userAgent.match(/iphone|ipod|ios/i)
 }
-var HOME_PATH = HOME_PATH || "http://localhost:8080/",
+var HOME_PATH = HOME_PATH || "http://uinote.com/html-game/",
 RESOURCE_IMG_PATH = RESOURCE_IMG_PATH || "/game/",
 HORIZONTAL = HORIZONTAL || false,
 COVER_SHOW_TIME = COVER_SHOW_TIME || 2e3;
-var imgUrl ="http://localhost:8080/icon.mishi.png/";
-var lineLink ="http://localhost:8080/games/mishi/index.html";
+var imgUrl ="http://uinote.com/html-game/icon.mishi.png/";
+var lineLink ="http://uinote.com/html-game/games/mishi/index.html";
 var descContent = "快来跟我一起玩！";
 var shareTitle = "最好玩的小游戏就在游戏排行榜！";
 var appid = "";

@@ -31,12 +31,12 @@
 <script src="js/index.js"></script>
 <script src="js/flyline.js"></script>
 <script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/games/qie/img/icon.png",
-		        "timeLineLink": "http://localhost:8080/games/qie",
+		        "imgUrl": "http://uinote.com/html-game/games/qie/img/icon.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/qie",
 		        "tTitle": "打企鹅-游戏中心",
-		        "tContent": "打企鹅-游戏中心微信号：158369_weixin"
+		        "tContent": "打企鹅-游戏中心微信号：uinote_weixin"
 		};
 				
 		function goHome(){
@@ -44,7 +44,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080";
+				window.location = "http://uinote.com/html-game";
 			 }
 			 else{
 				goHome();
@@ -87,14 +87,14 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/qie/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/qie/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "qie" };
-			window.shareData.timeLineLink = "http://localhost:8080/games/qie/index.html";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/qie/index.html";
 			function dp_submitScore(score){
 				myData.score = score*10;
 				myData.scoreName = score+"米";

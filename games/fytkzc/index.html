@@ -34,10 +34,10 @@
     </script>
     <script src="game.min.js"></script>
     <script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080/';
+		var mebtnopenurl = 'http://uinote.com/html-game/';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/fytkzc.png",
-		        "timeLineLink": "http://localhost:8080/games/fytkzc/",
+		        "imgUrl": "http://uinote.com/html-game/icon/fytkzc.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/fytkzc/",
 		        "tTitle": "飞越天空之城",
 		        "tContent": "飞越天空之城"
 		};
@@ -47,7 +47,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/games/fytkzc/";
+				window.location = "http://uinote.com/html-game/games/fytkzc/";
 			 }
 			 else{
 				goHome();
@@ -90,14 +90,14 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/icon/fytkzc.png"
+			<img width=100% src="http://uinote.com/html-game/icon/fytkzc.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "zb" };
-			window.shareData.timeLineLink = "http://localhost:8080/games/fytkzc/index.html" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/fytkzc/index.html" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName =score+"米";
@@ -111,7 +111,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/fytkzc" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                            window.location = "http://uinote.com/html-game/games/fytkzc" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
                         }
                         else {
                             document.location.href = mebtnopenurl;

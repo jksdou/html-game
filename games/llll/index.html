@@ -43,10 +43,10 @@ var loli_img_str = 'images/background/01.jpg hero10.png images/object/bullet_PLi
     egret_h5.startGame();
 </script>
 <script language=javascript>
-		var mebtnopenurl = 'https://uinote.com/l';
+		var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215cl';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/llll.png",
-		        "timeLineLink": "http://localhost:8080/llll/index.htm",
+		        "imgUrl": "http://uinote.com/html-game/icon/llll.png",
+		        "timeLineLink": "http://uinote.com/html-game/llll/index.htm",
 		        "tTitle": "萝莉来了-游戏中心",
 		        "tContent": "萝莉来了-游戏中心"
 		};
@@ -56,7 +56,7 @@ var loli_img_str = 'images/background/01.jpg hero10.png images/object/bullet_PLi
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080";
+				window.location = "http://uinote.com/html-game";
 			 }
 			 else{
 				goHome();
@@ -99,14 +99,14 @@ var loli_img_str = 'images/background/01.jpg hero10.png images/object/bullet_PLi
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/llll/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/llll/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "llll" };
-			window.shareData.timeLineLink = "http://localhost:8080";
+			window.shareData.timeLineLink = "http://uinote.com/html-game";
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName = score+"分";
@@ -120,7 +120,7 @@ var loli_img_str = 'images/background/01.jpg hero10.png images/object/bullet_PLi
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "https://uinote.com/";
+                            window.location = "https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
                         }
                         else {
                             document.location.href = mebtnopenurl;

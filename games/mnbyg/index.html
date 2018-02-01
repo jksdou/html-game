@@ -100,10 +100,10 @@
 <script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
 <script language=javascript>
-		var mebtnopenurl = 'https://uinote.com/';
+		var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/games/mnbyg/icon.png",
-		        "timeLineLink": "http://localhost:8080/games/mnbyg/index.html",
+		        "imgUrl": "http://uinote.com/html-game/games/mnbyg/icon.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/mnbyg/index.html",
 		        "tTitle": "美女啵一个-游戏中心",
 		        "tContent": "美女啵一个-游戏中心"
 		};
@@ -113,7 +113,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/";
+				window.location = "http://uinote.com/html-game/";
 			 }
 			 else{
 				goHome();
@@ -156,14 +156,14 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/mnbyg/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/mnbyg/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "mnbyg" };
-			//window.shareData.timeLineLink = "http://localhost:8080/games/";
+			//window.shareData.timeLineLink = "http://uinote.com/html-game/games/";
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName = "啵了"+score+"个美女";
@@ -177,7 +177,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "https://uinote.com/";
+                            window.location = "https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
                         }
                         else {
                             document.location.href = mebtnopenurl;

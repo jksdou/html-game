@@ -157,10 +157,10 @@
                    }
             </script>
 		<script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080/games/';
+		var mebtnopenurl = 'http://uinote.com/html-game/games/';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/bttz.png",
-		        "timeLineLink": "http://localhost:8080/games/bttz/index.html",
+		        "imgUrl": "http://uinote.com/html-game/icon/bttz.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/bttz/index.html",
 		        "tTitle": "冰桶挑战-游戏中心",
 		        "tContent": "冰桶挑战-游戏中心"
 		};
@@ -170,7 +170,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("f=zf",1)>0){
-				window.location = "http://localhost:8080/games/";
+				window.location = "http://uinote.com/html-game/games/";
 			 }
 			 else{
 				goHome();
@@ -213,7 +213,7 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/bttz/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/bttz/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
@@ -221,7 +221,7 @@
 			<script type="text/javascript">
             var myData = { gameid: "bttz" };
 			 var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
-			window.shareData.timeLineLink ="http://localhost:8080/games/bttz";
+			window.shareData.timeLineLink ="http://uinote.com/html-game/games/bttz";
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName ="共倒"+score+"升";
@@ -235,7 +235,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/";
+                            window.location = "http://uinote.com/html-game/games/";
                         }
                         else {
                             document.location.href = mebtnopenurl;

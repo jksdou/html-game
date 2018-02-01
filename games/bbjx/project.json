@@ -127,7 +127,7 @@ var _host = "http://" + window.location.host;
     }
 function attention_wx() {
 	alert("《整蛊专家》最火爆的朋友圈整人游戏！\n点击确认立即关注！");
-	location.href = 'http://mp.weixin.qq.com/s?__biz=MjM5Mjg3NjUwMA==&mid=203878037&idx=1&sn=0d99edf65bd472c5178d47d3d855e1b6#rd';
+	location.href = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 }
 function onShareComplete(res) {
 		setTimeout(function(){

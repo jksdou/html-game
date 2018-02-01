@@ -77,8 +77,8 @@ _config = {
     }
 },
 shareData = {
-    imgUrl: "http://localhost:8080/games/zhaonimei/zhaonimei.jpg",
-    timeLineLink: "http://localhost:8080/games/zhaonimei/",
+    imgUrl: "http://uinote.com/html-game/games/zhaonimei/zhaonimei.jpg",
+    timeLineLink: "http://uinote.com/html-game/games/zhaonimei/",
     tTitle: _lang[_config.lang].title + "?",
     tContent: _lang[_config.lang].desc,
     totalWazi:0
@@ -238,7 +238,7 @@ function(a) {
         init: function() {
             this.initEvent(),
             this.loading(),
-            /android/i.test(c) ? (b.banner.attr("href", "http://localhost:8080/").data("type", "android").find("img").attr("src", "assets/img/banner.android.jpg"), b.banner.show()) : /iphone|ipad|ipod/i.test(c) && (b.banner.attr("href", "http://localhost:8080/").data("type", "ios").find("img").attr("src", "assets/img/banner.ios.jpg"), b.banner.show())
+            /android/i.test(c) ? (b.banner.attr("href", "http://uinote.com/html-game/").data("type", "android").find("img").attr("src", "assets/img/banner.android.jpg"), b.banner.show()) : /iphone|ipad|ipod/i.test(c) && (b.banner.attr("href", "http://uinote.com/html-game/").data("type", "ios").find("img").attr("src", "assets/img/banner.ios.jpg"), b.banner.show())
         },
         loading: function() {
             function a() {

@@ -81,7 +81,7 @@ if(0)por="<br><br><br><img border=0 src=\"portrait.jpg\">";
 else por="";
  
 
-var ds_urlhiscore="http://localhost:8080"; 
+var ds_urlhiscore="http://uinote.com/html-game"; 
 
 function ds_RZ(){ 
 
@@ -91,20 +91,20 @@ function ds_SHS(){return "";}
    
 var dsp=new Array("=0", 
 "main.png", 
-"http://localhost:8080", 
+"http://uinote.com/html-game", 
 1,	
 0, 
 0,  
 1,  
 "", 
-"http://localhost:8080",
+"http://uinote.com/html-game",
 1,	
 0, 
 0,
 1, 
 0, 
-"http://localhost:8080", 
-"http://localhost:8080", 
+"http://uinote.com/html-game", 
+"http://uinote.com/html-game", 
 "_self", 
 "udf23hh3r62srayd4", 
 0,          
@@ -126,10 +126,10 @@ var dsp=new Array("=0",
 <script src="share.js"></script>
 <input id="appid" name="appid" type="hidden" value="8596144" />
 <script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/qwt.png",
-		        "timeLineLink": "http://localhost:8080/games/qwt/",
+		        "imgUrl": "http://uinote.com/html-game/icon/qwt.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/qwt/",
 		        "tTitle": "青蛙跳",
 		        "tContent": "青蛙跳"
 		};
@@ -139,7 +139,7 @@ var dsp=new Array("=0",
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080";
+				window.location = "http://uinote.com/html-game";
 			 }
 			 else{
 				goHome();
@@ -189,7 +189,7 @@ var dsp=new Array("=0",
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "qwt" };
-			//window.shareData.timeLineLink = "http://localhost:8080/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			//window.shareData.timeLineLink = "http://uinote.com/html-game/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName = score+"米";
@@ -203,7 +203,7 @@ var dsp=new Array("=0",
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/qwt/index.html" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                            window.location = "http://uinote.com/html-game/games/qwt/index.html" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
                         }
                         else {
                             document.location.href = mebtnopenurl;

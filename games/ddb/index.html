@@ -3,13 +3,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;">
 <title>Playing Twins Match-Up</title>
-	<script type="text/javascript" src="http://localhost:8080/games/qw/jquery.min.js"></script>
+	<script type="text/javascript" src="http://uinote.com/html-game/games/qw/jquery.min.js"></script>
       <script type="text/javascript">
 	  
         var dataForWeixin = {
               appId: "gh_ff79a97cd7f3",
-              TLImg: "http://localhost:8080/games/ddb/logo.jpg",
-              url: "http://localhost:8080/games/ddb/",
+              TLImg: "http://uinote.com/html-game/games/ddb/logo.jpg",
+              url: "http://uinote.com/html-game/games/ddb/",
               title: "Classic  game <Twins Match>, please share your friends!  Circle  friends wechat!",
               desc: "please share your friends!  Circle  friends wechat!"
         };
@@ -27,7 +27,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc 
                 });
-         setTimeout(function () {location.href = "http://localhost:8080/games/ddb/";}, 1500); 
+         setTimeout(function () {location.href = "http://uinote.com/html-game/games/ddb/";}, 1500); 
             });
             WeixinJSBridge.on('menu:share:timeline', function(argv){
                 var infos = $("#infos").text();             
@@ -40,7 +40,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc
                 });
-		setTimeout(function () {location.href = "http://localhost:8080/games/ddb/";}, 1500);  
+		setTimeout(function () {location.href = "http://uinote.com/html-game/games/ddb/";}, 1500);  
             });
         };
         if(document.addEventListener){
@@ -50,7 +50,7 @@
             document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
         }   
       </script>
-<link href='http://localhost:8080/css' rel='stylesheet' type='text/css'>
+<link href='http://uinote.com/html-game/css' rel='stylesheet' type='text/css'>
 <style>
 body {
 	text-align: center;
@@ -301,7 +301,7 @@ p {
 	  })();
 </script>
 
-<script src="http://localhost:8080/games/qw/jquery.min.js"></script>
+<script src="http://uinote.com/html-game/games/qw/jquery.min.js"></script>
 <script>
 window.addEventListener("load",function() {
 	  // Set a timeout...

@@ -57,7 +57,7 @@ var GameOverLayer = cc.Layer.extend
             try {
                 _hmt.push(['_trackEvent', 'escape', 'click', 'more', '1']);
             } catch(e) {}
-            window.open("http://localhost:8080");
+            window.open("http://uinote.com/html-game");
         });
         more.setPosition(0,-50);
 

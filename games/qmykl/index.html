@@ -48,10 +48,10 @@
 		<audio src="images/shake.mp3" id="shake" preload></audio>
 		<script src="js/shake.min.js"></script>
 		<script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/qmykl.png",
-		        "timeLineLink": "http://localhost:8080/games/qmykl/index.html",
+		        "imgUrl": "http://uinote.com/html-game/icon/qmykl.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/qmykl/index.html",
 		        "tTitle": "全民摇可乐-游戏中心",
 		        "tContent": "全民摇可乐-游戏中心"
 		};
@@ -61,7 +61,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/games/qmykl";
+				window.location = "http://uinote.com/html-game/games/qmykl";
 			 }
 			 else{
 				goHome();
@@ -104,14 +104,14 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/qmykl/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/qmykl/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "qmykl" };
-			window.shareData.timeLineLink ="http://localhost:8080/games/qmykl";
+			window.shareData.timeLineLink ="http://uinote.com/html-game/games/qmykl";
 			function dp_submitScore(score,percent){
 				myData.score = parseInt(score*1000);
 				myData.scoreName = "摇可乐用时"+score+"秒";
@@ -125,7 +125,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "http://localhost:8080";
+                            window.location = "http://uinote.com/html-game";
                         }
                         else {
                             document.location.href = mebtnopenurl;

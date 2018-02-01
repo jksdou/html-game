@@ -25,10 +25,10 @@ var Attack = new game($("myCanvas"));
 
 </script>
 <script language=javascript>
-		var mebtnopenurl = 'https://uinote.com/';
+		var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/games/djz/icon.png",
-		        "timeLineLink": "http://localhost:8080/games/djz/index.html",
+		        "imgUrl": "http://uinote.com/html-game/games/djz/icon.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/djz/index.html",
 		        "tTitle": "打击者",
 		        "tContent": "打击者"
 		};
@@ -38,7 +38,7 @@ var Attack = new game($("myCanvas"));
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("f=zf",1)>0){
-				window.location = "http://localhost:8080/index.html";
+				window.location = "http://uinote.com/html-game/index.html";
 			 }
 			 else{
 				goHome();
@@ -87,7 +87,7 @@ var Attack = new game($("myCanvas"));
 			<script type="text/javascript">
             var myData = { gameid: "djz" };
 			 // var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
-			window.shareData.timeLineLink = "http://localhost:8080/games/djz/index.html";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/djz/index.html";
 			function dp_submitScore(score){
 						myData.score = parseInt(score);
 						myData.scoreName ="获得了"+score+"分";		
@@ -97,7 +97,7 @@ var Attack = new game($("myCanvas"));
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到9G游戏排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/djz/index.html";
+                            window.location = "http://uinote.com/html-game/games/djz/index.html";
                         }
                         else {
                             document.location.href = mebtnopenurl;

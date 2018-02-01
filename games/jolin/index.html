@@ -61,10 +61,10 @@
 
  
 	<script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/jolin.png",
-		        "timeLineLink": "http://localhost:8080/games/jolin",
+		        "imgUrl": "http://uinote.com/html-game/icon/jolin.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/jolin",
 		        "tTitle": "一起寻找蔡依林，众多凤姐里找蔡依林，我果然是火眼金睛呀!",
 		        "tContent": "一起寻找蔡依林，众多凤姐里找蔡依林，我果然是火眼金睛呀!"
 		};
@@ -74,7 +74,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/";
+				window.location = "http://uinote.com/html-game/";
 			 }
 			 else{
 				goHome();
@@ -119,7 +119,7 @@
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "djyqlzmz" };
-			//window.shareData.timeLineLink = "http://localhost:8080/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			//window.shareData.timeLineLink = "http://uinote.com/html-game/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName ="找到"+score+"次蔡依林";

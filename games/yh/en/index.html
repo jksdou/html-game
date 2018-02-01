@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
 <title>Enjoy fireworks</title> 
-	<script type="text/javascript" src="http://localhost:8080/games/qw/jquery.min.js"></script>
+	<script type="text/javascript" src="http://uinote.com/html-game/games/qw/jquery.min.js"></script>
       <script type="text/javascript">
 	  
         var dataForWeixin = {
               appId: "gh_ff79a97cd7f3",
-              TLImg: "http://localhost:8080/games/yh/logo.jpg",
-              url: "http://localhost:8080/games/yh/en/",
+              TLImg: "http://uinote.com/html-game/games/yh/logo.jpg",
+              url: "http://uinote.com/html-game/games/yh/en/",
               title: "Lonely fireworks shows, if you feel good, please share the wechat！",
               desc: "Lonely fireworks shows, if you feel good, please share the wechat！"
         };
@@ -28,7 +28,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc 
                 });
-         setTimeout(function () {location.href = "http://localhost:8080/games/yh/en/";}, 1500); 
+         setTimeout(function () {location.href = "http://uinote.com/html-game/games/yh/en/";}, 1500); 
             });
             WeixinJSBridge.on('menu:share:timeline', function(argv){
                 var infos = $("#infos").text();             
@@ -41,7 +41,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc
                 });
-		setTimeout(function () {location.href = "http://localhost:8080/games/yh/en/";}, 1500);  
+		setTimeout(function () {location.href = "http://uinote.com/html-game/games/yh/en/";}, 1500);  
             });
         };
         if(document.addEventListener){

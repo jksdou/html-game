@@ -41,10 +41,10 @@
     </div>
      <script type="text/paperscript" canvas="canvas" src="js/game.min.js"></script>
     <script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080/games/qpjzg/';
+		var mebtnopenurl = 'http://uinote.com/html-game/games/qpjzg/';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/qpjzg.png",
-		        "timeLineLink": "http://localhost:8080/games/qpjzg/",
+		        "imgUrl": "http://uinote.com/html-game/icon/qpjzg.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/qpjzg/",
 		        "tTitle": "强迫症患者",
 		        "tContent": "强迫症患者"
 		};
@@ -54,7 +54,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/";
+				window.location = "http://uinote.com/html-game/";
 			 }
 			 else{
 				goHome();
@@ -97,14 +97,14 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/icon/qpjzg.png"
+			<img width=100% src="http://uinote.com/html-game/icon/qpjzg.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "qpzhz" };
-			window.shareData.timeLineLink = "http://localhost:8080/games/qpjzg" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/qpjzg" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
 			function dp_submitScore(score){
 				myData.score = score*100;
 				myData.scoreName ="坚持了"+ score+"秒";

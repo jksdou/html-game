@@ -24,10 +24,10 @@
 
 <script src="game.min.js"></script>
 <script language=javascript>
-		var mebtnopenurl = 'https://uinote.com/';
+		var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/xksds.png",
-		        "timeLineLink": "http://localhost:8080/games/xksds/index.html",
+		        "imgUrl": "http://uinote.com/html-game/icon/xksds.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/xksds/index.html",
 		        "tTitle": "胸口碎大石-游戏中心",
 		        "tContent": "小伙伴们,我在菜市口卖艺快来给我捧场啊!"
 		};
@@ -37,7 +37,7 @@
 		}
 		function clickMore(){
 			 if((window.location+"").indexOf("f=zf",1)>0){
-			 	window.location = "http://localhost:8080/games/xksds/index.html";
+			 	window.location = "http://uinote.com/html-game/games/xksds/index.html";
 			  }
 			  else{
 			 	goHome();
@@ -96,7 +96,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到9G游戏排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/xksds/index.html"
+                            window.location = "http://uinote.com/html-game/games/xksds/index.html"
                         }
                         else {
                             document.location.href = mebtnopenurl;

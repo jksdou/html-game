@@ -90,7 +90,7 @@ display: none;
 	<script type="text/javascript">
 	window.shareData = {
 	        "imgUrl": "./icon/xiaopingguo.png",
-	        "timeLineLink": "http://localhost:8080/games/xiaopingguo/",
+	        "timeLineLink": "http://uinote.com/html-game/games/xiaopingguo/",
 	        "tTitle": "我是你的小呀小苹果！",
 	        "tContent": "我是你的小呀小苹果,怎么爱你都不嫌多！"
 	    };
@@ -340,7 +340,7 @@ display: none;
 		
 		//增加用户微币
 		var addCoins = Math.ceil(_gameScore / 5);
-		$.get("http://localhost:8080" + addCoins + "&user=",
+		$.get("http://uinote.com/html-game" + addCoins + "&user=",
 			function(data,status){
 				//alert(data);
 				if(data >= 3){
@@ -375,7 +375,7 @@ display: none;
 		hideGameScoreLayer();
 		showWelcomeLayer();
 	}
-	var mebtnopenurl = 'https://uinote.com/';
+	var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 	function shareText( score ){
 		var coins = Math.ceil(score / 5);
 		if( score <= 49 )
@@ -464,15 +464,15 @@ display: none;
 			</div>
 			<br/>
 			<div align="center" style="font-size:0.8em;">
-				<a class="btn BOX-S" align="center" style="color:white" href="http://localhost:8080/games/">更多游戏</a>
+				<a class="btn BOX-S" align="center" style="color:white" href="http://uinote.com/html-game/games/">更多游戏</a>
 				<br/>
-				<a  class="btn BOX-S" align="center" style="color:white" href="https://uinote.com/">关注我们</a>
+				<a  class="btn BOX-S" align="center" style="color:white" href="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c">关注我们</a>
 			</div>
 			
 			
 			<div align="center" style="font-size:0.8em;">
 				
-				<br/><a  class="btn BOX-S" align="center" style="color:white" href="http://localhost:8080">游戏中心</a>
+				<br/><a  class="btn BOX-S" align="center" style="color:white" href="http://uinote.com/html-game">游戏中心</a>
 				
 			</div>
 			
@@ -491,8 +491,8 @@ display: none;
 				<div id="ready-btn" class="btn loading" style="display:inline-block; margin:0 auto; width:8em; height:1.7em; line-height:1.7em; font-size:2.2em; color:#fff;"></div>
 			<br/><br/><br/>
 			
-			<div style="font-size:1.6em;"><a style="color:#fff" href="http://localhost:8080/">更多游戏</a></div></br>
-				<div style="font-size:1.6em;"><a style="color:#fff" href="https://uinote.com/">关注我们</a></div>
+			<div style="font-size:1.6em;"><a style="color:#fff" href="http://uinote.com/html-game/">更多游戏</a></div></br>
+				<div style="font-size:1.6em;"><a style="color:#fff" href="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c">关注我们</a></div>
 				<br/>
 			<div style="font-size:1.4em;"></div></br>
 			

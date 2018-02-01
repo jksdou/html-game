@@ -121,11 +121,11 @@ $(window).ready(function() {
 });
 
 
-HOME_PATH="http://localhost:8080/";
+HOME_PATH="http://uinote.com/html-game/";
 mebtnopenurl=HOME_PATH;
 window.shareData = {
 		"imgUrl": "./img/share.jpg",
-		"timeLineLink": "http://localhost:8080/games/qifu/msg.php?name="+name+'&address='+address+'&num='+num,
+		"timeLineLink": "http://uinote.com/html-game/games/qifu/msg.php?name="+name+'&address='+address+'&num='+num,
 		"tTitle":"" ,
 		"tContent": "为云南鲁甸县祈福，为灾区的所有同胞祈福！"
 };
@@ -135,7 +135,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
         WeixinJSBridge.invoke('sendAppMessage', {
             "img_url": window.shareData.imgUrl,
-            "link": ' http://localhost:8080/games/qifu/msg.php?mame='+name+'&address='+address+'&num='+num,
+            "link": ' http://uinote.com/html-game/games/qifu/msg.php?mame='+name+'&address='+address+'&num='+num,
             "desc": window.shareData.tContent,
             "title": window.shareData.tTitle
         }, function(res) {
@@ -148,7 +148,7 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
             "img_url": window.shareData.imgUrl,
             "img_width": "640",
             "img_height": "640",
-            "link": ' http://localhost:8080/games/qifu/msg.php?name='+name+'&address='+address+'&num='+num,
+            "link": ' http://uinote.com/html-game/games/qifu/msg.php?name='+name+'&address='+address+'&num='+num,
             "desc": window.shareData.tContent,
             "title": "我叫"+name+"，我来自"+address+'，我是第'+num+'位为灾区祈福的人'
         }, function(res) {

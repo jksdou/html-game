@@ -24,10 +24,10 @@
 <body style="padding:0; margin: 0; background: #000;">
 	<canvas id="gameCanvas" style=" height: 100%;width: 100%;margin: 0;padding: 0;display: block;"></canvas>
 	<script language=javascript>
-		var mebtnopenurl = 'https://uinote.com/';
+		var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/flnu.png",
-		        "timeLineLink": "http://localhost:8080/games/flnu/index.html",
+		        "imgUrl": "http://uinote.com/html-game/icon/flnu.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/flnu/index.html",
 		        "tTitle": "粉蓝男女-游戏中心",
 		        "tContent": "粉蓝男女-游戏中心"
 		};
@@ -37,7 +37,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("f=zf",1)>0){
-				window.location = "http://localhost:8080/games/flnu/index.html";
+				window.location = "http://uinote.com/html-game/games/flnu/index.html";
 			 }
 			 else{
 				goHome();
@@ -86,7 +86,7 @@
 			<script type="text/javascript">
             var myData = { gameid: "flnu" };
 			 // var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
-			window.shareData.timeLineLink = "http://localhost:8080/games/flnu/index.html";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/flnu/index.html";
 			function dp_submitScore(score){
 						myData.score = parseInt(score);
 						myData.scoreName ="桃花运指数"+score+"分";		
@@ -96,7 +96,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到9G游戏排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/flnu/index.html";
+                            window.location = "http://uinote.com/html-game/games/flnu/index.html";
                         }
                         else {
                             document.location.href = mebtnopenurl;

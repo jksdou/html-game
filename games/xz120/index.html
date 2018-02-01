@@ -84,10 +84,10 @@
 			src="./auth/jquery.min.js"></script>
 		<script type="text/javascript" src="js/game.js"></script>
 		<script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080/';
+		var mebtnopenurl = 'http://uinote.com/html-game/';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/xz120.png",
-		        "timeLineLink": "http://localhost:8080/games/xz120",
+		        "imgUrl": "http://uinote.com/html-game/icon/xz120.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/xz120",
 		        "tTitle": "寻找120C|H明星-游戏中心",
 		        "tContent": "寻找120C|H明星-游戏中心"
 		};
@@ -97,7 +97,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("f=zf",1)>0){
-				window.location = "http://localhost:8080/games/xz120";
+				window.location = "http://uinote.com/html-game/games/xz120";
 			 }
 			 else{
 				goHome();
@@ -148,7 +148,7 @@
 			<script type="text/javascript">
             var myData = { gameid: "xz120" };
 			 var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
-			window.shareData.timeLineLink = "http://localhost:8080/games/xz120";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/xz120";
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName ="找到"+score+"个";
@@ -162,7 +162,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/";
+                            window.location = "http://uinote.com/html-game/games/";
                         }
                         else {
                             document.location.href = mebtnopenurl;

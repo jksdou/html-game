@@ -3,7 +3,7 @@
 }
 
 function goHome() {
-	window.location.href = "http://localhost:8080/games/";
+	window.location.href = "http://uinote.com/html-game/games/";
 }
 
 function play68_submitScore(score) {
@@ -12,8 +12,8 @@ function play68_submitScore(score) {
 }
 
 function updateShare(bestScore) {
-	imgUrl = 'http://localhost:8080/games/jgfx/static/icon.png';
-	lineLink = 'http://localhost:8080/games/jgfx/';
+	imgUrl = 'http://uinote.com/html-game/games/jgfx/static/icon.png';
+	lineLink = 'http://uinote.com/html-game/games/jgfx/';
 	descContent = "来比比看谁的手指更厉害！";
 	updateShareScore(bestScore);
 	appid = '';

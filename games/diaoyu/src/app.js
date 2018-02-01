@@ -67,8 +67,8 @@ var HelloWorldLayer = cc.Layer.extend({
         // 微信分享的数据
         self.wxData = {
             "appId": "", // 服务号可以填写appId
-            "imgUrl" : 'http://localhost:8080/games/diaoyu/logo.png',
-            "link" : 'http://localhost:8080/games/diaoyu/',
+            "imgUrl" : 'http://uinote.com/html-game/games/diaoyu/logo.png',
+            "link" : 'http://uinote.com/html-game/games/diaoyu/',
             "desc" : '史上最寂寞的游戏：我钓的不是鱼，是寂寞',
             "title" : '钓鱼'
         };
@@ -100,7 +100,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 // 分享成功
                 confirm : function(resp) {
                     // 分享成功了，我们是不是可以做一些分享统计呢？
-                    //window.location.href='http://localhost:8080/';
+                    //window.location.href='http://uinote.com/html-game/';
                     // alert("分享成功");
                 },
                 // 整个分享过程结束
@@ -108,7 +108,7 @@ var HelloWorldLayer = cc.Layer.extend({
                     // 如果你做的是一个鼓励用户进行分享的产品，在这里是不是可以给用户一些反馈了？
                     // alert("分享结束");
                     if(self.isGameOver){
-                        if(window.location) window.location.href = "http://localhost:8080/games/diaoyu/";
+                        if(window.location) window.location.href = "http://uinote.com/html-game/games/diaoyu/";
                     }
                 }
             };
@@ -146,7 +146,7 @@ var HelloWorldLayer = cc.Layer.extend({
 
         layerMask.delay(0.5).then(function(){
             layerMask.attr('opacity', 128);
-            var share = cc.createSprite('http://localhost:8080/games/diaoyu/share.png', {
+            var share = cc.createSprite('http://uinote.com/html-game/games/diaoyu/share.png', {
                 anchor: [1.0, 1.0],
                 xy: [720, 1280],
                 opacity: 0,

@@ -11,8 +11,8 @@ Auth9G = function(gameid) {
 	this.identify = function(){};
 	this.ready = function(){};
 	this.readyDone = false;
-	this.baseUrl = "http://localhost:8080/";
-	this.gameUrl = "http://localhost:8080/";
+	this.baseUrl = "http://uinote.com/html-game/";
+	this.gameUrl = "http://uinote.com/html-game/";
 	this.init();
 }
 

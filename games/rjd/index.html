@@ -11,7 +11,7 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<title>抛鸡蛋</title>
 		<script type="text/javascript">
-		var _config = {}; _config['isSite'] = 'http://localhost:8080/';_config["isCount"] = "http://localhost:8080/";_config["isSites"] = "http://localhost:8080/";
+		var _config = {}; _config['isSite'] = 'http://uinote.com/html-game/';_config["isCount"] = "http://uinote.com/html-game/";_config["isSites"] = "http://uinote.com/html-game/";
 		var _con = {}; _con["num"] = 70;
 	</script>
 		<script type="text/javascript"
@@ -451,10 +451,10 @@ input[type=checkbox] {
 		<script src="js/70/main.js"
 			type="text/javascript"></script>
 		<script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/rjd.png",
-		        "timeLineLink": "http://localhost:8080/games/rjd/",
+		        "imgUrl": "http://uinote.com/html-game/icon/rjd.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/rjd/",
 		        "tTitle": "抛鸡蛋-游戏中心",
 		        "tContent": "抛鸡蛋-游戏中心"
 		};
@@ -464,7 +464,7 @@ input[type=checkbox] {
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080";
+				window.location = "http://uinote.com/html-game";
 			 }
 			 else{
 				goHome();
@@ -514,7 +514,7 @@ input[type=checkbox] {
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "rjd" };
-			//window.shareData.timeLineLink = "http://localhost:8080/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			//window.shareData.timeLineLink = "http://uinote.com/html-game/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName = "拯救了"+score+"颗蛋";
@@ -528,7 +528,7 @@ input[type=checkbox] {
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏排行榜吗？")) {
-                            window.location = "http://localhost:8080/games/rjd/index.html" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                            window.location = "http://uinote.com/html-game/games/rjd/index.html" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
                         }
                         else {
                             document.location.href = mebtnopenurl;

@@ -15,10 +15,10 @@
 	</div>
 	<div style="position:absolute;rigth:0px;bottom:20px;">找不到？摇一摇有惊喜哦！</div>
 	<script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/qmxzfzm2.png",
-		        "timeLineLink": "http://localhost:8080/games/qmxzfzm2",
+		        "imgUrl": "http://uinote.com/html-game/icon/qmxzfzm2.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/qmxzfzm2",
 		        "tTitle": "升级版全民摇一摇寻找房祖名-游戏中心",
 		        "tContent": "升级版全民摇一摇寻找房祖名-游戏中心"
 		};
@@ -28,13 +28,13 @@
 		}
 		function clickMore(){
 			// if((window.location+"").indexOf("zf",1)>0){
-			// 	window.location = "http://localhost:8080/games/qmxzfzm2";
+			// 	window.location = "http://uinote.com/html-game/games/qmxzfzm2";
 			//  }
 			//  else{
 			// 	goHome();
 			//  }
 			if (Math.random() > 0.5) {
-				window.location = "http://localhost:8080/games/qmxzfzm2";
+				window.location = "http://uinote.com/html-game/games/qmxzfzm2";
 			}
 			else {
 				goHome();
@@ -80,7 +80,7 @@
 			<script type="text/javascript">
             var myData = { gameid: "qmxzfzm" };
 			var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
-			window.shareData.timeLineLink = "http://localhost:8080/games/qmxzfzm2";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/qmxzfzm2";
 			function dp_submitScore(score){
 				myData.score = parseInt(score);
 				myData.scoreName = "成功寻找"+score+"次房祖名";
@@ -94,7 +94,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "http://localhost:8080/";
+                            window.location = "http://uinote.com/html-game/";
                         }
                         else {
                             document.location.href = mebtnopenurl;
@@ -188,7 +188,7 @@
         </div>
     </div>
 	<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/qmxzfzm2/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/qmxzfzm2/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>

@@ -189,13 +189,13 @@
     <script type="text/javascript" src="success/js/lottery.min.js?v=20140621"></script>
     <script type="text/javascript" src="success/js/com.js?v=20140621"></script>
     <script>
-        var mebtnopenurl = '158369_weixin';
+        var mebtnopenurl = 'uinote_weixin';
         dataForWeixin = {
             appid: 'wx13b7a88076a07cba',
             img_url: './success/images/zazhi.png',
             img_width: '100',
             img_height: '100',
-            link: 'http://localhost:8080/games/zazhi/index.html',
+            link: 'http://uinote.com/html-game/games/zazhi/index.html',
             title: '我是认真的，千万不要来南宁',
             desc: "我是认真的，千万不要来南宁",
             callback: function() {
@@ -220,7 +220,7 @@
             };
             $.ajax({
                 type: 'POST',
-                url: 'http://localhost:8080/',
+                url: 'http://uinote.com/html-game/',
                 data: params,
                 dataType: 'json',
                 success: function(response) {

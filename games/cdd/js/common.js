@@ -1,13 +1,13 @@
 var btGame;~
 function(bt) {
 	bt.URL = {
-		root: "http://localhost:8080",
+		root: "http://uinote.com/html-game",
 		getMoreGame: function() {
 			bt.dc("more");
-			return "http://localhost:8080"
+			return "http://uinote.com/html-game"
 		},
 		getConcern: function() {
-			return "http://localhost:8080/"
+			return "http://uinote.com/html-game/"
 		},
 	};
 	bt.getGameId = function() {

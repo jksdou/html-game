@@ -96,10 +96,10 @@
 
 </script>
 <script language=javascript>
-		var mebtnopenurl = 'https://uinote.com/';
+		var mebtnopenurl = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/games/jssjm/icon.png",
-		        "timeLineLink": "http://localhost:8080/games/jssjm/index.html",
+		        "imgUrl": "http://uinote.com/html-game/games/jssjm/icon.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/jssjm/index.html",
 		        "tTitle": "激射神经猫-游戏中心",
 		        "tContent": "激射神经猫-游戏中心"
 		};
@@ -109,7 +109,7 @@
 		}
 		function clickMore(){
 			if((window.location+"").indexOf("zf",1)>0){
-				window.location = "http://localhost:8080/index.html";
+				window.location = "http://uinote.com/html-game/index.html";
 			 }
 			 else{
 				goHome();
@@ -152,14 +152,14 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/jssjm/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/jssjm/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
 		<div style="display: none;">
 			<script type="text/javascript">
             var myData = { gameid: "jssjm" };
-			window.shareData.timeLineLink = "http://localhost:8080/games/jssjm/index.html";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/jssjm/index.html";
 			function dp_submitScore(score){
 				myData.score = score;
 				myData.scoreName = score+"米";
@@ -197,7 +197,7 @@ function getParameter(name) {
 if (/android|linux/i.test(navigator.userAgent)) {
 	if(getParameter('f')=='zf'){
 		setTimeout(function(){
-			$("<div style='position:absolute;left:0px;bottom:0px;'><a href='http://localhost:8080/games/dtcq/game.html'><img src='http://localhost:8080/games/dtcq/ad2.jpg' style='width: 100%;'/></a></div>").appendTo($("#gameDiv"));
+			$("<div style='position:absolute;left:0px;bottom:0px;'><a href='http://uinote.com/html-game/games/dtcq/game.html'><img src='http://uinote.com/html-game/games/dtcq/ad2.jpg' style='width: 100%;'/></a></div>").appendTo($("#gameDiv"));
 		}, 3000);
 	}
 }

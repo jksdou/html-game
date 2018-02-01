@@ -525,9 +525,9 @@ var btGame;
         }
     };
     window.a = c;
-    var mebtnopenurl = 'http://localhost:8080';
+    var mebtnopenurl = 'http://uinote.com/html-game';
 var thegameurl =""; 
-var guanzhuurl ="https://uinote.com/";
+var guanzhuurl ="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
     c.src = "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWGibTGlgZ0T24BEhuvDE3KFIOib0Bicg8yfs64RHzul0BvfriaEJyI65UjLYmhop9YRyak37Oib0Laju1A/640";
     var onBridgeReady = function() {
         WeixinJSBridge.on("menu:share:appmessage", function(d) {

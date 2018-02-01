@@ -19,10 +19,10 @@
 <body onLoad="init()">
     <canvas id="canvas"></canvas>
     <script language=javascript>
-		var mebtnopenurl = 'http://localhost:8080';
+		var mebtnopenurl = 'http://uinote.com/html-game';
 		window.shareData = {
-		        "imgUrl": "http://localhost:8080/icon/sqs.png",
-		        "timeLineLink": "http://localhost:8080/games/sqs",
+		        "imgUrl": "http://uinote.com/html-game/icon/sqs.png",
+		        "timeLineLink": "http://uinote.com/html-game/games/sqs",
 		        "tTitle": "神枪手-游戏中心",
 		        "tContent": "瞄准后发射，看你能打中几环，考验你的眼明手快！"
 		};
@@ -32,7 +32,7 @@
 		}
 		function clickMore(){
 			 if((window.location+"").indexOf("zf",1)>0){
-			 	window.location = "http://localhost:8080/games/sqs";
+			 	window.location = "http://uinote.com/html-game/games/sqs";
 			  }
 			  else{
 			 	goHome();
@@ -75,7 +75,7 @@
 		}, false);
 		</script>
 		<div id=share style="display: none">
-			<img width=100% src="http://localhost:8080/games/sqs/share.png"
+			<img width=100% src="http://uinote.com/html-game/games/sqs/share.png"
 				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
 				ontouchstart="document.getElementById('share').style.display='none';" />
 		</div>
@@ -83,7 +83,7 @@
 			<script type="text/javascript">
             var myData = { gameid: "sqs" };
 			var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
-			window.shareData.timeLineLink = "http://localhost:8080/";
+			window.shareData.timeLineLink = "http://uinote.com/html-game/";
 			function dp_submitScore(score,maxscore){
 				myData.score =parseInt(score*100);
 				myData.maxscore =maxscore;
@@ -98,7 +98,7 @@
                 if (localStorage.myuid && myData.score != undefined) {
                     setTimeout(function(){
                         if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "http://localhost:8080/" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                            window.location = "http://uinote.com/html-game/" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
                         }
                         else {
                             document.location.href = mebtnopenurl;

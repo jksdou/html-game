@@ -6,13 +6,13 @@
         <meta charset="utf-8" />
 
         <title>Catch it!</title>
-						<script type="text/javascript" src="http://localhost:8080/games/qw/jquery.min.js"></script>
+						<script type="text/javascript" src="http://uinote.com/html-game/games/qw/jquery.min.js"></script>
       <script type="text/javascript">
 	  
         var dataForWeixin = {
               appId: "gh_ff79a97cd7f3",
-              TLImg: "http://localhost:8080/games/zhua/logo.jpg",
-              url: "http://localhost:8080/games/zhua/",
+              TLImg: "http://uinote.com/html-game/games/zhua/logo.jpg",
+              url: "http://uinote.com/html-game/games/zhua/",
               title: "Classic  game <Catch it!>, please share your friends!  Circle  friends wechat!",
               desc: "please share your friends!  Circle  friends wechat!"
         };
@@ -30,7 +30,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc 
                 });
-         setTimeout(function () {location.href = "http://localhost:8080/games/zhua/";}, 1500); 
+         setTimeout(function () {location.href = "http://uinote.com/html-game/games/zhua/";}, 1500); 
             });
             WeixinJSBridge.on('menu:share:timeline', function(argv){
                 var infos = $("#infos").text();             
@@ -43,7 +43,7 @@
                     "title": infos + dataForWeixin.title,
                     "desc": dataForWeixin.desc
                 });
-		setTimeout(function () {location.href = "http://localhost:8080/games/zhua/";}, 1500);  
+		setTimeout(function () {location.href = "http://uinote.com/html-game/games/zhua/";}, 1500);  
             });
         };
         if(document.addEventListener){

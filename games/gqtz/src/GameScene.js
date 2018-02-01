@@ -6,15 +6,15 @@
 
 var AD = ["res/ad02.png"];
 
-var ADLink = ["http://localhost:8080"];
+var ADLink = ["http://uinote.com/html-game"];
 
 var androidAD = ["res/ad01.png", "res/ad03.png"];
 
-var androidADLink = ["http://localhost:8080","http://localhost:8080"];
+var androidADLink = ["http://uinote.com/html-game","http://uinote.com/html-game"];
 
 var iosAD = ["res/ad01.png", "res/ad03.png"];
 
-var iosADLink = ["http://localhost:8080","http://localhost:8080"];
+var iosADLink = ["http://uinote.com/html-game","http://uinote.com/html-game"];
 
 var adPush = function(b) {
 
