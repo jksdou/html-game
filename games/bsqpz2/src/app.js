@@ -17,14 +17,14 @@ var ICONS = [
     ['2048.png', '2048']
 ];
 var StartLayer = cc.Layer.extend({
-    ctor: function(context){
+    ctor: function (context) {
         this._super();
 
         this.setBackground('rgba(0, 0, 0, 128)');
         var title = cc.createSprite('title.png', {
             xy: [320, 700],
         });
-        this.addChild(title);      
+        this.addChild(title);
 
         var buttonSp = cc.Button.create('button_bg.png', {
             xy: [320, 380],
@@ -42,7 +42,7 @@ var StartLayer = cc.Layer.extend({
         buttonSp.scaleTo(0.5, 0.92).scaleTo(0.5, 0.85).delay(1.0).repeat().act();
 
         var self = this;
-        this.delegate(buttonSp, 'click', function(){
+        this.delegate(buttonSp, 'click', function () {
             self.undelegate(buttonSp);
             context.start();
         });
@@ -52,8 +52,8 @@ var StartLayer = cc.Layer.extend({
 });
 
 var HelloWorldLayer = cc.Layer.extend({
-    ctor:function () {
-        this._super();  
+    ctor: function () {
+        this._super();
 
         this.setBackground('res/bg.jpg');
 
@@ -65,41 +65,41 @@ var HelloWorldLayer = cc.Layer.extend({
 
         return true;
     },
-    start: function(){
+    start: function () {
         var self = this;
-        this.startLayer.fadeOut(0.1).then(function(){
+        this.startLayer.fadeOut(0.1).then(function () {
             self.startLayer.removeFromParent(true);
         }).act();
         this.initIcons();
 
         this.setNotice(10, 3);
-       
+
         this.speedy = 1500;
         this.score = 0;
         this.tap = 0;
         var startTime = Date.now();
-        
-        setTimeout(function foo(){
-            self.speedy = Math.max(self.speedy-5, 200);
+
+        setTimeout(function foo() {
+            self.speedy = Math.max(self.speedy - 5, 200);
             self.setNotice(5, 2);
-            if(Date.now() - startTime <= 30000){
+            if (Date.now() - startTime <= 30000) {
                 setTimeout(foo, self.speedy);
-            }else{
+            } else {
                 self.timeout = true;
                 self.checkend();
             }
         }, self.speedy);
     },
-    checkend: function(){
-        this.isGameOver = !this.icons.some(function(o){
+    checkend: function () {
+        this.isGameOver = !this.icons.some(function (o) {
             return o.notice;
         });
-        if(this.isGameOver){
+        if (this.isGameOver) {
             //console.log('gameOver');
             this.gameOver();
         }
     },
-    gameOver: function(){
+    gameOver: function () {
         //console.log(this.score);
         var self = this;
         var i = 0;
@@ -107,19 +107,19 @@ var HelloWorldLayer = cc.Layer.extend({
         var hiscore = 635;
         var score = this.score;
 
-        var rand =  Math.random()*12454;
-        var rank = 0|((hiscore - score) * 34763  + rand);
-        var percent = (score *34763 + rand) / (hiscore*34763+rand);
+        var rand = Math.random() * 12454;
+        var rank = 0 | ((hiscore - score) * 34763 + rand);
+        var percent = (score * 34763 + rand) / (hiscore * 34763 + rand);
         percent = Math.min(0.999, percent);
 
-		dp_submitScore(this.score);
+        dp_submitScore(this.score);
         var layerMask = cc.LayerColor.create(cc.color('rgba(0,0,0,128)'));
         layerMask.attr({
             zOrder: 88,
             opacity: 0
         });
-        self.addChild(layerMask);  
-        layerMask.delay(0.5).then(function(){
+        self.addChild(layerMask);
+        layerMask.delay(0.5).then(function () {
             layerMask.attr('opacity', 192);
             var share = cc.createSprite('share_arraw.png', {
                 anchor: [1.0, 1.0],
@@ -127,11 +127,15 @@ var HelloWorldLayer = cc.Layer.extend({
                 opacity: 0,
                 scale: 0.5
             });
-            layerMask.addChild(share);     
+            layerMask.addChild(share);
 
-            var text = cc.tmpl("强迫症真的伤不起，你干掉了{score}个新提示。分享给你的强迫症好友吧。", {tap: self.tap, score: score, percent: (percent * 100).toFixed(1)});
+            var text = cc.tmpl("强迫症真的伤不起，你干掉了{score}个新提示。分享给你的强迫症好友吧。", {
+                tap: self.tap,
+                score: score,
+                percent: (percent * 100).toFixed(1)
+            });
 
-            var result = cc.createSprite('@'+text, {
+            var result = cc.createSprite('@' + text, {
                 xy: [320, 720],
                 fontSize: 36,
                 size: [600, 300],
@@ -155,8 +159,8 @@ var HelloWorldLayer = cc.Layer.extend({
             againButton.addChild(text);
             againButton.delay(0.5).fadeIn(0.5).act();
 
-            layerMask.delegate(againButton, 'click', function(){
-                layerMask.fadeOut(0.5).then(function(){
+            layerMask.delegate(againButton, 'click', function () {
+                layerMask.fadeOut(0.5).then(function () {
                     self.getParent().reload();
                 }).act();
             });
@@ -177,8 +181,8 @@ var HelloWorldLayer = cc.Layer.extend({
             shareButton.addChild(text);
             shareButton.delay(0.6).fadeIn(0.5).act();
 
-            layerMask.delegate(shareButton, 'click', function(){
-               dp_share();
+            layerMask.delegate(shareButton, 'click', function () {
+                dp_share();
             });
 
             var otherButton = cc.Button.create('button_bg.png', {
@@ -188,7 +192,7 @@ var HelloWorldLayer = cc.Layer.extend({
             });
             layerMask.addChild(otherButton);
 
-            text = cc.createSprite('@更多游戏',{
+            text = cc.createSprite('@更多游戏', {
                 xy: [220, 40],
                 fontSize: 46,
                 color: '#00a538',
@@ -197,15 +201,15 @@ var HelloWorldLayer = cc.Layer.extend({
             otherButton.addChild(text);
             otherButton.delay(0.7).fadeIn(0.5).act();
 
-            layerMask.delegate(otherButton, 'click', function(){
+            layerMask.delegate(otherButton, 'click', function () {
                 clickMore();
             });
-        }).act();          
+        }).act();
     },
-    initIcons: function(){
+    initIcons: function () {
         var self = this;
         this.icons = [];
-        for(var i = 0; i < 16; i++){
+        for (var i = 0; i < 16; i++) {
             var sp = cc.createSprite(ICONS[i][0], {
                 xy: [90 + (i % 4) * 152, 1026 - (0 | (i / 4)) * 176],
                 opacity: 0
@@ -218,27 +222,27 @@ var HelloWorldLayer = cc.Layer.extend({
             });
             this.addChild(spTxt);*/
 
-            (function(sp){
+            (function (sp) {
                 self.delegate(sp, {
-                    touchstart: function(){
+                    touchstart: function () {
                         var mask = cc.createSprite('mask.png', {
                             xy: [62, 61],
                         });
                         sp.addChild(mask);
                         sp.mask = mask;
-                        if(sp.notice){
+                        if (sp.notice) {
                             self.score += sp.notice.value;
                             self.tap++;
                             sp.notice.removeFromParent(true);
                             self.speedy -= 50;
                             delete sp.notice;
-                            if(self.timeout){
+                            if (self.timeout) {
                                 self.checkend();
                             }
                         }
                     },
-                    touchend: function(){
-                        if(sp.mask){
+                    touchend: function () {
+                        if (sp.mask) {
                             sp.mask.removeFromParent(true);
                             delete sp.mask;
                         }
@@ -248,11 +252,11 @@ var HelloWorldLayer = cc.Layer.extend({
             this.icons.push(sp);
         }
     },
-    setNotice: function(n, max){
+    setNotice: function (n, max) {
         var icons = cc.random(this.icons, max);
-        for(var i = 0; i < n; i++){
+        for (var i = 0; i < n; i++) {
             var icon = cc.random(icons);
-            if(!icon.notice){
+            if (!icon.notice) {
                 icon.notice = cc.createSprite("n.png", {
                     xy: [115, 115],
                     scale: 0.1,
@@ -266,7 +270,7 @@ var HelloWorldLayer = cc.Layer.extend({
                 icon.notice.v = v;
                 icon.addChild(icon.notice);
                 icon.notice.scaleTo(0.2, 1.0).act();
-            }else{
+            } else {
                 icon.notice.value++;
                 //icon.notice.attr('texture', 'n.png');
                 icon.notice.v.setString(icon.notice.value);
@@ -274,16 +278,15 @@ var HelloWorldLayer = cc.Layer.extend({
             }
         }
     },
-    backClicked: function(){
+    backClicked: function () {
 
     }
 });
 
 var HelloWorldScene = cc.Scene.extend({
-    onEnter:function () {
+    onEnter: function () {
         this._super();
         var layer = new HelloWorldLayer();
         this.addChild(layer);
     }
 });
-

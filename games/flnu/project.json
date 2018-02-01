@@ -1,1 +1,7 @@
-{"showFPS": false, "frameRate": 60, "debugMode": 1, "renderMode": 0, "id": "gameCanvas"}
+{
+  "showFPS": false,
+  "frameRate": 60,
+  "debugMode": 1,
+  "renderMode": 0,
+  "id": "gameCanvas"
+}

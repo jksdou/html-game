@@ -614,7 +614,7 @@ if (typeof StartGame == 'function') {
 	function isIOS() {
 		return navigator.userAgent.match(/iphone|ipod|ios/i)
 	}
-	var HOME_PATH = HOME_PATH || "http://www.dwz.cn/qZ3Ug",
+	var HOME_PATH = HOME_PATH || "https://uinote.com/html-game/",
 	RESOURCE_IMG_PATH = RESOURCE_IMG_PATH || "/game/",
 	HORIZONTAL = HORIZONTAL || false,
 	COVER_SHOW_TIME = COVER_SHOW_TIME || 2e3;

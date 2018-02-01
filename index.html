@@ -5,13 +5,13 @@
     <meta charset=UTF-8>
     <title>游戏中心</title>
     <meta name=viewport content=" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel=stylesheet target=_blank href="index/css/base.css" />
+    <link rel=stylesheet href="index/css/base.css" />
 </head>
 
 <body>
     <div class=main>
         <div class=banner>
-            <a target=_blank href="http://uinote.com/html-game/"><img src="index/img/banner02.gif" alt="" /></a>
+            <a href="http://uinote.com/html-game/"><img src="index/img/banner02.gif" alt="" /></a>
         </div>
         <div class=gameList>
             <dl>
@@ -115,7 +115,7 @@
                 <dd>
                     <a target=_blank href="games/bljqzffxwz">
                         <span class=palyBtn>开始游戏</span>
-                        <span class=icon style="background-image:url(icon/bljqzffxwz.png);"></span>
+                        <span class=icon style="background-image:url(games/bljqzffxwz/icon.png);"></span>
                         <div class=info>
                             <p>反腐小王子</p>
                             <p>84795+人玩过</p>
@@ -1894,35 +1894,46 @@
     </div>
     <style>
         #fix_footer {
+            left:0;
+            background-color:#191919;
+            color:#ffffff;
+            height:55px;
+            width:100%;
+            position:fixed;
+            bottom:0%;
+            font-size:14px;
             -moz-box-shadow: 0px 0px 11px #191919;
             -webkit-box-shadow: 0px 0px 11px #191919;
             box-shadow: 0px 0px 11px #191919;
         }
-        
+
+        #fix_footer table {
+            border-collapse: collapse;
+        }
+
         #fix_footer_menu {
             width: 33%;
             border-right: 1px solid rgba(0, 0, 0, 0.4);
             background: rgba(0, 0, 0, 0.1);
             font-family: 黑体;
         }
-        
+
         #fix_footer_menu_on {
             width: 33%;
             border-right: 1px solid rgba(0, 0, 0, 0.4);
             background: rgba(0, 0, 0, 0.3);
             font-family: 黑体;
-            background: #202020;
-            /* Fallback color for old browsers */
+            background-color: #202020;
         }
-        
+
         #fix_footer_menu img,
         #fix_footer_menu_on img {
             width: 24px;
             height: 25px;
         }
     </style>
-    <div class="fix_footer" id="fix_footer" style="left:0;background-color:#191919;color:#ffffff;height:55px;width:100%;position:fixed;bottom:0%;font-size:14px;">
-        <table width="100%" height="100%" border="0" style="border-collapse: collapse;">
+    <div class="fix_footer" id="fix_footer">
+        <table width="100%" height="100%" border="0">
             <tbody>
                 <tr>
                     <td id="fix_footer_menu" onclick="window.location='http://uinote.com/html-game/'" align="center"><img src="index/images/nav_7.png"><br>玩游戏</td>
