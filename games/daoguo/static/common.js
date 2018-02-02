@@ -536,9 +536,8 @@ var btGame;
     };
     window.a = c;
     var mebtnopenurl = 'http://uinote.com/html-game';
-    var thegameurl = "";
     var guanzhuurl = "https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
-    c.src = "http://uinote.com/html-game/daoguo/icon.png";
+    c.src = "http://uinote.com/html-game/games/daoguo/icon.png";
     var onBridgeReady = function() {
         WeixinJSBridge.on("menu:share:appmessage", function(d) {
             WeixinJSBridge.invoke("sendAppMessage", {
@@ -608,6 +607,6 @@ var btGame;
     var b = bt.getGameId();
     if (b) {
         var c = new Image();
-        c.src = 'http://uinote.com/html-game/daoguo/icon.png';
+        c.src = 'http://uinote.com/html-game/games/daoguo/icon.png';
     }
 }(btGame || (btGame = {}));
