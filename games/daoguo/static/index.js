@@ -6,8 +6,10 @@ Array.prototype._random = function() {
 };
 
 Array.prototype.random = function() {
-    var d = Math.ceil(this.length / 2), e = this.length;
-    var f = this.slice(0, d), g = this.slice(d, this.length);
+    var d = Math.ceil(this.length / 2),
+        e = this.length;
+    var f = this.slice(0, d),
+        g = this.slice(d, this.length);
     f._random(), g._random();
     for (var h = 0; h < e; h += 2) {
         var i = Math.floor(h / 2);
@@ -40,7 +42,8 @@ String.prototype.format = function(d, e) {
     return this.replace(e || /\${([^}]*)}/g, function(f, h) {
         var i = d;
         if (h.indexOf(".") >= 0) {
-            var j = h.split("."), k;
+            var j = h.split("."),
+                k;
             while (k = j.shift()) {
                 i = i[k];
                 if (!i) break;
@@ -62,14 +65,16 @@ a.height = 760;
 
 btGame.makePublisher(a);
 
-~function(a) {
+~ function(a) {
     a.load = [];
     var d = null;
     a.load.add = function(e) {
         a.load.push(e);
     };
     a.load.start = function() {
-        var e = a.load, f = 0, g = e.length;
+        var e = a.load,
+            f = 0,
+            g = e.length;
         d = $("<div></div>");
         d.css({
             position: "absolute",
@@ -105,24 +110,28 @@ btGame.makePublisher(a);
     });
 }(a);
 
-~function(a) {
+~ function(a) {
     a.gameMap = {
-        "1": [ "苍井空", "松岛枫", "吉泽明步", "波多野结衣", "天海翼", "麻生希", "泷泽萝拉", "冲田杏梨", "上原亚衣", "小泽玛利亚" ],
-        "2": [ "橘梨纱", "京香JULIA", "濑亚美莉", "武藤兰", "饭岛爱", "大桥未久", "樱井莉亚", "雨宫琴音", "早乙女露依", "柚木提娜" ],
-        "3": [ "羽田爱", "佐藤遥希", "小泽圆", "小仓奈奈", "大沢佑香", "桐谷尤莉亚", "芦名尤莉亚", "月野里沙", "西野翔", "白石瞳" ],
-        "4": [ "立花美凉", "白鸟樱", "长濑爱", "常盘樱子", "川岛和津实", "堤莎也加", "高树玛莉亚", "古都光", "黑崎扇菜", "渡濑晶", "橘未稀", "立花瞳", "铃木麻奈美", "早川濑里奈", "明日花绮罗", "横山美雪", "北原多香子", "爱田由", "红音萤", "樱井步", "大冢咲", "穗花", "绫波芹", "春咲梓美", "黑木麻衣", "尾上若叶", "希岛爱理", "樱理惠", "美竹凉子", "瑠川莉娜", "上原Kaera", "美祢藤", "小川亚纱美", "菅野亚梨沙", "木下柚花", "小蕾", "伊泽千夏", "秋山祥子", "纹舞兰", "上原瑞穂", "大沢美加", "月野莉纱", "葵实野理", "加藤莉娜", "友田彩也香", "村上里沙", "希志爱野", "仁科百华", "椎名由奈", "冬月枫", "立花里子", "小川阿佐美", "成濑心美", "上原结衣", "里美尤利娅", "希崎杰西卡", "雾岛奈津美", "石川铃华", "桥本舞", "原干惠" ]
+        "1": ["苍井空", "松岛枫", "吉泽明步", "波多野结衣", "天海翼", "麻生希", "泷泽萝拉", "冲田杏梨", "上原亚衣", "小泽玛利亚"],
+        "2": ["橘梨纱", "京香JULIA", "濑亚美莉", "武藤兰", "饭岛爱", "大桥未久", "樱井莉亚", "雨宫琴音", "早乙女露依", "柚木提娜"],
+        "3": ["羽田爱", "佐藤遥希", "小泽圆", "小仓奈奈", "大沢佑香", "桐谷尤莉亚", "芦名尤莉亚", "月野里沙", "西野翔", "白石瞳"],
+        "4": ["立花美凉", "白鸟樱", "长濑爱", "常盘樱子", "川岛和津实", "堤莎也加", "高树玛莉亚", "古都光", "黑崎扇菜", "渡濑晶", "橘未稀", "立花瞳", "铃木麻奈美", "早川濑里奈", "明日花绮罗", "横山美雪", "北原多香子", "爱田由", "红音萤", "樱井步", "大冢咲", "穗花", "绫波芹", "春咲梓美", "黑木麻衣", "尾上若叶", "希岛爱理", "樱理惠", "美竹凉子", "瑠川莉娜", "上原Kaera", "美祢藤", "小川亚纱美", "菅野亚梨沙", "木下柚花", "小蕾", "伊泽千夏", "秋山祥子", "纹舞兰", "上原瑞穂", "大沢美加", "月野莉纱", "葵实野理", "加藤莉娜", "友田彩也香", "村上里沙", "希志爱野", "仁科百华", "椎名由奈", "冬月枫", "立花里子", "小川阿佐美", "成濑心美", "上原结衣", "里美尤利娅", "希崎杰西卡", "雾岛奈津美", "石川铃华", "桥本舞", "原干惠"]
     };
     a.gameList = [];
     a.maxLevel = 30;
     a.currentLevel = 0;
     a.maxGate = 3;
     a.picPath = "resource/";
-    var d = a.gameMap, e = a.picPath, f = 0;
+    var d = a.gameMap,
+        e = a.picPath,
+        f = 0;
     for (var g in d) {
         f++;
         var h = d[g];
         for (var i = 0, max = h.length; i < max; i++) {
-            var j = h[i], k = i + 1 + (f - 1) * 10, l = e + k + ".jpg";
+            var j = h[i],
+                k = i + 1 + (f - 1) * 10,
+                l = e + k + ".jpg";
             h[i] = {
                 key: k,
                 name: j,
@@ -160,10 +169,14 @@ btGame.makePublisher(a);
     a.load.start();
 }(a);
 
-~function(a) {
-    var d = $("#main .page"), e = "hide", f = 200;
+~ function(a) {
+    var d = $("#main .page"),
+        e = "hide",
+        f = 200;
+
     function g() {
-        var h = Math.random() > .5 ? "100%" : "-100%", i = Math.random() > .5 ? "100%" : "-100%";
+        var h = Math.random() > .5 ? "100%" : "-100%",
+            i = Math.random() > .5 ? "100%" : "-100%";
         return {
             left: h,
             top: i
@@ -189,7 +202,7 @@ btGame.makePublisher(a);
     });
 }(a);
 
-~function(a) {
+~ function(a) {
     var d = $("#start");
     d.on("click", ".guessPic, .guessNam", function(e) {
         a.setPlayMode($(this).index() - 1);
@@ -201,9 +214,13 @@ btGame.makePublisher(a);
     });
 }(a);
 
-~function(a) {
-    var d = "", e = $(".container"), f = $("#play .time"), g = $("#play .tip");
-    var h = $(".heartList"), i = $("#play .level");
+~ function(a) {
+    var d = "",
+        e = $(".container"),
+        f = $("#play .time"),
+        g = $("#play .tip");
+    var h = $(".heartList"),
+        i = $("#play .level");
     a.on("playModeChange", function(k, l) {
         d = $(l === a.MODE.PIC ? "#template_game_pic" : "#template_game_nam").html();
         d = $.trim(d);
@@ -220,7 +237,8 @@ btGame.makePublisher(a);
             a.maxWrongCount = 3;
             a.wrongCount = 0;
             this.next(false);
-            var k = 3, l = this;
+            var k = 3,
+                l = this;
             var m = setInterval(function() {
                 k--;
                 if (k <= 0) {
@@ -238,7 +256,8 @@ btGame.makePublisher(a);
                 a.fire("gameEnd");
                 return;
             }
-            var m = Math.ceil(a.currentLevel / 10), n = a.gameMap[m][l - (m - 1) * 10 - 1];
+            var m = Math.ceil(a.currentLevel / 10),
+                n = a.gameMap[m][l - (m - 1) * 10 - 1];
             var o = a.gameList.slice(0).remove(n.key - 1).random().slice(0, 3);
             o.push(n);
             o.random();
@@ -254,7 +273,8 @@ btGame.makePublisher(a);
             timer: null,
             start: function() {
                 clearInterval(this.timer);
-                var k = 10, l = this;
+                var k = 10,
+                    l = this;
                 a.fire("timeChange", k);
                 this.timer = setInterval(function() {
                     k--;
@@ -288,7 +308,8 @@ btGame.makePublisher(a);
             return false;
         }
         var l = e.find(".gameTip");
-        var m = k.data("key"), n = l.data("key");
+        var m = k.data("key"),
+            n = l.data("key");
         if (m == n) {
             k.addClass("right");
             a.isPreparingNext = true;
@@ -352,8 +373,9 @@ btGame.makePublisher(a);
     }
 }(a);
 
-~function(a) {
-    var d = $("#prepare"), e = d.find(".text");
+~ function(a) {
+    var d = $("#prepare"),
+        e = d.find(".text");
     a.on("playPrepare", function(f, g) {
         if (g <= 0) {
             d.css("top", "-100%");
@@ -369,8 +391,10 @@ btGame.makePublisher(a);
     d.hide();
 }(a);
 
-~function(a) {
-    var d = $("#end"), e = d.find(".level"), f = d.find(".title");
+~ function(a) {
+    var d = $("#end"),
+        e = d.find(".level"),
+        f = d.find(".title");
     d.on("click", ".again", function() {
         a.fire("pageChange", 0);
         return false;
@@ -378,7 +402,7 @@ btGame.makePublisher(a);
         btGame.playShareTip();
         return false;
     });
-    var g = [ {
+    var g = [{
         key: 0,
         title: "小纯洁"
     }, {
@@ -402,7 +426,8 @@ btGame.makePublisher(a);
     }, {
         key: 30,
         title: "色即是空"
-    } ];
+    }];
+
     function h(i) {
         var j = g[0].title;
         for (var k = 0, max = g.length; k < max; k++) {
@@ -431,7 +456,7 @@ btGame.makePublisher(a);
     });
 }(a);
 
-~function(a, btGame) {
+~ function(a, btGame) {
     a.on("gameResult", function(d, e) {
         var f = "我玩《岛国么么答》获得【" + e.title + "】称号，我很纯洁别怀疑！";
         if (e.level >= 5) {
@@ -446,10 +471,13 @@ btGame.makePublisher(a);
     });
 }(a, btGame);
 
-~function(a, btGame) {
-    var d = $("body,html"), e = $("#main");
+~ function(a, btGame) {
+    var d = $("body,html"),
+        e = $("#main");
+
     function f() {
-        var g = a.width, h = window.innerWidth;
+        var g = a.width,
+            h = window.innerWidth;
         var i = h / g;
         if (i > 1) i = 1;
         var j = "scale(" + i + ")";

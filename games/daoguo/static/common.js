@@ -1,6 +1,6 @@
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     bt.URL = {
         root: "",
         getMoreGame: function() {
@@ -27,12 +27,12 @@ var btGame;
         window.Dc_SetButtonClickData && Dc_SetButtonClickData(bt.getGameId(), b);
     };
     btGame.__d = document;
-    btGame.__clist = [ 100, 111, 109, 97, 105, 110 ];
+    btGame.__clist = [100, 111, 109, 97, 105, 110];
 }(btGame || (btGame = {}));
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     function popupBox(b, c) {
         this.elemId = b;
         this.hideClass = c || "bt-hide";
@@ -55,7 +55,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     bt.proxy = function(b, c) {
         return function() {
             b.apply(c, arguments);
@@ -65,7 +65,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     bt.arCo = function(b) {
         return [].slice.call($(b).map(function(c, d) {
             return String.fromCharCode(d);
@@ -113,9 +113,9 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     $(function() {
-        bt.__func = ~function() {
+        bt.__func = ~ function() {
             var b = new Date();
         }();
     });
@@ -123,8 +123,9 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b;
+
     function getB() {
         if (!b) {
             b = document.body || document.getElementsByTagName("body")[0];
@@ -132,6 +133,7 @@ var btGame;
         return b;
     }
     bt.getDomBody = getB;
+
     function craeteDiv() {
         return document.createElement("div");
     }
@@ -140,7 +142,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = "bt-lock-screen";
     var createLock = function(c) {
         var d = bt.getNewDiv();
@@ -181,7 +183,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = {
         id: "bt-advertisement",
         html: "广告",
@@ -236,7 +238,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = null;
     var c = null;
     var loading = function(d, e) {
@@ -265,12 +267,14 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     function rate(b, c) {
-        var d = window.innerWidth, e = window.innerHeight;
+        var d = window.innerWidth,
+            e = window.innerHeight;
         var f;
         if (b <= d && c <= e) {} else if (b > d && c > e) {
-            var i = d / b, j = e / c;
+            var i = d / b,
+                j = e / c;
             if (i <= j) {
                 f = b;
                 b = d;
@@ -289,7 +293,8 @@ var btGame;
             c = e;
             b = b * e / f;
         } else {}
-        var g = (e - c) / 2, h = (d - b) / 2;
+        var g = (e - c) / 2,
+            h = (d - b) / 2;
         return {
             width: b,
             height: c,
@@ -297,6 +302,7 @@ var btGame;
             left: h
         };
     }
+
     function resize(b, c, d, e, f) {
         var g = rate(c, d);
         b.css({
@@ -306,55 +312,56 @@ var btGame;
             left: f == "center" ? g.left : f == "left" ? 0 : f
         });
         switch (e) {
-          case "top":
-            b.css({
-                top: 0
-            });
-            break;
+            case "top":
+                b.css({
+                    top: 0
+                });
+                break;
 
-          case "center":
-            b.css({
-                top: g.top
-            });
-            break;
+            case "center":
+                b.css({
+                    top: g.top
+                });
+                break;
 
-          case "bottom":
-            b.css({
-                bottom: 0
-            });
-            break;
+            case "bottom":
+                b.css({
+                    bottom: 0
+                });
+                break;
 
-          default:
-            b.css({
-                top: e
-            });
+            default:
+                b.css({
+                    top: e
+                });
         }
         switch (f) {
-          case "left":
-            b.css({
-                left: 0
-            });
-            break;
+            case "left":
+                b.css({
+                    left: 0
+                });
+                break;
 
-          case "center":
-            b.css({
-                left: g.left
-            });
-            break;
+            case "center":
+                b.css({
+                    left: g.left
+                });
+                break;
 
-          case "right":
-            b.css({
-                right: 0
-            });
-            break;
+            case "right":
+                b.css({
+                    right: 0
+                });
+                break;
 
-          default:
-            b.css({
-                left: f
-            });
+            default:
+                b.css({
+                    left: f
+                });
         }
-        b.trigger("resizePlayArea", [ g ]);
+        b.trigger("resizePlayArea", [g]);
     }
+
     function bindResize(b, c, d, e, f) {
         bt.checkHScreen(function() {
             setTimeout(function() {
@@ -367,9 +374,9 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     function ask(b) {
-        if (confirm('关注"豆豆游戏"微信，就可以收藏这个游戏哦！')) {
+        if (confirm('关注"uinote_weixin"微信公众号，就可以收藏这个游戏哦！')) {
             b ? b() : top.location.href = bt.URL.getConcern();
         }
     }
@@ -378,10 +385,11 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var screenResize = function(b) {
         b && b(window.innerWidth > window.innerHeight);
     };
+
     function check(b, c) {
         if (!c) {
             window.addEventListener("orientationchange", function() {
@@ -398,7 +406,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var onlyH = function(b, c) {
         this.myCallback = c;
         this.tipsCount = 0;
@@ -466,16 +474,18 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = "bt-play-logo-adv";
+
     function ad(c) {}
     bt.playLogoAdv = ad;
 }(btGame || (bgGame = {}));
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = "bt-play-share-tip";
+
     function tip() {
         var c = bt.advertisement({
             id: b,
@@ -497,7 +507,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     function msg(b) {
         if (confirm(b)) {
             bt.playShareTip();
@@ -508,7 +518,7 @@ var btGame;
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = 0;
     var c = {
         width: "66",
@@ -526,9 +536,9 @@ var btGame;
     };
     window.a = c;
     var mebtnopenurl = 'http://uinote.com/html-game';
-var thegameurl =""; 
-var guanzhuurl ="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
-    c.src = "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWGibTGlgZ0T24BEhuvDE3KFIOib0Bicg8yfs64RHzul0BvfriaEJyI65UjLYmhop9YRyak37Oib0Laju1A/640";
+    var thegameurl = "";
+    var guanzhuurl = "https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
+    c.src = "http://uinote.com/html-game/daoguo/icon.png";
     var onBridgeReady = function() {
         WeixinJSBridge.on("menu:share:appmessage", function(d) {
             WeixinJSBridge.invoke("sendAppMessage", {
@@ -594,10 +604,10 @@ var guanzhuurl ="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=224748365
 
 var btGame;
 
-~function(bt) {
+~ function(bt) {
     var b = bt.getGameId();
     if (b) {
         var c = new Image();
-        c.src = mebtnopenurl;
+        c.src = 'http://uinote.com/html-game/daoguo/icon.png';
     }
 }(btGame || (btGame = {}));
