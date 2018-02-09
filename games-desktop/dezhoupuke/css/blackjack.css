@@ -1,0 +1,422 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.Action{
+	position:absolute;
+	
+	width:60px;
+	height:60px;
+	
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+	
+	display:block;
+	background-image:url(../img/Actions.png);
+}
+.Chip{
+	position:absolute;
+	
+	width:63px;
+	height:60px;
+	
+	display:block;
+	background-image:url(../img/Chips.png);
+}
+.Card{
+	width:68.5px;
+	height:99px;
+	display:block;
+	position:absolute;
+	
+}
+.cyr {
+	text-align:center;
+	margin-top:560px;
+	}
+.Flip{
+	margin:0px;
+	padding:0px;
+	width:68.5px;
+	height:99px;
+	display:block;
+	background-color:#FFF;
+	border:2px #bcbcbc solid;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+}
+#Message{
+	display:none;
+	width:400px;
+	height:100px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-200px;
+	margin-top:-100px;
+	padding-top:50px;
+	font-size:48px;
+	text-align:center;
+	vertical-align:middle;
+	color:#FFF;
+	border:medium solid #FFF;
+	-webkit-border-radius:100px;
+	-moz-border-radius:100px;
+	z-index:100;
+	background-image:url(../img/Black_Alpha25.png);
+	-moz-box-shadow:0px 5px 5px #000;
+	-webkit-box-shadow:0px 5px 5px #000;
+}
+#Cash{
+	position:absolute;
+	left:50%;
+	margin-left:-450px;
+	margin-top:510px;
+	display:block;
+	font-size: 28px;
+	opacity:0.75;
+	text-align:left;
+	overflow:visible;
+	text-shadow:0px 5px #000;
+}
+#Chips{
+	position:absolute;
+	left:50%;
+	margin-left:-180px;
+	margin-top:465px;
+}
+#Actions{
+	position:absolute;
+	left:50%;
+	margin-left:120px;
+	margin-top:465px;
+}
+
+#Table {
+	background-attachment:scroll;
+	background-image: url(../img/Table.png);
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 500px;
+	width: 100%;
+	overflow: visible;
+	position: absolute;
+	z-index:0;
+}
+#Cards{
+	position:absolute;	
+	z-index:15;
+}
+#Hands{
+	position:absolute;
+	width:1000px;
+	height:500px;
+	margin-left:-500px;
+	left:50%;
+	top:0%;
+}
+#Shoe, #Discard, #Dealer, #Player{
+	position:absolute;
+	width:69px;
+	height:100px;
+	border:#FFF 1px solid;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+#Dealer{
+	background-image:url(../img/Dealer.png);
+	background-position:center center;
+	left:50%;
+	top:25px;
+	margin-left:-34.5px;
+	
+}
+#Shoe{
+	background-image:url(../img/Shoe.png);
+	left:50%;
+	top:25px;
+	margin-left:225px;
+	-moz-box-shadow:0px 5px 5px #000;
+	-webkit-box-shadow:0px 5px 5px #000;
+}
+#Shoe .Card{
+	position:absolute;
+	left:-1px;
+	top:-1px;
+}
+#Discard{
+	background-image:url(../img/Discard.png);
+	border:#FFF 1px solid;
+	left:50%;
+	top:25px;
+	margin-left:-315px;
+	opacity:0.5;
+}
+#Message{
+	
+}
+#CancelWager{
+	left:50%;
+	margin-left:-450px;
+	margin-top:545px;
+	opacity:0.75;
+	overflow:visible;
+	position:absolute;
+	text-align:left;
+	font-style:italic;
+	font-size:12px;
+}
+#Deal{
+	background-image:url(../img/Black_Alpha25.png);
+	position:absolute;
+	width:200px;
+	height:48px;
+	font-size:42px;
+	left:50%;
+	top:475px;
+	margin-left:-100px;
+	text-align:center;
+	
+	display:none;
+	
+	border:2px #FFF solid;
+	
+	-moz-border-radius:24px;
+	-webkit-border-radius:24px;
+	
+	
+	-moz-box-shadow:0px 5px 5px #000;
+	-webkit-box-shadow:0px 5px 5px #000;
+}
+#Deck{
+	background-image:url(../img/Stack.gif);	
+	-moz-border-radius-topleft:6px;
+	-moz-border-radius-topright:6px;
+	-webkit-border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+}
+
+#Player{
+	background-image:url(../img/Player.png);
+	left:50%;
+	top:250px;
+	margin-left:-34.5px;
+}
+.Score{
+	border:1px #FFF solid;
+	
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	padding:2px;
+	min-width:14px;
+	
+	display:none;
+	position:absolute;
+	top:112px;
+	left:25px;
+	font-size:10px;
+	text-align:center;
+}
+.Wager{
+	border:1px #FFF solid;
+	
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	width:24px;
+	height:24px;
+	
+	
+	display:block;
+	position:absolute;
+	top:-27.5px;
+	left:-27.5px;
+	
+	
+	z-index:10;
+}
+.Payout{
+	border:1px #FFF solid;
+	
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	width:24px;
+	height:24px;
+	
+	
+	display:block;
+	position:absolute;
+	top:-27.5px;
+	left:-55px;
+	
+	
+	z-index:10;
+}
+.ChipSm{
+	width:24px;
+	height:24px;
+	display:block;
+	
+	position:absolute;
+	background-image:url(../img/Chips_sm.png);	
+}
+.ChipSm.Bet5{
+	background-position:0px 0px;
+	
+}
+.ChipSm.Bet25{
+	background-position:-28px 0px;
+	
+}
+.ChipSm.Bet50{
+	background-position:-55px 0px;
+	
+}
+.ChipSm.Bet100{
+	background-position:-83px 0px;
+	
+}
+.ChipSm.Bet500{
+	background-position:-110px 0px;
+	
+}
+.PlusMinus{
+	font-size:18px;
+	font-weight:bold;
+}
+.Action#Stand{
+	background-position:0px 0px;
+}
+.Action#Hit{
+	background-position:-60px 0px;
+	left:75px;
+	top:-25px;
+}
+.Action#Split{
+	background-position:-120px 0px;
+	left:147.5px;
+	top:-65px;
+}
+.Action#DoubleDown{
+	background-position:-180px 0px;
+	left:215px;
+	top:-110px;
+}
+.Action#Surrender{
+	background-position:-240px 0px;
+	left:265px;
+	top:-175px;
+}
+#Chips .Chip#Bet5{
+	background-position:0px 0px;
+}
+#Chips .Chip#Bet25{
+	left:-75px;
+	top:-25px;
+	background-position:-63px 0px;
+}
+#Chips .Chip#Bet50{
+	background-position:-130px 0px;
+	left:-147.5px;
+	top:-65px;
+}
+#Chips .Chip#Bet100{
+	background-position:-194px 0px;
+	left:-215px;
+	top:-110px;
+}
+#Chips .Chip#Bet500{
+	background-position:-260px 0px;
+	left:-265px;
+	top:-175px;
+}
+
+.Front, .Back{
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:#FFF;
+	-moz-box-shadow:0px 5px 5px #000;
+	-webkit-box-shadow:0px 5px 5px #000;
+}
+.Front{
+	background-image:url(../img/Back.png);
+	
+}
+
+.Back{
+		
+}
+.Clubs{
+	background-image:url(../img/Clubs.png);
+	
+}
+.Diamonds{
+	background-image:url(../img/Diamonds.png);
+	
+}
+.Hearts{
+	background-image:url(../img/Hearts.png);
+	
+}
+.Spades{
+	background-image:url(../img/Spades.png);
+	
+}
+.Ace{
+	background-position:-0px 0px;
+	
+}
+.Two{
+	background-position:-138px 0px;
+	
+}
+.Three{
+	background-position:-276px 0px;
+	
+}
+.Four{
+	background-position:-414px 0px;
+	
+}
+.Five{
+	background-position:-552px 0px;
+	
+}
+.Six{
+	background-position:-690px 0px;
+	
+}
+.Seven{
+	background-position:-827px 0px;
+	
+}
+.Eight{
+	background-position:-965px 0px;
+	
+}
+.Nine{
+	background-position:-1103px 0px;
+	
+}
+.Ten{
+	background-position:-1241px 0px;
+	
+}
+.Jack{
+	background-position:-1378px 0px;
+	
+}
+.Queen{
+	background-position:-1516px 0px;
+	
+}
+.King{
+	background-position:-1654px 0px;
+	
+}
+
+.Locked{
+	opacity:0.25;	
+}

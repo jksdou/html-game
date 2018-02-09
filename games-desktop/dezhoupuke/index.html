@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="Keywords" content="HTML5扑克牌" />
+	<meta name="Description" content="HTML5扑克牌" />
+	<title>HTML5扑克牌</title>
+	<link href="./css/index.css" rel="stylesheet" type="text/css" />
+	<link href="./css/blackjack.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div id="Table">
+		<div id="Hands">
+			<div id="Player">
+				<span class="Payout"></span>
+				<span class="Wager"></span>
+				<span class="Score">0</span>
+			</div>
+			<div id="Dealer">
+				<span class="Score">0</span>
+			</div>
+		</div>
+		<div id="Shoe"></div>
+		<div id="Discard"></div>
+		<div id="Cards">
+		</div>
+		<div id="Chips">
+			<a href="#" id="Bet5" class="Chip Locked" title="Bet $5"></a>
+			<a href="#" id="Bet25" class="Chip Locked" title="Bet $25"></a>
+			<a href="#" id="Bet50" class="Chip Locked" title="Bet $50"></a>
+			<a href="#" id="Bet100" class="Chip Locked" title="Bet $100"></a>
+			<a href="#" id="Bet500" class="Chip Locked" title="Bet $500"></a>
+		</div>
+		<div id="Actions">
+			<a href="#" id="Stand" class="Action Locked" title="Stand"></a>
+			<a href="#" id="Hit" class="Action Locked" title="Hit"></a>
+			<a href="#" id="Split" class="Action Locked" title="Split"></a>
+			<a href="#" id="DoubleDown" class="Action Locked" title="Double Down"></a>
+			<a href="#" id="Surrender" class="Action Locked" title="Surrender"></a>
+		</div>
+		<div id="Cash">
+			$ 0
+		</div>
+		<div id="Options">
+			<a href="#" id="Deal" class="Option" title="Deal">开始</a>
+			<a href="#" id="CancelWager" class="Option" title="Clear Wager">Clear</a>
+		</div>
+		<div id="Message">
+		</div>
+		<div class="cyr">
+			版权所有
+		</div>
+	</div>
+
+	<script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="./js/zach.min.js"></script>
+	<script type="text/javascript" src="./js/modernizr-1.1.min.js"></script>
+	<script type="text/javascript" src="./js/blackjack.min.js"></script>
+</body>
+
+</html>
