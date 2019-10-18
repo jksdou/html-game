@@ -1,0 +1,21 @@
+{
+"resources":
+	[
+        {"name":"bg","type":"image","url":"assets/bg.jpg"},
+        {"name":"start","type":"image","url":"assets/start.png"},
+        {"name":"bgImage","type":"image","url":"assets/back.jpg"},
+        {"name":"switch","type":"image","url":"assets/switch.png"},
+        {"name":"share","type":"image","url":"assets/share.png"},
+        {"name":"shareArrow","type":"image","url":"assets/shareArrow.png"},
+        {"name":"again","type":"image","url":"assets/again.png"},
+        {"name":"light1","type":"image","url":"assets/light1.png"},
+        {"name":"light2","type":"image","url":"assets/light2.png"},
+        {"name":"description","type":"json","url":"config/description.json"},
+        {"name":"clock","type":"json","url":"config/clock.json"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"share,shareArrow,again,bg,start,bgImage,switch,light1,light2"}
+	]
+}

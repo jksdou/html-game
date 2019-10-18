@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta content="yes" name="apple-touch-fullscreen"/>
+		<meta content="telephone=no" name="format-detection"/>
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+		<title>美女拼图</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<style type="text/css">
+			.mask{
+				position:absolute;
+				z-index:99;
+				background-color:black;
+				top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+				opacity:.8;
+				display:none;
+			}
+			#gameresult{
+				position:absolute;
+				z-index:100;
+				top:30%;
+				left:0%;
+				width:100%;
+				height:100%;
+				display:none;
+			}
+			.resultcontainer{
+				width:80%;
+				margin:auto;
+				color:white;
+				text-align:center;
+				padding:20px;
+			}
+			.resultinfo{
+				margin-bottom:40px;
+				font-size:20px;
+			}
+			.resultinfo em{
+				color:red;
+			}
+			.btngroup{
+				height:60px;
+			}
+			.btn1{
+				padding:8px 15px;
+				background-color:rgb(93, 86, 145);
+				border-radius:5px;
+			}
+			.hide{
+				display:none;
+			}
+			.kapics{
+				text-align:center;
+			}
+		</style>
+	</head>
+<body><link rel="stylesheet" type="text/css" href="http://weixinad.lejuy.com/bdad.css">
+<div id="bdfootpanel">
+ <script type="text/javascript">
+    /*20:3 创建于 2014-09-01*/
+    var cpro_id = "u1692937";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/cm.js" type="text/javascript"></script>
+</div>
+<!--页面集合-->
+<div id="pageWrapper">
+	<div id="pages">
+		<div id="page_default" class="pagemodel">
+			<div class="initloading" >
+				<span class="normal-loading"></span>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mask"></div>
+<div  id="gameresult">
+	<div class="resultcontainer">
+		<div class="resultinfo"></div>
+		<div class="btngroup">
+			<a class="btn1 hide" id="againgame">再玩一次</a>
+			<a class="btn1 hide" id="restartgame">再来一次</a>
+			<a class="btn1 " id="continuegame">挑战下一关</a>
+			<a class="btn1" id="sharegame" onClick="dp_share();">炫耀一下</a>
+		</div>
+		<div class="btngroup">
+			<a class="btn1" onClick="clickMore();">更多游戏</a>
+		</div>
+	</div>
+</div>
+<script type="text/template" style="display:none;" id="pageTemplate">
+	<div id="<%= id%>" class="pagemodel">
+		<div class="initloading" >
+			<span class="normal-loading"></span>
+		</div>
+	</div>
+</script>
+<script type="text/template" style="display:none;" id="indexTemplate">
+	<h1 class="toptitle">拼图世界</h1>
+	<div class="game-desc">
+		<img src="./images/u193_normal.jpg">
+		<div><span>欢迎来到拼图世界，勇士村。想要进村，先让我看看你有多大本事吧。</span></div>
+	</div>
+	<div class="categorys">
+		<p class="cate-name">解救乱八七糟的水果们</p>
+		<div>
+			<img src="./images/u54_normal.png">
+		</div>
+		<div class="btn-con"><a href="javascript:;" showPage="category" class="btn">开始</a></div>
+	</div>
+</script>
+<script type="text/template" style="display:none;" id="jigsawTemplate">
+	<div class="drag-content">
+		<div class="play-container">
+			<div class="drag-box">
+			</div>
+			<div class="masker">
+				<div class="load">
+					<div class="first-layer"></div>
+					<div class="second-layer"></div>
+					<div class="third-layer"></div>
+					<div class="count-down" >
+						<div class="play-button play-button-ready playbtn" ></div>
+						<ul>
+							<li>3</li>
+							<li>2</li>
+							<li>1</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<span class="done">done</span>
+		</div>
+		<div class="timer">
+			<div class="timer-con">
+				<span class="timer-icon"></span>
+				<span class="t counter">00.000''</span>
+			</div>
+			<div class="kapics">1/1
+			</div>
+		</div>
+
+		<div class="play-info">
+			<div class="first-guide">
+				<div>挑战失败！共成功挑战XX关</div>
+				
+			</div>
+			<div class="playing-state" style="display:none;">
+				<span>暂停</span>
+			</div>
+			<div class="playing-over"  style="display:none;">
+				<span class="restart" style="display:none;" onclick="window.reload();">重新开始</span>
+				<span class="nextpic">下一关</span>
+				<span class="continuepic">继续挑战</span>
+				<span class="oldshare">分享</span>
+				<span class="moregame">更多游戏</span>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="text/template" style="display:none;" id="jigsawLayoutTemplate">
+<% for(var i = 0 ; i < list.length;i++){%>
+	<div class="item" sort="<%=list[i].sort%>" dragitem='1' style="width:<%=list[i].w%>px;height:<%=list[i].h%>px;background:url(<%=img%>) no-repeat;background-position:<%=list[i].x%>px <%=list[i].y%>px;background-size:<%=width%>px <%=height%>px;"></div>
+<%}%>
+</script>
+<script type="text/template" style="display:none;" id="showNextKaTemplate">
+<div class="shownextka">
+	<div class="lastpic">
+		<img src="<%=pic%>">
+	</div>
+	<div class="msg">
+		<p><%=first%></p>
+		<p><%=second%></p>
+		<p>耗时<%=time%></p>
+	</div>
+	<div class="opera">
+		<span class="red next">第<%=next%>关&gt;</span>
+		<span class="playagain">再玩一遍</span>
+		<span class="share">分享</span>
+	</div>
+</div>
+</script>
+
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.getScript("./js/index.js",function(){
+	})
+});
+</script>
+<script language=javascript>
+		var mebtnopenurl = 'http://weixinad.lejuy.com/game.html';
+var thegameurl ="http://weixinad.lejuy.com/game/mspt/"; 
+var guanzhuurl ="http://t.cn/RPtNrve";
+		window.shareData = {
+		        "imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWGXUI2K4TJFOVVGDTCsuDogZ8GSL9nuMvtRHfpOGQwnD1ibgVq8E4dlO946w2iahrPxb6ckynJBBU8Q/640",
+		        "timeLineLink": thegameurl,
+		        "tTitle": "美女拼图",
+		        "tContent": "美女拼图"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location =mebtnopenurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			document.getElementById("share").style.display="";
+			
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "mspt" };
+			function dp_submitScore(score){
+				myData.score =parseInt(score);
+				myData.scoreName = "闯了"+score+"关";
+				document.title ="我在美女拼图中连闯了"+score+"关，这游戏不是一般人能玩的，你们也来试试看吧！";			
+				window.shareData.tTitle = document.title;
+				
+			}
+			
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("？")) {
+                            window.location =mebtnopenurl;
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+			
+			</div>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/game9g.utils.js"></script>
+</body>
+</html>

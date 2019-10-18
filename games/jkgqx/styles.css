@@ -1,0 +1,23 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /*text-align: center;*/
+    /*background: white;*/
+}
+
+@font-face {
+    font-family: "Comic";
+    src: url('assets/fonts/comic.eot'), /* IE9 Compat Modes */
+        url(assets/fonts/comic.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "ComicBold";
+    src: url(assets/fonts/comicbd.eot),
+        url(assets/fonts/comicbd.ttf) format("truetype");
+}
+
+#gameArea {
+    position: absolute;
+}

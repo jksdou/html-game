@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>少年，就等你啦！-枪神纪</title>
+    <style>
+        html, body { margin:0; padding:0; text-align: center; background-color:#000000;}
+    </style>
+<meta name="viewport" content="width=device-width, user-scalable=no"/>
+</head>
+<body onload="initApp()">
+<div id="loadicon" style="margin-top: 300px" >
+     <img src="data:image/gif;base64,R0lGODlhEAAQALMNAD8/P7+/vyoqKlVVVX9/fxUVFUBAQGBgYMDAwC8vL5CQkP///wAAAP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAANACwAAAAAEAAQAAAEO5DJSau9OOvNex0IMnDIsiCkiW6g6BmKYlBFkhSUEgQKlQCARG6nEBwOgl+QApMdCIRD7YZ5RjlGpCUCACH5BAUAAA0ALAAAAgAOAA4AAAQ6kLGB0JA4M7QW0hrngRllkYyhKAYqKUGguAws0ypLS8JxCLQDgXAIDg+FRKIA6v0SAECCBpXSkstMBAAh+QQFAAANACwAAAAACgAQAAAEOJDJORAac6K1kDSKYmydpASBUl0mqmRfaGTCcQgwcxDEke+9XO2WkxQSiUIuAQAkls0n7JgsWq8RACH5BAUAAA0ALAAAAAAOAA4AAAQ6kMlplDIzTxWC0oxwHALnDQgySAdBHNWFLAvCukc215JIZihVIZEogDIJACBxnCSXTcmwGK1ar1hrBAAh+QQFAAANACwAAAAAEAAKAAAEN5DJKc4RM+tDyNFTkSQF5xmKYmQJACTVpQSBwrpJNteZSGYoFWjIGCAQA2IGsVgglBOmEyoxIiMAIfkEBQAADQAsAgAAAA4ADgAABDmQSVZSKjPPBEDSGucJxyGA1XUQxAFma/tOpDlnhqIYN6MEAUXvF+zldrMBAjHoIRYLhBMqvSmZkggAIfkEBQAADQAsBgAAAAoAEAAABDeQyUmrnSWlYhMASfeFVbZdjHAcgnUQxOHCcqWylKEohqUEAYVkgEAMfkEJYrFA6HhKJsJCNFoiACH5BAUAAA0ALAIAAgAOAA4AAAQ3kMlJq704611SKloCAEk4lln3DQgyUMJxCBKyLAh1EMRR3wiDQmHY9SQslyIQUMRmlmVTIyRaIgA7"/>
+</div>
+<script src="js/tgcreate.js"></script>
+<script src="js/tpsminigame.js"></script>
+
+<script language="javascript">
+    // if(typeof(pgvMain) == 'function') pgvMain();
+// function onBridgeReady() {
+//         //转发朋友圈
+//         WeixinJSBridge.on("menu:share:timeline", function(e) {
+//             var url = 'http://tps.qq.com/act/a20140716game/index.html';
+//             var data = {
+//                 img_url: "http://tps.qq.com/act/a20140716game/images/logo_tps_s.png",
+//                 img_width: "244",
+//                 img_height: "120",
+//                 link: url,
+//                 //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+//                 desc:GD.SHAREWORD,
+//                 title: GD.SHAREWORD
+//             };
+//             WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+//                 WeixinJSBridge.log(res.err_msg)
+//             });
+//         });
+//         //同步到微博
+//         WeixinJSBridge.on("menu:share:weibo", function() {
+//             var url = 'http://tps.qq.com/act/a20140716game/index.html';
+//             WeixinJSBridge.invoke("shareWeibo", {
+//                 "content": GD.SHAREWORD,
+//                 "url": url
+//             }, function(res) {
+//                 WeixinJSBridge.log(res.err_msg);
+//             });
+//         });
+//         //分享给朋友
+//         WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+//             var url = 'http://tps.qq.com/act/a20140716game/index.html';
+//             WeixinJSBridge.invoke("sendAppMessage", {
+//                 img_url: "http://tps.qq.com/act/a20140716game/images/logo_tps_s.png",
+//                 img_width: "244",
+//                 img_height: "120",
+//                 link: url,
+//                 desc:GD.SHAREWORD,
+//                 title: GD.SHAREWORD
+//             }, function(res) {
+//                 WeixinJSBridge.log(res.err_msg)
+//             });
+//         });
+//     };
+//     try{
+//         document.addEventListener('WeixinJSBridgeReady', function() {
+//             onBridgeReady();
+//         });
+//     }catch(e){}
+</script>
+	<canvas id="canvas" width="640" height="1008" style="background-color:#000000"></canvas>
+
+</body>
+
+</html><!--[if !IE]>|xGv00|d0ad785761ca8eaa86e2f452504f959b<![endif]-->

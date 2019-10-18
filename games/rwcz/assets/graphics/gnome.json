@@ -1,0 +1,315 @@
+﻿{"frames": {
+
+"Gnome0000":
+{
+	"frame": {"x":1,"y":1,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0001":
+{
+	"frame": {"x":76,"y":1,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0002":
+{
+	"frame": {"x":151,"y":1,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0003":
+{
+	"frame": {"x":1,"y":79,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0004":
+{
+	"frame": {"x":76,"y":79,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0005":
+{
+	"frame": {"x":151,"y":79,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0006":
+{
+	"frame": {"x":1,"y":157,"w":74,"h":77},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0007":
+{
+	"frame": {"x":76,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0008":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0009":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0010":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0011":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0012":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0013":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0014":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0015":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0016":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0017":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0018":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0019":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0020":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0021":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0022":
+{
+	"frame": {"x":151,"y":157,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0023":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0024":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0025":
+{
+	"frame": {"x":76,"y":234,"w":74,"h":76},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0026":
+{
+	"frame": {"x":200,"y":234,"w":37,"h":72},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0027":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0028":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0029":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0030":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0031":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0032":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0033":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0034":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0035":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0036":
+{
+	"frame": {"x":151,"y":234,"w":48,"h":70},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":2,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+},
+"Gnome0037":
+{
+	"frame": {"x":200,"y":234,"w":37,"h":72},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":18,"y":0,"w":74,"h":77},
+	"sourceSize": {"w":74,"h":77}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "gnome.png",
+	"format": "RGBA8888",
+	"size": {"w":256,"h":512},
+	"scale": "1"
+}
+}

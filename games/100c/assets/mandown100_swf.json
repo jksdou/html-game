@@ -1,0 +1,367 @@
+{"shapeImg": {}, "comp": {}, "btn": {}, "particle": {}, "s9": {}, "spr": {
+    "spr_step": [
+        ["img_step", "img", 0, 0, 1, 1, 0, 0, 1, ""]
+    ],
+    "spr_startgame": [
+        ["img_startgame_label", "img", 7.5, 13, 1, 1, 0, 0, 1, ""],
+        ["img_rect_startgame", "img", 0, 0, 1, 1, 0, 0, 1, ""]
+    ],
+    "spr_nail_step": [
+        ["img_nail_step", "img", 0, 0, 1, 1, 0, 0, 1, ""]
+    ],
+    "spr_uiframe": [
+        ["img_fill", "img", 48.15, 13, 17.71, 2.18, 0, 0, 1, ""],
+        ["mc_floor_count", "mc", 380, 34, 1, 1, 0, 0, 1, "floor_count4"],
+        ["mc_floor_count", "mc", 452, 34, 1, 1, 0, 0, 1, ""],
+        ["mc_floor_count", "mc", 452, 34, 1, 1, 0, 0, 1, ""],
+        ["mc_floor_count", "mc", 350.6, 34, 1, 1, 0, 0, 1, "floor_count3"],
+        ["mc_floor_count", "mc", 321.3, 34, 1, 1, 0, 0, 1, "floor_count2"],
+        ["mc_floor_count", "mc", 292, 34, 1, 1, 0, 0, 1, "floor_count1"],
+        ["img_progress", "img", 51, 35, 1, 1, 0, 0, 1, "progress"],
+        ["img_ui", "img", 0, 0, 1, 1, 0, 0, 1, ""]
+    ],
+    "spr_right_intro": [
+        ["spr_intro", "spr", 0, 0, 1, 1, 0, 0, 1, ""]
+    ],
+    "spr_left_intro": [
+        ["spr_intro", "spr", 214.85, 0, 1, 1, 0, 180, 1, ""]
+    ],
+    "spr_intro": [
+        ["img_intro_gesture", "img", 152.95, 0, 1, 1, 0, 0, 1, ""],
+        ["img_step", "img", 77, 53.5, 1, 1, 0, 0, 1, ""],
+        ["img_arrow_intro", "img", 13.6, 29.7, 1, 1, 0, 0, 1, ""],
+        ["img_run_left3", "img", 80.1, 37.85, 1, 1, 0, 180, 1, ""]
+    ]
+}, "img": {
+    "img_four": [0, 0],
+    "img_spring_step3": [48, 6],
+    "img_run_left2": [12.5, 16],
+    "img_spring_step2": [48, 2],
+    "img_arrow_intro": [0, 0],
+    "img_stand1": [16, 15.5],
+    "img_run_left2_hurt": [12.5, 16],
+    "img_rect_startgame": [1, 1],
+    "img_left_step2": [48, 8],
+    "img_jump1": [14, 16],
+    "img_stand_hurt": [16, 15.5],
+    "img_intro_gesture": [0, 0],
+    "img_roll_step1": [48, 8],
+    "img_progress": [0, 0],
+    "img_left_step1": [48, 8],
+    "img_startgame_label": [0, 0],
+    "img_eight": [0, 0],
+    "img_roll_step2": [48, 15],
+    "img_run_left3": [16, 15.5],
+    "img_step": [48, 0],
+    "img_jump1_hurt": [14, 16],
+    "img_roll_step3": [48, 17.9],
+    "img_run_left3_hurt": [16, 15.5],
+    "img_fill": [0, 0],
+    "img_left_step3": [48, 8],
+    "img_jump2": [16, 16],
+    "img_roll_step4": [48, 16],
+    "img_three": [0, 0],
+    "img_left_step4": [48, 8],
+    "img_mandown_label": [0, 0],
+    "img_five": [0, 0],
+    "img_spring_step1": [48, 0],
+    "img_roll_step5": [48, 18],
+    "img_six": [0, 0],
+    "img_jump2_hurt": [16, 16],
+    "img_nail_step": [48, 15.05],
+    "img_seven": [0, 0],
+    "img_roll_step6": [48, 15],
+    "img_ui": [0, 0],
+    "img_nine": [0, 0],
+    "img_two": [0, 0],
+    "img_run_left1": [11.5, 16],
+    "img_wizcloud_logo": [0, 0],
+    "img_jump3": [16, 16],
+    "img_one": [0, 0],
+    "img_zero": [0, 0],
+    "img_jump3_hurt": [16, 16],
+    "img_run_left1_hurt": [11.5, 16]
+}, "mc": {
+    "mc_floor_count": {
+        "objCount": {
+            "img_one": ["img", 1],
+            "img_six": ["img", 1],
+            "img_two": ["img", 1],
+            "img_three": ["img", 1],
+            "img_eight": ["img", 1],
+            "img_five": ["img", 1],
+            "img_four": ["img", 1],
+            "img_nine": ["img", 1],
+            "img_zero": ["img", 1],
+            "img_seven": ["img", 1]
+        },
+        "frames": [
+            [
+                ["img_zero", "img", -14, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_one", "img", -9.5, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_two", "img", -14.5, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_three", "img", -14, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_four", "img", -13.5, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_five", "img", -14, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_six", "img", -14, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_seven", "img", -12.5, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_eight", "img", -14, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_nine", "img", -14, -15.5, 1, 1, 0, 0, 1, "", 0]
+            ]
+        ],
+        "loop": true,
+        "labels": []
+    },
+    "mc_spring": {
+        "objCount": {
+            "img_spring_step1": ["img", 1],
+            "img_spring_step3": ["img", 1],
+            "img_spring_step2": ["img", 2]
+        },
+        "frames": [
+            [
+                ["img_spring_step1", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_spring_step2", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_spring_step3", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_spring_step2", "img", 0, 0, 1, 1, 0, 0, 1, "", 1]
+            ]
+        ],
+        "loop": false,
+        "labels": [
+            ["origin", 0, 3]
+        ]
+    },
+    "mc_right_step": {
+        "objCount": {
+            "img_left_step3": ["img", 1],
+            "img_left_step4": ["img", 1],
+            "img_left_step1": ["img", 1],
+            "img_left_step2": ["img", 1]
+        },
+        "frames": [
+            [
+                ["img_left_step1", "img", 0, 0, 1, 1, 0, 180, 1, "", 0]
+            ],
+            [
+                ["img_left_step2", "img", 0, 0, 1, 1, 0, 180, 1, "", 0]
+            ],
+            [
+                ["img_left_step3", "img", 0, 0, 1, 1, 0, 180, 1, "", 0]
+            ],
+            [
+                ["img_left_step4", "img", 0, 0, 1, 1, 0, 180, 1, "", 0]
+            ]
+        ],
+        "loop": true,
+        "labels": []
+    },
+    "mc_left_step": {
+        "objCount": {
+            "img_left_step3": ["img", 1],
+            "img_left_step4": ["img", 1],
+            "img_left_step1": ["img", 1],
+            "img_left_step2": ["img", 1]
+        },
+        "frames": [
+            [
+                ["img_left_step1", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_left_step2", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_left_step3", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_left_step4", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ]
+        ],
+        "loop": true,
+        "labels": []
+    },
+    "mc_roll_step": {
+        "objCount": {
+            "img_roll_step6": ["img", 1],
+            "img_roll_step1": ["img", 1],
+            "img_roll_step4": ["img", 1],
+            "img_roll_step2": ["img", 1],
+            "img_roll_step5": ["img", 1],
+            "img_roll_step3": ["img", 1]
+        },
+        "frames": [
+            [
+                ["img_roll_step1", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step1", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step2", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step2", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step3", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step3", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step4", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step4", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step5", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step5", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step6", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_roll_step6", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ]
+        ],
+        "loop": false,
+        "labels": [
+            ["origin", 0, 11]
+        ]
+    },
+    "mc_man": {
+        "objCount": {
+            "img_jump2": ["img", 1],
+            "img_run_left2": ["img", 4],
+            "img_stand1": ["img", 1],
+            "img_run_left2_hurt": ["img", 4],
+            "img_jump2_hurt": ["img", 1],
+            "img_jump1": ["img", 1],
+            "img_stand_hurt": ["img", 1],
+            "img_run_left3": ["img", 2],
+            "img_run_left1": ["img", 2],
+            "img_run_left3_hurt": ["img", 2],
+            "img_jump3": ["img", 2],
+            "img_jump1_hurt": ["img", 1],
+            "img_jump3_hurt": ["img", 2],
+            "img_run_left1_hurt": ["img", 2]
+        },
+        "frames": [
+            [
+                ["img_stand1", "img", 0, 0, 1, 1, 0, 0, 1, "stand", 0]
+            ],
+            [
+                ["img_stand_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_jump3", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_jump2", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_jump3", "img", 0, 0, 1, 1, 0, 0, 1, "", 1]
+            ],
+            [
+                ["img_jump1", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_jump3_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_jump2_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_jump3_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 1]
+            ],
+            [
+                ["img_jump1_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left3", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left2", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left1", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left2", "img", 0, 0, 1, 1, 0, 0, 1, "", 1]
+            ],
+            [
+                ["img_run_left3_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left2_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left1_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 0]
+            ],
+            [
+                ["img_run_left2_hurt", "img", 0, 0, 1, 1, 0, 0, 1, "", 1]
+            ],
+            [
+                ["img_run_left3", "img", 0, 0, 1, 1, 0, 180, 1, "", 1]
+            ],
+            [
+                ["img_run_left2", "img", 0, 0, 0.9999847412109375, 1, 0, 180, 1, "", 2]
+            ],
+            [
+                ["img_run_left1", "img", 0, 0, 0.9999847412109375, 1, 0, 180, 1, "", 1]
+            ],
+            [
+                ["img_run_left2", "img", 0, 0, 1, 1, 0, 180, 1, "", 3]
+            ],
+            [
+                ["img_run_left3_hurt", "img", 0, 0, 1, 1, 0, 180, 1, "", 1]
+            ],
+            [
+                ["img_run_left2_hurt", "img", 0, 0, 0.9999847412109375, 1, 0, 180, 1, "", 2]
+            ],
+            [
+                ["img_run_left1_hurt", "img", 0, 0, 0.9999847412109375, 1, 0, 180, 1, "", 1]
+            ],
+            [
+                ["img_run_left2_hurt", "img", 0, 0, 0.9999847412109375, 1, 0, 180, 1, "", 3]
+            ]
+        ],
+        "loop": true,
+        "labels": [
+            ["stand", 0, 0],
+            ["stand_hurt", 1, 1],
+            ["jump", 2, 5],
+            ["jump_hurt", 6, 9],
+            ["run_left", 10, 13],
+            ["run_left_hurt", 14, 17],
+            ["run_right", 18, 21],
+            ["run_right_hurt", 22, 25]
+        ]
+    }
+}}

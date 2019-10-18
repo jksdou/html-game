@@ -1,0 +1,273 @@
+<Parametrs>
+<Parametr n="tile_a_0_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_0_0_1_0" >
+<info x="1" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_0_1_0_0" >
+<info x="2" y="2"   />
+</Parametr>
+<Parametr n="tile_a_1_0_0_0" >
+<info x="-33" y="2"   />
+</Parametr>
+<Parametr n="tile_a_0_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_0_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_0_1_1_0" >
+<info x="2" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_0_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_1_0_0" >
+<info x="-33" y="2"   />
+</Parametr>
+<Parametr n="tile_a_0_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_1_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_a_1_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_0_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_0_0_1_0" >
+<info x="1" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_0_1_0_0" >
+<info x="2" y="2"   />
+</Parametr>
+<Parametr n="tile_b_1_0_0_0" >
+<info x="-33" y="2"   />
+</Parametr>
+<Parametr n="tile_b_0_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_0_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_0_1_1_0" >
+<info x="2" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_0_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_1_0_0" >
+<info x="-33" y="2"   />
+</Parametr>
+<Parametr n="tile_b_0_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_1_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_b_1_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_0_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_0_0_1_0" >
+<info x="1" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_0_1_0_0" >
+<info x="2" y="2"   />
+</Parametr>
+<Parametr n="tile_c_1_0_0_0" >
+<info x="-33" y="2"   />
+</Parametr>
+<Parametr n="tile_c_0_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_0_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_0_1_1_0" >
+<info x="2" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_0_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_1_0_0" >
+<info x="-33" y="2"   />
+</Parametr>
+<Parametr n="tile_c_0_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_1_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_c_1_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_0_1_0" >
+<info x="3" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_1_0_0" >
+<info x="3" y="3"   />
+</Parametr>
+<Parametr n="tile_black_1_0_0_0" >
+<info x="-33" y="3"   />
+</Parametr>
+<Parametr n="tile_black_0_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_1_1_0" >
+<info x="4" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_0_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_0_0" >
+<info x="-33" y="3"   />
+</Parametr>
+<Parametr n="tile_black_0_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_0_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_1_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="buttonStop_mc" >
+<info x="-16" y="-18"   />
+</Parametr>
+<Parametr n="buttonRestart_mc" >
+<info x="-17" y="-22"   />
+</Parametr>
+<Parametr n="buttonBase_mc" >
+<info x="-40" y="-40"   />
+</Parametr>
+<Parametr n="star_1_mc" >
+<info x="-14" y="-13"   />
+<info x="-14" y="-13"   />
+</Parametr>
+<Parametr n="star_2_mc" >
+<info x="-23" y="-14"   />
+<info x="-23" y="-14"   />
+</Parametr>
+<Parametr n="star_3_mc" >
+<info x="-24" y="-16"   />
+<info x="-24" y="-16"   />
+</Parametr>
+<Parametr n="scoreBar_1_mc" >
+<info x="-119" y="-13"   />
+</Parametr>
+<Parametr n="scoreBar_2_mc" >
+<info x="-119" y="-13"   />
+</Parametr>
+<Parametr n="scoreBar_3_mc" >
+<info x="-121" y="-15"   />
+</Parametr>
+<Parametr n="allField_1_mc" >
+<info x="-320" y="-480"   />
+</Parametr>
+<Parametr n="ButtonBack_mc" >
+<info x="-56" y="-53"   />
+</Parametr>
+<Parametr n="ButtonLevel_mc" >
+<info x="-38" y="-60"   />
+<info x="-38" y="-60"   />
+</Parametr>
+<Parametr n="LevelSelectButton_mc" >
+<info x="-50" y="-49"   />
+<info x="-49" y="-49"   />
+</Parametr>
+<Parametr n="MainMenuTitle_mc" >
+<info x="-273" y="-133"   />
+</Parametr>
+<Parametr n="ButtonCredits_mc" >
+<info x="-7" y="-19"   />
+</Parametr>
+<Parametr n="ButtonPlay_mc" >
+<info x="-26" y="-39"   />
+</Parametr>
+<Parametr n="ButtonMusic_mc" >
+<info x="-40" y="-43"   />
+<info x="-41" y="-43"   />
+</Parametr>
+<Parametr n="MainMenuBack_mc" >
+<info x="-320" y="-480"   />
+</Parametr>
+<Parametr n="MainMenuButton_1_mc" >
+<info x="-76" y="-76"   />
+</Parametr>
+<Parametr n="LevelMenuStar_mc" >
+<info x="-13" y="-12"   />
+<info x="-13" y="-12"   />
+<info x="-13" y="-12"   />
+</Parametr>
+<Parametr n="starGameOver_mc" >
+<info x="-73" y="-69"   />
+<info x="-73" y="-69"   />
+</Parametr>
+<Parametr n="FrameDialogBase_mc" >
+<info x="-263" y="-153"   />
+</Parametr>
+<Parametr n="buttonRestart_2_mc" >
+<info x="-44" y="-57"   />
+</Parametr>
+<Parametr n="buttonUndo_mc" >
+<info x="-24" y="-21"   />
+</Parametr>
+<Parametr n="Finger_mc" >
+<info x="-57" y="-75"   />
+<info x="-94" y="-75"   />
+</Parametr>
+<Parametr n="ButtonMoreGames_mc" >
+<info x="-55" y="-25"   />
+</Parametr>
+<Parametr n="ButtonWalk_mc" >
+<info x="-38" y="-57"   />
+</Parametr>
+</Parametrs>

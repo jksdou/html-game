@@ -1,0 +1,75 @@
+﻿{"frames": {
+
+"Close_Button0000":
+{
+	"frame": {"x":515,"y":273,"w":97,"h":97},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":97,"h":97},
+	"sourceSize": {"w":97,"h":97}
+},
+"Tutor_Board0000":
+{
+	"frame": {"x":1,"y":1,"w":513,"h":475},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":513,"h":475},
+	"sourceSize": {"w":513,"h":475}
+},
+"Tutor_Crab0000":
+{
+	"frame": {"x":179,"y":477,"w":169,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":169,"h":135},
+	"sourceSize": {"w":169,"h":135}
+},
+"Tutor_HappyArea0000":
+{
+	"frame": {"x":349,"y":477,"w":139,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":139,"h":135},
+	"sourceSize": {"w":139,"h":135}
+},
+"Tutor_JellyFish0000":
+{
+	"frame": {"x":515,"y":137,"w":125,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":135},
+	"sourceSize": {"w":125,"h":135}
+},
+"Tutor_MantaRay0000":
+{
+	"frame": {"x":1,"y":477,"w":177,"h":138},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":177,"h":138},
+	"sourceSize": {"w":177,"h":138}
+},
+"Tutor_NeedleFish0000":
+{
+	"frame": {"x":489,"y":477,"w":135,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":135,"h":135},
+	"sourceSize": {"w":135,"h":135}
+},
+"Tutor_Octopus0000":
+{
+	"frame": {"x":515,"y":1,"w":125,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":125,"h":135},
+	"sourceSize": {"w":125,"h":135}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "tutorial.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

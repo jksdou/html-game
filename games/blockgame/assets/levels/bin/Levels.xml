@@ -1,0 +1,721 @@
+<Levels>
+  <Level id="0" numStar="8">
+    <tiles id="3330000333333000033333300003330004004000000000000000000000000004004000333000033333300003333330000333"/>
+  </Level>
+  <Level id="1" numStar="6">
+    <tiles id="0000000000000000200000000000000000000000003300330000320023000032302300003200230000333333000000000000"/>
+  </Level>
+  <Level id="2" numStar="14">
+    <tiles id="0001100000000110000033000000334300000034444444044443000000343330000033003040000000000010000000000000"/>
+  </Level>
+  <Level id="3" numStar="11">
+    <tiles id="3333000333333000003333000300033000030000000023200300004340033000131000330003000333300000333333000333"/>
+  </Level>
+  <Level id="4" numStar="23">
+    <tiles id="0000000000000011000000000000000000220000004444444400000300000000000000040220000000011000000000000000"/>
+  </Level>
+  <Level id="5" numStar="7">
+    <tiles id="0000000000030303030000404040400303030300004040404003030303000040404040030303030000404040400000000000"/>
+  </Level>
+  <Level id="6" numStar="16">
+    <tiles id="0000222200003300020002220222000233000200020022220002330000000222000000003300200002220000000233000000"/>
+  </Level>
+  <Level id="7" numStar="13">
+    <tiles id="0003040000010300000000333330040030300000003030004000003333333330300002100033033300103200000000300002"/>
+  </Level>
+  <Level id="8" numStar="62">
+    <tiles id="0000000000033333330323111111000014444201201411321100140332000210000200000000020000000200000020000000"/>
+  </Level>
+  <Level id="9" numStar="12">
+    <tiles id="0000000044000000003400444444000000000400000444040000043404000004000400000444440000000000000000000000"/>
+  </Level>
+  <Level id="10" numStar="22">
+    <tiles id="0030000000300000002000300300000000000000300003022000030002200000000000000030300023000000302200000000"/>
+  </Level>
+  <Level id="11" numStar="13">
+    <tiles id="0000000000000000000000000000000000000000303303303300000000000000000000000422422400000000000004224224"/>
+  </Level>
+  <Level id="12" numStar="23">
+    <tiles id="0000000000000000000004222224000404000400040422040004043404000401140400040004040004111114000000000000"/>
+  </Level>
+  <Level id="13" numStar="9">
+    <tiles id="3333003333333000000334400044033400000403000033000333303300330040330043004000004300440304430000033333"/>
+  </Level>
+  <Level id="14" numStar="8">
+    <tiles id="0000000000000000000000130013000011001100000000000001300000130110013011000001100000130000000011000000"/>
+  </Level>
+  <Level id="15" numStar="24">
+    <tiles id="0000000000000000000002244000000224400000011220000001122000000441133000044113300000000000000000000000"/>
+  </Level>
+  <Level id="16" numStar="34">
+    <tiles id="0000000000000000000000111100000012220000001244000000124342100000044210000002221000000111100000000000"/>
+  </Level>
+  <Level id="17" numStar="23">
+    <tiles id="1100004444100000000400000002040000000004333300000440000033334000000000420000000040000000014444000011"/>
+  </Level>
+  <Level id="18" numStar="42">
+    <tiles id="1100000022110000002233333300330000000044000000004433003333334400000022440000002233333300330000000011"/>
+  </Level>
+  <Level id="19" numStar="13">
+    <tiles id="0000000000000444000000001400004304440034440000004443000000340000004040000000414000000044400000000000"/>
+  </Level>
+  <Level id="20" numStar="23">
+    <tiles id="2020002002000000000030044444032000000002000000000033333433330000000000000000000004444000000000000000"/>
+  </Level>
+  <Level id="21" numStar="38">
+    <tiles id="3333333333333333333342140241243333033333000000000000000000000000000000000000000000000000000000000000"/>
+  </Level>
+  <Level id="22" numStar="48">
+    <tiles id="0000000000000410400000044440000440000440004033041001403304000440000440000444400000041040000000000000"/>
+  </Level>
+  <Level id="23" numStar="46">
+    <tiles id="0000000000440000440040000004000033030004043443033000330303400034430330403303000444000000440000000000"/>
+  </Level>
+  <Level id="24" numStar="12">
+    <tiles id="3100000000131000000001000000000003100000000131000000001310000000013000000000001000000001310000000013"/>
+  </Level>
+  <Level id="25" numStar="36">
+    <tiles id="0010000000000000010001013300010000311000013331130000311333001001130101000033000001000001000000100001"/>
+  </Level>
+  <Level id="26" numStar="25">
+    <tiles id="0000000000333333333310001300100000030000400303400044440043334003034000000003000010001300103333333333"/>
+  </Level>
+  <Level id="27" numStar="25">
+    <tiles id="1111111111000000000000000000000003000300000000000000000000000000000000402320430440232043041113111311"/>
+  </Level>
+  <Level id="28" numStar="30">
+    <tiles id="0000333000033330333303000000030300040003330024200330044444003300242003030004000303000000030333303333"/>
+  </Level>
+  <Level id="29" numStar="21">
+    <tiles id="3333333344330023230430033300443003033300303303030030000300003303030300330303033300000001010000000111"/>
+  </Level>
+  <Level id="30" numStar="25">
+    <tiles id="3333333333300000000330333333033034214303303133230330323313033034333303300000000330000000033000000003"/>
+  </Level>
+  <Level id="31" numStar="28">
+    <tiles id="0044404400004030340000000000003300200033000000000002000002000000000000000002000000000000200000000000"/>
+  </Level>
+  <Level id="32" numStar="30">
+    <tiles id="0000300300000130030003000000001300000013030303300033330033330000000000000000000000221122000022112200"/>
+  </Level>
+  <Level id="33" numStar="14">
+    <tiles id="0000100100003333330000011011000033333300000011010000333333000011011000003333330000000000000000000000"/>
+  </Level>
+  <Level id="34" numStar="38">
+    <tiles id="0000040000000011111100000300001111110000000003000000001111110000030000010010010000030330000003443000"/>
+  </Level>
+  <Level id="35" numStar="22">
+    <tiles id="0033433000003323300000330330003333033333333303333342001000243333033333333303333300332330000033433000"/>
+  </Level>
+  <Level id="36" numStar="35">
+    <tiles id="0000000000000000000000000000000034443000004212400000410140000042124000003444300000000000000000000000"/>
+  </Level>
+  <Level id="37" numStar="55">
+    <tiles id="0000000000000000000002001002000000400000000333000004124214000003330000000040000002001002000000000000"/>
+  </Level>
+  <Level id="38" numStar="32">
+    <tiles id="0003000011000000004100000004410022000042022000002200000000240000000004000000004400000011110003000000"/>
+  </Level>
+  <Level id="39" numStar="19">
+    <tiles id="0000000000000001100000402221100002202104000022210400002221000000222104000220210400402221100000011000"/>
+  </Level>
+  <Level id="40" numStar="25">
+    <tiles id="4000044000040034300400400000400004000400430040403044000400440300404034000400040000403430400400440004"/>
+  </Level>
+  <Level id="41" numStar="56">
+    <tiles id="0000000000400000000000000400004000044400001114240040111024000211142400401114440000111400004000440000"/>
+  </Level>
+  <Level id="42" numStar="20">
+    <tiles id="0000000000000011000000001000000000100444004422240000442224000000100444000010000000001100000000000000"/>
+  </Level>
+  <Level id="43" numStar="70">
+    <tiles id="0000000000040040400000103000020010300033201110011133330003010040000001000000000123000430002200344000"/>
+  </Level>
+  <Level id="44" numStar="28">
+    <tiles id="0000000000000040000000000000000004442200000434320004044344000002343400000224440000000000000004000000"/>
+  </Level>
+  <Level id="45" numStar="19">
+    <tiles id="0000000110011000401040100044004400000000000011000000040100000004400011000000040100000004400000000000"/>
+  </Level>
+  <Level id="46" numStar="30">
+    <tiles id="0001000000333133033340010000330001000033000100403220010040020000004032100000403333303343330000004000"/>
+  </Level>
+  <Level id="47" numStar="13">
+    <tiles id="0000000000000000000001111111100100020010010111101001210012100101111010010002001001111111100000000000"/>
+  </Level>
+  <Level id="48" numStar="15">
+    <tiles id="0000000000000000000004333303000034434300003400430000343443000030333340000000000004000000000000000000"/>
+  </Level>
+  <Level id="49" numStar="33">
+    <tiles id="0400044400040400000400000000041333000033134300003413400100040333000033000001400004033030400003113000"/>
+  </Level>
+  <Level id="50" numStar="33">
+    <tiles id="1113443111100000300111130001110000000000000300000000000030000000000000444000344440030000044443113444"/>
+  </Level>
+  <Level id="51" numStar="80">
+    <tiles id="0000000000000141000000012100000001410000000121000300114110003001210000000141000000011100000000000000"/>
+  </Level>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+  <Level/>
+</Levels>

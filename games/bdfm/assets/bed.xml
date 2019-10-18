@@ -1,0 +1,60 @@
+{"frames": {
+
+"bedCollide01.png":
+{
+	"frame": {"x":342,"y":2,"w":168,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":105},
+	"sourceSize": {"w":168,"h":105}
+},
+"bedCollide02.png":
+{
+	"frame": {"x":2,"y":2,"w":168,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":113},
+	"sourceSize": {"w":168,"h":113}
+},
+"bedCollide03.png":
+{
+	"frame": {"x":342,"y":2,"w":168,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":105},
+	"sourceSize": {"w":168,"h":105}
+},
+"bedCollide04.png":
+{
+	"frame": {"x":2,"y":2,"w":168,"h":113},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":113},
+	"sourceSize": {"w":168,"h":113}
+},
+"bedCollide05.png":
+{
+	"frame": {"x":172,"y":2,"w":168,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":105},
+	"sourceSize": {"w":168,"h":105}
+},
+"bedNormal01.png":
+{
+	"frame": {"x":172,"y":2,"w":168,"h":105},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":168,"h":105},
+	"sourceSize": {"w":168,"h":105}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "bed.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":117},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:6ffd5651bc633214f5082e6766896777$"
+}
+}

@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<title>爸爸去兜风</title>
+
+<style>
+.div-a{ position:absolute; left:0px; top:0px;width:100%;height:100%} 
+/* css注释说明： 背景为红色 */ 
+.div-b{ position:absolute; left:0px; top:0px;width:100%;height:100%} 
+/* 背景为黄色 */ 
+</style>
+
+<script src="js/easeljs-0.7.1.min.js"></script>
+<script src="js/tweenjs-0.5.1.min.js"></script>
+<script src="js/preloadjs-0.4.1.min.js"></script>
+<script src="js/movieclip-0.7.1.min.js"></script>
+<script src="js/soundjs-0.5.2.min.js"></script>
+<script src="js/fathersDayLoading.js"></script>
+
+
+
+<script>
+
+var canvasLoading, canvas, stage, exportRoot;
+var loadingProgress=0;
+
+var queue = new createjs.LoadQueue();
+
+/*操作方式 0:陀螺仪 1:左右键*/
+var operation=0;
+/*分数*/
+var score=0;
+/*自适应缩放比例*/
+var scale=1;
+
+/*陀螺仪参数*/
+var a,b,g;
+
+function initLoading() {
+	canvasLoading = document.getElementById('canvasLoading');
+	exportRoot = new lib.fathersDayLoading();
+
+	stage = new createjs.Stage(canvasLoading);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+	
+	
+	//load main files;
+	queue.installPlugin(createjs.Sound);
+	queue.on("complete", handleComplete, this);
+	queue.on("progress", handleOverallProgress);
+	queue.loadFile({id:"mainjs", src:"js/fathersDay.js"});
+	queue.loadManifest([
+		{id:'sound',src:'res/bg.mp3'},
+		{id:'sound0',src:'res/sound0.mp3'}
+	]);
+}
+
+function init() {
+	document.getElementById('canvasLoading').style.display="none";
+	canvas = document.getElementById('canvas');
+	exportRoot = new lib.fathersDay();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	stage.update();
+
+	
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);
+	
+	createjs.Sound.alternateExtensions = ["mp3"];
+	createjs.Sound.registerSound("res/bg.mp3", "sound");
+	createjs.Sound.registerSound("res/sound0.mp3", "sound0");
+}
+
+function playSound0()
+{
+	var instance = createjs.Sound.play("sound0");
+	instance.volume = 0.5;
+}
+
+function addSound()
+{
+	console.log('load complete');
+	var instance = createjs.Sound.play("sound");  // play using id.  Could also use full sourcepath or event.src.
+	instance.addEventListener("complete", createjs.proxy(this.soundHandleComplete, this));
+	instance.volume = 0.3;
+}
+
+/*
+queue.loadManifest([
+	{id: "myImage", src:"fathersDay.js"}
+]);
+*/
+function handleOverallProgress(event) {
+	loadingProgress=event.progress;
+	console.log(event.progress,queue.progress);
+}
+
+function handleComplete() {
+ //createjs.Sound.play("sound");
+	
+	//stage.removeChildAt('canvasLoading');
+}
+
+function soundHandleComplete()
+{
+	var instance = createjs.Sound.play("sound");
+	instance.addEventListener("complete", createjs.proxy(this.soundHandleComplete, this));
+	instance.volume = 0.3;
+}
+var wrongx;
+
+//单个按钮检测代码;
+function checkClick(touch,mc)
+{
+	var obj={click:false,mcname:null};
+	
+	var mx,my;
+	mx=(touch.pageX-(wrongx/2))/scale;
+	my=touch.pageY/scale;
+
+	var mcx,mcy,mcwidth,mcheight;
+	
+	mcx=mc._matrix.tx;
+	mcy=mc._matrix.ty;
+	
+	mcwidth=mc.nominalBounds.width
+	mcheight=mc.nominalBounds.height;
+	
+	var parentmc=mc;
+	for(var i=0;i<2;i++)
+	{
+		parentmc=parentmc.parent;
+		//console.log('run:',i,parentmc);
+		if(parentmc!=null)
+		{
+			mcx+=parentmc._matrix.tx;
+			mcy+=parentmc._matrix.ty;
+			
+			i=0;
+		}
+		
+	}
+
+	if((mx>mcx&&mx<(mcx+mcwidth))&&(my>mcy&&my<(mcy+mcheight)))
+	{
+		obj.click=true;
+		obj.mcname=mc.name;
+		//console.log('click in mc area!');
+	}
+	else
+	{
+		obj.click=false;
+	}
+	return obj;
+}
+
+//多个按钮检测代码;
+function checkClickArr(touch,arr)
+{
+	var obj={click:false,mcname:null};
+	var tmp={};
+	for(var i=0;i<arr.length;i++)
+	{
+		tmp=checkClick(touch,arr[i]);
+		if(tmp.click==true)
+		{
+			obj=tmp;
+		}
+	}
+	return obj;
+}
+
+//返回mc当前坐标的全局坐标;
+function localPosToGlobal(mc)
+{
+	obj={x:0,y:0};
+	var mcx,mcy;
+	
+	mcx=mc._matrix.tx;
+	mcy=mc._matrix.ty;
+	
+	var parentmc=mc;
+	for(var i=0;i<2;i++)
+	{
+		parentmc=parentmc.parent;
+		//console.log('run:',i,parentmc);
+		if(parentmc!=null)
+		{
+			mcx+=parentmc._matrix.tx;
+			mcy+=parentmc._matrix.ty;
+			i=0;
+		}
+	}
+	obj.x=mcx;
+	obj.y=mcy;
+	return obj;
+}
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener('deviceorientation', function(event) {
+         a = event.alpha
+		b = event.beta
+		g = event.gamma
+        console.log('Orientation - Alpha: ' + a + ', Beta: '+ b + ', Gamma: ' + g);
+    }, false);
+} else {
+    console.log('This device does not support deviceorientation');
+}
+
+//统计代码;
+//if(typeof(pgvMain) == 'function') pgvMain();
+//统计打开页面数量;
+//pgvSendClick({hottag:'html5test.fathersday.index'});
+
+//分享;
+// function onBridgeReady() {
+//     //转发朋友圈
+//     WeixinJSBridge.on("menu:share:timeline", function(e) {
+//         var url = 'http://tgideas.qq.com/flash/quanchenTest/html5FathersDay/fathersDayIndex.html';
+//         var data = {
+//             img_url: "http://tgideas.qq.com/flash/quanchenTest/html5FathersDay/icon.jpg",
+//             img_width: "120",
+//             img_height: "120",
+//             link: url,
+//             //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+//             desc:"恭喜你!成功让老爸载儿子兜了"+score+"米的风",
+//             title: "恭喜你!成功让老爸载儿子兜了"+score+"米的风"
+//         };
+//     WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+//         WeixinJSBridge.log(res.err_msg)
+//     });
+// });
+//     //同步到微博
+//     WeixinJSBridge.on("menu:share:weibo", function() {
+//         var url = 'http://tgideas.qq.com/flash/quanchenTest/html5FathersDay/fathersDayIndex.html';
+//         WeixinJSBridge.invoke("shareWeibo", {
+//            "content": "恭喜你!成功让老爸载儿子兜了"+score+"米的风",
+//            "url": url
+//              }, function(res) {
+//                  WeixinJSBridge.log(res.err_msg);
+//             });
+//     });
+//     //分享给朋友
+//     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+//         var url = 'http://tgideas.qq.com/flash/quanchenTest/html5FathersDay/fathersDayIndex.html';
+//         WeixinJSBridge.invoke("sendAppMessage", {
+//             img_url: "http://tgideas.qq.com/flash/quanchenTest/html5FathersDay/icon.jpg",
+//             img_width: "120",
+//             img_height: "120",
+//             link: url,
+//             desc: "恭喜你!成功让老爸载儿子兜了"+score+"米的风",
+//             title: "恭喜你!成功让老爸载儿子兜了"+score+"米的风"
+//         }, function(res) {
+//             WeixinJSBridge.log(res.err_msg)
+//         });
+//     });
+// };
+//执行
+// try{
+// document.addEventListener('WeixinJSBridgeReady', function() {
+//     onBridgeReady();
+// });
+// }catch(e){}
+
+/*
+createjs.Sound.alternateExtensions = ["mp3"];
+createjs.Sound.addEventListener("fileload", createjs.proxy(this.loadHandler, this));
+createjs.Sound.registerSound("bg.mp3", "sound");
+function loadHandler(event) {
+	// This is fired for each sound that is registered.
+	var instance = createjs.Sound.play("sound");  // play using id.  Could also use full sourcepath or event.src.
+	instance.addEventListener("complete", createjs.proxy(this.handleComplete, this));
+	instance.volume = 0.5;
+}
+*/
+
+</script>
+</head>
+
+<body onload="initLoading();" style="background-color:#FFFFFF">
+	<div id="loading" class="div-a">
+		<canvas id="canvasLoading" width="640" height="1136">
+			sorry ，your browser dosen't support html5
+		</canvas>
+		<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #a{    
+			display: block;
+            background-color: gray;
+        }    
+    </style> 
+	</div>
+	<div id="main" class="div-b">
+		<canvas id="canvas" width="640" height="1136">
+			sorry ，your browser dosen't support html5
+		</canvas>
+		<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #a{    
+			display: block;
+            background-color: gray;
+        }    
+    </style> 
+	</div>
+	
+</body>
+</html><!--[if !IE]>|xGv00|95de91c1b78a032787deb8e3d96fd12e<![endif]-->

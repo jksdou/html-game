@@ -1,0 +1,52 @@
+{"frames": {
+
+"bombExplosion01.png":
+{
+	"frame": {"x":237,"y":2,"w":231,"h":228},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":32,"w":231,"h":228},
+	"sourceSize": {"w":235,"h":260}
+},
+"bombExplosion02.png":
+{
+	"frame": {"x":470,"y":2,"w":183,"h":196},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":28,"y":23,"w":183,"h":196},
+	"sourceSize": {"w":235,"h":260}
+},
+"bombExplosion03.png":
+{
+	"frame": {"x":2,"y":2,"w":233,"h":232},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":233,"h":232},
+	"sourceSize": {"w":235,"h":260}
+},
+"bombExplosion04.png":
+{
+	"frame": {"x":237,"y":232,"w":1,"h":1},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
+	"sourceSize": {"w":235,"h":260}
+},
+"bombNormal01.png":
+{
+	"frame": {"x":655,"y":2,"w":123,"h":130},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":61,"y":103,"w":123,"h":130},
+	"sourceSize": {"w":235,"h":260}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "bomb.png",
+	"format": "RGBA8888",
+	"size": {"w":780,"h":236},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b62379e5c3ef080dc3aa5f35215ae30a$"
+}
+}

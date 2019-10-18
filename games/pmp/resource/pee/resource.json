@@ -1,0 +1,22 @@
+{
+"resources":
+	[
+        {"name":"sound_pee","type":"sound","url":"pee_1.mp3"},
+        {"name":"gameFrameSheet","type":"sheet","url":"Pee.json"},
+        {"name":"gameFrameSheetPNG","type":"image","url":"assets/Pee.png"},
+        {"name":"aniPeeSheet","type":"json","url":"AniPee.json"},
+        {"name":"aniPeeSheetPNG","type":"image","url":"assets/AniPee.png"},
+        {"name":"aniTitleData","type":"json","url":"AniTitleData.json"},
+        {"name":"aniTitleSheet","type":"sheet","url":"AniTitle.json"},
+        {"name":"aniTitleSheetPNG","type":"image","url":"assets/AniTitle.png"},
+        {"name":"mainBG","type":"image","url":"assets/MainBG.jpg"},
+        {"name":"g3_ingameSheet","type":"sheet","url":"game3_ingame.json"},
+		{"name":"g3_ingameSheetPNG","type":"image","url":"assets/game3_ingame.png"},
+        {"name":"gameConfig","type":"json","url":"gameConfig.json"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"sound_pee, aniTitleSheet, aniTitleSheetPNG, aniTitleData, aniPeeSheet, aniPeeSheetPNG, gameFrameSheet, gameFrameSheetPNG, mainBG, g3_ingameSheet, g3_ingameSheetPNG, gameConfig"}
+	]
+}

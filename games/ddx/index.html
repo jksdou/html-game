@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>猜大小</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <style type="text/css">
+        html,body,canvas,div{padding: 0;margin: 0;}
+		canvas{width:100%;}
+        body{background-color: #000;}
+    </style>
+</head>
+<body>
+<div id="mylegend">loading……</div>
+<script type="text/javascript" src="js/lufylegend-1.9.1.simple.min.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+init(35,"mylegend",320,522,main);
+LGlobal.stageScale = LStageScaleMode.EXACT_FIT;
+LSystem.screen(LStage.FULL_SCREEN);
+
+var loadingLayer,
+    imglist = {},
+    imgData =[],   
+    box,
+    resultLayer,
+    decs=[],
+    TZLAYER1,
+    TZLAYER2,
+    COUNTS,
+    TZCOUNTS,   
+    shareIcon,
+    isSelect=false,
+    con= 0,
+    counts=200,
+    W,
+    TZ,
+    isOpen=true,
+    isAllScreen=false;
+function main(){    
+
+    imgData.push({name:"d_box",path:"img/d_box.png"});
+    imgData.push({name:"bgs5",path:"img/bgs5.jpg"});
+    imgData.push({name:"d1",path:"img/d1.png"});
+    imgData.push({name:"d2",path:"img/d2.png"});
+    imgData.push({name:"d3",path:"img/d3.png"});
+    imgData.push({name:"d4",path:"img/d4.png"});
+    imgData.push({name:"d5",path:"img/d5.png"});
+    imgData.push({name:"d6",path:"img/d6.png"});
+    imgData.push({name:"open_on",path:"img/open_on.png"});
+    imgData.push({name:"open_out",path:"img/open_out.png"});
+    imgData.push({name:"lose",path:"img/loseBg.png"});
+    imgData.push({name:"winBG",path:"img/winBg.png"});
+    imgData.push({name:"shareBg",path:"img/sharebg.png"});
+	loadingLayer =new LoadingSample1();
+
+	addChild(loadingLayer);	
+	LLoadManage.load(
+		imgData,
+		function(progress){
+			loadingLayer.setProgress(progress);
+		},
+		function(result){
+			imglist = result;
+			removeChild(loadingLayer);
+			loadingLayer = null;
+			gameInit();
+		}
+	);
+}
+
+
+function gameInit(){
+    var bgLayer=new LSprite(),
+        bgImageData=new LBitmapData(imglist['bgs5']),
+        bgImg=new LBitmap(bgImageData);
+
+    bgLayer.addChild(bgImg);
+    this.addChild(bgLayer);
+
+    decs[0]=new LSprite();
+    decs[1]=new LSprite();
+    decs[2]=new LSprite();
+    decs[0].x=90;
+    decs[0].y=100;
+    decs[1].x=160;
+    decs[1].y=60;
+    decs[2].x=160;
+    decs[2].y=140;
+
+    this.addChild(decs[0]);
+    this.addChild(decs[1]);
+    this.addChild(decs[2]);
+
+    box=new LSprite();
+    var boxImageData=new LBitmapData(imglist['d_box']),
+        boxImage=new LBitmap(boxImageData);
+
+    box.addChild(boxImage);
+    box.x=70;
+
+    this.addChild(box);
+
+    var  sureBtnDataOn=new LBitmapData(imglist['open_on']),
+         sureBtnDataOut=new LBitmapData(imglist['open_out']),
+         sureImgOn=new LBitmap(sureBtnDataOn),
+         sureImgOut=new LBitmap(sureBtnDataOut),
+         sureBTN=new LButton(sureImgOut,sureImgOn,sureImgOut);
+
+    sureBTN.x=118;
+    sureBTN.y=398;
+    this.addChild(sureBTN);
+    sureBTN.addEventListener(LMouseEvent.MOUSE_UP,onHandler);
+
+    TZLAYER1=new LSprite();
+    TZLAYER1.graphics.drawRect(0, "", [0, 5 ,145, 100], true, "");
+    TZLAYER1.alpha=0;
+    TZLAYER1.x=10;
+    TZLAYER1.y=280;
+
+    TZLAYER2=new LSprite();
+    TZLAYER2.graphics.drawRect(0, "", [0, 5 ,145, 100], true, "");
+    TZLAYER2.alpha=0;
+    TZLAYER2.x=160;
+    TZLAYER2.y=280;
+
+
+    this.addChild(TZLAYER1);
+    this.addChild(TZLAYER2);
+    TZLAYER1.addEventListener(LMouseEvent.MOUSE_UP,onSelectHandler);
+    TZLAYER2.addEventListener(LMouseEvent.MOUSE_UP,onSelectHandler2);
+
+    COUNTS=new LTextField();
+    COUNTS.text='财富:200';
+    COUNTS.x=20;
+    COUNTS.y=500;
+
+    this.addChild(COUNTS);
+
+    TZCOUNTS=new LTextField();
+    TZCOUNTS.text='投注:0';
+    TZCOUNTS.x=130;
+    TZCOUNTS.y=500;    
+
+    this.addChild(TZCOUNTS);
+    
+    var moreGameSpri = new LSprite();
+    moreGameSpri.x=240;
+    moreGameSpri.y=500;      
+    MOREGAME=new LTextField();
+    MOREGAME.text='更多游戏';
+    moreGameSpri.addChild(MOREGAME);		
+    this.addChild(moreGameSpri); 
+    moreGameSpri.addEventListener(LMouseEvent.MOUSE_UP,moreGameHandler);   
+}
+
+function moreGameHandler(){
+		Play68.goHome();		
+}
+
+function onSelectHandler(){
+    if(isOpen){
+        isSelect=true;
+    }else{
+        return false;
+    }
+    TZ=0;
+
+    TZLAYER2.removeAllChild();
+    TZLAYER1.removeAllChild();
+
+    TZCOUNTS.text='投注:'+counts;
+    COUNTS.text='财富:0';
+
+    var TZ1=new LShape();
+    TZ1.graphics.add(function(){
+        var ctx = LGlobal.canvas;
+        ctx.beginPath();
+        ctx.fillStyle='#0e34f8';
+        ctx.moveTo(0,0);
+        ctx.quadraticCurveTo(100,18,142,12,30);
+        ctx.lineTo(146,106);
+        ctx.lineTo(0,95);
+        ctx.lineTo(0,0);
+        ctx.fill();
+        ctx.closePath();
+    });
+    TZ1.alpha=0.2;
+    TZLAYER1.addChild(TZ1);
+}
+function onSelectHandler2(){
+    if(isOpen){
+        isSelect=true;
+    }else{
+        return false;
+    }
+    TZ=1;
+
+    TZLAYER1.removeAllChild();
+    TZLAYER2.removeAllChild();
+
+    TZCOUNTS.text='投注:'+counts;
+    COUNTS.text='财富:0';
+
+    var TZ2=new LShape();
+    TZ2.graphics.add(function(){
+        var ctx = LGlobal.canvas;
+        ctx.beginPath();
+        ctx.fillStyle='#0e34f8';
+        ctx.moveTo(5,10);
+        ctx.quadraticCurveTo(100,12,150,0,20);
+        ctx.lineTo(148,100);
+        ctx.lineTo(5,108);
+        ctx.lineTo(5,10);
+        ctx.fill();
+        ctx.closePath();
+    });
+    TZ2.alpha=0.2;
+    TZLAYER2.addChild(TZ2);
+}
+
+function onHandler(){
+    if(!isSelect){ return false;  }
+    isOpen=false;
+    isSelect=false;
+    
+    var c1 = Math.ceil(Math.random() * 6);
+    var c2 = Math.ceil(Math.random() * 6);
+    var c3 = Math.ceil(Math.random() * 6);
+    var results = 0;
+    if ((c1 + c2 + c3) >= 11) {
+    	results = 1;
+    }
+    var d = "{\"data\":{\"points\":\"" + c1 + "-" + c2 + "-" + c3 + "\",\"results\":" + results + "}}";    
+    gameResult($.parseJSON(d));
+}
+
+function gameResult(d){
+    var d= d.data,
+        code= d.points.split('-');
+
+    TZCOUNTS.text='投注:'+counts;
+    COUNTS.text='财富:0';
+
+    decs[0].removeAllChild();
+    decs[1].removeAllChild();
+    decs[2].removeAllChild();
+
+
+    decs[0].addChild(new LBitmap(new LBitmapData(imglist['d'+code[0]] )));
+    decs[1].addChild(new LBitmap(new LBitmapData(imglist['d'+code[1]] )));
+    decs[2].addChild(new LBitmap(new LBitmapData(imglist['d'+code[2]] )));
+
+    decs[0].visible=true;
+    decs[1].visible=true;
+    decs[2].visible=true;
+    LTweenLite.to(box,1,{y:-190,x:300,loop:false,rotate:45,ease:LEasing.Sine.easeInOut,onComplete:gameResultShow(d)});
+}
+
+function gameResultShow(d){
+    var t=setTimeout(function() {
+        clearTimeout(t);
+        if (resultLayer) {
+            removeChild(resultLayer);
+        }
+        resultLayer = new LSprite();
+        W = new LShape();
+        if (d.results == 0) {
+            W.graphics.add(function () {
+                var ctx = LGlobal.canvas;
+                ctx.beginPath();
+                ctx.fillStyle = '#e7ff9f';
+                ctx.moveTo(-2, 0);
+                ctx.quadraticCurveTo(100, 12, 145, 12, 22);
+                ctx.lineTo(145, 106);
+                ctx.quadraticCurveTo(100, 106, -2, 98, 10);
+                ctx.lineTo(-2, 10);
+                ctx.fill();
+                ctx.closePath();
+            });
+            TZLAYER1.addChild(W);
+        } else {
+            W.graphics.add(function () {
+                var ctx = LGlobal.canvas;
+                ctx.beginPath();
+                ctx.fillStyle = '#e7ff9f';
+                ctx.moveTo(4, 12);
+                ctx.quadraticCurveTo(100, 12, 150, 0, 20);
+                ctx.lineTo(150, 96);
+                ctx.quadraticCurveTo(100, 106, 4, 106, 10);
+                ctx.lineTo(4, 10);
+                ctx.fill();
+                ctx.closePath();
+            });
+            TZLAYER2.addChild(W);
+        }
+
+        if (d.results === TZ) {
+            con++;
+            counts *= 2;
+            gameWin();
+			// updateShare(con,counts); Play68.setRankingLevelScoreDesc(con,counts);
+        } else {
+            con = 0;
+            counts = 200;
+            gameLose();
+			// updateShare(con,counts); Play68.setRankingLevelScoreDesc(con,counts);
+        }
+
+        W.alpha = 0.8;
+
+        LTweenLite.to(W, 0.4, {alpha: 0.5, loop: true, ease: LEasing.Sine.easeInOut}).to(W, 0.5, {alpha: 0.8, loop: true, ease: LEasing.Sine.easeInOut});
+    },1500);
+}
+
+function gameRestart(e){
+    resultLayer.removeAllChild();
+    TZLAYER1.removeAllChild();
+    TZLAYER2.removeAllChild();
+
+    LTweenLite.to(box,0.4,{y:0,x:70,rotate:0,loop:false,ease:LEasing.Sine.easeInOut,onComplete:decsHide})
+              .to(box,0.1,{x:-100,loop:false,ease:LEasing.Sine.easeInOut})
+              .to(box,0.1,{x:200,loop:false,ease:LEasing.Sine.easeInOut})
+              .to(box,0.1,{x:70,loop:false,ease:LEasing.Sine.easeInOut,onComplete:function(){
+                        isOpen=true;
+              }});
+}
+
+function decsHide(){
+    decs[0].visible=false;
+    decs[1].visible=false;
+    decs[2].visible=false;
+}
+
+function gameWin(){	
+    var resImg=new LBitmap(new LBitmapData(imglist['winBG'])),
+        restartBtn=new LSprite(),
+        shareBtn=new LSprite(),
+        conTEXT=new LTextField();
+	
+    resultLayer.addChild(resImg);
+    resultLayer.x=25;
+    resultLayer.y=0;
+
+    conTEXT.text='已经连赢'+con+'把，累计奖金'+counts+'强币';
+    conTEXT.color='#FFFFFF';
+    conTEXT.size=10;
+    conTEXT.weight='bolder';
+    conTEXT.y=188;
+    conTEXT.x=40;
+
+    COUNTS.text='财富:'+counts;
+    TZCOUNTS.text='投注:0';
+
+    restartBtn.graphics.drawRect(0, "", [40,210,90, 35], true, "");
+	restartBtn.alpha=0;
+    shareBtn.graphics.drawRect(0, "", [141,210,90, 35], true, "");
+    shareBtn.alpha=0;
+	//shareBtn.x=50;
+
+    resultLayer.addChild(conTEXT);
+    resultLayer.addChild(restartBtn);
+    resultLayer.addChild(shareBtn);
+
+    addChild(resultLayer);
+    restartBtn.addEventListener(LMouseEvent.MOUSE_UP,gameRestart);
+    shareBtn.addEventListener(LMouseEvent.MOUSE_UP,shareHandler);
+}
+
+function gameLose(){	
+    COUNTS.text='财富:200';
+    TZCOUNTS.text='投注:0';
+
+    var resImg=new LBitmap(new LBitmapData(imglist['lose']));
+    resultLayer.addChild(resImg);
+    resultLayer.x=25;
+    resultLayer.y=100;
+
+    var restartBtn=new LSprite(),
+        shareBtn=new LSprite();
+
+    restartBtn.graphics.drawRect(0, "", [40, 95,90, 35], true, "");
+    restartBtn.alpha=0;   
+    shareBtn.graphics.drawRect(0, "", [141, 95,90, 35], true, "");		
+    shareBtn.alpha=0;
+	//shareBtn.x=50;
+	
+	resultLayer.addChild(restartBtn);
+    resultLayer.addChild(shareBtn);
+
+    addChild(resultLayer);
+    restartBtn.addEventListener(LMouseEvent.MOUSE_UP,gameRestart);
+    shareBtn.addEventListener(LMouseEvent.MOUSE_UP,shareHandler);
+}
+
+function shareHandler(){	
+   play68_submitScore(con,counts); 
+}
+</script>
+</body>
+</html>

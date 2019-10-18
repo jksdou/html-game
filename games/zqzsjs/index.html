@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>关于中秋节，你了解多少，一起来试试吧？</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+     <style type="text/css">
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #game input {
+            height: 50px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #game textarea {
+            font-size: 22px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+<div id="game"  style="background: #CEC3BA"> </div>
+ <script type="text/javascript" src="lib.js"></script>
+    <script type="text/javascript" src="common.js?t=3"></script>
+    <script>
+        var basePath="res/";
+        document.write("<script type='text/javascript' src='main.js?" + Math.random() + "'><\/script>");
+        var CONSTANT={};
+        CONSTANT.onAllFinish=function(score){
+            document.title ="我参加了中秋节小知识竞赛，分数为"+score+"，你也来考一考吧！";
+        }
+    </script>
+
+</body>
+</html>

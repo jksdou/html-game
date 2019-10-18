@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>犀牛溜冰场</title>
+	<link href="css/gamestyles.css" rel="stylesheet" type="text/css" />
+    <!--suppress HtmlUnknownTarget -->
+    <script src="game.min.js"></script>
+    <script>
+
+    var canvas;
+    var config = {
+        hotUrlDisabled: false,
+        coldUrlDisabled: false
+ 
+   
+    }
+      function init() {
+		  can = document.getElementById("Canvas");
+		  }
+
+    function yx() {
+        canvas = document.getElementById("gameCanvas");
+        Main.initialize(canvas, config);
+	   
+
+      
+    }
+
+	</script>
+
+</head>
+
+<body onload="init();yx()">
+    <div id="loader" class="loader">
+        <div id="loaderPercents" class="loaderPercentage"></div>
+    </div>
+
+    <div class="canvasHolder">
+        <canvas id="gameCanvas" width="640" height="712"></canvas>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+{"frames": {
+
+"ballCollide01.png":
+{
+	"frame": {"x":628,"y":148,"w":158,"h":83},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":12,"y":0,"w":158,"h":83},
+	"sourceSize": {"w":184,"h":95}
+},
+"ballDrop01.png":
+{
+	"frame": {"x":2,"y":2,"w":169,"h":166},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":169,"h":166},
+	"sourceSize": {"w":169,"h":166}
+},
+"ballDrop02.png":
+{
+	"frame": {"x":173,"y":2,"w":155,"h":148},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":14,"y":18,"w":155,"h":148},
+	"sourceSize": {"w":169,"h":166}
+},
+"ballFly01.png":
+{
+	"frame": {"x":173,"y":152,"w":184,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":184,"h":85},
+	"sourceSize": {"w":184,"h":95}
+},
+"ballFly02.png":
+{
+	"frame": {"x":359,"y":110,"w":178,"h":81},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":4,"y":14,"w":178,"h":81},
+	"sourceSize": {"w":184,"h":95}
+},
+"ballFly03.png":
+{
+	"frame": {"x":173,"y":152,"w":184,"h":85},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":184,"h":85},
+	"sourceSize": {"w":184,"h":95}
+},
+"ballFly04.png":
+{
+	"frame": {"x":485,"y":2,"w":166,"h":81},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":6,"y":1,"w":166,"h":81},
+	"sourceSize": {"w":184,"h":95}
+},
+"ballFlyOver01.png":
+{
+	"frame": {"x":2,"y":170,"w":151,"h":80},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":10,"y":35,"w":151,"h":80},
+	"sourceSize": {"w":169,"h":166}
+},
+"ballHitGround01.png":
+{
+	"frame": {"x":330,"y":2,"w":153,"h":106},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":7,"y":24,"w":153,"h":106},
+	"sourceSize": {"w":169,"h":166}
+},
+"ballStand01.png":
+{
+	"frame": {"x":539,"y":85,"w":87,"h":138},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":22,"w":87,"h":138},
+	"sourceSize": {"w":169,"h":166}
+},
+"ballStand02.png":
+{
+	"frame": {"x":653,"y":2,"w":111,"h":144},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":11,"y":11,"w":111,"h":144},
+	"sourceSize": {"w":169,"h":166}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "ball.png",
+	"format": "RGBA8888",
+	"size": {"w":798,"h":252},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b8c1730bbdcfbb29e5d9902fb067d5fa$"
+}
+}

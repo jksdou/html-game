@@ -1,0 +1,31 @@
+html, body {
+	-webkit-touch-callout:none;
+    -webkit-text-size-adjust:none;
+    -webkit-tap-highlight-color:transparent;
+    user-select: none;
+    overflow:hidden;
+	height:100%;
+	background:white;
+	text-align:center; 
+	padding:0;
+	margin:0;    
+}
+
+#viewporter {	
+	position:absolute;	
+	left:50%;
+	top:50%;
+}
+
+#scene {
+	background-color:white;
+}
+
+#rotate {
+    display:none;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-112px -112px;
+    pointer-events: none;
+}

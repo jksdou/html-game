@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:efde1734b6d9bb68ab47505ea5faff84:fc8165fbbe9e9c92df152df15c55ea24:69c6e17ee144180a1175adc5e8d595f4$ -->
+<TextureAtlas imagePath="atlas_txt_en.png">
+    <SubTexture name="txt_clicks" x="324" y="214" width="110" height="36"/>
+    <SubTexture name="txt_combo" x="264" y="2" width="115" height="36"/>
+    <SubTexture name="txt_congratulations" x="2" y="176" width="360" height="36"/>
+    <SubTexture name="txt_level" x="324" y="120" width="110" height="36"/>
+    <SubTexture name="txt_level_complete" x="2" y="214" width="320" height="36"/>
+    <SubTexture name="txt_level_failed" x="2" y="252" width="270" height="36"/>
+    <SubTexture name="txt_pause" x="2" y="2" width="260" height="90"/>
+    <SubTexture name="txt_score" x="264" y="40" width="110" height="36"/>
+    <SubTexture name="txt_taps" x="324" y="78" width="80" height="40"/>
+    <SubTexture name="txt_tutorial" x="2" y="94" width="320" height="80"/>
+</TextureAtlas>

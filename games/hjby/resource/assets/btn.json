@@ -1,0 +1,13 @@
+{
+    "file":"btn.png",
+    "frames":{
+        "left":{"x":0,"y":0,"w":360,"h":170,"offX":0,"offY":0},
+        "right":{"x":360,"y":0,"w":360,"h":170,"offX":0,"offY":0},
+        "startBtn":{"x":0,"y":170,"w":306,"h":116,"offX":0,"offY":0},
+        "hareBtn":{"x":306,"y":170,"w":306,"h":116,"offX":0,"offY":0},
+        "replayBtn":{"x":0,"y":288,"w":280,"h":71,"offX":0,"offY":0},
+        "shareBtn":{"x":280,"y":288,"w":280,"h":71,"offX":0,"offY":0},
+        "linkBtn":{"x":0,"y":360,"w":681,"h":82,"offX":0,"offY":0},
+        "logo":{"x":612,"y":170,"w":62,"h":62,"offX":0,"offY":0}
+    }
+}

@@ -1,0 +1,21 @@
+﻿/*Stylesheet*/
+BODY, HTML 
+{
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-touch-callout: none;                
+    -webkit-text-size-adjust: none;             
+    -webkit-user-select: none;                  
+	margin: 			0;
+	padding: 			0;
+	font-family: 		Arial, Verdana, sans-serif;
+	font-size: 			12px;
+	font-weight:		normal;
+	color: 				#ccc;
+	background-color:	#4aa4c2;
+	background-image: url(assets/art/tile.png);
+}
+
+canvas
+{
+    box-shadow: 0px 0px 20px #000000;
+}

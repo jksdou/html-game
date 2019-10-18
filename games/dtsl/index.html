@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>动态视力</title>
+    <!--<meta name="viewport" content="width=321, user-scalable=no">-->
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+	 <link rel="stylesheet" type="text/css" href="css/game9g.css">
+		<script src="js/game9g.js"></script>
+</head>
+
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="800" height="450"></canvas>
+<script src="cocos2d-js-v3.0.js"></script>
+<!-- <script src="CCLoaderScene.js"></script> -->
+<script src="main.js"></script>
+<script language=javascript>
+        var game9g = new Game9G("dtsl");
+        game9g.shareData.title = "动态视力";
+        game9g.shareData.content = "动态视力";
+
+		function goHome(){
+			window.location=game9g.gzurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = game9g.gzurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			game9g.share();
+		}
+		function dp_Ranking(){
+			window.location=game9g.homeurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		function dp_submitScore(score){
+			if(score>0){
+				game9g.score =parseInt(score);
+				game9g.scoreName = "闯了"+score+"关";	
+				game9g.shareData.title ="谁能超越我？我在动态视力中玩过"+score+"关";
+				game9g.utils.shareConfirm("你成功闯过了"+score+"关，快通知一下小伙伴吧！", dp_share); 
+			}
+			
+		}
+	</script>
+	<div style="display: none;">
+							
+	</div>
+</body>
+</html>

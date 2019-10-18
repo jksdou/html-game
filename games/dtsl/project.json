@@ -1,0 +1,16 @@
+{
+    "debugMode": 1,
+    "showFPS": false,
+    "frameRate": 50,
+    "id": "gameCanvas",
+    "renderMode": 1,
+    "modules": ["core", "actions"],
+
+    "jsList": [
+        "src/Util/PARAS.js",
+        "src/Resources.js",
+        "src/GameScene.js",
+        "src/Util/Tools.js",
+        "src/Util/CH.js"
+    ]
+}

@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin:0; height:100%;}
+h1,h2,h3,h4,h5 {margin: 0;font-weight: normal;}
+div,p,img,
+ul,ol,li, 
+dl,dt,dd, 
+table,th,td, 
+form {margin: 0;padding: 0;}
+img {border: 0; vertical-align: top;}
+ul li{list-style:none; }
+a {text-decoration: none;}
+a:hover {text-decoration: none;}
+/*---------------- 页面部分 ----------------*/

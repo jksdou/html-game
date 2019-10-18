@@ -1,0 +1,1241 @@
+﻿<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <title>解开绳子</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none
+        }
+
+        body {
+            text-align: center;
+            background: #077d45;
+            min-height: 417px;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif
+        }
+
+        .tips {
+            color: #fff;
+            height: 30px;
+            margin-top: 5px
+        }
+
+        .left {
+            color: #f60;
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            left: 0;
+            font-size: 20px;
+            height: 1em;
+            line-height: 1em
+        }
+
+        .left em {
+            font-style: normal
+        }
+
+        .panel {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background: rgba(20, 90, 20, .7);
+            display: none
+        }
+
+        .panel.show {
+            display: block
+        }
+
+        .panel-wrap {
+            position: absolute;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 10px;
+            display: none
+        }
+
+        .panel-wrap .hd {
+            text-align: center;
+            color: #090;
+            font-size: 16px;
+            padding: 10px 0;
+            background: #333
+        }
+
+        .success .panel-success,
+        .fail .panel-fail {
+            display: block
+        }
+
+        .fail .panel-fail .hd {
+            color: red
+        }
+
+        .fail .panel-success .hd {
+            color: #0f0
+        }
+
+        .panel .bd {
+            margin-top: 120px
+        }
+
+        .btn {
+            display: block;
+            width: 178px;
+            height: 38px;
+            line-height: 38px;
+            color: #fff;
+            margin: 40px auto;
+            text-align: center;
+            background: #040;
+            text-decoration: none
+        }
+
+        .btn.goon {
+            color: #ff0
+        }
+
+        .btn.share {
+            color: #f60
+        }
+
+        .share-arrow {
+            display: none;
+            top: 0;
+            right: 0;
+            position: absolute;
+            width: 90px;
+            height: 75px;
+            background: url(127201e0a9fd21d6.png) no-repeat;
+            background-size: 90px 75px
+        }
+
+        .share-arrow.show {
+            display: block
+        }
+
+        #cnzz_stat_icon_1252934876 {
+            display: none
+        }
+    </style>
+    <script>
+        document.write("<script type='text/javascript' src='config.js?v=" + Math.floor(Math.random() * 10000000) +
+            "' charset='UTF-8'><\/script>");
+    </script>
+</head>
+
+<body>
+    <p class="tips" id="tips">拖动节点，让所有的绳子都不交叉。</p>
+    <p class="left">剩余步数：<em id="left-step">0</em></p>
+    <div id="panel" class="panel fail">
+        <div id="success" class="panel-wrap panel-success">
+            <div class="hd">
+                <h2 id="panel-title-success">恭喜闯关成功！</h2>
+            </div>
+            <div class="bd">
+                <div>
+                    <div class="btn goon" onClick="goon()">闯下一关</div>
+                    <div class="btn share" onClick="share()">分享战绩</div>
+                    <a align="center" style="color:red" href="http://uinote.com/html-game/">更多游戏</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a align="center" style="color:red"
+                        href="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c">关注我们</a>
+                    <br /><br />
+                    <a align="center" style="text-decoration:underline;color:white;font-size:14;"
+                        href="javascript:location.href=game_47_01_url">
+                        <script>
+                            document.write(game_47_01_txt);
+                        </script>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-wrap panel-fail">
+            <div class="hd">
+                <h2 id="panel-title-fail">很遗憾，没有解开所有绳子.</h2>
+            </div>
+            <div class="bd">
+                <div>
+                    <div class="btn goon" onClick="goon()">重新闯关</div>
+                    <div class="btn share" onClick="share()">分享战绩</div>
+                    <a align="center" style="color:red" href="http://uinote.com/html-game/">更多游戏</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a align="center" style="color:red"
+                        href="https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c">关注我们</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="share-arrow" id="share-arrow"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    function updateData(a) {
+        levelNum = a || levelNum + 1,
+            levelNum = Math.max(1, Math.min(maxLevels, parseInt(levelNum))),
+            step = Math.round(.5 * levelNum * (Math.ceil(levelNum / 10) + 1))
+
+        document.getElementById("panel-title-success").innerHTML = "第" + levelNum + "关，恭喜闯关成功！";
+        document.getElementById("panel-title-fail").innerHTML = "第" + levelNum + "关，很遗憾绳子没解开！";
+
+    }
+
+    function updateDataFromHash() {
+        var a = Math.max(0, window.location.hash.replace("#", ""));
+        a > lastPlayNum && -1 === window.location.search.indexOf("isappinstalled") && (Tips("你还没玩到这关来哦，请继续加油！", 2), a =
+                lastPlayNum),
+            updateData(a)
+    }
+
+    function setCharAt(a, b, c) {
+        return b > a.length - 1 ? a : a.substr(0, b) + c + a.substr(b + 1)
+    }
+
+    function init() {
+        cursorX = 0,
+            cursorY = 0,
+            canvas ? context.clearRect(0, 0, gameW, gameH) : (canvas = document.createElement("canvas"), context =
+                canvas.getContext("2d"), canvas.width = gameW, canvas.height = gameH, document.body.appendChild(canvas)
+                ),
+            checkForTouch() ? (canvas.addEventListener("touchmove", touchMove, !1), canvas.addEventListener(
+                "touchstart", touchStart, !1), canvas.addEventListener("touchend", touchEnd, !1)) : (canvas
+                .addEventListener("mousemove", mouseMove, !1), canvas.addEventListener("mousedown", mouseDown, !1),
+                canvas.addEventListener("mouseup", mouseUp, !1)),
+            field = level[0],
+            window.location.hash && startLevel(),
+            collisionMagic(),
+            draw()
+    }
+
+    function moveCircle() {
+        field[selectedCircle] && (field[selectedCircle][0] = cursorX, field[selectedCircle][1] = cursorY, draw())
+    }
+
+    function selectCircle() {
+        var a, b, c, d, e, f, g;
+        for (level = levels[levelNum - 1], selectedCircle = void 0, f = 1e4, g = 0; g < field.length; g++) a = field[g][
+                0
+            ],
+            b = field[g][1],
+            c = a - cursorX,
+            d = b - cursorY,
+            e = c * c + d * d,
+            f > e && (f = e, selectedCircle = g)
+    }
+
+    function startLevel() {
+        for (window.scrollTo(0, 1), level = levels[levelNum - 1], field = [], i = 0; i < level[0].length; i++) field
+            .push([level[0][i][0], level[0][i][1]]);
+        collisionMagic(),
+            draw(),
+            selectedCircle = void 0,
+            usedStep = 0
+    }
+
+    function showPanel(a) {
+        closepanel(),
+            penel.classList.add(a),
+            penel.classList.add("show")
+    }
+
+    function closepanel() {
+        $share.classList.remove("show"),
+            penel.className = "panel"
+    }
+
+    function winLevel() {
+        levelNum >= maxLevels ? (showPanel("success"), Tips('<span style="color:red">恭喜通关！</span>')) : showPanel(
+                "success"),
+            levelNum += 1,
+            step = .5 * 2 * levelNum * (Math.ceil(levelNum / 10) + 1)
+    }
+
+    function loseLevel() {
+        setTimeout(function () {
+                showPanel("fail")
+            },
+            800)
+    }
+
+    function finishLevel(a) {
+        saveFile = setCharAt(saveFile, levelNum - 1, "1"),
+            localStorage.setItem("lazorsSave2", saveFile),
+            a ? (winLevel(), shareDesc = "我在解绳子游戏第" + (levelNum - 1) + "关中" + usedStep + "步就解开了，你能做到吗？", finishStatus =
+                1) : (loseLevel(), shareDesc = "解绳子游戏第" + levelNum + "关我已经掌握了技巧，你也来试试？", finishStatus = 0)
+    }
+
+    function collisionMagic() {
+        var a, b, c;
+        for (collisions = [
+                [],
+                []
+            ], a = 0; a < field.length; a++) collisions[0].push(0);
+        for (a = 0; a < level[1].length; a++) collisions[1].push(0);
+        for (B = !1, a = 0; a < level[1].length; a++)
+            for (b = a; b < level[1].length; b++) a !== b && (c = checkCollision(level[1][a], level[1][b]), c && (B = !
+                0, collisions[0][level[1][a][0]] += c, collisions[0][level[1][b][0]] += c, collisions[0][level[
+                    1][a][1]] += c, collisions[0][level[1][b][1]] += c, collisions[1][a] += c, collisions[1][
+                b] += c));
+        setTimeout(function () {
+                B ? step || finishLevel() : finishLevel(!0),
+                    $step.innerHTML = Math.max(0, step)
+            },
+            0)
+    }
+
+    function checkCollision(a, b) {
+        var d, e, f, g, h, c = {
+            p0: {
+                x: field[a[0]][0],
+                y: field[a[0]][1]
+            },
+            p1: {
+                x: field[a[1]][0],
+                y: field[a[1]][1]
+            }
+        };
+        return c.vx = c.p0.x - c.p1.x,
+            c.vy = c.p0.y - c.p1.y,
+            d = {
+                p0: {
+                    x: field[b[0]][0],
+                    y: field[b[0]][1]
+                },
+                p1: {
+                    x: field[b[1]][0],
+                    y: field[b[1]][1]
+                }
+            },
+            d.vx = d.p0.x - d.p1.x,
+            d.vy = d.p0.y - d.p1.y,
+            e = {
+                vx: c.p0.x - d.p0.x,
+                vy: c.p0.y - d.p0.y
+            },
+            f = {
+                vx: d.p0.x - c.p0.x,
+                vy: d.p0.y - c.p0.y
+            },
+            g = perP(e, c) / perP(d, c),
+            h = perP(f, d) / perP(c, d),
+            g > -1 && 0 > g && h > -1 && 0 > h
+    }
+
+    function perP(a, b) {
+        return a.vx * b.vy - a.vy * b.vx
+    }
+
+    function clear() {
+        context.clearRect(0, 0, gameW, gameH)
+    }
+
+    function draw() {
+        var a, b, c, d, e;
+        for (clear(), context.lineWidth = 2, e = 0; e < level[1].length; e++) c = field[level[1][e][0]],
+            d = field[level[1][e][1]],
+            context.strokeStyle = collisions[1][e] > 1 ? "rgb(185,24,14)" : 1 == collisions[1][e] ? "rgb(235,170,34)" :
+            "rgb(7,195,13)",
+            context.beginPath(),
+            context.moveTo(c[0], c[1]),
+            context.lineTo(d[0], d[1]),
+            context.closePath(),
+            context.stroke();
+        for (e = 0; e < field.length; e++) a = field[e][0],
+            b = field[e][1],
+            context.fillStyle = "rgb(13,87,180)",
+            drawCirclePath(17, a, b),
+            context.fill(),
+            context.fillStyle = collisions[0][e] > 1 ? "rgb(185,24,14)" : 1 == collisions[0][e] ? "rgb(235,170,34)" :
+            "rgb(7,195,13)",
+            drawCirclePath(8, a, b),
+            context.fill()
+    }
+
+    function drawCirclePath(a, b, c) {
+        context.beginPath(),
+            context.arc(b, c, a, 0, 2 * Math.PI, !0),
+            context.closePath()
+    }
+
+    function checkForTouch() {
+        return detective = document.createElement("div"),
+            detective.setAttribute("ontouchmove", "return;"),
+            "function" == typeof detective.ontouchmove ? !0 : !1
+    }
+
+    function updateCursorPos(a) {
+        cursorX = a.pageX - canvas.offsetLeft,
+            cursorY = a.pageY - canvas.offsetTop,
+            cursorX > gameW ? cursorX = gameW : 0 > cursorX && (cursorX = 0),
+            cursorY > gameH ? cursorY = gameH : 0 > cursorY && (cursorY = 0)
+    }
+
+    function touchStart(a) {
+        return step ? (updateCursorPos(a.touches[0]), selectCircle(), moveCircle(), window.scrollTo(0, 1), (cursorY >
+            40 || 230 > cursorX) && a.preventDefault(), void 0) : (a.preventDefault(), void 0)
+    }
+
+    function touchMove(a) {
+        updateCursorPos(a.touches[0]),
+            moveCircle()
+    }
+
+    function touchEnd() {
+        step--,
+        usedStep++,
+        selectedCircle = void 0,
+            collisionMagic(),
+            draw(),
+            Math.random() < .1 && Tips(tipsText[new Date % tipsTextLength])
+    }
+
+    function mouseDown(a) {
+        updateCursorPos(a),
+            selectCircle(),
+            moveCircle()
+    }
+
+    function mouseUp() {
+        selectedCircle = void 0,
+            collisionMagic(),
+            draw()
+    }
+
+    function mouseMove(a) {
+        updateCursorPos(a),
+            moveCircle()
+    }
+
+    function goon() {
+        closepanel(),
+            updateData(levelNum),
+            startLevel()
+    }
+
+    function share() {
+        $share.classList.add("show")
+    }
+    var gameW, gameH, menu, menuItems, canvas, context, cursorX, cursorY, shareTitle, shareDesc, finishStatus, levels,
+        maxLevels, $step, $share, saveFile, tipsText, Tips, lastPlayNum, levelNum, step, usedStep, level, field,
+        collisions, selectedCircle, s, penel, tipsTextLength;
+    if (window.scrollTo(0, 1), gameW = window.screen.width, gameH = window.screen.height - 80, shareTitle = "解开绳子",
+        shareDesc = "多掌握些解绳子扣子的技巧，说不定这技能以后还能用上呢，谁知道。", finishStatus = 1, levels = [
+            [
+                [
+                    [94, 96],
+                    [263, 72],
+                    [40, 330],
+                    [273, 343]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 3],
+                    [1, 2],
+                    [1, 3],
+                    [2, 3]
+                ]
+            ],
+            [
+                [
+                    [173, 86],
+                    [240, 305],
+                    [63, 223],
+                    [254, 111],
+                    [143, 314]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 3],
+                    [0, 4],
+                    [1, 3],
+                    [2, 3],
+                    [3, 4]
+                ]
+            ],
+            [
+                [
+                    [168, 60],
+                    [173, 316],
+                    [233, 266],
+                    [215, 143],
+                    [105, 317],
+                    [58, 137]
+                ],
+                [
+                    [0, 3],
+                    [0, 4],
+                    [1, 3],
+                    [1, 5],
+                    [2, 3],
+                    [2, 4],
+                    [2, 5]
+                ]
+            ],
+            [
+                [
+                    [127, 71],
+                    [213, 155],
+                    [152, 317],
+                    [224, 237],
+                    [70, 272],
+                    [65, 193]
+                ],
+                [
+                    [0, 2],
+                    [0, 5],
+                    [1, 4],
+                    [1, 5],
+                    [3, 4],
+                    [3, 5]
+                ]
+            ],
+            [
+                [
+                    [247, 296],
+                    [95, 278],
+                    [163, 71],
+                    [58, 148],
+                    [278, 151],
+                    [171, 332]
+                ],
+                [
+                    [0, 2],
+                    [1, 2],
+                    [1, 3],
+                    [1, 4],
+                    [2, 3],
+                    [2, 4],
+                    [2, 5],
+                    [3, 4],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [38, 300],
+                    [123, 361],
+                    [173, 53],
+                    [258, 321],
+                    [284, 151],
+                    [72, 111]
+                ],
+                [
+                    [0, 2],
+                    [0, 4],
+                    [0, 5],
+                    [1, 2],
+                    [1, 4],
+                    [1, 5],
+                    [2, 4],
+                    [3, 5]
+                ]
+            ],
+            [
+                [
+                    [46, 125],
+                    [207, 370],
+                    [145, 201],
+                    [255, 213],
+                    [238, 161],
+                    [78, 329]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 4],
+                    [0, 5],
+                    [1, 3],
+                    [1, 5],
+                    [2, 3],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [45, 140],
+                    [130, 363],
+                    [41, 309],
+                    [174, 92],
+                    [250, 132],
+                    [285, 315]
+                ],
+                [
+                    [0, 2],
+                    [0, 4],
+                    [0, 5],
+                    [1, 3],
+                    [1, 4],
+                    [1, 5],
+                    [2, 3],
+                    [2, 5],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [139, 335],
+                    [284, 193],
+                    [80, 273],
+                    [210, 80],
+                    [93, 134],
+                    [283, 314]
+                ],
+                [
+                    [0, 1],
+                    [0, 3],
+                    [1, 3],
+                    [1, 4],
+                    [2, 3],
+                    [2, 4],
+                    [3, 4],
+                    [3, 5],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [258, 329],
+                    [202, 73],
+                    [67, 293],
+                    [273, 136],
+                    [173, 360],
+                    [60, 107]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 3],
+                    [1, 2],
+                    [1, 4],
+                    [1, 5],
+                    [2, 3],
+                    [2, 4],
+                    [2, 5],
+                    [3, 5],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [48, 341],
+                    [240, 136],
+                    [203, 345],
+                    [273, 290],
+                    [123, 96],
+                    [29, 138]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 3],
+                    [0, 4],
+                    [0, 5],
+                    [1, 2],
+                    [1, 5],
+                    [2, 3],
+                    [2, 4],
+                    [2, 5],
+                    [3, 4]
+                ]
+            ],
+            [
+                [
+                    [149, 212],
+                    [77, 232],
+                    [121, 138],
+                    [225, 220],
+                    [266, 100],
+                    [210, 337],
+                    [142, 329],
+                    [274, 319]
+                ],
+                [
+                    [0, 1],
+                    [0, 6],
+                    [1, 3],
+                    [1, 4],
+                    [1, 6],
+                    [1, 7],
+                    [2, 3],
+                    [3, 4],
+                    [3, 5],
+                    [3, 6]
+                ]
+            ],
+            [
+                [
+                    [264, 246],
+                    [77, 97],
+                    [65, 304],
+                    [175, 344],
+                    [202, 137],
+                    [263, 117]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 3],
+                    [0, 4],
+                    [1, 2],
+                    [1, 3],
+                    [1, 5],
+                    [3, 5],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [103, 335],
+                    [184, 336],
+                    [239, 253],
+                    [35, 262],
+                    [187, 141],
+                    [69, 157]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 5],
+                    [1, 4],
+                    [1, 5],
+                    [2, 3],
+                    [2, 4],
+                    [2, 5],
+                    [3, 4],
+                    [4, 5]
+                ]
+            ],
+            [
+                [
+                    [71, 109],
+                    [266, 286],
+                    [66, 217],
+                    [117, 313],
+                    [206, 346],
+                    [246, 88],
+                    [274, 192],
+                    [180, 180]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 4],
+                    [0, 6],
+                    [0, 7],
+                    [1, 3],
+                    [2, 3],
+                    [2, 4],
+                    [2, 5],
+                    [2, 6],
+                    [2, 7],
+                    [3, 5],
+                    [3, 6],
+                    [5, 7]
+                ]
+            ],
+            [
+                [
+                    [154, 255],
+                    [186, 191],
+                    [85, 279],
+                    [49, 167],
+                    [198, 93],
+                    [264, 178],
+                    [108, 111],
+                    [251, 298]
+                ],
+                [
+                    [0, 5],
+                    [0, 6],
+                    [1, 2],
+                    [1, 4],
+                    [1, 7],
+                    [2, 3],
+                    [2, 4],
+                    [2, 6],
+                    [2, 7],
+                    [3, 6],
+                    [3, 7],
+                    [4, 6],
+                    [4, 7],
+                    [5, 6]
+                ]
+            ],
+            [
+                [
+                    [218, 291],
+                    [250, 221],
+                    [151, 358],
+                    [48, 344],
+                    [76, 232],
+                    [47, 80],
+                    [270, 129],
+                    [175, 119]
+                ],
+                [
+                    [0, 3],
+                    [0, 7],
+                    [1, 5],
+                    [1, 7],
+                    [2, 7],
+                    [3, 5],
+                    [3, 6],
+                    [3, 7],
+                    [4, 5],
+                    [4, 6],
+                    [5, 7]
+                ]
+            ],
+            [
+                [
+                    [33, 204],
+                    [252, 91],
+                    [250, 191],
+                    [71, 353],
+                    [227, 246],
+                    [54, 272],
+                    [67, 142],
+                    [193, 316]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [1, 2],
+                    [1, 3],
+                    [1, 5],
+                    [1, 6],
+                    [2, 6],
+                    [3, 4],
+                    [3, 5],
+                    [4, 6],
+                    [5, 6],
+                    [5, 7],
+                    [6, 7]
+                ]
+            ],
+            [
+                [
+                    [143, 338],
+                    [146, 75],
+                    [98, 189],
+                    [285, 195],
+                    [257, 303],
+                    [278, 100],
+                    [66, 268],
+                    [44, 129]
+                ],
+                [
+                    [0, 2],
+                    [0, 3],
+                    [0, 6],
+                    [1, 3],
+                    [2, 3],
+                    [2, 4],
+                    [2, 7],
+                    [3, 4],
+                    [3, 6],
+                    [5, 6],
+                    [5, 7]
+                ]
+            ],
+            [
+                [
+                    [101, 70],
+                    [273, 225],
+                    [52, 159],
+                    [133, 339],
+                    [245, 334],
+                    [38, 279],
+                    [191, 248],
+                    [190, 79]
+                ],
+                [
+                    [0, 1],
+                    [0, 3],
+                    [0, 6],
+                    [1, 2],
+                    [1, 3],
+                    [1, 4],
+                    [1, 7],
+                    [2, 3],
+                    [2, 4],
+                    [3, 5],
+                    [3, 7],
+                    [5, 7],
+                    [6, 7]
+                ]
+            ],
+            [
+                [
+                    [169, 226],
+                    [74, 154],
+                    [51, 306],
+                    [213, 325],
+                    [267, 174],
+                    [39, 212],
+                    [192, 192],
+                    [121, 377],
+                    [131, 90],
+                    [247, 238]
+                ],
+                [
+                    [0, 2],
+                    [1, 2],
+                    [1, 6],
+                    [2, 3],
+                    [2, 9],
+                    [3, 5],
+                    [4, 6],
+                    [4, 7],
+                    [5, 9],
+                    [6, 9],
+                    [7, 8]
+                ]
+            ],
+            [
+                [
+                    [55, 149],
+                    [189, 316],
+                    [239, 188],
+                    [300, 213],
+                    [276, 285],
+                    [217, 58],
+                    [114, 294]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 6],
+                    [1, 2],
+                    [1, 3],
+                    [1, 5],
+                    [2, 5],
+                    [2, 6],
+                    [3, 4],
+                    [3, 5],
+                    [4, 6],
+                    [5, 6]
+                ]
+            ],
+            [
+                [
+                    [262, 193],
+                    [84, 113],
+                    [194, 82],
+                    [77, 280],
+                    [230, 288],
+                    [40, 183],
+                    [158, 346],
+                    [163, 218]
+                ],
+                [
+                    [0, 5],
+                    [0, 6],
+                    [0, 7],
+                    [1, 3],
+                    [1, 4],
+                    [1, 5],
+                    [1, 6],
+                    [1, 7],
+                    [2, 3],
+                    [2, 4],
+                    [2, 6],
+                    [3, 4],
+                    [3, 6],
+                    [3, 7],
+                    [5, 6],
+                    [5, 7]
+                ]
+            ],
+            [
+                [
+                    [287, 190],
+                    [131, 201],
+                    [255, 289],
+                    [60, 194],
+                    [163, 74],
+                    [246, 87],
+                    [66, 281],
+                    [184, 312]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 4],
+                    [0, 7],
+                    [1, 4],
+                    [2, 3],
+                    [2, 5],
+                    [2, 7],
+                    [3, 4],
+                    [3, 7],
+                    [4, 5],
+                    [4, 6],
+                    [4, 7],
+                    [6, 7]
+                ]
+            ],
+            [
+                [
+                    [228, 100],
+                    [259, 147],
+                    [276, 307],
+                    [173, 321],
+                    [61, 161],
+                    [55, 237],
+                    [126, 81],
+                    [118, 134]
+                ],
+                [
+                    [0, 2],
+                    [0, 5],
+                    [0, 6],
+                    [1, 5],
+                    [1, 6],
+                    [2, 4],
+                    [2, 5],
+                    [2, 6],
+                    [2, 7],
+                    [3, 5],
+                    [3, 7],
+                    [4, 6],
+                    [4, 7]
+                ]
+            ],
+            [
+                [
+                    [104, 334],
+                    [266, 263],
+                    [262, 132],
+                    [92, 102],
+                    [170, 287],
+                    [225, 336],
+                    [158, 52],
+                    [55, 214]
+                ],
+                [
+                    [0, 3],
+                    [0, 5],
+                    [0, 6],
+                    [0, 7],
+                    [1, 2],
+                    [1, 5],
+                    [1, 6],
+                    [1, 7],
+                    [2, 3],
+                    [2, 4],
+                    [3, 4],
+                    [4, 7],
+                    [5, 6]
+                ]
+            ],
+            [
+                [
+                    [291, 165],
+                    [158, 341],
+                    [53, 219],
+                    [159, 216],
+                    [220, 48],
+                    [80, 124],
+                    [188, 121],
+                    [272, 325]
+                ],
+                [
+                    [0, 1],
+                    [0, 5],
+                    [1, 5],
+                    [1, 7],
+                    [2, 3],
+                    [2, 6],
+                    [2, 7],
+                    [3, 6],
+                    [3, 7],
+                    [4, 5],
+                    [4, 6],
+                    [4, 7],
+                    [5, 6],
+                    [6, 7]
+                ]
+            ],
+            [
+                [
+                    [203, 287],
+                    [258, 151],
+                    [65, 305],
+                    [256, 262],
+                    [90, 91],
+                    [178, 86],
+                    [38, 214],
+                    [129, 316]
+                ],
+                [
+                    [0, 1],
+                    [0, 6],
+                    [0, 7],
+                    [1, 2],
+                    [1, 3],
+                    [1, 4],
+                    [1, 5],
+                    [1, 6],
+                    [1, 7],
+                    [2, 4],
+                    [2, 5],
+                    [3, 4],
+                    [4, 6],
+                    [6, 7]
+                ]
+            ],
+            [
+                [
+                    [209, 182],
+                    [151, 299],
+                    [176, 56],
+                    [50, 169],
+                    [98, 106],
+                    [109, 168],
+                    [284, 290],
+                    [279, 116]
+                ],
+                [
+                    [0, 2],
+                    [0, 7],
+                    [1, 3],
+                    [1, 5],
+                    [1, 6],
+                    [2, 4],
+                    [2, 5],
+                    [2, 6],
+                    [3, 5],
+                    [3, 6],
+                    [4, 5],
+                    [4, 6],
+                    [5, 6],
+                    [5, 7],
+                    [6, 7]
+                ]
+            ],
+            [
+                [
+                    [136, 186],
+                    [243, 111],
+                    [55, 302],
+                    [62, 106],
+                    [188, 317],
+                    [132, 89],
+                    [234, 218],
+                    [28, 189]
+                ],
+                [
+                    [0, 1],
+                    [0, 2],
+                    [0, 3],
+                    [0, 4],
+                    [1, 2],
+                    [1, 3],
+                    [1, 5],
+                    [1, 6],
+                    [1, 7],
+                    [2, 5],
+                    [2, 6],
+                    [3, 4],
+                    [3, 5],
+                    [4, 5],
+                    [5, 6],
+                    [5, 7],
+                    [6, 7]
+                ]
+            ]
+        ], maxLevels = levels.length, $step = document.getElementById("left-step"), $share = document.getElementById(
+            "share-arrow"), saveFile = localStorage.getItem("lazorsSave2"), !saveFile) {
+        for (saveFile = "", i = 0; i < levels.length; i++) saveFile += "0";
+        localStorage.setItem("lazorsSave2", saveFile)
+    }
+    tipsText = ["点击朋友圈好友的分享结果，有可能玩到还没玩过的关卡哦", "某一关玩到泄气都过不了？发到群里让大家一起玩吧"],
+        Tips = function () {
+            var c, a = document.getElementById("tips"),
+                b = a.innerHTML;
+            return function (d, e) {
+                clearTimeout(c),
+                    a.innerHTML = d,
+                    e && (c = setTimeout(function () {
+                            a.innerHTML = b
+                        },
+                        1e3 * e))
+            }
+        }(),
+        lastPlayNum = 1 + saveFile.lastIndexOf("1"),
+        levelNum = lastPlayNum,
+        step = 0,
+        usedStep = 0,
+        //window.location.hash && (updateDataFromHash(), window.location.hash = ""),
+        updateData(levelNum),
+        level = levels[levelNum - 1],
+        collisions = [
+            [0, 0, 0, 0],
+            [!1, !1, !1, !1, !1]
+        ],
+        penel = document.getElementById("panel"),
+        tipsTextLength = tipsText.length,
+        document.addEventListener("touchmove",
+            function (a) {
+                a.preventDefault()
+            }),
+        document.addEventListener("onorientationchange",
+            function () {
+                Math.abs(90 === window.orientation) && alert("请使用竖屏玩耍")
+            }),
+        document.addEventListener("WeixinJSBridgeReady",
+            function () {
+                WeixinJSBridge.on("menu:share:appmessage",
+                        function () {
+                            WeixinJSBridge.invoke("sendAppMessage", {
+                                    img_url: "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG91oXlPAYqCQySojbHiaXnOL347ce7pfHv3ZN8Lia5ickoMVicUDCt9PlibFaYU7ECrOuD4E60FIHZedrA/640",
+                                    link: "http://" + domain + "/games/jksz/",
+                                    desc: shareDesc,
+                                    title: shareTitle
+                                },
+                                function () {
+                                    window.location.href = aboutus;
+                                })
+                        }),
+                    WeixinJSBridge.on("menu:share:timeline",
+                        function () {
+                            WeixinJSBridge.invoke("shareTimeline", {
+                                    img_url: "http://mmbiz.qpic.cn/mmbiz/kG4NuD28mG91oXlPAYqCQySojbHiaXnOL347ce7pfHv3ZN8Lia5ickoMVicUDCt9PlibFaYU7ECrOuD4E60FIHZedrA/640",
+                                    link: "http://" + domain + "/games/jksz/",
+                                    desc: shareDesc,
+                                    title: shareDesc
+                                },
+                                function () {
+                                    window.location.href = aboutus;
+                                })
+                        })
+            },
+            !1),
+        init();
+</script>
+<div style="display:none;">
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol +
+                    "hm.baidu.com/h.js%3F2eac95e2df0ea5d2b0aaa92e3dbbe419' 
+
+                    type = 'text/javascript' % 3 E % 3 C / script % 3 E "));
+    </script>
+</div>
+
+</html>
+
+</html>

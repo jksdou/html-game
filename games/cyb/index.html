@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,user-scalable=no"/>
+    <title>插月饼</title>
+    <style>
+    </style>
+    <script src="lib/easeljs-0.7.1.min.js"></script>
+    <script src="lib/tweenjs-0.5.1.min.js"></script>
+    <script src="lib/preloadjs-0.4.1.min.js"></script>
+    <script src="lib/movieclip-0.7.1.min.js"></script>
+    <script src="lib/soundjs-0.5.2.min.js"></script>
+    <script src="lib/common.js"></script>
+    <script src="lib/app.js"></script>
+    <script src="lib/loadingContent.js"></script>
+    <script src="lib/loading.js"></script>
+    <script src="lib/main.js"></script>
+
+    <script>
+        var canvasLoading,canvas,stage,loadingStage,exportRoot;
+        var queue=new createjs.LoadQueue();
+        var score=0;
+        var scale=1;
+        var picNum=0;
+        var picTotal=0;
+        var loadingProgress=0;
+
+        init();
+        //initLoading();
+
+        function init()
+        {
+            SHARE_ICON_URL='http://tgideas.qq.com/flash/quanchenTest/html5MidAutumn/images/icon.jpg';
+            SHARE_URL='http://tgideas.qq.com/flash/quanchenTest/html5MidAutumn/index.html';
+            SHARE_STR='你收到一份来自月球的思念和祝福!快快点击体验吧！';
+            // onBridgeInit();
+            initSound('sound/po','sound0');
+            initSound('sound/po1','sound1');
+            initSound('sound/po2','sound2');
+        }
+
+        function initLoading()
+        {
+            canvasLoading=document.getElementById('canvasLoading');
+
+            loadingImages = loadingImages||{};
+
+            var loader = new createjs.LoadQueue(false);
+            loader.addEventListener("fileload", loadingHandleFileLoad);
+            loader.addEventListener("complete", loadingHandleComplete);
+            loader.loadManifest(loadingLib.properties.manifest);
+        }
+
+        function loadingHandleFileLoad(evt) {
+            if (evt.item.type == "image") { loadingImages[evt.item.id] = evt.result; }
+        }
+
+        function loadingHandleComplete() {
+            exportRoot = new loadingLib.loading();
+
+            stage = new createjs.Stage(canvasLoading);
+            stage.addChild(exportRoot);
+            stage.update();
+
+            createjs.Ticker.setFPS(loadingLib.properties.fps);
+            createjs.Ticker.addEventListener("tick", stage);
+
+            //console.log('loadingHandleComplete');
+
+            //var loading=new lib.LOADING();
+            //stage.addChild(loading);
+            new loadingContent.init();
+            initMain();
+        }
+
+        //
+        function initMain()
+        {
+            canvas = document.getElementById('canvas');
+            images = images||{};
+
+            picTotal=lib.properties.manifest.length;
+
+            var loader = new createjs.LoadQueue(false);
+            loader.addEventListener("fileload", initHandleFileLoad);
+            loader.addEventListener("complete", initHandleComplete);
+            loader.loadManifest(lib.properties.manifest);
+            console.log('initMain');
+        }
+
+        function initHandleFileLoad(evt) {
+            picNum+=1;
+            loadingProgress=picNum/picTotal;
+            //console.log(loadingProgress);
+            if (evt.item.type == "image") { images[evt.item.id] = evt.result; }
+        }
+
+        function initHandleComplete() {
+            //console.log('handleCompleteInit');
+            document.getElementById('loading').style.display="none";
+            exportRoot = new lib.main();
+
+            stage = new createjs.Stage(canvas);
+            stage.addChild(exportRoot);
+            stage.update();
+
+            createjs.Ticker.setFPS(lib.properties.fps);
+            createjs.Ticker.addEventListener("tick", stage);
+
+            new app.init();
+        }
+
+        function initSound(url,name)
+        {
+            var mp3url='';
+            if(isAndroid())
+            {
+                createjs.Sound.registerPlugins([createjs.HTMLAudioPlugin]);
+                mp3url=url+'.ogg';
+            }
+            if(!isAndroid())
+            {
+                createjs.Sound.registerPlugins([createjs.WebAudioPlugin]);
+                mp3url=url+'.m4a';
+            }
+            createjs.Sound.alternateExtensions = ["mp3"];
+            createjs.Sound.addEventListener("fileload", createjs.proxy(this.loadHandler, this));
+            createjs.Sound.registerSound(mp3url, name);
+        }
+
+        function playSound0()
+        {
+            var instance = createjs.Sound.play("sound0");
+            instance.volume = 0.5;
+        }
+
+        function playSound1()
+        {
+            var instance = createjs.Sound.play("sound1");
+            instance.volume = 0.5;
+        }
+
+        function playSound2()
+        {
+            var instance = createjs.Sound.play("sound2");
+            instance.volume = 0.5;
+        }
+
+        function loadHandler(event) {
+            // This is fired for each sound that is registered.
+            //var instance = createjs.Sound.play("sound");  // play using id.  Could also use full sourcepath or event.src.
+            //instance.addEventListener("complete", createjs.proxy(this.soundComplete, this));
+            //instance.volume = 0.5;
+        }
+    </script>
+</head>
+<body onload="initLoading();" style="background-color: #ffffff">
+    <div id="loading" class="div-loading">
+        <canvas id="canvasLoading" width="640" height="1008">
+            sorry,your browser dosen't support html5
+        </canvas>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #a{
+                display: block;
+                background-color: gray;
+            }
+        </style>
+    </div>
+    <div id="main" class="div-main">
+        <canvas id="canvas" width="640" height="1008">
+            sorry,your browser dosen't support html5
+        </canvas>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #a{
+                display: block;
+                background-color: gray;
+            }
+        </style>
+    </div>
+</body>
+</html><!--[if !IE]>|xGv00|a6d03ba51a4aabe3b4e4bbfbc2d8709c<![endif]-->

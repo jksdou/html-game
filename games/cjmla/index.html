@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+    <title>超级马里奥</title>
+    <link rel="shortcut icon" href="icon.png">
+    <script type="text/javascript" src="js/zepto.min.js"></script>
+    <link type="text/css" href="style/index.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/index.js?v1"></script>
+    <style type="text/css">
+        .gamebtn {
+            margin-top: 15px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <canvas id="gamescene"></canvas>
+    <div id="mask" class="hide"></div>
+    <div id="cover" class="hide"></div>
+    <div id="game_div" class="">
+        <div id="ctrboard">
+            <div id="start" class="boards hide">
+                <div class="logo"></div>
+                <div class="title"></div>
+                <a class="startgame" href="###" alt="开始游戏"></a>
+                <a class="moregame" onclick="clickMore();" alt="更多游戏"></a>
+            </div>
+            <div id="play" class="boards hide">
+                <div class="score_title">分数</div>
+                <div class="score">0</div>
+            </div>
+            <div id="end" class="boards hide">
+                <div>得分</div>
+                <div class="score">0</div>
+                <div class="history">历史最佳: <span class="bestScore">0</span></div>
+                <div class="gameover"></div>
+                <div id="resetgame" class="gamebtn" style="margin-top:40px;">重新开始</div>
+                <div id="showgame" class="gamebtn" onclick="dp_share();">炫耀一下</div>
+                <div id="moregame" class="gamebtn" onclick="clickMore();">更多游戏</div>
+            </div>
+        </div>
+        <div id="footer" class="hide">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.onerror = function (e) {
+            // alert(e);
+        }
+    </script>
+    <input id="bt-game-id" type="hidden" value="8-supermario">
+    <script language=javascript>
+        var mebtnopenurl = 'http://uinote.com/html-game/';
+        var thegameurl = "http://uinote.com/html-game/games/cjmla/";
+        var guanzhuurl = "https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c";
+        window.shareData = {
+            "imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWEj5ShYvicEVgvTpeYHxEjibq5Zlia2Hm5ISG5aibD2TQ5KT7kQicdJBXI9MaF5IIReATAbF5ulY4BHAuw/640",
+            "timeLineLink": thegameurl,
+            "tTitle": "超级马里奥",
+            "tContent": "超级马里奥"
+        };
+
+        function goHome() {
+            window.location = mebtnopenurl;
+        }
+
+        function clickMore() {
+            if ((window.location + "").indexOf("f=zf", 1) > 0) {
+                window.location = mebtnopenurl;
+            } else {
+                goHome();
+            }
+        }
+
+        function dp_share() {
+            document.getElementById("share").style.display = "";
+
+        }
+
+        function dp_Ranking() {
+            window.location = mebtnopenurl;
+        }
+
+        function showAd() {}
+
+        function hideAd() {}
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "img_url": window.shareData.imgUrl,
+                    "link": window.shareData.timeLineLink,
+                    "desc": window.shareData.tContent,
+                    "title": window.shareData.tTitle
+                }, onShareComplete);
+            });
+
+            WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "img_url": window.shareData.imgUrl,
+                    "img_width": "640",
+                    "img_height": "640",
+                    "link": window.shareData.timeLineLink,
+                    "desc": window.shareData.tContent,
+                    "title": window.shareData.tTitle
+                }, onShareComplete);
+            });
+        }, false);
+    </script>
+    <div id=share style="display: none">
+        <img width="100%" src="share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+            ontouchstart="document.getElementById('share').style.display='none';" />
+    </div>
+    <script type="text/javascript">
+        var myData = {
+            gameid: "cjmla"
+        };
+        var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+        window.shareData.timeLineLink = thegameurl;
+
+        function dp_submitScore(score) {
+            myData.score = parseInt(score);
+            myData.scoreName = "越过" + score + "个障碍物";
+            document.title = window.shareData.tTitle = "我带领马里奥越过" + score + "个障碍物，快来玩变态版超级玛丽！";
+        }
+
+        function onShareComplete(res) {
+            if (localStorage.myuid && myData.score != undefined) {
+                setTimeout(function () {
+                    if (confirm("？")) {
+                        window.location = mebtnopenurl;
+                    } else {
+                        document.location.href = mebtnopenurl;
+                    }
+                }, 500);
+            } else {
+                document.location.href = guanzhuurl;
+            }
+        }
+    </script>
+    <div style="display: none;">
+
+    </div>
+</body>
+
+</html>

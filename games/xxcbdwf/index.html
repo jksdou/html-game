@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>炫炫翅膀带我飞</title>
+    <style>
+        body,canvas,div{ -moz-user-select: none;-webkit-user-select: none;-ms-user-select: none;-khtml-user-select: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
+    </style>
+    <meta name="viewport" content="user-scalable=no,width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0"/>
+
+
+    <!---->
+</head>
+<body onload="StageManager.getInstance().initialize()">
+<div id="loadicon" style="position:absolute;" >
+     <img style="display:table-cell;vertical-align:middle;text-align:center;overflow:hidden;width:34px;height:34px;" src="data:image/gif;base64,R0lGODlhIgAiALMJAN7e3s7OzpSUlISEhLW1taWlpXNzc2NjY8XFxQAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFGMTdCMUZDNTA1ODExRTRCQTFERUNDODE0M0YxRDhBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFGMTdCMUZENTA1ODExRTRCQTFERUNDODE0M0YxRDhBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUYxN0IxRkE1MDU4MTFFNEJBMURFQ0M4MTQzRjFEOEEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUYxN0IxRkI1MDU4MTFFNEJBMURFQ0M4MTQzRjFEOEEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx8O/u7ezr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"/>
+</div>
+<script src="lib/easeljs-0.7.1.min.js"></script>
+<script src="lib/tweenjs-0.5.1.min.js"></script>
+<script src="lib/preloadjs-0.4.1.min.js"></script>
+<script src="lib/LoaderManager.js"></script>
+<script src="src/StageManager.js"></script>
+
+
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+</style>
+<script language="javascript">
+    var App = {}
+    App.TITLE ="炫炫翅膀来了，带你装酷带你飞！"
+    App.DESC = "";
+    var turl = "http://ttxd.qq.com/act/a20141028gamewx/"
+    var icon = "http://ttxd.qq.com/act/a20141028game/icon.png"
+    // if(typeof(pgvMain) == 'function') pgvMain();
+
+    // function onBridgeReady() {
+    //     //转发朋友圈
+    //     WeixinJSBridge.on("menu:share:timeline", function(e) {
+    //         var url = turl;
+    //         var data = {
+    //             img_url: icon,
+    //             img_width: "120",
+    //             img_height: "120",
+    //             link: url,
+    //             //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+    //             desc:App.DESC,
+    //             title:App.DESC
+    //         };
+
+    //         WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+    //             WeixinJSBridge.log(res.err_msg)
+    //             pgvSendClick({hottag:"a20141028game.share.wx"})
+    //         });
+    //     });
+    //     //同步到微博
+    //     WeixinJSBridge.on("menu:share:weibo", function() {
+    //         var url = turl;
+
+    //         WeixinJSBridge.invoke("shareWeibo", {
+    //             "content": App.DESC,
+    //             "url": url
+    //         }, function(res) {
+    //             WeixinJSBridge.log(res.err_msg);
+    //             pgvSendClick({hottag:"a20141028game.share.wb"})
+    //         });
+    //     });
+    //     //分享给朋友
+    //     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+    //         var url =turl
+
+    //         WeixinJSBridge.invoke("sendAppMessage", {
+    //             img_url: icon,
+    //             img_width: "120",
+    //             img_height: "120",
+    //             link: url,
+    //             desc:App.DESC,
+    //             title: App.TITLE
+    //         }, function(res) {
+    //             pgvSendClick({hottag:"a20141028game.share.appmessage"})
+    //             WeixinJSBridge.log(res.err_msg)
+    //         });
+    //     });
+    // };
+    function onButtonEvent(value)
+    {
+        //pgvSendClick({hottag:'a20140817map.index.img.begin_logo'});
+        var PGVtype = "a20141028game.index";
+        switch (value)
+        {
+            case "startgame":
+
+                PGVtype=  "a20141028game.game.startgame";
+                break;
+            case "sharewx":
+                PGVtype=  "a20141028game.game.sharewx";
+                break;
+            case "shareqq":
+                PGVtype=  "a20141028game.game.shareqq";
+                break;
+            case "shareqz":
+                PGVtype=  "a20141028game.game.shareqz";
+                break;
+            case "regame":
+                PGVtype=  "a20141028game.game.regame";
+            case "ingame":
+                PGVtype=  "a20141028game.game.ingame";
+            break;
+
+
+
+        }
+
+
+        // pgvSendClick({hottag:PGVtype})
+    }
+    // try{
+    //     document.addEventListener('WeixinJSBridgeReady', function() {
+    //         onBridgeReady();
+    //     });
+    // }catch(e){}
+    function setViewport()
+    {
+        var viewportMetas = {"target-densitydpi":"device-dpi","user-scalable": "no", "maximum-scale": "1.0", "initial-scale": "1.0"}, elems = document.getElementsByName("viewport"), vp, content;
+        if (elems.length == 0) {
+            vp =document.createElement("meta");
+            vp.name = "viewport";
+            vp.content = "";
+            document.head.appendChild(vp);
+        }
+        else vp = elems[0];
+
+        var win = window, nav = win.navigator
+        var ua = nav.userAgent.toLowerCase();
+
+        var isMobile = ua.indexOf('mobile') != -1 || ua.indexOf('android') != -1;
+        if (isMobile) {
+            vp.content = "initial-scale:1";
+            return;
+        }
+
+        content = vp.content;
+        for (var key in viewportMetas) {
+            var pattern = new RegExp(key);
+            if (!pattern.test(content)) {
+                content += (content == "" ? "" : ",") + key + "=" + viewportMetas[key];
+            }
+        }
+
+        vp.content = content;
+    }
+    setViewport();
+    // function shareBoxToZone()
+    // {
+
+    //     var url ="http://openmobile.qq.com/api/check2?page=qzshare.html&loginpage=loginindex.html&logintype=qzone" +
+    //             "&title="+App.TITLE +
+    //             "&summary=" +App.DESC+
+    //             "&url=" +turl+
+    //             "&desc=" +App.DESC+
+    //             "&imageUrl=" +icon+
+    //             "&site=" +App.TITLE+
+    //             "&successUrl=" +turl+
+    //             "&failUrl=" +turl+
+    //             "&callbackUrl=" +turl+
+    //             "&sid="
+    //     window.location.replace(url)
+    // }
+
+    // function shareBoxToQQFriend()
+    // {
+
+
+    //     window.location.replace("http://openmobile.qq.com/oauth2.0/m_jump?page=shareindex.html" +
+    //             "&style=9&status_os=0&sdkp=0&_wv=1031&_bid=168&site="+App.TITLE +
+    //             "&summary="+App.DESC+"&title="+App.TITLE +
+    //             "&pagetitle="+App.TITLE +"&appid=101019894&sid=" +
+    //             "&imageUrl="+icon+"&targetUrl="+turl+"&page_url="+turl+"&nobar=1&name=&desc=&pre=1&appName="+App.TITLE +
+    //             "&preUrl="+turl+"&appCallback=")
+
+    // }
+
+</script>
+<div style="width: 100%; height: 100%;">
+	<canvas id="canvas" width="640" height="960" style="background-color:#191919"></canvas>
+</div>
+</body>
+
+
+</html><!--[if !IE]>|xGv00|f545d41813a111ff325b10cedb383f1b<![endif]-->

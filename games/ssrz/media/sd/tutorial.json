@@ -1,0 +1,57 @@
+{"frames": {
+
+"tutorial_clickBubble.png":
+{
+	"frame": {"x":240,"y":91,"w":38,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":38},
+	"sourceSize": {"w":38,"h":38},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tutorial_go.png":
+{
+	"frame": {"x":144,"y":2,"w":199,"h":87},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":199,"h":87},
+	"sourceSize": {"w":199,"h":87},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tutorial_hand.png":
+{
+	"frame": {"x":144,"y":91,"w":94,"h":132},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":94,"h":132},
+	"sourceSize": {"w":94,"h":132},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tutorial_ninja.png":
+{
+	"frame": {"x":280,"y":91,"w":19,"h":19},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":19,"h":19},
+	"sourceSize": {"w":19,"h":19},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tutorial_phone.png":
+{
+	"frame": {"x":2,"y":2,"w":140,"h":233},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":140,"h":233},
+	"sourceSize": {"w":140,"h":233},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tutorial.png",
+	"format": "RGBA8888",
+	"size": {"w":345,"h":237},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:52f4e55d224193df72231d8961ee10cc:f74eefc715d62569232a42bded928f16:79be00c7babd4ee577009a58f6978baa$"
+}
+}

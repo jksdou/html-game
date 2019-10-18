@@ -1,0 +1,9 @@
+{
+    "showFPS" : false,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "jsList" : [
+        "http://s4.qhimg.com/!e1103a81/game.min.js",
+        "src/app.js"
+    ]
+}

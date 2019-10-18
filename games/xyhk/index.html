@@ -1,0 +1,167 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Startan">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>向阳花开</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/zepto.js" ></script>
+</head>
+<body>
+    <div class="container">
+        <div class="start page">
+            <div class="slogan">
+                <p>快来！</p>
+                <p>支援一下</p>
+            </div>
+            <div class="bucket-wr">
+                <div class="bucket"></div>
+                <div class="ice-bundle"></div>
+                <div class="waterlogging"></div>
+            </div>
+            <div class="button-wr">
+                <button id="begin"></button>
+                <div class="star bling"></div>
+                <div class="star bling"></div>
+            </div>
+            <p class="tip">@三个好友，一起拯救作物</p>
+        </div>
+        <div class="game page">
+            <div class="timer">
+                <span>51</span>
+            </div>
+            <div class="perf score">
+                <span>51</span>
+            </div>
+            <div class="hand">
+                <div class="water-wr">
+                    <div class="water"></div>
+                </div>
+            </div>
+            <div class="man"></div>
+            <button id="pour"></button>
+        </div>
+        <div class="end page">
+            <div class="result-plate">
+                <p class="result score">我居然浇了<span>34</span>吨水！！<br>不服来战！！！</p>
+                <div class="button-wr clearfix">
+                    <button id="again"></button>
+                    <button id="challenge"></button>
+                </div>
+            </div>
+        </div>
+        <div class="share page">
+            <img src="img/t0104750a981787aafd.png" alt="share">
+        </div>
+    </div>
+    <div class="preload">
+        <img id="share-icon" src="img/t01c9271c30b6920dc6.png" alt="share">
+    </div>
+    <script src="js/main.js" ></script>
+  <script language=javascript>
+		var mebtnopenurl = 'http://uinote.com/html-game/';
+		window.shareData = {
+		        "imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWGEib397UuJmchwe5effnS5xT1aeNreoRZFicicn85zXnQGujwODKJU7JeibwgC66Wr5bicvcZ3SSia1F6g/640",
+		        "timeLineLink": "http://uinote.com/html-game/games/fkbttz/",
+		        "tTitle": "疯狂挑战-空中传媒游戏",
+		        "tContent": "疯狂挑战-空中传媒游戏"
+		};
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				window.location = "http://uinote.com/html-game/";
+			 }
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.title ="疯狂抗旱大赛！我浇了"+myData.score+"吨！不服来战！"
+			document.getElementById("share").style.display="";
+			window.shareData.tTitle = document.title;
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		</script>
+		<div id=share style="display: none">
+			<img width=100% src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "fkbttz" };
+			 var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+			window.shareData.timeLineLink = "http://uinote.com/html-game/games/fkbttz/";
+			function dp_submitScore(score){
+				myData.score = score;
+				myData.scoreName ="浇了"+score+"吨";
+				if(score>0){
+					if (confirm("疯狂抗旱大赛！你浇了"+score+"吨！想看一下小伙伴的能力吗？")){
+						dp_share();
+					}
+				}
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("？")) {
+                            window.location = mebtnopenurl;
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = "http://mp.weixin.qq.com/s?__biz=MzAwNzQ4NzQyOQ==&mid=207029465&idx=1&sn=7b3e89d22b38e1e1337bf3a98ccdfb46#rd";
+				}
+	        }
+			</script>
+			<div style="display: none;">
+			<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2eac95e2df0ea5d2b0aaa92e3dbbe419' 
+
+type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+			</div>
+</body>
+</html>

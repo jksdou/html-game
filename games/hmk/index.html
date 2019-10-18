@@ -1,0 +1,104 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>滑木块</title>
+<link rel="apple-touch-icon" sizes="57x57" href="touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone-retina.png">
+<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) --><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- <link rel="apple-touch-icon" sizes="256x256" href="icon-256.png"> -->
+<meta name="HandheldFriendly" content="true">
+<!-- Chrome for Android web app tags --><meta name="mobile-web-app-capable" content="yes">
+<!-- <link rel="shortcut icon" sizes="256x256" href="icon-256.png"> -->
+<!-- All margins and padding must be zero for the canvas to fill the screen. --><style>#sg-loadscrn{
+    position:fixed; top:0;left:0;width:100%; height:100%; background-color:#fff; z-index:9999;
+}
+
+#sg-loadtext{
+    position:absolute;
+    font-family: sans-serif;
+    top:50%; left:50%;
+    width: 250px;
+    margin-left:-125px;
+    margin-top:-125px;
+    text-align:center;
+    line-height:150%;
+    font-size:16px;
+}</style>
+
+
+<script type="text/javascript" src="./assets/softgames-1.1.js"></script><script type="text/javascript" src="./assets/sg.hooks.js"></script><script type="text/javascript">
+        window.gameLangs = ['en', 'es'];
+		window.gameJS = ['jquery-2.0.0.min.js', 'c2runtime.js'];
+		window.gameOnLoadScript = "startWoblox();";
+	</script><script type="text/javascript" src="./localization.js"></script>
+</head>
+<body> 
+    <style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			background: #000;
+			color: #fff;
+			overflow: hidden;
+			-ms-touch-action: none;
+		}
+		canvas {
+			touch-action-delay: none;
+			touch-action: none;
+			-ms-touch-action: none;
+		}
+    </style>
+<div id="fb-root"></div>
+
+	<!-- The canvas must be inside a div called c2canvasdiv -->
+	<div id="c2canvasdiv">
+	
+		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
+		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
+		<canvas id="c2canvas" width="384" height="600"><!-- This text is displayed if the visitor's browser does not support HTML5.
+			You can change it, but it is a good idea to link to a description of a browser
+			and provide some links to download some popular HTML5-compatible browsers. --><h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
+			<br><br><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br><a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br><a href="http://www.google.com/chrome/">Google Chrome</a><br><a href="http://www.apple.com/safari/download/">Apple Safari</a><br><a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br>
+</h1>
+		</canvas>
+</div>
+	
+    <script>
+        function startWoblox(){
+            var resizeme = function() {
+			cr_sizeCanvas(jQuery(window).width(), jQuery(window).height());
+		};
+		// Size the canvas to fill the browser viewport.
+		jQuery(window).resize(resizeme);
+        SG_Hooks.setOrientationHandler(resizeme);
+        SG_Hooks.setResizeHandler(resizeme);
+		
+		// Start the Construct 2 project running on window load.
+			// Create new runtime using the c2canvas
+			cr_createRuntime("c2canvas");
+		
+		// Pause and resume on page becoming visible/invisible
+		function onVisibilityChanged() {
+			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
+				cr_setSuspended(true);
+			else
+				cr_setSuspended(false);
+		};
+		
+		document.addEventListener("visibilitychange", onVisibilityChanged, false);
+		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
+		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
+    }
+    </script>
+</body>
+</html>

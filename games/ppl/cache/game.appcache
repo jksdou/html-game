@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+  <Code>NoSuchKey</Code>
+  <Message>The specified key does not exist.</Message>
+  <Key>test1/cache/game.appcache</Key>
+  <RequestId>541250F5A628912C364F3A1C</RequestId>
+  <HostId></HostId>
+</Error>

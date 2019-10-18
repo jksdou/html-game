@@ -1,0 +1,147 @@
+﻿{"frames": {
+
+"Back_Button0000":
+{
+	"frame": {"x":903,"y":138,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"Button_Base0000":
+{
+	"frame": {"x":799,"y":58,"w":103,"h":108},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":103,"h":108},
+	"sourceSize": {"w":103,"h":108}
+},
+"CreditsBoard0000":
+{
+	"frame": {"x":1,"y":1477,"w":513,"h":323},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":513,"h":323},
+	"sourceSize": {"w":513,"h":323}
+},
+"Credits_Button0000":
+{
+	"frame": {"x":903,"y":58,"w":75,"h":79},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":79},
+	"sourceSize": {"w":75,"h":79}
+},
+"GameTitle0000":
+{
+	"frame": {"x":515,"y":1477,"w":377,"h":195},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":377,"h":195},
+	"sourceSize": {"w":377,"h":195}
+},
+"LevelCompleteBoard0000":
+{
+	"frame": {"x":1,"y":1226,"w":668,"h":250},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":668,"h":250},
+	"sourceSize": {"w":668,"h":250}
+},
+"LevelIcon_Lock0000":
+{
+	"frame": {"x":979,"y":58,"w":38,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":38,"h":42},
+	"sourceSize": {"w":38,"h":42}
+},
+"LevelsMenu_Background0000":
+{
+	"frame": {"x":1,"y":1,"w":676,"h":832},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":676,"h":832},
+	"sourceSize": {"w":676,"h":832}
+},
+"MainMenu_Back0000":
+{
+	"frame": {"x":1,"y":834,"w":646,"h":391},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":646,"h":391},
+	"sourceSize": {"w":646,"h":391}
+},
+"MainMenu_PlayButton0000":
+{
+	"frame": {"x":678,"y":58,"w":120,"h":126},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":126},
+	"sourceSize": {"w":120,"h":126}
+},
+"Menu_Button0000":
+{
+	"frame": {"x":875,"y":217,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"MoreGames_Button0000":
+{
+	"frame": {"x":830,"y":296,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"Music_OFF_Button0000":
+{
+	"frame": {"x":799,"y":167,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"Music_ON_Button0000":
+{
+	"frame": {"x":754,"y":246,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"Play_Button0000":
+{
+	"frame": {"x":678,"y":264,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"Restart_Button0000":
+{
+	"frame": {"x":678,"y":185,"w":75,"h":78},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":78},
+	"sourceSize": {"w":75,"h":78}
+},
+"SandTiles_Label0000":
+{
+	"frame": {"x":678,"y":1,"w":310,"h":56},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":310,"h":56},
+	"sourceSize": {"w":310,"h":56}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "gui.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}

@@ -1,0 +1,23 @@
+{
+    "project_type": "javascript",
+
+    "debugMode" : 0,
+    "showFPS" : false,
+    "frameRate" : 60,
+    "id" : "gameCanvas",
+    "renderMode" : 1,
+    "engineDir":"frameworks/cocos2d-html5",
+
+    "modules" : ["ccui"],
+
+    "jsList" : [
+        "src/resource.js",
+        "src/app.js",
+        "src/constant.js",
+        "src/level.js",
+        "src/loading.js",
+        "src/menu.js",
+        "src/result.js",
+        "src/shop.js"
+    ]
+}

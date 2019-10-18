@@ -1,0 +1,36 @@
+{"frames": {
+
+"collideShit01.png":
+{
+	"frame": {"x":2,"y":2,"w":154,"h":138},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":154,"h":138},
+	"sourceSize": {"w":170,"h":138}
+},
+"collideShit02.png":
+{
+	"frame": {"x":158,"y":2,"w":140,"h":100},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":19,"y":25,"w":140,"h":100},
+	"sourceSize": {"w":170,"h":138}
+},
+"collideShit03.png":
+{
+	"frame": {"x":2,"y":142,"w":162,"h":52},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":8,"y":79,"w":162,"h":52},
+	"sourceSize": {"w":170,"h":138}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "collideShit.png",
+	"format": "RGBA8888",
+	"size": {"w":300,"h":196},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:10e5c4dbae9ad548de1eaad58f67d7cd$"
+}
+}

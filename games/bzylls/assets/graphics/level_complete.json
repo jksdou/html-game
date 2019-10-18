@@ -1,0 +1,59 @@
+﻿{"frames": {
+
+"Home_Button0000":
+{
+	"frame": {"x":189,"y":243,"w":93,"h":102},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":102},
+	"sourceSize": {"w":93,"h":102}
+},
+"LevelComplete_Board0000":
+{
+	"frame": {"x":1,"y":1,"w":458,"h":241},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":458,"h":241},
+	"sourceSize": {"w":458,"h":241}
+},
+"NextLevel_Button0000":
+{
+	"frame": {"x":1,"y":243,"w":93,"h":102},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":102},
+	"sourceSize": {"w":93,"h":102}
+},
+"NoStar0000":
+{
+	"frame": {"x":283,"y":243,"w":86,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":86,"h":80},
+	"sourceSize": {"w":86,"h":80}
+},
+"Restart_Button0000":
+{
+	"frame": {"x":95,"y":243,"w":93,"h":102},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":93,"h":102},
+	"sourceSize": {"w":93,"h":102}
+},
+"Star0000":
+{
+	"frame": {"x":370,"y":243,"w":67,"h":63},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":67,"h":63},
+	"sourceSize": {"w":67,"h":63}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "level_complete.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

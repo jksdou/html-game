@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title>圆点</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="full-screen" content="yes">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-fullscreen" content="true">
+<meta name="360-fullscreen" content="true">
+<style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f6f6f6;
+        }
+        #gameCanvas {
+            position: absolute;
+        }
+        .hint {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -165px 0 0 -170px;
+            z-index: 100;
+            display: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+
+<script type="text/javascript">
+            window.gameLangs = ['en', 'zh', 'es', 'fr', 'it', 'pt', 'ru', 'tr'];
+            window.gameJS = [
+            'http://lib.sinaapp.com/js/jquery/1.8.1/jquery.min.js'
+            ];
+            window.gameOnLoadScript = "startGame();";
+
+        </script><script type="text/javascript" src="./assets/softgames-1.1.js"></script><script type="text/javascript" src="./assets/sg.hooks.js"></script><script>
+        var lang, isStarted = false;
+        var startGame = function () {
+            lang = SG.lang; //langs
+            SG_Hooks.setOrientationHandler(function () {
+
+            });
+            SG_Hooks.setResizeHandler(function () {
+
+            });
+
+            if (window.orientation != null) {
+                checkOrientation();
+                $(window).bind('resize', checkOrientation);
+            } else {
+                var s = document.createElement('script');
+                s.src = 'main.js';
+                document.body.appendChild(s);
+            }
+        };
+        var checkOrientation = function () {
+            var orientation = 'Portrait';
+            var screenWidth = $(window).width();
+            var screenHeight = $(window).height();
+            if (screenWidth > screenHeight) {
+                orientation = 'Landscape';
+            }
+
+            if (orientation == 'Landscape') {
+                $('#gameCanvas').css('visibility', 'hidden');
+                $('.hint').css('display', 'block');
+            } else {
+                $('#gameCanvas').css('visibility', 'visible');
+                $('.hint').css('display', 'none');
+
+                if (!isStarted) {
+                    isStarted = true;
+                    var s = document.createElement('script');
+                    s.src = 'main.js';
+                    document.body.appendChild(s);
+                }
+                setTimeout (function () {
+                    window.scrollTo(0, 1);
+                }, 10);
+            }
+        };
+    </script>
+</head>
+<body >
+<img src="res/tip_rotate.png" alt="" class="hint"><canvas id="gameCanvas" width="320" height="418"></canvas><script src="frameworks/cocos2d-html5/CCBoot.js"></script><!--<script src="main.js"></script>-->
+</body>
+</html>

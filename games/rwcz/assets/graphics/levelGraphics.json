@@ -1,0 +1,115 @@
+﻿{"frames": {
+
+"BgTile_Dark0000":
+{
+	"frame": {"x":301,"y":103,"w":80,"h":80},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
+	"sourceSize": {"w":80,"h":80}
+},
+"BgTile_Light0000":
+{
+	"frame": {"x":456,"y":103,"w":70,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":70,"h":70},
+	"sourceSize": {"w":70,"h":70}
+},
+"EdgeGrass0000":
+{
+	"frame": {"x":1,"y":1,"w":969,"h":100},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":969,"h":100},
+	"sourceSize": {"w":969,"h":100}
+},
+"GroundTile_10000":
+{
+	"frame": {"x":76,"y":103,"w":73,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":73,"h":98},
+	"sourceSize": {"w":73,"h":98}
+},
+"GroundTile_20000":
+{
+	"frame": {"x":226,"y":103,"w":73,"h":90},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":73,"h":90},
+	"sourceSize": {"w":73,"h":90}
+},
+"GroundTile_30000":
+{
+	"frame": {"x":1,"y":103,"w":73,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":73,"h":98},
+	"sourceSize": {"w":73,"h":98}
+},
+"Pipe_Blue0000":
+{
+	"frame": {"x":528,"y":103,"w":51,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":38},
+	"sourceSize": {"w":51,"h":38}
+},
+"Pipe_Red0000":
+{
+	"frame": {"x":581,"y":103,"w":51,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":38},
+	"sourceSize": {"w":51,"h":38}
+},
+"Pipe_Yellow0000":
+{
+	"frame": {"x":634,"y":103,"w":51,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":38},
+	"sourceSize": {"w":51,"h":38}
+},
+"SadBubble0000":
+{
+	"frame": {"x":972,"y":1,"w":43,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":54},
+	"sourceSize": {"w":43,"h":54}
+},
+"SandTile0000":
+{
+	"frame": {"x":151,"y":103,"w":73,"h":93},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":73,"h":93},
+	"sourceSize": {"w":73,"h":93}
+},
+"WaterBubble0000":
+{
+	"frame": {"x":972,"y":57,"w":43,"h":54},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":54},
+	"sourceSize": {"w":43,"h":54}
+},
+"WaterTile0000":
+{
+	"frame": {"x":383,"y":103,"w":71,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":71,"h":70},
+	"sourceSize": {"w":71,"h":70}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "levelGraphics.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1"
+}
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="robots" content="all" />
+<meta name="author" content="Tencent-TGideas" />
+<meta name="Copyright" content="Tencent" />
+<title>暴打小苹果！- 魂之猎手</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+<style>
+html, body { margin:0; padding:0; text-align: center; background-color:#000000;width:100%;height:100%;}
+p{margin:0;}
+.orient,
+.layer{position:absolute;top:0;left:0;width:100%;height:100%;color:#fff;font-size:21px;display:none;
+background: rgb(15,35,70); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(15,35,70,1) 0%, rgba(48,108,160,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(15,35,70,1)), color-stop(100%,rgba(48,108,160,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(15,35,70,1) 0%,rgba(48,108,160,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(15,35,70,1) 0%,rgba(48,108,160,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(15,35,70,1) 0%,rgba(48,108,160,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(15,35,70,1) 0%,rgba(48,108,160,1) 100%);
+}
+.orient p{position:absolute;width:100%;height:30px;text-align:center;left:0;top:50%;margin-top:-15px;}
+.lclose{position:absolute;top:15px;right:15px;width:12px;height:12px;line-height:100px;overflow:hidden;background:url(images/layer.png) no-repeat top right;background-size:250px 141px;}
+.layer .cnt{width:100%;max-width:640px;margin:0 auto;}
+.lvideo{width:265px;height:167px;margin:8px auto 10px;}
+.llogo{width:110px;height:78px;margin:25px auto 15px;background:url(images/layer.png) no-repeat;background-size:250px 141px;}
+.lsogan{width:230px;height:62px;margin:0 auto;line-height:200px;overflow:hidden;background:url(images/layer.png) no-repeat 0 -79px;background-size:250px 141px;}
+.lnote{font-size:14px;color:#84b1da;}
+.lbtn{display:block;vertical-align:top;width:107px;height:31px;line-height:100px;overflow:hidden;margin:6px auto;background:url(images/layer.png) no-repeat -119px 0;background-size:250px 141px;}
+</style>
+</head>
+<body onload="initApp()">
+
+<div class="orient" id="orient"><p>请在竖屏情况下使用</p></div>
+<!-- 视频层 -->
+<!-- <div class="layer" id="layer"><div class="cnt">
+	<div class="llogo"></div>
+	<p class="lsogan">参与无双内测  体验无双动作</p>
+	<div class="lvideo" id="lvideo"></div>
+	<p class="lnote">建议在wifi环境下播放</p>
+	<p><a class="lbtn" target="_blank" href="http://mp.weixin.qq.com/s?__biz=MjM5MTQ1OTE0MQ==&mid=201145397&idx=1&sn=1364d06b945110b6a7b34a1d080ff9e7#rd" onclick="pgvSendClick({hottag:'act.a20140721hds.btngetcode'});">抢码 go</a></p>
+	<span class="lclose" id="lclose">关闭</span>
+</div></div> -->
+
+<div id="loadicon" style="margin-top: 300px" >
+     <img src="data:image/gif;base64,R0lGODlhEAAQALMNAD8/P7+/vyoqKlVVVX9/fxUVFUBAQGBgYMDAwC8vL5CQkP///wAAAP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAANACwAAAAAEAAQAAAEO5DJSau9OOvNex0IMnDIsiCkiW6g6BmKYlBFkhSUEgQKlQCARG6nEBwOgl+QApMdCIRD7YZ5RjlGpCUCACH5BAUAAA0ALAAAAgAOAA4AAAQ6kLGB0JA4M7QW0hrngRllkYyhKAYqKUGguAws0ypLS8JxCLQDgXAIDg+FRKIA6v0SAECCBpXSkstMBAAh+QQFAAANACwAAAAACgAQAAAEOJDJORAac6K1kDSKYmydpASBUl0mqmRfaGTCcQgwcxDEke+9XO2WkxQSiUIuAQAkls0n7JgsWq8RACH5BAUAAA0ALAAAAAAOAA4AAAQ6kMlplDIzTxWC0oxwHALnDQgySAdBHNWFLAvCukc215JIZihVIZEogDIJACBxnCSXTcmwGK1ar1hrBAAh+QQFAAANACwAAAAAEAAKAAAEN5DJKc4RM+tDyNFTkSQF5xmKYmQJACTVpQSBwrpJNteZSGYoFWjIGCAQA2IGsVgglBOmEyoxIiMAIfkEBQAADQAsAgAAAA4ADgAABDmQSVZSKjPPBEDSGucJxyGA1XUQxAFma/tOpDlnhqIYN6MEAUXvF+zldrMBAjHoIRYLhBMqvSmZkggAIfkEBQAADQAsBgAAAAoAEAAABDeQyUmrnSWlYhMASfeFVbZdjHAcgnUQxOHCcqWylKEohqUEAYVkgEAMfkEJYrFA6HhKJsJCNFoiACH5BAUAAA0ALAIAAgAOAA4AAAQ3kMlJq704611SKloCAEk4lln3DQgyUMJxCBKyLAh1EMRR3wiDQmHY9SQslyIQUMRmlmVTIyRaIgA7"/>
+</div>
+<script src="lib/tgcreate.js"></script>
+<script src="js/soundjs-0.5.2.min.js"></script>
+
+<script src="js/mfminigamev4.js"></script>
+<script language="javascript">
+
+//横屏提示
+function orientationChange(){
+	if(window.orientation==90||window.orientation==-90){document.getElementById("orient").style.display="block"}else{document.getElementById("orient").style.display="none"}
+}
+orientationChange();
+window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", orientationChange, false); 
+
+// if(location.hash==="#site"){ pgvSendClick({hottag:'act.a20140721hds.qrcode'}); }
+// if(location.hash==="#post"){ pgvSendClick({hottag:'act.a20140721hds.frompost'}); }
+
+
+//关闭浮层
+// document.getElementById("lclose").onClick = function(){
+// 	document.getElementById("layer").style.display = "none";
+// 	document.getElementById("lvideo").innerHTML = "";
+// }
+
+//视频
+// function playVideo(){
+// 	var video = new tvp.VideoInfo();
+// 	video.setVid("i01334oyvim");
+// 	video.setTitle("街机风闯关动作网游《魂之猎手》无双内测");
+// 	var player = new tvp.Player();
+// 	player.create({
+// 		width:265,
+// 		height:167,
+// 		video:video,
+// 		isVodFlashShowSearchBar:0,
+// 		isVodFlashShowEnd:0,
+// 		vodFlashSkin:"http://imgcache.qq.com/minivideo_v1/vd/res/skins/TencentPlayerMiniSkin.swf",
+// 		modId:"lvideo",
+// 		onplaying:function(){/*pgvSendClick({hottag:'act.a20140721hds.playvideo'});*/}
+// 	});
+// }
+
+function onShowVideo(){
+	// playVideo();
+	document.getElementById("layer").style.display = "block";
+	// pgvSendClick({hottag:'act.a20140721hds.showlayer'});
+}
+
+// function onBridgeReady() {
+//         //转发朋友圈
+//         WeixinJSBridge.on("menu:share:timeline", function(e) {
+//             var url = 'http://mf.qq.com/act/a20140721hds/index.html';
+//             var data = {
+//                 img_url: "images/logo_s.jpg",
+//                 img_width: "244",
+//                 img_height: "120",
+//                 link: url,
+//                 //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+//                 desc:"30秒决战小苹果，一大波小苹果来袭，拳力出击！",
+//                 title: "暴击"+GD.GETNUM+"个小苹果，最高连击"+GD.MAXHITUM+"："+GD.COMMENT
+//             };
+//             WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+// 				pgvSendClick({hottag:'act.a20140721hds.shareTimeline'});
+//                 WeixinJSBridge.log(res.err_msg);
+//             });
+//         });
+//         //同步到微博
+//         WeixinJSBridge.on("menu:share:weibo", function() {
+//             var url = 'http://mf.qq.com/act/a20140721hds/index.html';
+//             WeixinJSBridge.invoke("shareWeibo", {
+//                 "content": GD.SHAREWORD,
+//                 "url": url
+//             }, function(res) {
+//                 WeixinJSBridge.log(res.err_msg);
+//             });
+//         });
+//         //分享给朋友
+//         WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+//             var url = 'http://mf.qq.com/act/a20140721hds/index.html';
+//             WeixinJSBridge.invoke("sendAppMessage", {
+//                 img_url: "images/logo_s.jpg",
+//                 img_width: "244",
+//                 img_height: "120",
+//                 link: url,
+//                 title:"30秒决战小苹果，一大波小苹果来袭，拳力出击！",
+//                 desc: "暴击"+GD.GETNUM+"个小苹果，最高连击"+GD.MAXHITUM+"："+GD.COMMENT
+//             }, function(res) {                
+// 				pgvSendClick({hottag:'act.a20140721hds.sharemessage'});
+// 				WeixinJSBridge.log(res.err_msg)
+//             });
+//         });
+//     };
+//     try{
+//         document.addEventListener('WeixinJSBridgeReady', function() {
+//             onBridgeReady();
+//         });
+//     }catch(e){}
+</script>
+<canvas id="canvas" width="630" height="992" style="background-color:#000000"></canvas>
+
+</body>
+
+</html><!--[if !IE]>|xGv00|6f6ac6b6ebb1bfbc43c764deab2fa7ee<![endif]-->

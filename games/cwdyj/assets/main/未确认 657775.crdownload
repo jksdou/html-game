@@ -1,0 +1,115 @@
+[en]
+save="RESCUE"
+pets="PETS"
+help1="Your Goal: Move your pets to the bottom to rescue them! \n\n\n\n\n\n Tap on at least two or more blocks to remove them!"
+gameover="OH NO! YOU DIDN´T RESCUE ENOUGH PETS!"
+gameend="CONGRATULATIONS! \n All pets were rescued."
+
+enfx1=NICE!
+enfx2=COOL!
+enfx3=GREAT!
+enfx4=AWESOME!
+
+[cn]
+save="营救"
+pets="宠物"
+help1="目标：移动宠物到屏幕底部来营救它们! \n\n\n\n\n\n 点击两块或以上的同色方块消除它们！"
+gameover="糟糕，没有营救到足够的宠物！"
+gameend="恭喜! \n 所有宠物营救成功。"
+
+enfx1=不错!
+enfx2=酷!
+enfx3=太酷了!
+enfx4=牛逼!
+
+
+[de]
+save="RETTE"
+pets="TIERE"
+help1="Dein Ziel: Hilf den Tieren dabei den Boden zu erreichen! \n\n\n\n\n\n Berühre zwei oder mehr Blocks, um diese zu entfernen!"
+gameover="OH, NEIN! ES WURDEN NICHT GENÜGEND TIERE GERETTET!"
+gameend="SUPER! DU HAST ALLE TIERE GERETTET!"
+
+enfx1=GUT!
+enfx2=TOLL!
+enfx3=SUPER!
+enfx4=FANTASTISCH!
+
+
+[fr]
+save="SAUVER"
+pets="PETITS ANIMAUX"
+help1="Amène les petits animaux vers le bas pour les sauver! \n\n\n\n\n\n Réunissez 2 blocs ou plus pour les enlever!"
+gameover="TROP PEU D’ANIMAUX SAUVES"
+gameend="FÉLICITATIONS ! Tous les petits animaux sont sauvés."
+
+enfx1=BIEN!
+enfx2=WOW!
+enfx3=GÈNIAL!
+enfx4=FANTASTIQUE!
+
+
+[es]
+save="RESCATE"
+pets="MASCOTAS"
+help1="Tu objetivo: ayudar a tus mascotas a escapar moviéndolas hasta el fondo! \n\n\n\n\n\n ¡Junta y toca 2 o más bloques para eliminarlos!"
+gameover="¡OH NO! ¡NO RESCATASTE SUFICIENTES MASCOTAS!"
+gameend="¡ENHORABUENA! Todas las mascotas han sido rescatadas."
+
+enfx1=BUENO!
+enfx2=NIZA!
+enfx3=WOW!
+enfx4=IMPRESIONANTE!
+
+
+[it]
+save="SALVATAGGIO"
+pets="ANIMALI"
+help1="Il tuo obiettivo: spostare i vostri animali domestici al fondo per salvarli! \n\n\n\n\n\n Combina almeno due blocchi per eliminarli!"
+gameover="OH NO! ALCUNI ANIMALI NON sono stati salvati!"
+gameend="CONGRATULAZIONI! Tutti gli animali sono stati salvati."
+
+enfx1=BUONA!
+enfx2=NIZZA!
+enfx3=OTTIMO!
+enfx4=IMPRESSIONANTE!
+
+
+[pt]
+save="RESCUE"
+pets="MASCOTES"
+help1="Sua meta: Mova seus animais de estimação para o fundo para resgatá-los! \n\n\n\n\n\n Combine pelo menos dois blocos para removê-los!"
+gameover="OH NÃO! Alguns animais de estimação não foram resgatados!"
+gameend="PARABÉNS! Todos os animais foram resgatados."
+
+enfx1=BOA!
+enfx2=AGRADÁVEL!
+enfx3=WOW!
+enfx4=IMPRESSIONANTE!
+
+
+[ru]
+save="СПАСТИ"
+pets="ЖИВОТНЫХ"
+help1="Твоя цель - помочь животным спастись, подняв их на самый верх! \n\n\n\n\n\n Найди и выдели 2 одинаковых блока, чтобы их удалить!"
+gameover="О НЕТ! ТЫ НЕ СПАС ЖИВОТНЫХ!"
+gameend="ПОЗДРАВЛЯЮ! Все животные спасены."
+
+enfx1=ХОРОШО!
+enfx2=ЗДОРОВО!
+enfx3=ОТЛИЧНО!
+enfx4=НЕВЕРОЯТНО!
+
+
+[tk]
+save="KURTAR"
+pets="EVCİL HAYVANLAR"
+help1="Kurtarmak için evcil hayvanları aşağıya indir! \n\n\n\n\n\n Yok etmek için 2 veya 2’den fazla bloğu eşleştir!"
+gameover="ÇOK AZ EVCİL HAYVAN KURTARILDI"
+gameend="TEBRİKLER! Tüm evcil hayvanlar kurtarıldı."
+
+enfx1=İYİ!
+enfx2=GÜZEL BİR!
+enfx3=WOW!
+enfx4=KUSURSUZ!
+

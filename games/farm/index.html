@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>农场连连看</title>
+
+	<!-- there is the engine js. -->
+	<script type="text/javascript" charset="UTF-8" src="js/Core.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/ResourceManager.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/ResourceAudio.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/ResourceJs.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/ResourceImage.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/Tween.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/GameBase.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/Sprite.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/Math.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/JSON.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/ControlManager.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/Music.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/SpilAPI.js"></script> 
+</head>
+<body style="margin:0px;padding:0px;-webkit-user-select: none;">
+	<!-- there are the defines. -->
+	<script type="text/javascript" charset="UTF-8" src="js/StateDefs.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/UiDefs.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/GameDefs.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/GameText.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/SearchSpecialPath.js"></script>
+
+	<!-- div manager -->
+	<script type="text/javascript" charset="UTF-8" src="js/DivManager.js"></script>
+	<!-- game loop  -->
+	<script type="text/javascript" charset="UTF-8" src="js/BaseState.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/pregame.js"></script>
+	
+	<!-- there are game play manager. -->
+	<script type="text/javascript" charset="UTF-8" src="js/Pet.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/PetManager.js"></script>
+		
+	<!-- there all ui display object -->
+	<script type="text/javascript" charset="UTF-8" src="js/UIButton.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/UIMenu.js"></script>
+	<!-- there are all game state. -->
+	<script type="text/javascript" charset="UTF-8" src="js/game.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/LogoState.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/LoadingState.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/MainmenuState.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/ResetGame.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/GameState.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/GameOverState.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/NextLevel.js"></script>
+	<script type="text/javascript" charset="UTF-8" src="js/GameWin.js"></script>
+	<div id="mainDiv" style="overflow:hidden; position:absolute; left:50%; top: -20px;margin-left:-160px; width:320px; height:480px; z-index:20"></div>
+	<div id="orientationDiv" style="background:url(imgs/OrientationWarning.png)  no-repeat center;position:absolute; width:480px; height:320px"></div>
+	<script type="text/javascript"></script>
+    <style>
+	body{ background:#ca7e1d;}
+	</style>
+</body>
+</html>
+<script type="text/javascript" src="js/gamehub.js"></script>
+
+<script type="text/javascript">
+  var sid = "c1301317718";
+  Gamehub.Settings.gameName = "DreamFarmLink";
+  if (typeof StartGame == 'function') {
+    StartGame();
+  }
+  window.scrollTo(0, 1);
+</script>

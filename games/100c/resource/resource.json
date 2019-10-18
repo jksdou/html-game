@@ -1,0 +1,54 @@
+{
+"resources":
+	[
+	    {"name":"description","type":"json","url":"config/description.json"},
+        {"name":"mandown","type":"starlingswf_sheet","url":"assets/mandown100.json"},
+        {"name":"mandown_swf","type":"json","url":"assets/mandown100_swf.json"},
+        {"name":"uiframe","type":"image","url":"assets/big_images/img_ui.png"},
+        {"name":"big_image","type":"starlingswf_sheet","url":"assets/bigImg.json"},
+        {"name":"Main","type":"image","url":"assets/Main.png"},
+        {"name":"line","type":"image","url":"assets/line.png"},
+        {"name":"share_weixin","type":"image","url":"assets/share_weixin.png"},
+        {"name":"tip_arrow","type":"image","url":"assets/arrow.png"},
+        {
+            "url": "assets/sound/sound_dead1.mp3",
+            "type": "sound",
+            "name": "sound_dead1"
+        },
+        {
+            "url": "assets/sound/sound_dead2.mp3",
+            "type": "sound",
+            "name": "sound_dead2"
+        },
+        {
+            "url": "assets/sound/sound_hurt.mp3",
+            "type": "sound",
+            "name": "sound_hurt"
+        },
+        {
+            "url": "assets/sound/sound_jump.mp3",
+            "type": "sound",
+            "name": "sound_jump"
+        },
+        {
+            "url": "assets/sound/sound_lr.mp3",
+            "type": "sound",
+            "name": "sound_lr"
+        },
+        {
+            "url": "assets/sound/sound_roll.mp3",
+            "type": "sound",
+            "name": "sound_roll"
+        },
+        {
+            "url": "assets/sound/sound_touch.mp3",
+            "type": "sound",
+            "name": "sound_touch"
+        }
+    ],
+
+"groups":
+	[
+        {"name":"starlingswf","keys":"mandown,mandown_swf,uiframe,big_image,Main,line,share_weixin,sound_dead1,sound_dead2,sound_hurt,sound_jump,sound_lr,sound_roll,sound_touch,tip_arrow"}
+    ]
+}

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>最新虐心小游戏废柴勇士，听说没人能过37秒。</title>
+    <script type="text/javascript" src="cocos2d-js-v3.0-lite.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/ismobile.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/isIOSDevice.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/PlayScene.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/resource.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="src/WelcomeScene.js" charset="UTF-8"></script>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style = "background-color: #000">
+<canvas id="gameCanvas" width="480" height="800"></canvas>
+<script type="text/javascript">
+    window.onload = function() {
+        cc.game.onStart = function () {
+            cc.view.setDesignResolutionSize(480, 800, cc.ResolutionPolicy.SHOW_ALL);
+            scaleValue1 = cc.director.getWinSize();
+            console.log("scaleValue:" + scaleValue1.width);
+            cc.view.resizeWithBrowserSize(true);
+            //load resources
+            var texture2d = self._texture2d = new cc.Texture2D();
+            texture2d.initWithElement(res.huo_png);
+            cc.LoaderScene.preload(g_resources, function () {
+                cc.director.runScene(new WelcomeScene());
+            }, this);
+
+        };
+        cc.game.run("gameCanvas");
+    };
+
+</script>
+<script language=javascript>
+  //       var game9g = new Game9G("fcys");
+  //       game9g.shareData.title = "废柴勇士";
+  //       game9g.shareData.content = "最新虐心小游戏废柴勇士，听说没人能过37秒。";
+
+		// function goHome(){
+		// 	window.location=game9g.homeurl;
+		// }
+		// function clickMore(){
+		// 	 window.location=game9g.moreurl;
+		// }
+		// function dp_share(){
+		// 	game9g.share();
+		// }
+		// function dp_Ranking(){
+		// 	window.location=game9g.homeurl;
+		// }
+
+		// function showAd(){
+		// }
+		// function hideAd(){
+		// }
+		// function dp_submitScore(score){
+		// 	if(score>0){
+		// 		game9g.score =parseInt(score);
+		// 		game9g.scoreName = "坚持了"+score+"秒";
+		// 		game9g.shareData.title ="我在《废柴勇士》中坚持了"+score+"秒，听说没人能过37秒，快来挑战吧！-9G游戏";
+		// 		game9g.utils.shareConfirm("你在《废柴勇士》中坚持了"+score+"秒,通知一下小伙伴吧!",dp_share);
+		// 	}
+		// }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+body {
+	overflow:hidden;
+	padding:0px;
+	margin:0px;
+	text-align:center;
+	overflow: hidden;
+	background-color:#000000;
+}
+
+#full {
+	position:fixed;
+	top:0px;
+	left:0px
+}

@@ -1,0 +1,99 @@
+﻿{
+	"README": "Please use JSON Validator after each change this file. It will help to find errors.",
+	"JSON_VALIDATOR_URL": "http://jsonlint.com/",
+
+	"en": {
+		"level": "Level",
+		"level_complete": "Level Complete!",
+		"octopus": {
+			"title": "Octopus",
+			"description": "He is happy when all his hands are busy. Drag to move around. Place on another creature to swap."
+		},
+		"crab": {
+			"title": "Crab",
+			"description": "He has inflexible claws. Tap to rotate. Drag to move around."
+		},
+		"manta_ray": {
+			"title": "Manta Ray",
+			"description": "He is always happy. But others are sad around him. Drag to move around."
+		},
+		"needlefish": {
+			"title": "Needlefish",
+			"description": "He is happy when there is nobody around. Drag to move around."
+		},
+		"happy_area": {
+			"title": "Happy Cell",
+			"description": "Anyone in this cell is happy, no matter what is going on around."
+		},
+		"jellyfish": {
+			"title": "Jellyfish",
+			"description": "Can join other jellies only. Drag to move around."
+		}
+	},	
+
+	"cn": {
+		"level": "关卡",
+		"level_complete": "过关！",
+		"octopus": {
+			"title": "八爪鱼",
+			"description": "拖动移动八爪鱼\n当他的手都很忙的时候\n他会很高兴！"
+		},
+		"crab": {
+			"title": "螃蟹",
+			"description": "拖动移动螃蟹\n点击可以旋转他的爪子！"
+		},
+		"manta_ray": {
+			"title": "魔鬼鱼",
+			"description": "他总是很高兴\n但在他旁边的人却很伤心\n拖动移动他！"
+		},
+		"needlefish": {
+			"title": "颌针鱼",
+			"description": "当他身边没人时\n他会很高兴的\n拖动移动他！"
+		},
+		"happy_area": {
+			"title": "快乐的细胞",
+			"description": "不管周围有什么\n谁在这个细胞里都会很快乐！"
+		},
+		"jellyfish": {
+			"title": "水母",
+			"description": "可以加入其他的水母\n拖动移动他！"
+		}
+	},	
+
+	
+	"ru": {
+		"level": "Уровень",
+		"level_complete": "Уровень пройден!",
+		"octopus": {
+			"title": "Осьминог",
+			"description": "Он счастлив, когда все его щупальца заняты. Нажми на него, чтобы перетащить."
+		},
+		"crab": {
+			"title": "Краб",
+			"description": "У него неподвижные клешни, но при нажатии он может поворачиваться. Нажми на него, чтобы перетащить."
+		},
+		"manta_ray": {
+			"title": "Скат",
+			"description": "Он всегда счастлив, но жители соседних ячеек недолюбливают его. Нажми на него, чтобы перетащить."
+		},
+		"needlefish": {
+			"title": "Рыба-еж",
+			"description": "Она счастлива, когда соседние ячейки пустые. Нажми на нее, чтобы перетащить."
+		},
+		"happy_area": {
+			"title": "Счастливая ячейка",
+			"description": "Любой счастлив на этой ячейке, и не важно, кто будет рядом."
+		},
+		"jellyfish": {
+			"title": "Медуза",
+			"description": "Любит только себе подобных. Нажми на нее, чтобы перетащить."
+		}
+	},
+
+	"de": ["Level zu\nbeenden!"],
+	"es": ["Hola\namigo!"],
+	"fr": ["Niveau\nComplet!"],
+	"it": ["Hola\namigo!"],
+	"pt": ["Hola\namigo!"],
+	"tr": ["Hola\namigo!"]
+}

@@ -1,0 +1,490 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta charset="utf-8">
+	<meta name="keywords" content="iPhone,Android,iPad,game,html5 game,puzzle game,puzzle,Puzzle,flick,card,postman,post,action,Flash,Flash for iPhone,html5,iPod touch,iPad">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta equiv="Expires" content="0">
+<title>你听老师的话吗？好好写字</title>
+<link rel="stylesheet" href="./css/18/main.css">
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/count.js"></script>
+<script type="text/javascript" src="./js/18/createjs.js"></script>
+<script type="text/javascript">
+		var _config = {}; _config['isSite'] = './';_config["isCount"] = "./";_config["isSites"] = "http://app.46465.com/";
+		var _con = {}; _con["num"] = 18;
+</script>
+<style type="text/css">
+ /*html{
+      max-width: 600px;
+      position: absolute;
+      max-height: 100%;
+    }*/
+    body{
+        /*max-width: 600px;*/
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        -webkit-user-select: none;
+        /**/
+        /*background-color: #000;*/
+    }
+    .bodybg{
+        background: url(./vapp/18/home.jpg) center center;
+        background-size: 100%;
+    }
+    img, ul, li, a{
+        display: block;
+    }
+    .start, .game, .result, .wxWindow{
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        /*-webkit-transition: all .6s ease;*/
+        z-index: 1;
+        /*background-color: rgba(0,0,0,.6);*/
+        
+    }
+    a{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+    .hide {
+        visibility: hidden;
+        /*display: none;*/
+        /*top: 0%;*/
+        overflow: hidden;
+        /*width: 0;*/
+        /*height: 100%;*/
+        min-height: 100% !important;
+        max-height: 100% !important;
+        z-index: 0 !important;
+    }
+    .body{
+      position: relative;
+      width: 100%;
+      height: 94.2%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .bg0 {
+        background: url(./vapp/18/bg-1.jpg) center bottom;
+        background-size: 100%;
+    }
+    .bg1 {
+        background: url(./vapp/18/bg-2.jpg) center bottom;
+        background-size: 100%;
+    }
+    .bg2 {
+        background: url(./vapp/18/bg-3.jpg) center bottom;
+        background-size: 100%;
+    }
+    .bg3 {
+        background: url(./vapp/18/bg-4.jpg) center bottom;
+        background-size: 100%;
+    }
+    .bg4 {
+        background: url(./vapp/18/bg-5.jpg) center bottom;
+        background-size: 100%;
+    }
+    .start{
+        width: 100%;
+        height: 100%;
+        background: url(./vapp/18/home.jpg) center center;
+        background-size: 100%;
+    }
+    .help{
+      position: absolute;
+      left: 25%;
+      bottom: 38%;
+      width: 50%;
+    }
+    .help img{
+      width: 100%;
+    }
+    .help .finger{
+        position: absolute;
+        left:18%;
+        bottom: 23%;
+        height: 100%;
+        width: 30%;
+        top: 0;
+        background: url(./vapp/18/finger.png) center center no-repeat;
+        background-size: 70% auto;
+        -webkit-animation: flash 2s infinite linear;
+    }
+    @-webkit-keyframes flash {
+        0% { -webkit-transform: translate3d(0, -10%, 0); opacity: 1;}
+        50% { -webkit-transform: translate3d(100%, -10%, 0); opacity: 0; }
+        51% { -webkit-transform: translate3d(0%, 56%, 0); opacity: 1;}
+        100% { -webkit-transform: translate3d(100%, 56%, 0); opacity: 0;}
+    }
+    .start .btn{
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      bottom: 15%;
+    }
+    .start .btnmore{
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      bottom: 3%;
+    }
+      #game2{
+          width: 100%;
+          height: 100%;
+          /*background: url(./vapp/18/bg-5.jpg) center bottom;
+          background-size: 100%;*/
+      }
+      .game .title{
+        position: absolute;
+        top:0;
+        width: 100%;
+      }
+      .game .title .time{
+        top: 30%;
+        left: 45%;
+        width: 20%;
+        text-align: center;
+        display: block;
+        position: absolute;
+      }
+      .game .title .score{
+        top: 30%;
+        left: 78%;
+        width: 20%;
+        text-align: center;
+        display: block;
+        position: absolute;
+      }
+      .result{
+          width: 100%;
+          height: 100%;
+        /*  background: url(./vapp/18/r-bg.png) center top;*/
+          background-size: 100%;
+          color: #000000;
+          /*font-weight: bold;*/
+      }
+
+      .result .btn{
+          position: absolute;
+          width: 80%;
+          top: 63%;
+          left: 10%;
+          z-index: 10;
+      }
+      .win .btn{}
+      .lose .btn{
+          top: 38%;
+      }
+      .result .btn>div{
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 47%;
+          z-index: 10;
+      }
+      .result .btn .b1{
+          left: 0;
+      }
+      .result .btn .b2{
+          right: 0;
+      }
+      .result .share-btn{
+          position: absolute;
+          width: 90%;
+          bottom: 8%;
+          height: auto;
+          overflow: hidden;
+          z-index: 10;
+          /* -webkit-transform: translate3d(-100%, 0, 0); */
+          /*-webkit-transition: all .6s ease;*/
+          left: 5%;
+      }
+      .result .score{
+        position: absolute;
+        width: 100%;
+        font-size: 2em;
+        text-align: center;
+        color: #000000;
+        top: 24%;
+        /*background: url(./vapp/18/scorebg.png) center center;*/
+        /*background-size: auto 100%;*/
+      }
+      .result .max-score{
+        position: absolute;
+        width: 100%;
+        font-size: 1.2rem;
+        text-align: center;
+        color: #000000;
+        /* top: 44%; */
+        /* background: url(./vapp/18/scorebg.png) center center; */
+        /* background-size: auto 100%; */
+      }
+      .result .text{
+        position: absolute;
+        width: 85%;
+        font-size: 1em;
+        text-align: center;
+        color: #000000;
+        left: 10%;
+        top: 51%;
+        /*background: url(./vapp/18/scorebg.png) center center;*/
+        /*background-size: auto 100%;*/
+      }
+      .result .text2{
+        position: absolute;
+        width: 85%;
+        font-size: .9em;
+        text-align: center;
+        color: #000000;
+        left: 8%;
+        bottom: 18%;
+        /*background: url(./vapp/18/scorebg.png) center center;*/
+        /*background-size: auto 100%;*/
+      }
+      .result .score{
+        position: absolute;
+        width: 30%;
+        left: 35%;
+        font-size: 2em;
+        text-align: center;
+        color: #000000;
+        top: 22%;
+        /*background: url(./vapp/18/scorebg.png) center center;*/
+        /*background-size: auto 100%;*/
+      }
+      .result .scorebox{
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          display: -webkit-box;
+          -webkit-box-orient: horizontal;
+          -webkit-box-pack: center;
+          -webkit-box-align: center;
+          text-align: center;
+      }
+      .result .scorebox .title{
+          width: 100%;
+          -webkit-transform: translate3d(-100%, 0, 0);
+          font-size: 1.2rem;
+      }
+      .result .scorebox .s{
+          width: 100%;
+          -webkit-transform: translate3d(-100%, 0, 0);
+      }
+      .win .share-btn{
+
+      }
+      .lose .share-btn{
+          top: 48%;
+      }
+      .result .share-btn.act{
+          -webkit-transform: translate3d(0, 0, 0);
+      }
+      .result .share-btn .sbtn{
+          /*padding: 0 6%;*/
+          display: -webkit-box;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          box-sizing: border-box;
+          z-index: 10;
+      }
+      .result .share-btn .b{
+          -webkit-box-flex: 1;
+      }
+      .loading {
+          width: 15%;
+          position: absolute;
+          top: 50%;
+          left: 42.5%;
+          -webkit-animation: loading 3s infinite linear;
+      }
+
+      @-webkit-keyframes loading {
+          from {
+              -webkit-transform: rotate(0deg);
+          }
+          to {
+              -webkit-transform: rotate(360deg);
+          }
+      }
+      .hidden{
+        opacity: 0;
+      }
+	 #share-wx{
+		background:rgba(0,0,0,0.8);
+		position:absolute;top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		z-index:10000;
+		display:none;
+	 }
+	 #wx-qr{
+		background:rgba(0,0,0,0.8);
+		position:absolute;top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		z-index:10000;
+		display:none;
+	}
+	.lis{overflow: hidden;width: 100%;z-index: 99999;}
+	.lis a{display: block;position: relative;width:99.9%;color:#13addf;font-size:18px;text-decoration: none;background:#606783;text-align: center;opacity: 0.8;line-height:30px;font-weight: bold;font-family:"微软雅黑"；}
+	.lis a img{position: relative;top: -1px;display: inline;}
+</style>
+</head>
+ <body onload="startCutting();">
+ <script type="text/javascript" src="./js/code.js"></script>
+<!--{-----------------------------------------------}-->
+<script type="text/javascript">
+			var isCount = 0;
+		if(isCount==1){openCount(18);}
+</script>
+ <div class="loading"><img src="./vapp/18/loading.png" width="100%"></div>
+    <div class="body hide">
+      <img src="./vapp/18/001.jpg" style="position:absolute; opacity:0; width:0; height:0;" />
+      <div class="start">
+        <div class="help">
+          <img src="./vapp/18/help.png">
+          <div class="finger"></div>
+        </div>
+        <img src="./vapp/18/homebtn.png" class="btn" onclick="startbtn()">
+        <img src="./vapp/18/homebtn2.png" class="btnmore" onclick="goHome()">
+      </div>
+      <div id="game2" class="game hide">
+        <div class="title">
+          <img src="./vapp/18/title.jpg" width="100%">
+          <span class="time">9'99"</span>
+          <span class="score">9'99</span>
+        </div>
+      </div>
+      <div class="result hide">
+          <div class="btn">
+              <img src="./vapp/18/btn3.png" width="100%;">
+              <div class="b1 B" onclick="restartbtn()"></div>
+              <div class="b2 B"><a href="javascript:void(0);" onclick="dp_share();"></a></div>
+          </div>
+         
+          <div class="score">
+            <img src="./vapp/18/scorebg.png" width="100%">
+            <div class="max-score">最佳：0</div>
+            <div class="scorebox">
+              <div class="title">成绩：</div>
+              <div class="s">0</div>
+            </div>
+          </div>
+          
+          <div class="text"></div>
+      </div>
+    </div>
+	<script type="text/javascript">
+    var _smq = _smq || [];
+    _smq.push(['_setAccount', 'c9930ed8', new Date()]);
+    _smq.push(['pageview']);
+	var _gaq = _gaq || [];  
+    </script>
+	<div id="infos" style="display:none"></div>
+    <script language=javascript>
+		var mebtnopenurl = './game/';
+		var gainscore;//记录最近得分
+		var successflag;//记录结果成功或者失败
+				
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function dp_submitScore(score){
+				gainscore=score;
+				if(score>=15){
+					$("#infos").html("矮油，恭喜你写字用对了"+score+"次笔！老师很欣慰呢！");
+					if(confirm("矮油，恭喜你写字用对了"+score+"次笔！老师很欣慰呢！")){
+						dp_share();
+					}
+				}
+		}		
+		function dp_share(){
+			document.title = "听老师的话，我正确使用了"+gainscore+"次画笔，老师笑晕在厕所！";
+			$("#share").show();
+			$("#infos").html("听老师的话，我正确使用了"+gainscore+"次画笔，老师笑晕在厕所！");
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+		</script>
+		<script src="./js/18/main.js"></script>
+		<div id="share" style="display: none">
+			<img width=100% src="./vapp/18/share.png" style="position: absolute;z-index:2; top: 0; left: 0; display: " ontouchstart="document.getElementById('share').style.display='none';">
+		</div>
+        <script type="text/javascript">
+			var dataForWeixin = {
+				  appId: "wx2dcf1c9837b601ae",
+				  TLImg: "http://app.46465.com/html5/daitao/logo.jpg",
+				  url: "http://app.46465.com/html5/daitao/",
+				  title: "滑你妹，你能超越我吗？",
+				  desc: "快去测测吧"
+			};
+        var onBridgeReady = function(){
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+               var infos = $("#infos").text();    
+			   if(isCount==1){shareCount(18);}
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "appid": dataForWeixin.appId,
+                    "img_url": dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_hy_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc 
+                });
+         setTimeout(function () {location.href = mebtnopenurl;}, 1500); 
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                var infos = $("#infos").text();   
+				if(isCount==1){shareCount(18);}
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "appid": dataForWeixin.appId,
+                    "img_url":dataForWeixin.TLImg,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": dataForWeixin.url + '?f=wx_pyq_bb',
+                    "title": infos + dataForWeixin.title,
+                    "desc": dataForWeixin.desc
+                });
+		setTimeout(function () {location.href = mebtnopenurl;}, 1500);  
+            });
+        };
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+            document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+        }   
+      </script>
+	  <!--{-----------------------------------------------}-->
+
+
+</div>
+</div>
+<div class="lis">
+		<div style=position: absolute;
+      left: 35%;
+      bottom: 2%;
+      width: 50%;""><a style="border-bottom: 0px solid #ffffff;" href="http://mp.weixin.qq.com/s?__biz=MzAwNzQ4NzQyOQ==&mid=207029465&idx=1&sn=7b3e89d22b38e1e1337bf3a98ccdfb46#rd">更多游戏点击关注“空中传媒”</a></div>   
+        </div>
+</body>
+</html>

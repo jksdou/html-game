@@ -1,0 +1,36 @@
+{"frames": {
+
+"shitCollide01.png":
+{
+	"frame": {"x":2,"y":129,"w":222,"h":193},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":20,"y":0,"w":222,"h":193},
+	"sourceSize": {"w":242,"h":193}
+},
+"shitCollide02.png":
+{
+	"frame": {"x":2,"y":2,"w":242,"h":125},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":68,"w":242,"h":125},
+	"sourceSize": {"w":242,"h":193}
+},
+"shitNormal01.png":
+{
+	"frame": {"x":2,"y":324,"w":118,"h":127},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":130,"y":65,"w":118,"h":127},
+	"sourceSize": {"w":248,"h":193}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "shit.png",
+	"format": "RGBA8888",
+	"size": {"w":246,"h":453},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e426a2906db3f77d761a857edfca6340$"
+}
+}

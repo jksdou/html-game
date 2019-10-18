@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<title>动物连线</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style>
+    body {
+      text-align: center;
+      margin: 0;
+      background: black;
+      color: #404040;
+      font-family: sans-serif;
+      font-size: 10pt;
+    width: 100%;
+    height: 100%;
+    }
+    a {
+      color: #F88113;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    html {
+    /* Prevent scrollbars from causing a resize feedback loop. */
+    overflow: hidden;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  #content {
+        height: 100%;
+        width: 100%;
+        margin: inherit;
+        box-shadow: none;
+    text-align: left;
+    background-color: black;
+  }
+  </style>
+<style>#sg-loadscrn{
+    position:fixed; top:0;left:0;width:100%; height:100%; background-color:#fff; z-index:9999;
+}
+
+#sg-loadtext{
+    position:absolute;
+    font-family: sans-serif;
+    top:50%; left:50%;
+    width: 250px;
+    margin-left:-125px;
+    margin-top:-125px;
+    text-align:center;
+    line-height:150%;
+    font-size:16px;
+}</style>
+
+<script type="text/javascript">
+        window.gameLangs = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ru', 'tr'];
+        window.gameJS = ['softgames_game.js'];
+        window.gameOnLoadScript = "jsembed.embed('flambe.js', 'content', '640', '960', params, attr);";
+    </script>
+    <script type="text/javascript" src="./assets/softgames-1.1.js"></script>
+    <script type="text/javascript" src="./assets/sg.hooks.js"></script>
+    <script type="text/javascript">
+  function getBase() {
+      var basePath = location.pathname;
+      if(basePath[0] != '/')
+        basePath = '/' + basePath;
+      basePath = basePath.substring(0, basePath.lastIndexOf("/") + 1);
+
+      return basePath;
+   }
+  
+    var params = {
+      "base":getBase(),"api":"flambe","autoscale": "false"
+    };
+    
+  var attr = {
+    };
+
+  // jsembed.embed("flambe.js", "content", "640", "960", params, attr);
+  // orientationManager.lockOrientation("portrait", "orientation");
+  // window.addEventListener("load", function()
+  //  {
+  //    // We process resize and orientation in orientationManager so just pass dummy functions
+  //    SG_Hooks.setOrientationHandler( function() { } );
+  //    SG_Hooks.setResizeHandler( function() { } );
+  //  }, false);
+  </script>
+</head>
+<body >
+  <div id="wrapper" style="margin: 0!important; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    <div id="content"></div>
+  </div>  
+  <div id="orientation" style="margin: 0 auto; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url(./assets/game/Rotate.png); background-repeat: no-repeat; background-position: center; background-color: rgb(0, 0, 0); z-index: 999; display: none;"></div>
+</body>
+</html>

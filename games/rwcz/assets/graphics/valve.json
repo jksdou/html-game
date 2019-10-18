@@ -1,0 +1,107 @@
+﻿{"frames": {
+
+"Faucet0000":
+{
+	"frame": {"x":3,"y":3,"w":75,"h":77},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0001":
+{
+	"frame": {"x":3,"y":3,"w":75,"h":77},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0002":
+{
+	"frame": {"x":3,"y":3,"w":75,"h":77},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0003":
+{
+	"frame": {"x":3,"y":3,"w":75,"h":77},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0004":
+{
+	"frame": {"x":3,"y":161,"w":67,"h":74},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":3,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0005":
+{
+	"frame": {"x":3,"y":161,"w":67,"h":74},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":3,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0006":
+{
+	"frame": {"x":3,"y":161,"w":67,"h":74},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":3,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0007":
+{
+	"frame": {"x":3,"y":161,"w":67,"h":74},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":5,"y":3,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0008":
+{
+	"frame": {"x":3,"y":83,"w":67,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0009":
+{
+	"frame": {"x":3,"y":83,"w":67,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0010":
+{
+	"frame": {"x":3,"y":83,"w":67,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+},
+"Faucet0011":
+{
+	"frame": {"x":3,"y":83,"w":67,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":3,"y":2,"w":75,"h":77},
+	"sourceSize": {"w":75,"h":77}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "valve.png",
+	"format": "RGBA8888",
+	"size": {"w":128,"h":256},
+	"scale": "1"
+}
+}

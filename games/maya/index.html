@@ -1,0 +1,83 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>玛雅传奇</title>
+	
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<link rel="stylesheet" href="css/main.css">
+    
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+			background-image:url(data/pics/back.jpg);
+		}
+	</style>
+	<link type="text/css" href='css/softgames.css' rel="stylesheet">
+        <script type="text/javascript">
+            window.gameLangs = ['en', 'de', 'es', 'fr', 'it', 'pt', 'ru', 'tk'];
+            window.gameJS = ['js/scriptjava.js', 'js/soundjs-0.5.2.min.js','js/dependencies.js','js/pixi.js', 'js/avk_game.js', 'js/avk_body.js'];
+            window.gameOnLoadScript = "avk_start();";
+        </script>
+        <script type="text/javascript" src='js/softgames-1.1.js'></script>
+        <script type="text/javascript" src='js/sg.hooks.js'></script>
+</head>
+<body>
+
+	<script>
+
+(function() {
+  if (!window.console) {
+    window.console = {};
+  }
+  
+  var m = [
+    "log", "info", "warn", "error", "debug", "trace", "dir", "group",
+    "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+    "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+  ];
+  
+  for (var i = 0; i < m.length; i++) {
+    if (!window.console[m[i]]) {
+      window.console[m[i]] = function() {};
+       }    
+     } 
+   })();
+
+		var AVK_DEBUG_CONDITION={stack:"",msg:"",prog:["","","","","","","","","",""]};
+
+		var GLOB_M=false;
+	    var GLOB_ball=0;
+	    var GLOB_click=0;
+	    var GLOB_gameover=0;
+	    var GLOB_heart=0;
+	    var GLOB_in_game=0;
+	    var GLOB_in_menu=0;
+	    var GLOB_knock=0;
+	    var GLOB_match=0;
+	    var GLOB_win=0;
+	    var GLOB_light=0;
+	    var GLOB_light_on=0;
+	    var GLOB_up=0;
+
+	isMobile = {
+    Android:function(){return navigator.userAgent.match(/Android/i);},
+    BlackBerry:function(){return navigator.userAgent.match(/BlackBerry/i);},
+    iOS:function(){return navigator.userAgent.match(/iPhone|iPad|iPod/i);},
+    Opera:function(){return navigator.userAgent.match(/Opera Mini/i);},
+    Windows:function(){return navigator.userAgent.match(/IEMobile/i);},
+    any:function(){return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());}
+    };
+	
+		
+	</script>
+	
+
+	</body>
+</html>

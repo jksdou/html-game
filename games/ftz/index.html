@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>挑战繁简字-空中传媒游戏</title>
+<meta name="description" content="来空中传媒游戏，轻松认识繁体字，成为最有文化的中国人">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="y0/news/game/caizi/css/css.css" rel="stylesheet" type="text/css" />
+<style>
+/* 核心 */
+body {font:12px/18px simsun, Arial, Helvetica, sans-serif;}
+.wrap {width:100%; overflow:hidden; position:relative;}
+.box01 {background:url(y0/news/game/caizi/images/bg.jpg); background-size:100% auto; height:100%; width:100%; position:absolute; left:0; top:0; z-index:3;}
+.box01 .cont {position:absolute; width:100%; z-index:1;}
+.box01 .font { background-size:100% auto; height:159px; width:159px; margin:10px auto 0; line-height:159px; text-align:center;}
+.box01 .text {margin:0 auto; width:270px;}
+.box01 .t01 {font-size:1.6em; font-family:"微软雅黑"; line-height:1.6em; text-align:center; margin-top:10px;}
+.box01 .t02 {color:#693810; font-size:1.3em; font-family:"微软雅黑"; line-height:1.4em; margin:5px auto 0; text-align: center; width:200px;}
+.box01 .btn {background:url(y0/news/game/caizi/images/btn01.png) no-repeat; background-size:100% auto; height:116px; width:116px; margin:15px auto 0;}
+.box02 {background:url(y0/news/game/caizi/images/bg.jpg); background-size:100% auto; height:100%; width:100%; position:absolute; left:0; top:0; z-index:1;}
+.box02 .font {background:url(y0/news/game/caizi/images/i02.jpg) no-repeat; background-size:100% auto; height:160px; width:159px; margin:10px auto 0; font-size:8em; line-height:159px; text-align:center;}
+.box02 .time {padding:0 25px; text-align:center; font-size:1.2em; font-family:"微软雅黑"; height:50px; line-height:50px; overflow:hidden;}
+.box02 .time span {color:#d8271c; font-size:1.8em;}
+.box02 .flist {margin:0 auto; width:306px;}
+.box02 .flist li {background:url(y0/news/game/caizi/images/b01.png) no-repeat; background-size:100% auto; height:82px; width:82px; font-size:4em; float:left; line-height:82px; text-align:center; margin:5px 10px;}
+.box02 .flist li.cor {background:url(y0/news/game/caizi/images/b02.png) no-repeat; background-size:100% auto; color:#FFF;}
+.box02 .flist li.err {background:url(y0/news/game/caizi/images/b03.png) no-repeat; background-size:100% auto; color:#FFF;}
+.box03 {background:url(y0/news/game/caizi/images/bg.jpg); background-size:100% auto; height:100%; width:100%; position:absolute; left:0; top:0; z-index:2;}
+.box03 .cont {position:absolute; width:100%; z-index:1;}
+.box03 .win .pic {background:url(y0/news/game/caizi/images/win.jpg) no-repeat; background-size:100% auto; height:167px; width:185px; margin:15px auto 0;}
+.box03 .win .text {font-size:1.6em; font-family:"微软雅黑"; line-height:1.4em; margin:10px auto 0;  width:268px;}
+.box03 .win .text span {color:#cc3333; font-size:1.4em; font-family:"微软雅黑";}
+.box03 .win .txt {color:#693810; font-size:1.3em; font-family:"微软雅黑"; line-height:1.8em; width:268px; margin:0 auto;}
+.box03 .win .txt a {color:#cc3333;}
+.box03 .lose .pic {background:url(y0/news/game/caizi/images/lose.jpg) no-repeat; background-size:100% auto; height:145px; width:185px; margin:15px auto 0;}
+.box03 .lose .text {font-size:1.6em; font-family:"微软雅黑"; line-height:1.4em; margin:10px auto 0;  width:268px;}
+.box03 .lose .text span {color:#cc3333; font-size:1.4em; font-family:"微软雅黑";}
+.box03 .lose .txt {color:#693810; font-size:1.3em; font-family:"微软雅黑"; line-height:1.8em; width:268px; margin:0 auto;}
+.box03 .bcot {text-align:center; color:#FFF; font-size:1.4em; font-family:"微软雅黑"; line-height:40px; width:100%; margin-top:10px;}
+.box03 .bcot .btn01 {background:url(y0/news/game/caizi/images/btn02.jpg) no-repeat; background-size:100% auto; height:40px; width:118px; display:inline-block; margin:0 16px;}
+.box03 .bcot .btn02 {background:url(y0/news/game/caizi/images/btn03.jpg) no-repeat; background-size:100% auto; height:40px; width:118px; display:inline-block; margin:0 16px;}
+</style>
+<script type="text/javascript" src="y0/base/jQuery/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="wrap" style="height:100%; overflow:visible;">
+  <!-- one begin -->
+  <div class="box01" id="wbegin">
+    <div class="cont">
+    <div class="font"><img src="y1/d/h5images/logo45300.png" width="153" height="153"></div>
+    <div class="text">
+      <div class="t01">挑战你认识多少个繁体字</div>
+      <div class="t02">从6个繁体字中选出正确的<br>10秒不出手就算输</div>
+    </div>
+    <div class="btn" id="start"></div>
+    </div>
+  </div>
+  <!-- one end -->
+  <!-- g begin -->
+  <div class="box02" id="main" style="display:none;">
+    <div class="font"></div>
+    <div class="time"><span>10</span>秒</div>
+    <div  class="flist">
+      <ul id="selects_box">
+        <li id='s_0' class="cell"></li>
+        <li id='s_1' class="cell"></li>
+        <li id='s_2' class="cell"></li>
+        <li id='s_3' class="cell"></li>
+        <li id='s_4' class="cell"></li>
+        <li id='s_5' class="cell"></li>
+      </ul>
+    </div>
+  </div>
+  <!-- g end -->
+  <!-- e begin -->
+  <div class="box03" id="wend" style="display:none;">
+    <div class="cont">
+    <div class="lose" id="text_pic">
+      <div class="pic"></div>
+      <div class="text" id="text_top"></div>
+      <div class="txt" id="text_bottom"></div>
+	  <div class="txt" id="text_end" style="display:black;"></div>
+    </div>
+    <div class="bcot">
+      <div class="btn01" id="tryagain">再来一把</div>
+      <div id="whshare" class="btn02">炫耀才华</div>
+    </div>
+  </div>
+  <!-- e end -->
+</div>
+<script type="text/javascript" src="m0/news/game/caizi/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>拍马屁</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="description" content="拍马 Pee"/>
+    <meta name="full-screen" content="true"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+        div, canvas {
+            display:block;
+            position:absolute;
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+        }
+    </style>
+    	 <link rel="stylesheet" type="text/css" href="css/game9g.css">
+		<script src="js/game9g.js"></script>
+</head>
+<body>
+<div id='wx_pic' style='margin:0 auto;display:none;'>
+    <img id="icon"  src='' />
+</div>
+<div style="width:480px; height:800px;background: black; position:relative;"
+     id="gameDiv">
+    <canvas id="gameCanvas" width="480" height="800" style="background-color: #000000"></canvas>
+</div>
+<script>
+    var document_class = "GameApp";
+    var LOG_URL = '';
+    var GAME_URL = "http://uinote.com/html-game/games/pmp/";
+    
+    var GAME_DOWNLOAD_URL = "http://uinote.com/html-game/games/pmp/"; //下载页面链接
+</script>
+
+ <script type='text/javascript' src='js/egret_require.58112.js'></script>
+ 
+ <script type='text/javascript' src='js/egret_loader.58112.js'></script>
+ 
+ <script type='text/javascript' src='js/game.58128.js'></script>
+ 
+
+<script>
+    egret_h5.startGame();
+</script>
+<script language=javascript>
+        var game9g = new Game9G("pmp");
+        game9g.shareData.title = "谁超越我？我在拍马屁中老板非常满意，见识一下小伙伴们的实力吧！";
+        game9g.shareData.content = "拍马屁";
+
+		function goHome(){
+			window.location=game9g.gzurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = game9g.gzurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			game9g.share();
+		}
+		function dp_Ranking(){
+			window.location=game9g.homeurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		function dp_submitScore(score){
+			game9g.score =parseInt(score*100);
+			game9g.scoreName = "比老板快了"+score+"秒";	
+			game9g.shareData.title ="谁超越我？我在拍马屁中比老板还快"+score+"秒";
+			game9g.utils.shareConfirm("你在拍马屁中比老板"+score+"秒，见识一下小伙伴们的实力吧！", dp_share); 
+		}
+	</script>
+	<div style="display: none;">
+								
+	</div>
+</body>
+</html>

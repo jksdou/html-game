@@ -1,0 +1,23 @@
+{
+"resources":
+	[
+		{"name":"bg","type":"image","url":"bg.jpg"},
+		{"name":"block0","type":"image","url":"block0.png"},
+		{"name":"block1","type":"image","url":"block1.png"},
+		{"name":"block2","type":"image","url":"block2.png"},
+		{"name":"ball","type":"image","url":"ball.png"},
+		{"name":"scorePanel","type":"image","url":"scoreboard.png"},
+		{"name":"power","type":"image","url":"power.png"},
+		{"name":"plus","type":"image","url":"plus.png"},
+		{"name":"logo","type":"image","url":"logo.png"},
+		{"name":"startBtn","type":"image","url":"taptostart.png"},
+		{"name":"block3","type":"image","url":"block3.png"},
+		{"name":"gameover","type":"sheet","url":"game_over_sprites.json"},
+		{"name":"gameOverNumber","type":"font","url":"game_over_number.fnt"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"gameover,gameOverNumber,logo,startBtn,block3,bg,block0,block1,block2,ball,scorePanel,power,plus"}
+	]
+}

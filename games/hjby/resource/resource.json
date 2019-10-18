@@ -1,0 +1,19 @@
+{
+"resources":
+	[
+		{"name":"sprite","type":"sheet","url":"assets/sprite.json"},
+		{"name":"btn","type":"sheet","url":"assets/btn.json"},
+        {"name":"result","type":"sheet","url":"assets/result.json"},
+        {"name":"scene","type":"sheet","url":"assets/scene.json"},
+        {"name":"bg","type":"image","url":"assets/bg.jpg"},
+        {"name":"homeBg","type":"image","url":"assets/homeBg.jpg"},
+        {"name":"maskOpacity","type":"image","url":"assets/maskOpacity.png"},
+        {"name":"bgSound","type":"sound","url":"sound/bg.mp3"},
+        {"name":"hitSound","type":"sound","url":"sound/hit.mp3"}
+	],
+
+"groups":
+	[
+        {"name":"preload","keys":"bg,homeBg,sprite,btn,scene,result,maskOpacity"}
+	]
+}

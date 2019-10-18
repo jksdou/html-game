@@ -13,7 +13,7 @@ function play68_submitScore(score) {
 
 function updateShare(bestScore) {
 	imgUrl = 'http://uinote.com/html-game/games/xiongchumo/wenzhangku.png';
-	//var domains = ['uinote.com/html-game','www.xinwenzhang.com'];
+	//var domains = ['http://uinote.com/html-game','www.xinwenzhang.com'];
 	//var domain = domains[new Date().getTime()%4];
 	lineLink = 'http://uinote.com/html-game/games/xiongchumo/';
 	descContent = "反向跑酷没玩过吧？快来一起跑！";

@@ -1,0 +1,55 @@
+
+<!DOCTYPE HTML>
+<html>
+<head><meta name="x-key" content="6c5745df7070a3d322c86cd2eb7b9a35">
+    <meta charset="utf-8">
+    <title>愤怒的小红帽</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+	<link rel="shortcut icon" href="icon.png">
+	<link rel="icon" href="icon.png">
+    <style>
+        body {
+            text-align: center;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        html {
+            -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+        }
+
+        #gameDiv, canvas {
+            display: block;
+            position: absolute;
+            margin: 0 auto;
+            padding: 0;
+            border: 0;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <div style="position: relative;" id="gameDiv"></div>
+	
+    <script>var document_class = "Main";</script>
+    <!--这部分内容在编译时会被替换，要修改文档类，请到工程目录下的egretProperties.json内编辑。-->
+    <script src="launcher/egret_require.js"></script>
+    <script src="launcher/egret_loader.js"></script>
+    <script src="launcher/EgretRuntimeBridge.js"></script>
+    <script src="launcher/3/game-min.js"></script>
+    <script>
+        setTimeout(function () {
+            egret_h5.startGame();
+        }, 100);
+    </script>
+</body>
+
+</html>

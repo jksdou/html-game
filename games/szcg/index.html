@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>数字闯关</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0,minimal-ui,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #js-fps {
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1000;
+            margin:0 auto;
+            color:#FFF;
+            font-size:20px;
+        }
+        body{
+            background: #d9f5ff;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#d9f5ff),to(#d9f5ff));
+            overflow: hidden;
+        }
+        #bg,canvas{
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            z-index: 1;
+        }
+        .hide{
+            display: none;
+        }
+        #share{
+            z-index:  5;
+            background: rgba(0, 0, 0, 0.53);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        #share img{ height:150px; width: 180px; position: absolute; right: 0; top: 0; }
+    </style>
+    <script>
+        var _czc = _czc || [];
+        _czc.push(['_setAccount',1253076839]);
+		
+    </script>
+    	 <link rel="stylesheet" type="text/css" href="css/game9g.css">
+  		<script src="js/game9g.js"></script>
+</head>
+<body>
+    	<div id="moregame" style="position:fixed;z-index:99; bottom:20px; left:0px; font-size:20px; width:100%; text-align:center;">
+		<a href="javascript:void(0);" style="padding: 8px 20px;
+background-color: rgb(93, 18, 163);
+border-radius: 5px;
+text-decoration: none;color:white;" onClick="clickMore();">更多游戏</a>
+	</div>
+    <script src="js/hilo-standalone.js"></script>
+    <script src="js/number.min.js?v=2014"></script>
+	<script language=javascript>
+        var game9g = new Game9G("szcg");
+        game9g.shareData.title = "数字闯关";
+        game9g.shareData.content = "数字闯关，通过点击图中数字，该数字及其相邻数字都减一，直至所有数字都减为0，游戏通关";
+
+		function goHome(){
+			window.location=game9g.gzurl;
+		}
+		function clickMore(){
+			 if((window.location+"").indexOf("f=zf",1)>0){
+			 	window.location = game9g.gzurl;
+			  }
+			  else{
+			 	goHome();
+			  }
+		}
+		function dp_share(){
+			game9g.share();
+		}
+		function dp_Ranking(){
+			window.location=game9g.homeurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		function dp_submitScore(score){
+			game9g.score =parseInt(score);
+			game9g.scoreName = "闯过"+score+"关";
+			game9g.shareData.title ="谁能超越我？我在数字闯关小游戏连闯过"+score+"关!"; 
+			
+			
+		}
+	</script>
+	<div style="display: none;">
+								
+	</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Tencent-TGideas">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>抽绷带-全民打怪兽</title>
+<!-- 设计：yafeezhou| 重构：brucewan | 创建：2014/05/08 | 更新：| 团队博客：http://tgideas.qq.com/ -->
+<script>
+	var _speedMark = new Date();
+</script>
+<style>
+/* global */
+html,body,ul,h1,h2,h3,p,input,img,figure{margin: 0;padding: 0;}
+ul,ol{list-style: none;}
+html{overflow: hidden;}
+body{width: 100%;height: 100%;overflow: hidden;-webkit-user-select: none;}
+body{font:12px/21px  Arial,\5FAE\8F6F\96C5\9ED1;color: #fff;}
+@font-face {font-family: 'icon';src: url('./res/hero.woff') format('woff'), url('./res/hero.ttf')  format('truetype');}
+ [class^="icon-"]:before, [class*=" icon-"]:before {display: inline-block; width: 1em;margin-right: .2em;font-family: "icon";font-style: normal;font-weight: normal;text-align: center;speak: none;line-height: 1em; margin-left: .2em;}
+.icon-more:before { content: '\e800'; } 
+.icon-share:before { content: '\e801'; } 
+.icon-play:before { content: '\e802'; }
+a{color: #33234f;text-decoration: none;}
+a:active{-webkit-tap-highlight-color: rgba(0,0,0,0);}
+
+@-webkit-keyframes jump {
+	0% { -webkit-transform: translate(0, 0);}
+	100% { -webkit-transform: translate(0, 100px);}
+}
+@-webkit-keyframes wave {
+	0% { -webkit-transform: scale(1, 1);opacity: 0.5;}
+	100% { -webkit-transform: scale(2, 2);opacity: 0;}
+}
+
+
+/* layout */
+.screen-slide{position: absolute;height: 300%;width: 100%;}
+.screen-slide .s{height: 33.4%;position: relative;overflow: hidden;}
+.screen-slide .content{position: absolute;left: 50%;top: 50%;width: 360px;height: 575px;margin-left: -180px;margin-top: -288px;background: #ff0;}
+
+.s1{background-color: #4bb8a4;}
+.s1 .content{background: url(./images/bg-s1.jpg);-webkit-background-size: 360px 575px;background-size: 360px 575px;}
+.s1 .progress{position: absolute;right: 100px;top: 243px;width: 130px;font-size: 24px;text-align: center;}
+.s1 .progress .num{margin-right: 5px;font-size: 42px}
+
+
+.s2{background-color: #4bb8a4;}
+.s2 .content{background: url(./images/bg-s2.jpg);-webkit-background-size: 360px 575px;background-size: 360px 575px;}
+.s2 .paper-box{-webkit-transform:skew(0,-8deg);transform:skew(0,-8deg);position: absolute;top: 232px;left: 118px;width: 176px;height: 400px;background:  url(./images/bg-paper.jpg) repeat-y;-webkit-background-size: 176px 143px;background-size: 176px 143px;}
+.s2 .tips{position: absolute;top: 100px;left: 0;width: 360px;height: 400px;text-align: center;line-height: 1}
+.s2 .tips p{margin: 8px 0;}
+.s2 .tips .f1{font-size: 14px;}
+.s2 .tips .f2{font-size: 30px;font-weight: bold;}
+.s2 .tips .f3{font-size: 14px;line-height: 18px;color: #066355}
+.s2 .tips .f4{font-size: 40px;color: #1d8172;}
+.s2 .tips .f5{font-size: 16px;}
+.s2 .tips .f6{font-size: 28px;color: #ff0}
+.s2 .tips .f7{font-size: 24px;color: #fff}
+.s2 .guide{position: absolute;top: 280px;left: 116px;z-index: 1;width: 130px;height: 200px;color: #000;font-weight: bold;font-size: 16px;text-align: center;pointer-events: none;-webkit-transition:.5s opacity;}
+.s2 .guide .hand{width: 75px;height: 65px;margin: 10px 0 0 28px;background: url('./images/icon-hand.png') no-repeat;-webkit-background-size: 75px 65px;background-size: 75px 65px;-webkit-animation: jump 2s infinite;}
+.s2 .guide .f8{font-size: 12px;font-weight: normal;}
+.s2 .guide.hide{opacity: 0}
+.s2 .logo{position: absolute;left:10px;top: 10px;z-index: 2;opacity: .2;}
+
+.s3{background-color: #556573;}
+.s3 .content{background: url(./images/bg-s3.jpg);-webkit-background-size: 360px 575px;background-size: 360px 575px;}
+.s3 .tips{width: 200px;margin-left: 80px;padding-top: 110px;text-align: center;}
+.s3 .tips .f1{font-size: 14px;}
+.s3 .tips .f2{font-size: 14px;color: #fffb87}
+.s3 .tips .f3{margin-top: 10px;font-size: 20px;color: #fffb87}
+.s3 .tips .f3 .num{margin: 0 5px;font-size: 28px;}
+.s3 .img img{width: 120px;height: 125px;}
+.s3 .tips .f4{font-size: 12px;color: #b5c8d8}
+.s3 .logo{position: absolute;left:10px;top: 10px;z-index: 2;opacity: .2;}
+
+.s3 .fuc{margin-top: 15px;text-align: center;}
+.s3 .fuc .btn-wrap{display: inline-block;position: relative;}
+.s3 .fuc .btn-wrap .bg{position: absolute;left: 10px ;top: 0;width: 60px;height: 60px;border-radius: 30px;background: #e6f6ff;-webkit-animation: wave 2s infinite;}
+.s3 .fuc .btn-wrap .about{position: absolute;left: -22px;width: 120px;top: 70px;border-radius: 3px; background-color: rgba(255,255,255,0.2);color: #fff}
+.s3 .fuc .btn{position: absolute;left: 0;top: 0;z-index: 2;display: inline-block;width: 60px;height: 60px;border-radius: 30px;margin: 0 10px;background-color: #76a6c8;position: relative;-webkit-box-shadow:0 3px rgba(0,0,0,.4);box-shadow:0 3px rgba(0,0,0,.4);}
+.s3 .fuc .btn span{position: absolute;width: 60px;height: 60px;top: -3px;left: 0;border-radius: 30px;background-color: #e6f6ff;color: #5d90ab;font-size: 12px;line-height: 18px;}
+.s3 .fuc .btn span::before{display: inline-block;width: 100%;margin: 12px 0 0 0;font-size: 20px}
+.s3 .fuc .btn-em{background-color: #c9950c;}
+.s3 .fuc .btn-em span{background-color: #f3c856;color: #ab6c21}
+
+.share-guide{position: absolute;left: 0;top: 0;width: 100%;height: 100%;background: rgba(0,0,0,0.8) url(./images/icon-arrow.png?33) no-repeat 90% 20px;-webkit-background-size: 40px 80px;background-size: 40px 80px;color: #fff;}
+.share-guide p{padding: 100px 30px 30px;text-align: right;font-size: 20px;line-height: 30px;}
+.share-guide .em{color: #ff734d;}
+
+</style>
+<script>
+	document.documentElement.style.height = window.innerHeight + 'px';
+</script>
+</head>
+
+<body>
+	<div class="screen-slide">
+		<div class="s s1">
+			<div class="content">
+				<div class="progress"><span class="num">0</span>%</div>
+			</div>
+		</div>
+		<div class="s s2">
+			<a href="#" class="logo"><img src="./images/logo.png" width="59" height="42" alt="全民打怪兽"></a>
+			<div class="content">
+				<div class="tips">
+					<div class="ready">
+						<p class="f1">　</p>
+						<p class="f2">“抽绷带 救怪兽”</p>
+						<p class="f3">12秒内看看你能抽出多长的绷带</p>
+					</div>
+					<div class="run" style="display:none">
+						<p class="f4">“00:12:00”</p>
+						<p class="f5">已抽出绷带 <span class="f6"><span class="dis">0</span> <span class="f7">m</span></span></p>		
+					</div>
+				</div>
+				<div class="guide">
+					<p><span class="f8">提示</span><br/>手指下向滑动<br/>开始游戏</p>
+					<div class="hand"></div>
+				</div>
+				<div class="paper-box"></div>
+			</div>
+		</div>
+		<div class="s s3">
+			<a href="#" class="logo"><img src="./images/logo.png" width="59" height="42" alt="全民打怪兽"></a>
+			<div class="content">
+				<div class="tips">
+					<p class="f1">你神一样的手速，碉堡了</p>
+					<p class="f2">本次抽出绑带<span class="f3"><span class="num">7</span>m</span></p>
+					<p class="img"><img src="./images/pic1.jpg" alt=""></p>
+					<p class="f4">“我还需要更多绑带”</p>
+				</div>
+				<div class="fuc">
+					<div class="btn"><span class="icon-more">再来</span></div>
+					<div class="btn"><span class="icon-share">分享</span></div>
+					<div class="btn-wrap">
+						<div class="btn btn-em"><span class="icon-play">去战场</span></div>
+						<div class="bg"></div>
+						<p class="about">去玩全民打怪兽吧！</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="share-guide" style="display:none;">
+		<p>点击上面按钮<br/>将成绩 <span class="em">分享到朋友圈</span></p>
+	</div>
+
+	<script>
+		(function(e){if(e)return;var t=["webkit","moz","o"],e={extend:function(e,t,n,r){n===undefined&&(n=!0);for(var i in t)if(n||!(i in e))r?r(i):e[i]=t[i];return e},support:{translate3d:function(){var e="translate3d(0px, 0px, 0px)",t=document.createElement("div");t.style.cssText=" -moz-transform:"+e+"; -ms-transform:"+e+"; -o-transform:"+e+"; -webkit-transform:"+e+"; transform:"+e;var n=/translate3d\(0px, 0px, 0px\)/g,r=t.style.cssText.match(n),i=r!==null&&r.length==1;return i}()},css:function(e,n,r){var i=/transform/i;if(i.test(n))for(var s=0;s<t.length;s++)e.style[t[s]+n.substr(0,1).toUpperCase()+n.substr(1)]=r;e.style[n]=r}};window.m=e})(window.m),m.Tab=function(e){this.config=m.extend(m.extend({},m.Tab.config),e,!0),this.init()},m.Tab.config={touchMove:!1,animTime:500,touchDis:40,direction:"x",touchSpeed:1,currentClass:"current",progressBar:!1},m.Tab.prototype={init:function(){var e=this,t=e.config;e._data={},e.target=t.target,e.length=e.target.length,e.trigger=t.trigger,e.num=e.target.length,e.wrap=e.target[0].parentNode,m.support.translate3d&&(e.wrap.style.webkitTransition="-webkit-transform "+t.animTime+"ms ease-out"),m.css(e.wrap,"transform","translate(0,0)"),e.width=e.wrap.parentNode.clientWidth;if(t.progressBar===!0){var n=document.createElement("ul");n.classList.add("progress-bar");for(var r=0;r<e.length;r++){var i=document.createElement("li");n.appendChild(i)}e.progressBar=e.wrap.parentNode.appendChild(n).childNodes}e._attach(),e.playTo(0)},_attach:function(){var e=this,t=e.config;window.addEventListener("resize",e.update.bind(e));if(e.trigger){var n=e.trigger.length;for(var r=0;r<n;r++)(function(t){e.trigger[t].addEventListener("touchend",function(n){e.playTo(t)})})(r)}var i=e._data,s=!1,o,u,a;t.touchMove&&e.wrap.addEventListener("touchstart",function(n){if(t.ontouchstart&&t.ontouchstart.apply(e,[n])===!1)return!1;i.pageX=n.touches[0].pageX,i.pageY=n.touches[0].pageY,e.wrap.style.webkitTransitionDuration="0ms",e.wrap.addEventListener("touchmove",u),e.wrap.addEventListener("touchend",a),o=""}),u=function(n){i.disX=n.touches[0].pageX-i.pageX,i.disY=n.touches[0].pageY-i.pageY,t.direction=="x"?i.dis=i.disX:i.dis=i.disY,o||(Math.abs(i.disX/i.disY)>1?o="x":o="y");if(t.ontouchmove&&t.ontouchmove.apply(e,[i.dis,n])===!1)return!1;t.direction==o&&(t.direction=="x"?m.css(e.wrap,"transform","translate3d("+(i.dis-e.target[e.current].offsetLeft)+"px,0,0)"):m.css(e.wrap,"transform","translate3d(0,"+(i.dis-e.target[e.current].offsetTop)+"px,0)"))},a=function(){if(o&&t.direction!=o)return;if(i.dis===undefined||isNaN(i.dis))i.dis=0;e.wrap.style.webkitTransitionDuration=t.animTime+"ms",e.wrap.removeEventListener("touchmove",u),e.wrap.removeEventListener("touchend",a);var n=!0;t.ontouchend&&t.ontouchend.apply(e,[i.dis])===!1&&(n=!1);if(!i.dis||Math.abs(i.dis)<t.touchDis||!n){e.playTo(e.current);return}i.dis>0?e.playTo(e.current-t.touchSpeed):e.playTo(e.current+t.touchSpeed),i.dis=0},e.wrap.addEventListener("click",function(n){t.onclick&&t.onclick.call(e,n)})},playTo:function(e){var t=this,n=t.config;t.wrap.style.webkitTransitionDuration=n.animTime+"ms";if(n.onchangebefore&&n.onchangebefore.apply(t,[e])===!1)return;e>=t.num-1&&(e=t.num-1),e<0&&(e=0),m.support.translate3d?n.direction=="x"?m.css(t.wrap,"transform","translate3d("+ -t.target[e].offsetLeft+"px,0,0)"):m.css(t.wrap,"transform","translate3d(0,"+ -t.target[e].offsetTop+"px,0)"):n.direction=="x"?m.css(t.wrap,"transform","translate("+ -t.target[e].offsetLeft*e+"px,0)"):m.css(t.wrap,"transform","translate(0,"+ -t.target[e].offsetTop*e+"px)");if(e===t.current)return;t.trigger&&t.trigger[t.current]&&t.trigger[t.current].classList.remove(n.currentClass),t.progressBar&&t.progressBar[t.current]&&t.progressBar[t.current].classList.remove(n.currentClass),t.prevPage=t.current,t.current=e,t.trigger&&t.trigger[t.current]&&t.trigger[t.current].classList.add(n.currentClass),t.progressBar&&t.progressBar[t.current]&&t.progressBar[t.current].classList.add(n.currentClass),n.onchangebefore&&n.onchangebefore.apply(t,[e]),n.lazyClass&&t.lazy(e),window.setTimeout(function(){n.onchange&&n.onchange.apply(t,[e])},n.animTime)},prev:function(){this.playTo(this.current-1)},next:function(){this.playTo(this.current+1)},update:function(e){var t=this;t.width=t.wrap.parentNode.clientWidth},lazy:function(e){var t=[];targetWrap=this.target[e],targetWrap.classList.contains(this.config.lazyClass)&&t.push(targetWrap);var n=Array.prototype.slice.call(targetWrap.querySelectorAll("."+this.config.lazyClass),0);t=t.concat(n);for(var r=0;r<t.length;r++){var i=t[r],s=i.getAttribute("data-url");s&&(/img/i.test(i.tagName)?i.src=s:i.style.backgroundImage="url("+s+")",i.removeAttribute("data-url"))}}},m.Pop=function(e){this.config=m.extend(e,m.Pop.config),this.init()},m.Pop.config={animTime:300},m.Pop.prototype={init:function(){var e=this,t=e.config;e.target=t.target,e.target.style.webkitPerspective="1000px",e.target.style.webkitBackfaceVisibility="hidden",e.context=t.target.querySelector(".pop-content"),e.context.style.webkitTransition="-webkit-transform "+t.animTime+"ms ease-out",e.context.style.webkitTransformOrigin="50% 0",e.hide()},show:function(){var e=this,t=e.config;e.target.style.display="block",window.setTimeout(function(){e.context.style.webkitTransform="translate3d(0,0,0) rotateX(0)"},0)},hide:function(){var e=this,t=e.config;e.context.style.webkitTransform="translate3d(0,-50%,0) rotateX(-90deg)",window.setTimeout(function(){e.target.style.display="none"},t.animTime)}}
+	</script>
+
+
+
+	<script>
+
+		// name space
+		window.page = {};
+
+		// reset page scroll top
+		// document.documentElement.scrollTop =  0;
+		window.scrollTo(0, 0);
+
+
+
+
+
+		document.addEventListener('DOMContentLoaded', function(){
+
+			// screen slide
+			page.screenSlide = new m.Tab({
+				target: document.querySelectorAll('.screen-slide .s'),
+				onchangebefore: function(n){
+
+				},
+				touchMove: false,
+				direction: 'y'
+			});	
+
+			// loading
+			var domProgress = document.querySelector('.progress .num');
+			var TIME = 3000;
+			var intervals = [];
+			var per = 0;
+			for(var i = 0; i < 100; i++) {
+				intervals.push( parseInt(Math.random() * TIME) );
+
+			}
+			intervals = intervals.sort(function(a,b){return a - b});
+
+			for(var i = 0; i < intervals.length; i++) {
+				window.setTimeout(function(){
+					per++;
+					domProgress.innerHTML = per;
+					// m.css(domProgress.parentNode, 'transform', 'translate(0,'+ Math.random()*1  +'px' + ')');
+				}, intervals[i]);
+			}
+
+			window.setTimeout(function(){
+				page.screenSlide.playTo(1);
+			}, TIME + 300);
+
+
+
+			// game
+			var bgPosY = 0;
+			score = 0;
+			var gameTime = 12000;
+			var d = {};
+			var domPaper = document.querySelector('.paper-box');
+			var domS2 = document.querySelector('.s2');
+			var domTimer = document.querySelector('.s2 .tips .f4');
+			var domDis = document.querySelector('.s2 .tips .dis');
+			var domResultText1 = document.querySelector('.s3 .f1');
+			var domResultText2 = document.querySelector('.s3 .f4');
+			var domResultScore = document.querySelector('.s3 .num');
+			var domResultRole = document.querySelector('.s3 .img img');
+			var resultTexts1 = ['你天生不是治愈系，<br/>还是去打怪兽吧！ ', '施主无力救治…<br/>还是去打怪兽吧！', '包扎的恰到好处~良心打手，<br/>你可以继续去打怪兽啦！', '神一样的手速，神一样的战斗力！<br/>还不快去打怪兽！', '大力出奇迹！<br/>这样也能打怪兽！'];
+			var resultTexts2 = ['主人，最近全民都在打怪兽，我还想战斗T＿T', '主人，我可以的！奔赴怪兽战场为你争光去！', '满血复活！主人快带我去战斗吧！', '主人，你太爱（keng）我(die)了！', '主人*&*%￥#*…（碾压战场么…）'];
+			var hasBegun = false;
+			var hasEnd = false;
+			domS2.addEventListener('touchstart', function(e){
+				if(hasEnd) return;
+				d.startY = e.touches[0].pageY;
+				domS2.addEventListener('touchmove', touchMove);
+				domS2.addEventListener('touchend', touchEnd);
+
+				if(!hasBegun) {
+					document.querySelector('.ready').style.display = 'none';
+					document.querySelector('.run').style.display = 'block';
+					document.querySelector('.guide').className = 'guide hide';
+					timerStart();
+					hasBegun = true;
+				}
+			});
+			touchMove = function(e){
+
+				d.disY = e.touches[0].pageY - d.startY;
+				d.startY = e.touches[0].pageY;
+
+				if(Math.abs(d.dis / d.disY) > 0.5) {
+					e.stopPropagation();
+					e.preventDefault();
+				}
+				if(d.disY < 0) return;
+
+
+
+				// domPaper.style.webkitTransform = 'translate3d(' + (d.dis - self.current * self.width) + 'px,0,0)';
+				// console.log(d.disY)
+				bgPosY += d.disY;
+				score += parseInt(d.disY/20);
+				// console.log(bgPosY)
+
+				 domPaper.style.backgroundPositionY = bgPosY + 'px';
+				 domDis.innerHTML = score;
+				
+			}
+			touchEnd = function() {
+
+				domS2.removeEventListener('touchmove', touchMove);
+				domS2.removeEventListener('touchend', touchEnd);
+
+
+
+				d.disY = 0;
+
+			};
+
+			timerStart = function(){
+				if(gameTime < 0) {
+					hasEnd = true;
+
+					level = parseInt(score/250);
+					level = level > 4 ? 4 : level;
+
+					domResultScore.innerHTML = score;
+					domResultText1.innerHTML = resultTexts1[level];
+					domResultText2.innerHTML = resultTexts2[level];
+					domResultRole.src = './images/pic'+ (level + 1 )+'.jpg'
+
+					window.setTimeout(function(){
+						page.screenSlide.playTo(2);
+					}, 300);
+					return;
+				}
+				var sec = ('00' + parseInt(gameTime/1000)).substr(-2, 2);
+				var ms = (gameTime - sec*1000 + '00').substr(0, 2);
+				domTimer.innerHTML = '“00:'+ sec +':'+ ms +'”';
+				gameTime -= 20;
+				window.setTimeout(timerStart, 20);
+			}
+
+
+
+			window.restart = function(){
+				bgPosY = 0;
+				score = 0;
+				gameTime = 12000;
+				d = {};
+				domPaper = document.querySelector('.paper-box');
+				domTimer = document.querySelector('.s2 .tips .f4');
+				domDis = document.querySelector('.s2 .tips .dis');
+				hasBegun = false;
+				hasEnd = false;
+				domDis.innerHTML = '0';
+				page.screenSlide.playTo(1);
+			}
+
+
+			document.querySelector('.icon-more').addEventListener('touchend', function(e){
+				restart();
+				pgvSendClick({hottag:'a20140515bandage.restart'});
+			});
+
+			document.querySelector('.icon-share').addEventListener('touchend', function(){
+				// 微信已停止开放该接口
+				// WeixinJSBridge.invoke("sendAppMessage", {
+				//     img_url:"./images/pic2.jpg",
+				//     img_width: "120",
+				//     img_height: "125",
+				//     link: "http://baidu.com",
+				//     desc: "这是描述",
+				//     title: "这是标题"
+				// }, function (res) {
+				//     alert(res.err_msg);
+				// });
+				document.querySelector('.share-guide').style.display = 'block';
+				pgvSendClick({hottag:'a20140515bandage.share.post'});
+			});
+
+			document.querySelector('.share-guide').addEventListener('touchend', function(){
+				this.style.display = 'none';
+			});
+
+
+			document.querySelector('.icon-play').addEventListener('touchend', function(e){
+				pgvSendClick({hottag:'a20140515bandage.play'});
+				window.open('play.html');
+			});
+
+			if(/adtag/i.test(window.location.search)) {
+				pgvSendClick({hottag:'a20140515bandage.share.view'});
+			}
+
+
+
+		});
+
+		
+
+
+
+
+		// disabled default events
+		document.documentElement.addEventListener('touchmove', function(e){
+			e.preventDefault();
+		});
+	</script>
+	<script>
+	descs = ['经鉴定为手残党，你敢不敢来试？', '我的手速被鄙视了，男人（妹子）不能这样！你呢？', '你绝对忍不住只玩一次！拼手速怎么可以输？', '风靡全球的抽绷带游戏，手残忍不住就是要点啊！', '我是全球手速最快的1%，不服来战！'];
+
+	shareURL = 'http://hero.qq.com/act/a20140515bandage/?ADTAG=a20140515bandage.share.view';
+
+	
+	// function onBridgeReady() {
+	//     WeixinJSBridge.invoke("getNetworkType", {}, function (res) {
+	//         pgvSendClick({hottag:'a20140515bandage.net.' + res.err_msg.substr(13)});
+	//     });	
+	//     //转发朋友圈
+	//     WeixinJSBridge.on("menu:share:timeline", function(e) {
+	//         var data = {
+	//             img_url: "./images/pic"+(level+1)+".jpg",
+	//             img_width: "150",
+	//             img_height: "150",
+	//             link: shareURL,
+	//             //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+ //                desc: '治愈系【全民打怪兽】',
+ //                title: '我的手速打败了'+ (function(){var per = parseInt(score/12);return per > 99 ? 99 : per})()+'%的人！治愈系【全民打怪兽】'
+	//         };
+	//     WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+	//         WeixinJSBridge.log(res.err_msg)
+	//     });
+	// });
+	//     //同步到微博
+	//     WeixinJSBridge.on("menu:share:weibo", function() {
+	//         WeixinJSBridge.invoke("shareWeibo", {
+	//            "content":  '我的手速打败了'+ (function(){var per = parseInt(score/12);return per > 99 ? 99 : per})()+'%的人！治愈系【全民打怪兽】',
+	//            "url": shareURL
+	//              }, function(res) {
+	//                  WeixinJSBridge.log(res.err_msg);
+	//             });
+	//     });
+	//     //分享给朋友
+	//     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+	//         WeixinJSBridge.invoke("sendAppMessage", {
+	//             img_url: "./images/pic"+(level+1)+".jpg",
+	//             img_width: "150",
+	//             img_height: "150",
+	//             link: shareURL,
+ //                desc: '治愈系【全民打怪兽】',
+ //                title: '我的手速打败了'+ (function(){var per = parseInt(score/12);return per > 99 ? 99 : per})()+'%的人！治愈系【全民打怪兽】'
+	//         }, function(res) {
+	//             WeixinJSBridge.log(res.err_msg)
+	//         });
+	//     });
+	// };
+	// document.addEventListener('WeixinJSBridgeReady', function() {
+	//     onBridgeReady();
+	// });
+	</script>
+</body>
+</html><!--[if !IE]>|xGv00|018dd7e82cc2f276430005bdb2ebd151<![endif]-->

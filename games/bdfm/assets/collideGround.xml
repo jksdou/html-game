@@ -1,0 +1,28 @@
+{"frames": {
+
+"collideGround01.png":
+{
+	"frame": {"x":2,"y":33,"w":62,"h":27},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":60,"y":61,"w":62,"h":27},
+	"sourceSize": {"w":184,"h":95}
+},
+"collideGround02.png":
+{
+	"frame": {"x":2,"y":2,"w":74,"h":29},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":51,"y":52,"w":74,"h":29},
+	"sourceSize": {"w":184,"h":95}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "collideGround.png",
+	"format": "RGBA8888",
+	"size": {"w":78,"h":62},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:5012bc95539bfd580fcb2c7607808cb0$"
+}
+}

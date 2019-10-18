@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>新召唤师峡谷大冒险</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no"/>
+    <meta charset="utf-8"/>
+    <meta name="author" content="tg"/>
+</head>
+<style>
+    html, body { background-color:#191919;margin:0; padding:0;width:100%;height:100%; text-align: center}
+    #loadicon{margin-top: 250px; }
+    #orient{margin-top:50px;}
+    p{color:#FFFFFF; font-size: 24}
+</style>
+<script src="js/Base64Images.js"></script>
+<body  onload="complete();">
+<div class="orient" id="orient"><p>请在竖屏情况下使用</p></div>
+<div id="loadicon"><img id="img1"/><br/><img id="img2"/><br/><img id="img3"/></div>
+<canvas id="gameCanvas" width="445" height="700"></canvas>
+<script>
+ // if(typeof(pgvMain) == 'function') pgvMain();
+    //横屏提示
+    function orientationChange(){
+        if(window.orientation==90||window.orientation==-90){
+            document.getElementById("gameCanvas").style.display="none"
+            document.getElementById("orient").style.display="block"
+        }else{
+             document.getElementById("gameCanvas").style.display="block"
+            document.getElementById("orient").style.display="none"
+        }
+    }
+    document.getElementById("orient").style.display="none";
+   // orientationChange();
+    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", orientationChange, false);
+
+    function trace(v){
+  //    console.log(v)
+    }
+ var ccConfig={
+        "debugMode" : 0,
+        "showFPS" : false,
+        "frameRate" : 30,
+        "id" : "gameCanvas",
+        "renderMode" : 1,
+        "engineDir":"./../",
+        "modules" : ["cocos2d"],
+        "jsList" : [
+        ]
+    }
+document["ccConfig"]=ccConfig;
+//document.getElementById("img1").src=cc._loaderImage;
+document.getElementById("img2").src=cc._loadingImage;
+document.getElementById("img3").src=cc.tgideasLogo;
+var GD={}
+GD.GETNUM=0;
+GD.SCORE=0;
+ GD.isApp=true,
+ GD.isWin=false;
+GD.MAXHITUM=0;
+GD.SHARE="我没能完成勘探新召唤师峡谷的，你行你来啊！"
+GD.MAXTIME=60;
+GD.SOUND = false;
+GD.USETIME=0;
+function complete(){
+    orientationChange();
+ document.getElementById("loadicon").style.display="none";
+ cc.game.run();
+}
+ // function onBridgeReady() {
+ //     //转发朋友圈
+ //     WeixinJSBridge.on("menu:share:timeline", function(e) {
+ //         var url = 'http://tgideas.qq.com/flash/h5/lol/map/index.html';
+ //         var data = {
+ //             img_url: "http://tgideas.qq.com/flash/h5/lol/map/res/logo.png",
+ //             img_width: "120",
+ //             img_height: "120",
+ //             link: url,
+ //             //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+ //             title:GD.SHARE,
+ //             desc: " "
+ //         };
+ //         WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+ //             if(pgvSendClick&&typeof(pgvSendClick) == 'function') pgvSendClick({hottag:'h5game.map.shareTimeline'});
+ //            // pgvSendClick({hottag:'act.a20140721hds.shareTimeline'});
+ //             WeixinJSBridge.log(res.err_msg);
+
+ //         });
+ //     });
+ //     //同步到微博
+ //     WeixinJSBridge.on("menu:share:weibo", function() {
+ //         var url = 'http://tgideas.qq.com/flash/h5/lol/map/index.html';
+ //         WeixinJSBridge.invoke("shareWeibo", {
+ //             "content": GD.SHARE,
+ //             "url": url
+ //         }, function(res) {
+ //             if(pgvSendClick&&typeof(pgvSendClick) == 'function') pgvSendClick({hottag:'h5game.map.shareweibo'});
+ //             WeixinJSBridge.log(res.err_msg);
+ //         });
+ //     });
+ //     //分享给朋友
+ //     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+ //         var url = 'http://tgideas.qq.com/flash/h5/lol/map/index.html';
+ //         WeixinJSBridge.invoke("sendAppMessage", {
+ //             img_url: "http://tgideas.qq.com/flash/h5/lol/map/res/logo.png",
+ //             img_width: "120",
+ //             img_height: "120",
+ //             link: url,
+ //             title:"新召唤师峡谷大冒险",
+ //             desc: GD.SHARE
+ //         }, function(res) {
+ //             if(pgvSendClick&&typeof(pgvSendClick) == 'function') pgvSendClick({hottag:'h5game.map.sharemessage'});
+ //           //  pgvSendClick({hottag:'act.a20140721hds.sharemessage'});
+ //             WeixinJSBridge.log(res.err_msg)
+ //         });
+ //     });
+ // };
+ // try{
+ //     document.addEventListener('WeixinJSBridgeReady', function() {
+ //         onBridgeReady();
+ //     });
+ // }catch(e){}
+</script>
+<script src="js/cocos2dtgme.js"></script>
+<script src="js/app2.js"></script>
+
+</body>
+</html><!--[if !IE]>|xGv00|f8fe75e375b05ed39aa2e9afbf0aec86<![endif]-->

@@ -1,0 +1,77 @@
+
+<!DOCTYPE html> 
+<!-- <html manifest="manifest.mf"> -->
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta http-equiv="Cache-Controle" content="public">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1">
+        <title>雷霆机战</title> 
+  
+      <style type="text/css">
+        html,body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: helvetica, arial, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 12pt;
+           width: 100%;
+            
+        }
+        #canvas {
+            position: relative;
+            display: block;
+              image-rendering: optimizeSpeed;
+            -ms-interpolation-mode: nearest-neighbor;
+            -webkit-optimize-contrast;
+        }
+    </style>
+ 
+	<!--Google Analytics-->
+
+</head>
+<body>
+
+	
+<div id="wrapper" style="width: 444px; height: 666px; position: absolute; left: 0px; top: 0px; right: 0px; margin: auto;">
+
+    <canvas id="canvas" style="width: 444px; height: 666px;" width="320" height="480"></canvas>
+    
+    </div>
+       <img id="rotate" src="media/en/rotation_logo.png" style="display: none; position: absolute; top: 0px; left: 0px;">
+<script type="text/javascript">
+			window.scrollTo(0, 1);
+           
+            var gameHeight = window.innerHeight;
+            var gameWidth = window.innerWidth;
+            var wrapper=document.getElementById('wrapper');
+
+           
+            var scaleToFitX = gameWidth / 320;
+            var scaleToFitY = gameHeight / 480;
+
+            var currentScreenRatio = gameWidth / gameHeight;
+            var optimalRatio = Math.min(scaleToFitX, scaleToFitY);
+
+            if (currentScreenRatio >= 1.77 && currentScreenRatio <= 1.79) {
+                canvas.style.width = gameWidth + "px";
+                canvas.style.height = gameHeight + "px";
+                wrapper.style.width = gameWidth + "px";
+                wrapper.style.height = gameHeight + "px";
+            
+            } else {
+                canvas.style.width = 320 * optimalRatio + "px";
+                canvas.style.height = 480 * optimalRatio + "px";
+                wrapper.style.width = 320 * optimalRatio + "px";
+                wrapper.style.height = 480 * optimalRatio + "px";
+               
+            }
+</script>
+
+   
+    <script type="text/javascript" src="./js/game.min.js"></script> 
+	
+
+  </body></html>

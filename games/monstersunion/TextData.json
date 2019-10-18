@@ -1,0 +1,115 @@
+{
+    "en":
+    {
+        "select_level": "选择关卡",
+        "clear_progress": "清除进度",
+        "credits": "开发者",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "暂停",
+        "tutorial1": "一笔画链接所有的点",
+        "tutorial2a": "重新开始",
+        "tutorial2b": "后退一步",
+        "tutorial3": "一些线条只能单向"
+    },
+    "ru":
+    {
+        "select_level": "ВЫБЕРИ УРОВЕНЬ",
+        "clear_progress": "УДАЛИТЬ\nПРОГРЕСС?",
+        "credits": "АВТОРЫ",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "ПАУЗА",
+        "tutorial1": "Соедини все точки\nнепрерывной линией",
+        "tutorial2a": "Рестарт\nУровня",
+        "tutorial2b": "Отмена\nПоследнего\nХода",
+        "tutorial3": "У некоторых линий\nтолько одно направление."
+    },
+
+    "de": 
+    {
+        "select_level": "LEVEL WÄHLEN",
+        "clear_progress": "FORTSCHRITT\nLÖSCHEN?",
+        "credits": "CREDITS",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "PAUSE",
+        "tutorial1": "Verbinde alle Punkte\nmit einer durchgehenden Linie",
+        "tutorial2a": "Level\nneu starten",
+        "tutorial2b":"Letzen\nSchritt\nrückgängig",
+        "tutorial3": "Manche Linien sind richtungsgebunden."
+    },
+
+    "es": 
+    {
+        "select_level": "SELECCIONAR NIVEL",
+        "clear_progress": "¿BORRAR AVANCE?",
+        "credits": "CRÉDITOS",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "PAUSA",
+        "tutorial1": "Une todo los puntos\ncon una línea continua",
+        "tutorial2a": "Reiniciar\nel nivel",
+        "tutorial2b":"Retroceder\nel último paso",
+        "tutorial3": "Algunas líneas tienen dirección única."
+    },
+
+    "it": 
+    {
+        "select_level": "SELEZIONA IL LIVELLO",
+        "clear_progress": "CANCELLA\nPROGRESSI?",
+        "credits": "CREDITI",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "PAUSA",
+        "tutorial1": "Unisci tutti i punti\ncon una linea continua",
+        "tutorial2a": "Livello\ninizia di nuovo",
+        "tutorial2b":"Anulla\nultimo\npasso",
+        "tutorial3": "Alcune linee sono sensibili alla direzione."
+    },
+
+    "pt": 
+    {
+        "select_level": "SELECIONAR NÍVEL",
+        "clear_progress": "ELIMINAR\nPROGRESSO",
+        "credits": "CRÉDITOS",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "PAUSA",
+        "tutorial1": "Une todos os pontos\ncom uma linha contínua",
+        "tutorial2a": "Reiniciar\nnível",
+        "tutorial2b":"Anular\no último\npasso",
+        "tutorial3": "Algumas linhas estão limitadas num sentido."
+    },
+
+    "fr": 
+    {
+        "select_level": "CHOISIR LE NIVEAU",
+        "clear_progress": "EFFACER LES PROGRÈS ?",
+        "credits": "CRÉDITS",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "PAUSE",
+        "tutorial1": "Reliez tous les points \na vec une ligne continue",
+        "tutorial2a": "Démarrer un nouveau niveau",
+        "tutorial2b":"Annuler le dernier pas",
+        "tutorial3": "Certaines lignes vont dans plusieurs sens."
+    },
+
+    "tk": 
+    {
+        "select_level": "SEVİYE SEÇ",
+        "clear_progress": "GELİŞİMİ TEMİZLE",
+        "credits": "KREDİLER",
+        "credits_code": "SOFTGAMES",
+        "credits_art": "Mobile Entertainment-\nServices GmbH",
+        "pause": "DURAKLAT",
+        "tutorial1": "Tüm noktaları kesintisiz bir hatla birleştir",
+        "tutorial2a": "Seviyeyi tekrar başlat",
+        "tutorial2b":"Son hareketi geri al",
+        "tutorial3": "Bazı hatlar tek yönlüdür."
+    }
+
+
+
+}

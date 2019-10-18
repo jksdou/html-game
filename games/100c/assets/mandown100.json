@@ -1,0 +1,378 @@
+{"frames": {
+    "img_spring_step3": {
+        "offX": 0,
+        "y": 207,
+        "w": 96,
+        "h": 22,
+        "offY": 0,
+        "x": 196
+    },
+    "img_run_left2": {
+        "offX": 0,
+        "y": 136,
+        "w": 25,
+        "h": 32,
+        "offY": 0,
+        "x": 375
+    },
+    "img_spring_step2": {
+        "offX": 0,
+        "y": 228,
+        "w": 96,
+        "h": 18,
+        "offY": 0,
+        "x": 98
+    },
+    "img_arrow_intro": {
+        "offX": 0,
+        "y": 230,
+        "w": 37,
+        "h": 15,
+        "offY": 0,
+        "x": 380
+    },
+    "img_stand1": {
+        "offX": 0,
+        "y": 131,
+        "w": 32,
+        "h": 31,
+        "offY": 0,
+        "x": 402
+    },
+    "img_run_left2_hurt": {
+        "offX": 0,
+        "y": 165,
+        "w": 25,
+        "h": 32,
+        "offY": 0,
+        "x": 433
+    },
+    "img_rect_startgame": {
+        "offX": 0,
+        "y": 90,
+        "w": 207,
+        "h": 70,
+        "offY": 0,
+        "x": 0
+    },
+    "img_left_step2": {
+        "offX": 0,
+        "y": 256,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 392
+    },
+    "img_jump1": {
+        "offX": 0,
+        "y": 169,
+        "w": 28,
+        "h": 32,
+        "offY": 0,
+        "x": 307
+    },
+    "img_stand_hurt": {
+        "offX": 0,
+        "y": 136,
+        "w": 32,
+        "h": 31,
+        "offY": 0,
+        "x": 307
+    },
+    "img_intro_gesture": {
+        "offX": 0,
+        "y": 0,
+        "w": 62,
+        "h": 87,
+        "offY": 0,
+        "x": 410
+    },
+    "img_roll_step1": {
+        "offX": 0,
+        "y": 250,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 0
+    },
+    "img_progress": {
+        "offX": 0,
+        "y": 265,
+        "w": 96,
+        "h": 15,
+        "offY": 0,
+        "x": 294
+    },
+    "img_left_step1": {
+        "offX": 0,
+        "y": 247,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 294
+    },
+    "img_startgame_label": {
+        "offX": 0,
+        "y": 90,
+        "w": 191,
+        "h": 44,
+        "offY": 0,
+        "x": 209
+    },
+    "img_eight": {
+        "offX": 0,
+        "y": 197,
+        "w": 28,
+        "h": 31,
+        "offY": 0,
+        "x": 397
+    },
+    "img_roll_step2": {
+        "offX": 0,
+        "y": 200,
+        "w": 96,
+        "h": 30,
+        "offY": 0,
+        "x": 0
+    },
+    "img_run_left3": {
+        "offX": 0,
+        "y": 136,
+        "w": 32,
+        "h": 31,
+        "offY": 0,
+        "x": 341
+    },
+    "img_step": {
+        "offX": 0,
+        "y": 249,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 196
+    },
+    "img_jump1_hurt": {
+        "offX": 0,
+        "y": 169,
+        "w": 28,
+        "h": 32,
+        "offY": 0,
+        "x": 337
+    },
+    "img_roll_step3": {
+        "offX": 0,
+        "y": 162,
+        "w": 96,
+        "h": 36,
+        "offY": 0,
+        "x": 0
+    },
+    "img_run_left3_hurt": {
+        "offX": 0,
+        "y": 136,
+        "w": 32,
+        "h": 31,
+        "offY": 0,
+        "x": 461
+    },
+    "img_fill": {
+        "offX": 0,
+        "y": 232,
+        "w": 22,
+        "h": 22,
+        "offY": 0,
+        "x": 419
+    },
+    "img_left_step3": {
+        "offX": 0,
+        "y": 231,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 196
+    },
+    "img_jump2": {
+        "offX": 0,
+        "y": 34,
+        "w": 32,
+        "h": 32,
+        "offY": 0,
+        "x": 474
+    },
+    "img_roll_step4": {
+        "offX": 0,
+        "y": 162,
+        "w": 96,
+        "h": 32,
+        "offY": 0,
+        "x": 98
+    },
+    "img_three": {
+        "offX": 0,
+        "y": 170,
+        "w": 28,
+        "h": 31,
+        "offY": 0,
+        "x": 367
+    },
+    "img_left_step4": {
+        "offX": 0,
+        "y": 248,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 98
+    },
+    "img_mandown_label": {
+        "offX": 0,
+        "y": 0,
+        "w": 408,
+        "h": 88,
+        "offY": 0,
+        "x": 0
+    },
+    "img_five": {
+        "offX": 0,
+        "y": 199,
+        "w": 28,
+        "h": 31,
+        "offY": 0,
+        "x": 427
+    },
+    "img_spring_step1": {
+        "offX": 0,
+        "y": 232,
+        "w": 96,
+        "h": 16,
+        "offY": 0,
+        "x": 0
+    },
+    "img_roll_step5": {
+        "offX": 0,
+        "y": 136,
+        "w": 96,
+        "h": 36,
+        "offY": 0,
+        "x": 209
+    },
+    "img_six": {
+        "offX": 0,
+        "y": 169,
+        "w": 28,
+        "h": 31,
+        "offY": 0,
+        "x": 460
+    },
+    "img_jump2_hurt": {
+        "offX": 0,
+        "y": 68,
+        "w": 32,
+        "h": 32,
+        "offY": 0,
+        "x": 474
+    },
+    "img_nail_step": {
+        "offX": 0,
+        "y": 174,
+        "w": 96,
+        "h": 31,
+        "offY": 0,
+        "x": 196
+    },
+    "img_seven": {
+        "offX": 0,
+        "y": 203,
+        "w": 25,
+        "h": 31,
+        "offY": 0,
+        "x": 353
+    },
+    "img_roll_step6": {
+        "offX": 0,
+        "y": 196,
+        "w": 96,
+        "h": 30,
+        "offY": 0,
+        "x": 98
+    },
+    "img_one": {
+        "offX": 0,
+        "y": 169,
+        "w": 19,
+        "h": 31,
+        "offY": 0,
+        "x": 490
+    },
+    "img_nine": {
+        "offX": 0,
+        "y": 202,
+        "w": 28,
+        "h": 31,
+        "offY": 0,
+        "x": 457
+    },
+    "img_two": {
+        "offX": 0,
+        "y": 164,
+        "w": 29,
+        "h": 31,
+        "offY": 0,
+        "x": 402
+    },
+    "img_run_left1": {
+        "offX": 0,
+        "y": 131,
+        "w": 23,
+        "h": 32,
+        "offY": 0,
+        "x": 436
+    },
+    "img_wizcloud_logo": {
+        "offX": 0,
+        "y": 277,
+        "w": 112,
+        "h": 47,
+        "offY": 0,
+        "x": 0
+    },
+    "img_jump3": {
+        "offX": 0,
+        "y": 102,
+        "w": 32,
+        "h": 32,
+        "offY": 0,
+        "x": 461
+    },
+    "img_four": {
+        "offX": 0,
+        "y": 203,
+        "w": 27,
+        "h": 31,
+        "offY": 0,
+        "x": 324
+    },
+    "img_zero": {
+        "offX": 0,
+        "y": 203,
+        "w": 28,
+        "h": 31,
+        "offY": 0,
+        "x": 294
+    },
+    "img_jump3_hurt": {
+        "offX": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32,
+        "offY": 0,
+        "x": 474
+    },
+    "img_run_left1_hurt": {
+        "offX": 0,
+        "y": 202,
+        "w": 23,
+        "h": 32,
+        "offY": 0,
+        "x": 487
+    }
+}, "file": "mandown100.png"}

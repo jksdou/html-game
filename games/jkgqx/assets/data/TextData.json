@@ -1,0 +1,171 @@
+﻿{
+    "en":
+    {
+        "credits": "Credits",
+        "level_select": "关卡选择",
+        "level_complete": "完成\n关卡",
+        "level": "关卡",
+        "moves": "步数",
+        "score": "分数",
+        "game_complete": "完成游戏",
+        "thanks": "谢谢您！",
+
+        "tutorial1a": "笑脸表示相互连接着。\n有时候连接是交叉的。",
+        "tutorial1b": "拖动它们改变位置\n使之都变成笑脸！",
+        "tutorial8": "变得越来越难了。",
+        "tutorial11": "有时候笑脸被束缚在圈上。",
+        "tutorial15": "有些元素是固定的。"
+
+    },
+    "ch":
+    {
+        "credits": "Credits",
+        "level_select": "Level Select",
+        "level_complete": "Level\nComplete",
+        "level": "Level",
+        "moves": "Moves",
+        "score": "Score",
+        "game_complete": "Game complete",
+        "thanks": "Thanks for playing!",
+
+        "tutorial1a": "Smileys are connected with each other.\nSometimes links are crossed.",
+        "tutorial1b": "Drag smileys to uncross the lines\nand make everyone happy!",
+        "tutorial8": "It's getting harder and harder",
+        "tutorial11": "Sometimes smileys are tied to a circle",
+        "tutorial15": "Look! Some elements are fixed."
+
+    },
+
+    "de":
+    {
+        "credits": "Credits",
+        "level_select": "Level wählen",
+        "level_complete": "Level\nbeendet",
+        "level": "Level",
+        "moves": "Züge",
+        "score": "Punktzahl",
+        "game_complete": "Spiel beendet",
+        "thanks": "Vielen Dank für's Spielen!",
+
+        "tutorial1a": "Die Smileys sind miteinander verbunden.\nManchmal kreuzen sich die Verbindungen.",
+        "tutorial1b": "Ziehe die Smileys so, dass sich kein Linien\nmehr kreuzen und alle glücklich sind!",
+        "tutorial8": "Es wird immer schwerer!",
+        "tutorial11": "Manchmal sind die Smileys an einem Kreis befestigt",
+        "tutorial15": "Schau mal! Einige Elemente können nicht bewegt werden."
+
+    },
+
+    "es":
+    {
+        "credits": "Créditos",
+        "level_select": "Seleccionar nivel",
+        "level_complete": "Nivel\ncompletado",
+        "level": "Nivel",
+        "moves": "Jugadas",
+        "score": "Puntuación",
+        "game_complete": "Juego completado",
+        "thanks": "¡Gracias por jugar!",
+
+        "tutorial1a": "Las sonrisas están conectadas entre sí.\nA veces las conexiones están cruzadas.",
+        "tutorial1b": "¡Arrastra las sonrisas para descruzar las líneas\n y hacer feliz a todos!",
+        "tutorial8": "Cada vez se complica más y más",
+        "tutorial11": "A veces las sonrisas están atadas a un círculo",
+        "tutorial15": "¡Fíjate! Algunos elementos son fijos."
+
+    },
+
+    "fr":
+    {
+        "credits": "Créateurs",
+        "level_select": "Choix du niveau",
+        "level_complete": "Niveau \nterminé",
+        "level": "Niveau",
+        "moves": "Déplacements",
+        "score": "Score",
+        "game_complete": "Jeu terminé",
+        "thanks": "Merci d'avoir joué !",
+
+        "tutorial1a": "Les smileys sont reliés entre eux. \nParfois les liens se croisent.",
+        "tutorial1b": "Déplacez les smileys pour que les liens ne se croisent plus \net tout le monde sera content!",
+        "tutorial8": "C'est de plus en plus difficile",
+        "tutorial11": "Parfois les smileys sont reliés à un cercle",
+        "tutorial15": "Regardez ! Certains éléments sont fixes."
+
+    },
+
+    "it":
+    {
+        "credits": "Crediti",
+        "level_select": "Selezione del livello",
+        "level_complete": "Livello\ncompletato",
+        "level": "Livello",
+        "moves": "Mosse",
+        "score": "Punteggio",
+        "game_complete": "Gioco completato",
+        "thanks": "Grazie per aver giocato!",
+
+        "tutorial1a": "I sorrisi sono collegati tra di loro.\nA volte i collegamenti sono incrociati.",
+        "tutorial1b": "Trascina i sorrisi per liberare le linee\ne rendere tutti felici!",
+        "tutorial8": "Sta diventando sempre più difficile",
+        "tutorial11": "A volte i sorrisi  sono legati ad un cerchio",
+        "tutorial15": "Guarda! Alcuni elementi sono fissi."
+
+    },
+
+    "pt":
+    {
+        "credits": "Créditos",
+        "level_select": "Seleção de Nível",
+        "level_complete": "Nível\nCompletado",
+        "level": "Nível",
+        "moves": "Jogadas",
+        "score": "Pontuação",
+        "game_complete": "Jogo completado",
+        "thanks": "Obrigado por jogar!",
+
+        "tutorial1a": "Os smileys estão conectados entre si.\nÀs vezes as ligações estão cruzadas.",
+        "tutorial1b": "Arraste os smileys para descruzar as linhas\ne fazer todos felizes!",
+        "tutorial8": "Está a ficar cada vez mais difícil",
+        "tutorial11": "Às vezes os smileys estão presos a um círculo",
+        "tutorial15": "Olha! Alguns elementos estão fixos."
+
+    },
+
+    "tr":
+    {
+        "credits": "Kredi",
+        "level_select": "Bölüm Seç",
+        "level_complete": "Bölüm\nTamamlandı",
+        "level": "Bölüm",
+        "moves": "Hareket",
+        "score": "Skor",
+        "game_complete": "Oyun tamamlandı",
+        "thanks": "Oynadığınız için teşekkürler!",
+
+        "tutorial1a": "Gülenyüzler birbirine bağlıdır.\nBazen bu bağlantılar çaprazdır.",
+        "tutorial1b": "Bu çizgileri açmak\nve herkesi mutlu etmek için gülenyüzleri sürükleyin!",
+        "tutorial8": "Gittikçe zorlaşıyor",
+        "tutorial11": "Bazen gülenyüzler bir halkaya bağlıdır",
+        "tutorial15": "Bakın! Bazı parçalar sabitleştirildi."
+
+    },
+
+
+    "ru":
+    {
+        "credits": "Авторы",
+        "level_select": "Выбор уровня",
+        "level_complete": "Уровень\nпройден!",
+        "level": "Уровень",
+        "moves": "Ходы",
+        "score": "Очки",
+        "game_complete": "Ура!",
+        "thanks": "Игра пройдена!",
+
+        "tutorial1a": "Кругляши связаны между собой.\nИногда линии пересекаются",
+        "tutorial1b": "Двигай кругляшей, чтобы распутать связи\nи сделать всех счастливыми!",
+        "tutorial8": "Становится все сложней и сложней",
+        "tutorial11": "Иногда кругляши привязаны к окружности",
+        "tutorial15": "Смотри! Некоторые элементы зафиксированы."
+    }
+}

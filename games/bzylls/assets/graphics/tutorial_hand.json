@@ -1,0 +1,211 @@
+﻿{"frames": {
+
+"Tutorial_Hand0000":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0001":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0002":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0003":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0004":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0005":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0006":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0007":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0008":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0009":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0010":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0011":
+{
+	"frame": {"x":86,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0012":
+{
+	"frame": {"x":171,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0013":
+{
+	"frame": {"x":256,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0014":
+{
+	"frame": {"x":341,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0015":
+{
+	"frame": {"x":426,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0016":
+{
+	"frame": {"x":1,"y":115,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0017":
+{
+	"frame": {"x":86,"y":115,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0018":
+{
+	"frame": {"x":171,"y":115,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0019":
+{
+	"frame": {"x":256,"y":115,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0020":
+{
+	"frame": {"x":341,"y":115,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0021":
+{
+	"frame": {"x":426,"y":115,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0022":
+{
+	"frame": {"x":1,"y":229,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0023":
+{
+	"frame": {"x":86,"y":229,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+},
+"Tutorial_Hand0024":
+{
+	"frame": {"x":1,"y":1,"w":83,"h":112},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":83,"h":112},
+	"sourceSize": {"w":83,"h":112}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "13.1.0.226",
+	"image": "tutorial_hand.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

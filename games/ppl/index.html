@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html lang="en" manifest="cache/game.appcache">
+<head>
+    <meta charset="UTF-8">
+    <title>泡泡龙</title>
+	<link rel="stylesheet" href="assets/css/bubble.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+</head>
+<body class="loading">
+
+
+    <div id="grid">
+        <div class="page" id="loading">
+            <div class="windows8" id="win-loading">
+                <div class="wBall" id="wBall_1">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_2">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_3">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_4">
+                <div class="wInnerBall">
+                </div>
+                </div>
+                <div class="wBall" id="wBall_5">
+                <div class="wInnerBall">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="page hide" id="index">
+            <div class="btn-wrap">
+                <button class="btn-classics" id="start">start</button>
+            </div>
+        </div>
+        <div class="page hide" id="levelList">
+            <div class="wrap" id="listWrap">
+                <ul class="clearfix"></ul>
+            </div>
+            <div id="handler" class="handler">
+                <span class="icon-prev"></span>
+                <span class="txt">10/200</span>
+                <span class="icon-next"></span>
+            </div>
+            <button class="btn-back" id="goToIndex">返回主页</button>
+        </div>
+        <div class="page hide" id="room">
+            <div id="info" class="hide">
+                <div id="pauseInfo" class="dialog">
+                    <h4 class="title pause">游戏暂停</h4>
+                    <div class="btn-wrap">
+                        <button class="btn resume">继续游戏</button>
+                        <button class="fl back btn-back">返回</button>
+                        <button class="btn restart">重来</button>
+                    </div>
+                </div>
+                <div id="gameWinInfo" class="dialog">
+                    <div class="info">
+                        <div class="star-wrap"></div>
+                        Time : <span class="time"></span>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="btn nextLv">下一关</button>
+                        <button class="fl back btn-back">返回</button>
+                        <button class="btn restart">重来</button>
+                    </div>
+                </div>
+                <div id="gameLostInfo" class="dialog">
+                    <h4 class="title lose">很遗憾</h4>
+                    <p class="help-txt lose">闯关失败</p>
+                    <div class="btn-wrap">
+                        <button class="fl back btn-back">返回</button>
+                        <button class="btn restart">重来</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;">
+<script type="text/javascript">
+</script> -->
+ </div>
+ <script type="text/javascript" src="recommend.js"></script>
+</body>
+</html>
+<script type="text/html" id="tpl_lvItem">
+    <span data-lv="<%=lv%>" class="<%=className%> lv-item">
+        <% if(className == 'unlock') {%>
+            <p><%=idx%></p>
+        <% } %>
+        <span class="star-wrap">
+            <%
+                _(3).times(function(i) {
+                    if( i+1 > star){
+            %>
+                <i></i>
+            <% }else{ %>
+                <i class="star"></i>
+            <%}})%>
+        </span>
+    </span>
+</script>
+
+<script src="assets/js/lib/lib.min.js"></script>
+<script src="assets/js/app/app.min.js"></script>

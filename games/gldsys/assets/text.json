@@ -1,0 +1,198 @@
+﻿{"texts_en": [
+{
+	"id": "levelComplete",
+	"text": "恭喜过关"
+},
+{
+	"id": "developed",
+	"text": "分数 "
+},
+{
+	"id": "level",
+	"text": "关卡"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_de": [
+{
+	"id": "levelComplete",
+	"text": "Niveua beendet"
+},
+{
+	"id": "developed",
+	"text": "Credits "
+},
+{
+	"id": "level",
+	"text": "Niveua"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_es": [
+{
+	"id": "levelComplete",
+	"text": "¡Nivel completo!"
+},
+{
+	"id": "developed",
+	"text": "Creditos"
+},
+{
+	"id": "level",
+	"text": "Nivel"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_fr": [
+{
+	"id": "levelComplete",
+	"text": "Niveau terminé !"
+},
+{
+	"id": "developed",
+	"text": "Crédits"
+},
+{
+	"id": "level",
+	"text": "Niveau"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_it": [
+{
+	"id": "levelComplete",
+	"text": "Livello completato!"
+},
+{
+	"id": "developed",
+	"text": "Crediti"
+},
+{
+	"id": "level",
+	"text": "Livello"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_pt": [
+{
+	"id": "levelComplete",
+	"text": "Nível Completo!"
+},
+{
+	"id": "developed",
+	"text": "Créditos"
+},
+{
+	"id": "level",
+	"text": "Nível"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_ru": [
+{
+	"id": "levelComplete",
+	"text": "Уровень пройден!"
+},
+{
+	"id": "developed",
+	"text": "Кредиты"
+},
+{
+	"id": "level",
+	"text": "Уровень"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}],
+
+
+
+"texts_tr": [
+{
+	"id": "levelComplete",
+	"text": "Seviye Tamamlandı!"
+},
+{
+	"id": "developed",
+	"text": "Krediler"
+},
+{
+	"id": "level",
+	"text": "Seviye"
+},
+{
+	"id": "aizat",
+	"text": ""
+},
+
+{
+	"id": "email",
+	"text": ""
+}]
+}

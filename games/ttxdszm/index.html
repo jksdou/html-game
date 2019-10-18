@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>天天炫斗-无尽的斩杀</title>
+    <style>
+        html, body { margin:0; padding:0; text-align:  center;display: block; background-color: #000000;}
+    </style>
+    <meta name="viewport" content="target-densitydpi=device-dpi">
+    <!---->
+</head>
+<body onload="initGame()">
+<div id="loadicon" style="margin-top: 250px" >
+     <img src="data:image/gif;base64,R0lGODlhEAAQALMNAD8/P7+/vyoqKlVVVX9/fxUVFUBAQGBgYMDAwC8vL5CQkP///wAAAP///wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAANACwAAAAAEAAQAAAEO5DJSau9OOvNex0IMnDIsiCkiW6g6BmKYlBFkhSUEgQKlQCARG6nEBwOgl+QApMdCIRD7YZ5RjlGpCUCACH5BAUAAA0ALAAAAgAOAA4AAAQ6kLGB0JA4M7QW0hrngRllkYyhKAYqKUGguAws0ypLS8JxCLQDgXAIDg+FRKIA6v0SAECCBpXSkstMBAAh+QQFAAANACwAAAAACgAQAAAEOJDJORAac6K1kDSKYmydpASBUl0mqmRfaGTCcQgwcxDEke+9XO2WkxQSiUIuAQAkls0n7JgsWq8RACH5BAUAAA0ALAAAAAAOAA4AAAQ6kMlplDIzTxWC0oxwHALnDQgySAdBHNWFLAvCukc215JIZihVIZEogDIJACBxnCSXTcmwGK1ar1hrBAAh+QQFAAANACwAAAAAEAAKAAAEN5DJKc4RM+tDyNFTkSQF5xmKYmQJACTVpQSBwrpJNteZSGYoFWjIGCAQA2IGsVgglBOmEyoxIiMAIfkEBQAADQAsAgAAAA4ADgAABDmQSVZSKjPPBEDSGucJxyGA1XUQxAFma/tOpDlnhqIYN6MEAUXvF+zldrMBAjHoIRYLhBMqvSmZkggAIfkEBQAADQAsBgAAAAoAEAAABDeQyUmrnSWlYhMASfeFVbZdjHAcgnUQxOHCcqWylKEohqUEAYVkgEAMfkEJYrFA6HhKJsJCNFoiACH5BAUAAA0ALAIAAgAOAA4AAAQ3kMlJq704611SKloCAEk4lln3DQgyUMJxCBKyLAh1EMRR3wiDQmHY9SQslyIQUMRmlmVTIyRaIgA7"/>
+</div>
+<script src="lib/easeljs-0.7.1.min.js"></script>
+<script src="lib/tweenjs-0.5.1.min.js"></script>
+
+<script src="lib/preloadjs-0.4.1.min.js"></script>
+<script src="lib/LoaderManager.js"></script>
+<script src="src/app.js"></script>
+
+
+
+
+<style>
+    * { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+    html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+    canvas { display:block; }
+
+</style>
+<script language="javascript">
+    // if(typeof(pgvMain) == 'function') pgvMain();
+
+    // function onBridgeReady() {
+    //     //转发朋友圈
+    //     WeixinJSBridge.on("menu:share:timeline", function(e) {
+    //         var url = 'http://ttxd.qq.com/act/a20140919game/';
+    //         var data = {
+    //             img_url: "http://ttxd.qq.com/act/a20140919game/images/ttxd.jpg",
+    //             img_width: "120",
+    //             img_height: "120",
+    //             link: url,
+    //             //desc这个属性要加上，虽然不会显示，但是不加暂时会导致无法转发至朋友圈，
+    //             desc:App.DESC,
+    //             title:App.DESC
+    //         };
+
+    //         WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+    //             pgvSendClick({hottag:"a20140919.share.wx"});
+    //             WeixinJSBridge.log(res.err_msg)
+    //         });
+    //     });
+    //     //同步到微博
+    //     WeixinJSBridge.on("menu:share:weibo", function() {
+    //         var url = 'http://ttxd.qq.com/act/a20140919game/';
+
+    //         WeixinJSBridge.invoke("shareWeibo", {
+    //             "content": App.DESC,
+    //             "url": url
+    //         }, function(res) {
+    //             pgvSendClick({hottag:"a20140919.share.wb"});
+    //             WeixinJSBridge.log(res.err_msg);
+    //         });
+    //     });
+    //     //分享给朋友
+    //     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+    //         var url = 'http://ttxd.qq.com/act/a20140919game/';
+
+    //         WeixinJSBridge.invoke("sendAppMessage", {
+    //             img_url: "http://ttxd.qq.com/act/a20140919game/images/ttxd.jpg",
+    //             img_width: "120",
+    //             img_height: "120",
+    //             link: url,
+    //             desc:App.DESC,
+    //             title: App.TITLE
+    //         }, function(res) {
+    //             pgvSendClick({hottag:"a20140919.share.sendAppMessage"});
+    //             WeixinJSBridge.log(res.err_msg)
+    //         });
+    //     });
+    // };
+
+    // try{
+    //     document.addEventListener('WeixinJSBridgeReady', function() {
+    //         onBridgeReady();
+    //     });
+    // }catch(e){}
+    function onButtonEvent(value)
+    {
+        //pgvSendClick({hottag:'a20140817map.index.img.begin_logo'});
+        var PGVtype = "a20140919game.index";
+        switch (value)
+        {
+            case "share_btn":
+                //share_btn 分享按钮
+                PGVtype=  "a20140919game.gameover.sharebtn";
+                break;
+            case "reset_game":
+                //reset_game 重玩按钮
+                PGVtype=  "a20140919game.gameover.regame";
+                break;
+            case "start_name":
+
+                PGVtype=  "a20140919game.info.ingame";
+                break;
+            case "in_ttxd":
+                PGVtype=  "a20140919.info.inttxd";
+
+                break;
+
+        }
+
+
+        // pgvSendClick({hottag:PGVtype});
+
+    }
+
+
+</script>
+<div style="width: 100%; height: 100%;">
+	<canvas id="canvas" width="640" height="960" style="background-color:#191919"></canvas>
+</div>
+</body>
+
+
+</html><!--[if !IE]>|xGv00|9c815681e8627d42d65c9667328980b1<![endif]-->

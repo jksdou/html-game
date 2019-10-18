@@ -1,0 +1,63 @@
+
+<!DOCTYPE html> 
+<html manifest="manifest.mf"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>怪物连萌</title>
+
+  <!-- Define the viewport -->
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, target-densitydpi=device-dpi">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+    * {
+       -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    html {
+      overflow: hidden;
+    }
+    body,html {
+      margin: 0;
+      padding: 0; 
+      background-color: #111111;
+      height: 100%;
+      width: 100%;
+      display:block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    #canvas {
+        background-color: #189000;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -172px;
+        margin-left: -160px;
+        z-index: 1;
+    }
+
+  </style>
+  <script type="text/javascript"></script>
+  <script language="javascript"></script>
+  <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/game.min.js"></script>
+	
+  <!--Analytics-->
+	
+</head>
+<body onload="MyGame.init()" ryt12819="1">
+
+    <canvas id="canvas" width="638" height="893" style="-webkit-transform: scale(1, 1); margin-top: 0px; margin-left: 0px; left: 0px; top: 0px; background-color: rgb(17, 17, 17);"></canvas>
+
+
+	
+
+	
+</body></html>

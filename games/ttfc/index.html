@@ -1,0 +1,808 @@
+
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta name="robots" content="all" />
+    <meta name="Copyright" content="TENCNET" />
+    <meta name="author" content="Tencent-TGideas" />
+    <title>【天天飞车·全新超级配件版本上线】最炫科技风</title>
+	<meta name="Keywords" content="天天飞车,女神,天天飞车女神评选活动,天天飞车视频,天天飞车礼包,微信/手Q游戏,极速闪避"/>
+	<meta name="Description" content="《天天飞车》是一款3D写实极速闪避类手机游戏，《QQ飞车》原班人马打造。酷炫赛车，逼真场景，刺激玩法，让你感受与众不同手游新乐趣。"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- 设计：yafee | 重构：shine | 创建：20140711 | 团队博客：http://tgideas.qq.com -->
+    <style>
+		body,h1,h2,h3,h4,dl,dt,dd,ul,ol,li,p{margin:0;padding:0;}
+		table{border-collapse:collapse;border-spacing:0}
+		h1,h2,h3,h4{font-size:100%}
+		ul,li{list-style:none}
+		em,i{font-style:normal}
+		img{border:0}
+		input,img{vertical-align:middle}
+		body{
+		         min-width:320px;
+		         color:#fff;
+		         font-family:Helvetica,Arial;
+		         -webkit-text-size-adjust:none;
+		         background-color: #000;
+		         font-size: 14px;
+		         word-wrap: break-word;
+		         word-break:keep-all;
+		         overflow: hidden;
+		         -webkit-user-select:none;
+		         -webkit-touch-callout:none;
+		         -webkit-tap-highlight-color: rgba(0,0,0,0);
+		         -webkit-font-smoothing: antialiased;
+		}
+		html,body{height:100%;}
+		a{color:#fff; text-decoration:none; display:block;}
+
+		.road{width: 155px; margin:0 auto; position: absolute; right:0; top:0; bottom:130px; overflow: hidden; left:12px;}
+		.road img{width: 155px; height:350px;}
+		.road-inner{ position: absolute; top:-350px; left:0; width: 100%;}
+		.road-arrow{width: 20px; height:25px; background:url(./images/road-arrow.png?201407110132) no-repeat; background-size: 20px 25px; position: absolute; left:50%; margin-left: -10px; top:10px; z-index:3;}
+		.car{width: 121px; height:299px; position: absolute; top:54px; left:50%; margin-left: -55px;}
+		.car img{width: 121px; height:240px;}
+		.car-normal{width: 82px; height:83px; position: absolute; top:100px; left:33px;}
+		.car-cry,
+		.car-laugh{background:url(./images/car-status.png?201407110132) no-repeat; background-size: 212px 180px; width: 212px; height:81px; position: absolute; top:107px; left:-61px;}
+
+		.car-laugh{background-position: 0 -100px; -webkit-tranisition}
+
+		.tools{width: 320px; height:130px; text-align: center; background:url(./images/toolsbar.jpg?201407110132) no-repeat; background-size: 320px 130px;  z-index: 3; position: absolute; bottom:0;}
+		.tools span{display: inline-block; margin:10px 1px 0; position: relative;}
+		.tools img{width: 70px; height:auto; display: block;}
+		.tools em{position: absolute; bottom:-12px; width: 100%; left:0; right:0; color:#61615F;}
+		.hour{width: 75px; height:98px; background:url(./images/hours.png?201407110132) no-repeat; background-size: 75px 98px; position: absolute; right:0; top:90px; color:#fff;}
+		.hour span{position: absolute; top:50px; left:19px; font-size89px; color:#3c879a;}
+		.hour b{font-size:12px; color:#39fffa; margin-right: 4px;}
+
+		.loading{width: 50px; height:50px; border-radius:50px; border:5px solid #f60; display: inline-block;  margin-top: 150px;}
+
+
+		.load{text-align: center;  background-color: #050505; overflow: hidden; display: block; z-index: 9;}
+		.loadBg{background:url(./images/loadbg.jpg?201407110132) no-repeat; width: 265px; height:267px; background-size: 265px 267px; position: absolute; left:50%; margin-left: -133px; top:20%;}
+		.loadGif{background:url(./images/wheel.png?201407110132) no-repeat; width: 106px; height:106px; background-size: 106px 106px; position: absolute; top:54px; left:82px; -webkit-animation: rotate 3s infinite linear;}
+
+
+		.spinner{text-align: center; background-color: #e2b105;}
+		.page{position: absolute; top:0; left:0; right:0; bottom:0;}
+		.main{background:url(./images/bg.jpg?201407110132) no-repeat top center #161616; width: 320px; margin:0 auto; background-size: 320px 480px; display: block;}
+
+		.guide{text-align: center; overflow: hidden; background: rgba(0,0,0,.8); z-index: 8;}
+		.guideArrow{width: 24px; height:24px; border-top: solid 3px #9E9E9E; border-right: solid 3px #9E9E9E; top: 50%; right: 15px; margin-top: -24px; -webkit-transform: rotate(45deg); transform: rotate(45deg); position: absolute;}
+		.guidebar{width: 320px; height:130px; position: absolute;  bottom:0; left:50%; margin-left: -160px;}
+		.guidebaPoint{width: 232px; height:176px; background:url(./images/guidebarpoint.png?201407110132) no-repeat; background-size:232px 176px; position: absolute; top:-61px; left:50%; margin-left: -116px; z-index: 3;}
+		.guidebarBg{width: 320px; height:90px; background:url(./images/guidebar.jpg?201407110132) no-repeat; background-size:320px 90px; position: relative; z-index: 2;}
+		.guidebarBlank{background-color: #000; position: absolute; top:85px; left:0; right:0; bottom:0;}
+		
+		.guideList {width: 1000%;height: 100%;}
+		.guideList li{float: left; width: 10%; height: 100%; position: relative;}
+		.guide .progress-bar{position: absolute;bottom: 0;width: 100%;height: 30px;text-align: center;}
+		.guide .progress-bar li{display: inline-block;width: 20px;height: 20px;border-radius: 10px;background-color: #494949;-webkit-transform: scale(0.5, 0.5);}
+		.guide .progress-bar .current{background-color: #fff;}
+
+		.propListTit{margin:20px auto 0; width: 280px; text-align: left;}
+		.propList{margin: 15px auto 0; width: 280px;}
+		.propList dt{font-size:13px; padding-left: 10px;  height:30px; line-height: 30px; text-align: left;}
+		.propList dd{ height:95px;}
+		.propGood dt{background:rgba(82,199,87,.34);}
+		.propGood dd{background:rgba(68,133,66,.34);}
+		.propBad dt{background:rgba(200,80,80,.34);}
+		.propBad dd{background:rgba(169,70,70,.34);}
+		.propList img{width: 70px;}
+		.propList p{float:left;}
+		.propList p span{display:block; text-align: center; margin-top: -10px; color:#6c8568; font-size:11px;}
+
+		.begin{width: 172px; height:60px; font-size:18px; border:2px solid #fff; line-height: 60px; color:#fff;  position: absolute; bottom:50px; left:50%; margin-left: -86px;}
+		.intro{margin-top: 150px; color:#fff; line-height: 2; font-size:18px;}
+		.intro strong{color:#ffe607;}
+		.intro b{color:#ee2f2f;}
+		@-webkit-keyframes rotate {
+		  0% {-webkit-transform:rotate(0deg);}
+		  100% {-webkit-transform:rotate(360deg);}
+		}
+
+		.oils{width: 25px; height:168px; background:url(./images/oil.png?201407110132) no-repeat; background-size:35px 223px; position: absolute; left:0; top:84px; padding-top: 32px; padding-left: 10px;}
+		.oils span{width: 15px; height:13px; display: block; background:url(./images/oil.png?201407110132) no-repeat 0 -210px; background-size:35px 223px; margin-bottom: 2px; }
+		.oils .blank{background: none;}
+		.miles{width: 114px; height:70px; background:url(./images/miles.png?201407110132) no-repeat; background-size: 114px 70px; position: absolute; left:0; top:15px; font-size:11px; color:#c3ffb8;}
+		.miles em{position: absolute; left:10px; top:27px; font-style: normal;}
+		.miles b{margin-right: 4px; font-size:25px;}
+		.miles strong{font-size:15px; color:#d2cebf; position: absolute; top:6px; right:37px;}
+		.car-normal{-moz-transition: all 6s linear 0s; opacity:0;}
+		#carStatus{transition: opacity 2s ease-out;}
+
+		#carText{width: 140px; text-align: center; font-size:15px; color:#fff; margin:21px 0 0 70px; padding:10px 5px 6px 0; height:30px;  font-weight:bold; z-index: 3; font-size:15px;}
+
+		.share{background-color: #000; opacity:0.8; position: absolute; top:0; bottom:0; left:0; right:0; display: none; z-index: 3;}
+		.share .btn{width: 40px; height:40px; background-color: #f60; color:#fff; font-size:16px; display: inline-block; margin-left: 20px; }
+
+		.shareSl {color:#fff; font-size:12px;  font-size:15px; width: 205px; margin:15px auto 0; text-align: center; line-height: 1.4;}
+		.shareSl  b{color:#fef000;}
+
+		.shareShow{width: 273px; height:160px; background:url(./images/shareShow.png?201407110132) no-repeat; background-size: 273px 159px; margin:5px auto 0; color:#fff; font-size:12px; text-align: center;  line-height: 1.5;}
+		
+		.shareData{padding-top: 35px; position: relative; z-index: 2;}
+		.shareData b{font-size:35px; margin-right: 4px;}
+		.shareData em{font-size:24px;}
+
+		.propShow{display: none;}
+		.propShow img{width: 65px; float:left; margin-left: 28px; margin-top: 38px;}
+		.propShow h2{margin-left: 105px; padding-top: 50px; font-size:15px; margin-bottom: 8px; color:#fff; text-align: left;}
+		.propShow p{margin-left: 105px; color:#949494; text-align: left; margin-right: 35px;}
+
+		.shareAction{margin-top: 15px; text-align: center;}
+		.shareAction span{width: 130px; height:48px; display: inline-block; margin-left: 4px; margin-right: 9px; background-size:130px 48px;}
+		.shareTip{display: none; background:url(./images/shareTip.png?201407110132) no-repeat; width: 165px; height:74px; background-size: 165px 74px; position: absolute; top:8px; right:15px;}
+		.btnShare{background:url(./images/btnShare.jpg?201407110132) no-repeat;background-size:130px 48px;}
+		.btnAgain{background:url(./images/btnAgain.jpg?201407110132) no-repeat;background-size:130px 48px;}
+
+		.copyright{text-align: center; margin-top: 15px;}
+		.copyright .logo{background:url(./images/logo.png?201407110132) no-repeat; width: 91px; height:39px; background-size: 91px 39px; display:inline-block; vertical-align: middle;}
+		.btnDown{display: inline-block; width: 73px; height:30px; text-align: center; border:2px solid #008fd1; color:#008fd1; font-size:12px; line-height: 30px; vertical-align: middle; margin-left: 10px;}
+
+		.askPropbar{margin:-5px auto 0; width: 273px; height:81px;}
+		.askPropbar p{color:#fff; font-size:12px; margin-bottom: 18px;}
+		.askPropbar li{float:left; margin-left: 5px; margin-right: 5px; position: relative;}
+		.askPropbar li img{width: 48px; height:48px;}
+		.askPropbar li span{position: absolute; top:-6px; left:-5px; width: 12px; height:12px; background-image:url("./images/circle.png"); background-size:12px 12px; -webkit-animation: propTip 1s infinite alternate; animation: propTip 1s infinite alternate;}
+ 
+		.askPropbar li:nth-child(1) span{-webkit-animation-delay:0s; animation-delay:0s;}
+		.askPropbar li:nth-child(2) span{-webkit-animation-delay:250ms; animation-delay:250ms;}
+		.askPropbar li:nth-child(3) span{-webkit-animation-delay:500ms; animation-delay:500ms;}
+		.askPropbar li:nth-child(4) span{-webkit-animation-delay:750ms; animation-delay:750ms;}
+
+		@-webkit-keyframes propTip {
+			0% {
+				-webkit-transform:scale(0.8);  
+			}
+			100%{
+				-webkit-transform:scale(1.2);
+			}
+		}
+		@keyframes propTip {
+			0% {
+				transform:scale(0.8);  
+			}
+			100%{
+				transform:scale(1.2);
+			}
+		}
+		/*===== 450px =====*/
+		@media screen and (max-height:450px) {
+			.begin{margin-top: 50px;}
+			.car{top:34px;}
+			.shareShow{margin-top: 0;}
+			.askPropbar{margin-top: -5px;}
+			.shareAction{margin-top: 15px;}
+			.copyright{margin-top: 15px;}
+			.propListTit{margin-top: 15px;}
+			.begin{bottom:30px;}
+			.shareSl{margin-top: 10px;}
+		}
+
+		.oils,.miles,.hour,.car{-webkit-transition: all 1s; transition: all 1s;}
+
+		.cover {
+			position: absolute;
+			top:0; right:0; left:0; bottom:130px;
+			background: -webkit-linear-gradient(90deg,#1F1B18,rgba(5,5,4,0) 10%,rgba(5,5,4,0) 90%,#050504);
+			background: linear-gradient(0,#1F1B18,rgba(5,5,4,0) 10%,rgba(5,5,4,0) 90%, #050504);
+			pointer-events: none;
+			-webkit-backface-visibility: hidden;
+		}
+    </style>
+</head>
+<body>
+	<div class="page load">
+		<div class="loadBg">
+			<div class="loadGif"></div>
+		</div>
+		<div class="logo"></div>
+	</div>
+	<div class="page guide" id="guide">
+		<ul class="guideList" id="guideList">
+			<li>
+				<div class="intro">
+					<p><strong>拖动超级配件，</strong>使赛车更快更强哦！</p>
+					<p>注意<strong>丢掉奇怪的配件</strong>哟~</p>
+				</div>
+				<div class="guidebar">
+					<div class="guidebaPoint"></div>
+					<div class="guidebarBg"></div>
+					<div class="guidebarBlank"></div>
+				</div>
+				<div class="guideArrow"></div>
+			</li>
+			<li>
+				<h2 class="propListTit">道具一览表</h2>
+				<dl class="propList propGood">
+					<dt>这里的道具都是大有好处的哟 ~</dt>
+					<dd>
+						<p><img src="./images/tools1.png?201407110132"><span>加速引擎</span></p>
+						<p><img src="./images/tools2.png?201407110132"><span>里程芯片</span></p>
+						<p><img src="./images/tools3.png?201407110132"><span>招财挂件</span></p>
+						<p><img src="./images/tools4.png?201407110132"><span>幸运油箱</span></p>
+					</dd>
+				</dl>
+				<dl class="propList propBad">
+					<dt>下面这些道具会让你的赛车遭殃的！</dt>
+					<dd>
+						<p><img src="./images/tools5.png?201407110132"><span>香蕉皮</span></p>
+						<p><img src="./images/tools6.png?201407110132"><span>大钉子</span></p>
+						<p><img src="./images/tools7.png?201407110132"><span>交警叔叔</span></p>
+						<p><img src="./images/tools8.png?201407110132"><span>油漆</span></p>
+					</dd>
+				</dl>
+				<span class="begin" id="begin">开始游戏</span>
+			</li>
+		</ul>
+	</div>
+	<div class="page main">
+		<div class="road">
+			<div class="road-arrow"></div>
+			<div class="road-inner" id="road" style="-webkit-transform: translateY(0px);">
+				<img src="./images/road.jpg?201407110132" alt="">
+				<img src="./images/road.jpg?201407110132" alt="">
+				<img src="./images/road.jpg?201407110132" alt="">
+			</div>
+		</div>
+		<div class="cover"></div>
+		<div class="car" id="car">
+			<img src="./images/car.png?201407110132" id="carFeature">
+			<div class="car-normal" id="carStatus"><div id="carText"></div></div>
+		</div>
+		<div class="oils" id="oils">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="miles" id="miless">
+			<strong>L<span id="milesPoint">1</psan></strong>
+			<em><b id="miles">0</b>km</em>
+		</div>
+		<div class="hour" id="hours">
+			<span><b id="hour">0</b>km</span>
+		</div>
+		<div class="tools" id="tools">
+			<span><img src="./images/tools1.png?201407110132" type="1"tip="引擎改装成功！飚起来！"><em>加速引擎</em></span>
+			<span><img src="./images/tools2.png?201407110132" type="0" tip="芯片改装成功！飚起来！" ><em>里程芯片</em></span>
+			<span><img src="./images/tools3.png?201407110132" type="3" tip="挂饰改装成功！飚起来！" ><em>招财挂件</em></span>
+			<span><img src="./images/tools4.png?201407110132" type="0" tip="油箱改装成功！飚起来！" ><em>幸运油箱</em></span>
+		</div>
+	</div>
+	<div class="page share" id="sharePage">
+		<div class="shareSl">【<b>天天飞车超级配件版本</b>】来袭，一起改装吧！</div>
+
+		<div class="shareShow" id="shareShow">
+			<div class="shareData" id="shareData">
+				<p>你狂奔了 <b><span id="result">0</span></b><em>KM</em></p>
+				<p>击败了全国 <span id="resultB">0</span>% 的车手...</p>
+			</div>
+			<div class="propShow">
+				<img src="./images/tools1.png?201407110132">
+				<h2>加速引擎</h2>
+				<p>超强动力给你飞一般的感觉，提升赛车加速度！</p>
+			</div>
+			<div class="propShow">
+				<img src="./images/tools2.png?201407110132">
+				<h2>里程芯片</h2>
+				<p>享受科技升级带来幸福吧增加里程积分</p>
+			</div>
+			<div class="propShow">
+				<img src="./images/tools3.png?201407110132">
+				<h2>招财芯片</h2>
+				<p>财神贴身挂饰 <br>金币多多~</p>
+			</div>
+			<div class="propShow">
+				<img src="./images/tools4.png?201407110132">
+				<h2>祝福油箱</h2>
+				<p>更多燃油更远疾驰<br>增加单局额外油量！
+</p>
+			</div>
+		</div>
+		<div class="shareTip" id="shareTip"></div>
+		<div class="askPropbar" id="askPropbar">
+			<p>新版本新道具闪亮登场 <img width="8" height="8" src="./images/arrow.png" /></p>
+			<ul>
+				<li>
+					<img src="./images/askProp1.jpg?201407110132" sort="1">
+					<span></span>
+				</li>
+				<li>
+					<img src="./images/askProp2.jpg?201407110132" sort="2">
+					<span></span>
+				</li>
+				<li>
+					<img src="./images/askProp3.jpg?201407110132" sort="3">
+					<span></span>
+				</li>
+				<li>
+					<img src="./images/askProp4.jpg?201407110132" sort="4">
+					<span></span>
+				</li>
+			</ul>
+		</div>
+		<div class="shareAction">
+			<span class="btnShare" id="share"></span><span class="btnAgain" id="again"></span>
+		</div>
+		<!-- <div class="copyright">
+			<div class="logo"></div><a href="http://ttfc.qq.com/act/a20140711modifyracing/play.htm" class="btnDown" onclick="pgvSendClick({hottag:'a20140711modifyracing.btns.begingame'});">+ 开始游戏</a>
+		</div> -->
+	</div>
+<script>
+	(function(e){if(e)return;var t=["webkit","moz","o"],e={extend:function(e,t,n,r){n===undefined&&(n=!0);for(var i in t)if(n||!(i in e))r?r(i):e[i]=t[i];return e},support:{translate3d:function(){var e="translate3d(0px, 0px, 0px)",t=document.createElement("div");t.style.cssText=" -moz-transform:"+e+"; -ms-transform:"+e+"; -o-transform:"+e+"; -webkit-transform:"+e+"; transform:"+e;var n=/translate3d\(0px, 0px, 0px\)/g,r=t.style.cssText.match(n),i=r!==null&&r.length==1;return i}()},css:function(e,n,r){var i=/transform/i;if(i.test(n))for(var s=0;s<t.length;s++)e.style[t[s]+n.substr(0,1).toUpperCase()+n.substr(1)]=r;e.style[n]=r}};window.m=e})(window.m),m.Tab=function(e){this.config=m.extend(m.extend({},m.Tab.config),e,!0),this.init()},m.Tab.config={touchMove:!1,animTime:500,touchDis:40,direction:"x",touchSpeed:1,currentClass:"current",progressBar:!1},m.Tab.prototype={init:function(){var e=this,t=e.config;e._data={},e.target=t.target,e.length=e.target.length,e.trigger=t.trigger,e.num=e.target.length,e.wrap=e.target[0].parentNode,m.support.translate3d&&(e.wrap.style.webkitTransition="-webkit-transform "+t.animTime+"ms ease-out"),m.css(e.wrap,"transform","translate(0,0)"),e.width=e.wrap.parentNode.clientWidth;if(t.progressBar===!0){var n=document.createElement("ul");n.classList.add("progress-bar");for(var r=0;r<e.length;r++){var i=document.createElement("li");n.appendChild(i)}e.progressBar=e.wrap.parentNode.appendChild(n).childNodes}e._attach(),e.playTo(0)},_attach:function(){var e=this,t=e.config;window.addEventListener("resize",e.update.bind(e));if(e.trigger){var n=e.trigger.length;for(var r=0;r<n;r++)(function(t){e.trigger[t].addEventListener("touchend",function(n){e.playTo(t)})})(r)}var i=e._data,s=!1,o,u,a;t.touchMove&&e.wrap.addEventListener("touchstart",function(n){if(t.ontouchstart&&t.ontouchstart.apply(e,[n])===!1)return!1;i.pageX=n.touches[0].pageX,i.pageY=n.touches[0].pageY,e.wrap.style.webkitTransitionDuration="0ms",e.wrap.addEventListener("touchmove",u),e.wrap.addEventListener("touchend",a),o=""}),u=function(n){i.disX=n.touches[0].pageX-i.pageX,i.disY=n.touches[0].pageY-i.pageY,t.direction=="x"?i.dis=i.disX:i.dis=i.disY,o||(Math.abs(i.disX/i.disY)>1?o="x":o="y");if(t.ontouchmove&&t.ontouchmove.apply(e,[i.dis,n])===!1)return!1;t.direction==o&&(t.direction=="x"?m.css(e.wrap,"transform","translate3d("+(i.dis-e.target[e.current].offsetLeft)+"px,0,0)"):m.css(e.wrap,"transform","translate3d(0,"+(i.dis-e.target[e.current].offsetTop)+"px,0)"))},a=function(){if(o&&t.direction!=o)return;if(i.dis===undefined||isNaN(i.dis))i.dis=0;e.wrap.style.webkitTransitionDuration=t.animTime+"ms",e.wrap.removeEventListener("touchmove",u),e.wrap.removeEventListener("touchend",a);var n=!0;t.ontouchend&&t.ontouchend.apply(e,[i.dis])===!1&&(n=!1);if(!i.dis||Math.abs(i.dis)<t.touchDis||!n){e.playTo(e.current);return}i.dis>0?e.playTo(e.current-t.touchSpeed):e.playTo(e.current+t.touchSpeed),i.dis=0},e.wrap.addEventListener("click",function(n){t.onclick&&t.onclick.call(e,n)})},playTo:function(e){var t=this,n=t.config;t.wrap.style.webkitTransitionDuration=n.animTime+"ms";if(n.onchangebefore&&n.onchangebefore.apply(t,[e])===!1)return;e>=t.num-1&&(e=t.num-1),e<0&&(e=0),m.support.translate3d?n.direction=="x"?m.css(t.wrap,"transform","translate3d("+ -t.target[e].offsetLeft+"px,0,0)"):m.css(t.wrap,"transform","translate3d(0,"+ -t.target[e].offsetTop+"px,0)"):n.direction=="x"?m.css(t.wrap,"transform","translate("+ -t.target[e].offsetLeft*e+"px,0)"):m.css(t.wrap,"transform","translate(0,"+ -t.target[e].offsetTop*e+"px)");if(e===t.current)return;t.trigger&&t.trigger[t.current]&&t.trigger[t.current].classList.remove(n.currentClass),t.progressBar&&t.progressBar[t.current]&&t.progressBar[t.current].classList.remove(n.currentClass),t.prevPage=t.current,t.current=e,t.trigger&&t.trigger[t.current]&&t.trigger[t.current].classList.add(n.currentClass),t.progressBar&&t.progressBar[t.current]&&t.progressBar[t.current].classList.add(n.currentClass),n.onchangebefore&&n.onchangebefore.apply(t,[e]),n.lazyClass&&t.lazy(e),window.setTimeout(function(){n.onchange&&n.onchange.apply(t,[e])},n.animTime)},prev:function(){this.playTo(this.current-1)},next:function(){this.playTo(this.current+1)},update:function(e){var t=this;t.width=t.wrap.parentNode.clientWidth},lazy:function(e){var t=[];targetWrap=this.target[e],targetWrap.classList.contains(this.config.lazyClass)&&t.push(targetWrap);var n=Array.prototype.slice.call(targetWrap.querySelectorAll("."+this.config.lazyClass),0);t=t.concat(n);for(var r=0;r<t.length;r++){var i=t[r],s=i.getAttribute("data-url");s&&(/img/i.test(i.tagName)?i.src=s:i.style.backgroundImage="url("+s+")",i.removeAttribute("data-url"))}}},m.Pop=function(e){this.config=m.extend(e,m.Pop.config),this.init()},m.Pop.config={animTime:300},m.Pop.prototype={init:function(){var e=this,t=e.config;e.target=t.target,e.target.style.webkitPerspective="1000px",e.target.style.webkitBackfaceVisibility="hidden",e.context=t.target.querySelector(".pop-content"),e.context.style.webkitTransition="-webkit-transform "+t.animTime+"ms ease-out",e.context.style.webkitTransformOrigin="50% 0",e.hide()},show:function(){var e=this,t=e.config;e.target.style.display="block",window.setTimeout(function(){e.context.style.webkitTransform="translate3d(0,0,0) rotateX(0)"},0)},hide:function(){var e=this,t=e.config;e.context.style.webkitTransform="translate3d(0,-50%,0) rotateX(-90deg)",window.setTimeout(function(){e.target.style.display="none"},t.animTime)}}
+</script>
+<script>
+	(function(e){if(e)return;var t=["webkit","moz","o"],e={extend:function(e,t,n,r){n===undefined&&(n=!0);for(var i in t)if(n||!(i in e))r?r(i):e[i]=t[i];return e}};window.m=e})(window.m),m.Car=function(e){this.config=m.extend(m.extend({},m.Car.config),e,!0)},m.Car.config={speed:30,stopSpeed:5,time:100,height:480},m.Car.prototype={init:function(){var e=this,t=e.config;e._data={},e.target=t.target,e.wrap=e.target;e.wrap.style.webkitTransform="translateY(0px)";t.bspeed=0;e.miles=0;e.switch()},switch:function(){var t=this,n=t.config;var obj=t.target;t.bspeed=0;t.switchTime=0;t.clear();t.timerSwitch=setInterval(function(){if(t.bspeed<n.speed){t.bspeed+=2}else{t.switchOver=true}t.miles+=t.bspeed*n.time;var num=(parseInt(obj.style.webkitTransform.replace(/[^0-9]/ig,""))+t.bspeed);t.bspeed=t.bspeed>0?Math.ceil(t.bspeed):Math.floor(t.bspeed);if(num<n.height){obj.style.webkitTransform="translateY("+num+"px)"}else{obj.style.webkitTransform="translateY(0px)"}t.switchTime++},n.time)},up:function(){var t=this;n=t.config;t.clear();if(t.bspeed<n.speed){t.switch();return false}else{t.bspeed=t.bspeed+3}t.change();var t=this;this.clear();t.timerUp=setInterval(function(){t.change();t.miles+=t.bspeed*n.time},n.time)},down:function(){var t=this;n=t.config;t.clear();if(t.bspeed>n.stopSpeed){t.bspeed-=3}else{t.stops();return false};var t=this;t.timerDown=setInterval(function(){t.change();t.miles+=t.bspeed*n.time},n.time)},stops:function(){var t=this;n=t.config;t.stopTime=0;t.timer=null;t.clear();t.timerStops=setInterval(function(){if(t.bspeed>n.stopSpeed){t.bspeed-=2}else{if(t.stopTime>20)t.bspeed-=2}t.change();t.stopTime++;if(!t.bspeed)clearTimeout(t.timerStops);t.miles+=t.bspeed*n.time;t.stopTime++},n.time)},change:function(){var t=this;n=t.config;var obj=n.target;var num=(parseInt(obj.style.webkitTransform.replace(/[^0-9]/ig,""))+t.bspeed);t.bspeed=t.bspeed>0?Math.ceil(t.bspeed):Math.floor(t.bspeed);if(num<n.height){obj.style.webkitTransform="translateY("+num+"px)"}else{obj.style.webkitTransform="translateY(0px)"}},clear:function(){var t=this;clearTimeout(t.timerSwitch);clearTimeout(t.timerUp);clearTimeout(t.timerDown);clearTimeout(t.timerStops)}}
+</script>
+<script type="text/javascript">
+//防止屏幕拖动
+document.documentElement.addEventListener('touchmove', function(e){e.preventDefault();});
+
+//define selctor
+function g(obj){return (typeof obj=='object')?obj:document.getElementById(obj);}
+
+//动态生成JS或CSS;
+function delay_js(url){var type=url.split("."),file=type[type.length-1];if(file=="css"){var obj=document.createElement("link"),lnk="href",tp="text/css";obj.setAttribute("rel","stylesheet");}else var obj=document.createElement("script"),lnk="src",tp="text/javascript";obj.setAttribute(lnk,url);obj.setAttribute("type",tp);file=="css"?document.getElementsByTagName("head")[0].appendChild(obj):document.body.appendChild(obj);return obj;};
+
+//延时加载并判断是否加载完毕
+function loadjs(url,succ,v){var elem=delay_js(url);if((navigator.userAgent.indexOf('MSIE')==-1)?false:true){elem.onreadystatechange=function(){if(this.readyState&&this.readyState=="loading") return;else succ(v);};}else elem.onload=function(){succ(v);};elem.onerror=function(){};};
+
+
+var per = 0;
+var kilo = 0;
+
+//图片预加载
+var imgPath= "./images/";
+
+var loadImage = function(path, callback){
+    var img = new Image();
+    img.onload = function(){
+        img.onload = null;
+        callback(path);
+    }
+    img.src = path;
+}
+function removeElement(_element){
+         var _parentElement = _element.parentNode;
+         if(_parentElement){
+                _parentElement.removeChild(_element);  
+         }
+}
+var loadingPage = (function(){
+    var sourceArr = ['guidebarpoint.png?201407110132','guidebar.jpg?201407110132','tools1.png?201407110132','tools2.png?201407110132','tools3.png?201407110132','tools4.png?201407110132','tools5.png?201407110132','tools6.png?201407110132','tools7.png?201407110132','tools8.png?201407110132','car.png?201407110132','car-sep.png?201407110132','road.jpg?201407110132'];
+    for (var i = 0; i < sourceArr.length; i++) {
+        sourceArr[i] = (imgPath + sourceArr[i]);
+    };
+    var imgLoader = function(imgs, callback){
+        var len = imgs.length, i = 0;
+        while(imgs.length){
+            loadImage(imgs.shift(), function(path){
+                callback(path, ++i, len);
+            });
+        }
+    }
+    imgLoader(sourceArr, function(path, curNum, total){
+        var percent = curNum/total;
+        if(percent == 1){
+    		//loading页隐藏
+		 	var domLoading = document.querySelector('.load');
+			removeElement(domLoading);
+			// guide loading
+			var guideSlide = new m.Tab({
+				target: document.querySelectorAll('.guideList li'),
+						trigger: document.querySelectorAll('.guideList li'),
+						touchMove: true,
+						direction: 'x',
+						progressBar: true
+
+			});
+			g("guideList").getElementsByTagName("li")[0].onclick = function(){
+				guideSlide.next();
+			}
+            setTimeout(gameLoading,500);
+        }
+    });
+})();
+
+
+
+//道具详情信息展示
+function propDetail(e) {
+	var target = e.target;
+	if(target.tagName == "IMG"){
+		e.stopPropagation() ;
+		var shareData = g("shareData");
+		if(shareData.style.display= "none"){
+			shareData.style.display="none";
+		}
+		var sort = target.getAttribute("sort");
+		var propShows = document.querySelectorAll(".propShow");
+		for(var i=0; i<propShows.length; i++){
+			propShows[i].style.display = "none";
+		}
+		document.querySelectorAll(".propShow")[sort-1].style.display = "block";
+	}
+}
+//初始化道具
+function propReset(){
+	var tools = g("tools").getElementsByTagName("img");
+	for(var i=0; i<tools.length; i++){
+		var randNum=Math.floor(Math.random()*4+1);
+		tools[i].src = propsObjs[randNum].url;
+		tools[i].setAttribute("type",propsObjs[randNum].type);
+		tools[i].setAttribute("tip",propsObjs[randNum].tip);
+		tools[i].setAttribute("num",propsObjs[randNum].id);
+		tools[i].setAttribute("name",propsObjs[randNum].name);
+		tools[i].parentNode.getElementsByTagName("em")[0].innerHTML = propsObjs[randNum].name;
+
+	}
+}
+function updateProp(target,num){
+	 parent = target.parentNode
+	// parent.removeChild(target);
+	// var objImg = document.createElement("img");//div创建成功
+
+	var randNum = Math.floor(Math.random()*100);
+	if(randNum<60){
+		 randNum=Math.floor(Math.random()*3);
+	}else{
+		 randNum=Math.floor(Math.random()*num+3);
+	}
+	//console.log(randNum+" rand");
+	target.src = propsObjs[randNum].url;
+	target.setAttribute("type",propsObjs[randNum].type);
+	target.setAttribute("tip",propsObjs[randNum].tip);
+	target.setAttribute("num",propsObjs[randNum].id);
+	target.setAttribute("name",propsObjs[randNum].name);
+	// parent.appendChild(objImg);
+	parent.getElementsByTagName("em")[0].innerHTML = propsObjs[randNum].name;
+
+	
+
+}
+var propsObjs = [
+	{id:1,name:"加速引擎",url:"./images/tools1.png?201407110132",type:"1",tip:"引擎改装成功！飚起来！"},
+	{id:2,name:"里程芯片",url:"./images/tools2.png?201407110132",type:"1",tip:"芯片改装成功！飚起来！"},
+	{id:3,name:"招财挂件",url:"./images/tools3.png?201407110132",type:"3",tip:"挂饰改装成功！飚起来！"},
+	{id:4,name:"幸运油箱",url:"./images/tools4.png?201407110132",type:"1",tip:"油箱改装成功！飚起来！"},
+	{id:5,name:"香蕉皮",url:"./images/tools5.png?201407110132",type:"0",tip:"您的赛车踩到了香蕉皮，滑到拉~"},
+	{id:6,name:"大钉子",url:"./images/tools6.png?201407110132",type:"0",tip:"赛车轮胎被图钉扎破拉，好惨~"},
+	{id:7,name:"交警叔叔",url:"./images/tools7.png?201407110132",type:"0",tip:"秉公执法的交警拦下了你的车~"},
+	{id:8,name:"油漆",url:"./images/tools8.png?201407110132",type:"0",tip:"新车惨遭油漆洗礼，人生好艰难~"}
+]
+
+//汽车油量更新
+function oilsModify(string,curnum){
+	var  oils = g("oils").getElementsByTagName("span");
+	if(string == "reset"){
+		for(var i=0; i< oils.length; i++){
+	 		oils[i].className = "";
+	 	}
+	}
+ 	else{
+ 		oils[curnum].className = "blank";
+ 	}
+}
+function updateImgUrl(imgs,filename){
+	for(var i=0; i<imgs.length; i++){
+		imgs[i].src = filename;
+	}
+}
+
+function gameLoading(){	//预加载完成后动作
+ 		g("begin").onclick = function(){
+ 			// pgvSendClick({hottag:'a20140711modifyracing.btns.begingame'}); 
+ 			removeElement(g('guide'));
+ 			 var car = new m.Car({
+		        target: g("road"),
+		        speed: 20,
+		        stopSpeed:2,
+		        time: 50,
+		        height:350
+	        });
+
+ 			var pointNum = 1;
+
+ 			function play(){
+ 				propReset();
+ 			 	car.init();
+ 			 	pointNum = 1;
+ 			 	var  startNum = 0;
+ 			 	var  endNum =11;
+
+ 			 	oilsModify("reset");
+ 			 	var points = 1;
+ 			 	g("milesPoint").innerHTML = points;
+
+ 			 	var roadImgs = g("road").getElementsByTagName("img");;
+ 			 	updateImgUrl(roadImgs,"./images/road.jpg?201407110132");
+ 			 	//油箱与时速时时更新
+ 			 	 setInterval(function(){
+			    	hour = g("hour").innerHTML = parseInt(car.bspeed*4);
+			    	g("miles").innerHTML = (car.miles/8000).toFixed(1);
+			    },1000);
+
+ 			 	var endTimer = setInterval(function(){
+ 			 		if(startNum == 1){
+ 			 			g("milesPoint").innerHTML = 2;
+ 			 			pointNum = 2;
+ 			 			loadImage(imgPath+"road2.jpg?201407110132",function(){
+ 			 				 	updateImgUrl(roadImgs,"./images/road2.jpg?201407110132");
+ 			 			});
+ 			 		}else if(startNum == 3){
+ 			 			g("milesPoint").innerHTML =3;
+ 			 			pointNum = 3;
+ 			 			loadImage(imgPath+"road3.jpg?201407110132",function(){
+ 			 				 	updateImgUrl(roadImgs,"./images/road3.jpg?201407110132");
+ 			 			});
+ 			 		}else if(startNum == 6){
+ 			 			g("milesPoint").innerHTML =4;
+ 			 			pointNum = 4;
+ 			 			loadImage(imgPath+"road4.jpg?201407110132",function(){
+ 			 				 	updateImgUrl(roadImgs,"./images/road4.jpg?201407110132");
+ 			 			});
+ 			 		}
+
+
+
+ 			 		oilsModify("plus",startNum);	//减少油量
+ 			 		startNum++;
+ 			 		if(startNum == endNum){ 			//游戏结束后才操作	 
+ 			 			clearTimeout(endTimer);			
+ 			 			car.stops();
+	 			 		g('sharePage').style.display = "block";	//分享页面展现
+	 			 		car.clear();
+
+	 			 		g("result").innerHTML = (car.miles/8000).toFixed(1);
+	 			 		kilo = (car.miles/8000).toFixed(1);
+	 			 		per = parseInt((car.miles/8000-92)/8);  per > 99? per = 99 : per;
+
+	 			 		g("resultB").innerHTML = per;
+
+			 			var propShows = document.querySelectorAll(".propShow");
+						for(var i=0; i<propShows.length; i++){
+							propShows[i].style.display = "none";
+						}
+ 			 			g("shareData").style.display = "block";
+
+
+	 			 		g("again").onclick = function(){	//重新游戏
+	 			 			// pgvSendClick({hottag:'a20140711modifyracing.btns.again'}); 
+	 			 			document.querySelector('.share').style.display = "none";
+	 			 			document.querySelector('.main').style.display = "block";
+	 			 			play();
+	 			 		}
+
+
+	 			 		g("share").onclick = function(){	//分享按钮
+	 			 			// pgvSendClick({hottag:'a20140711modifyracing.btns.share'}); 
+	 			 			g("shareTip").style.display = "block";
+	 			 			setTimeout(function(){
+	 			 				g("shareTip").style.display = "none";
+	 			 			},3000);
+	 			 		}
+	 			 		g("sharePage").onclick = function(e){
+	 			 			if(g("shareData").style.display == "none" && e.target.id !="share"&& e.target.id !="again"&& e.target.id !="btnDown"){
+	 			 				var propShows = document.querySelectorAll(".propShow");
+								for(var i=0; i<propShows.length; i++){
+									propShows[i].style.display = "none";
+								}
+		 			 			g("shareData").style.display = "block";
+	 			 			}
+	 			 		}
+
+	 			 		// onBridgeReady();	//更新微信分享数据
+
+	 			 		//分享展台初始化
+ 			 			var propShows = document.querySelectorAll(".propShow");
+						for(var i=0; i<propShows.length; i++){
+							propShows[i].style.display = "none";
+						}
+						var shareData = g("shareData");
+			 				shareData.style.display="block";
+
+ 			 			}
+ 			 		
+ 			 		 //console.log(startNum);
+
+ 			 	},3500);
+
+ 			 }
+ 			 play();
+ 			 
+
+ 			g("askPropbar").addEventListener('click', function(e){propDetail(e);}, false);
+		   
+		    var forever = false; //无敌状态
+		    var statusTimer = null;
+		    var tools = g("tools");
+		    var d = {};
+		    tools.addEventListener('touchstart', function(e){
+		    	var target = e.target;
+		    	if(target.tagName == "IMG"){
+		    		d.startY = e.touches[0].pageY;
+		    		d.startX = e.touches[0].pageX;
+		    		tools.addEventListener('touchmove', touchMove);
+					tools.addEventListener('touchend', touchEnd);
+		    	}
+		    	clearTimeout(statusTimer);
+		    	g("carStatus").style.opacity = 0;
+
+		    	var targetNum = target.getAttribute("num");
+		    	// if(targetNum ==1){
+		    	// 	g("hours").style.webkitTransform = "scale(1.1)";
+		    	// }else if(targetNum ==2){
+		    	// 	g("miless").style.webkitTransform = "scale(1.1)";
+		    	// }else if(targetNum == 3){
+		    	// 	g("car").style.webkitTransform = "scale(1.1)";
+		    	// }else if(targetNum == 4){
+		    	// 	g("oils").style.webkitTransform = "scale(1.1)";
+		    	// }
+		    	
+		    	
+		    	
+
+
+			});
+			touchMove = function(e){
+				var target = e.target;
+				if(target.tagName == "IMG"){
+					d.disY = e.touches[0].pageY - d.startY;
+					d.disX = e.touches[0].pageX - d.startX;
+					if(Math.abs(d.dis / d.disY) > 0.5) {
+						e.stopPropagation();
+						e.preventDefault();
+					}
+					 target.style.webkitTransform = 'translate3d(' +d.disX + 'px,'+d.disY+'px,0)';
+				}
+			}
+			touchEnd = function(e){
+				var target = e.target;
+				//console.log(d.disY +"disY");
+				if(target.tagName == "IMG"){
+					target.style.webkitTransform = 'translate3d(' +0 + 'px,'+0+'px,0)';
+					if(d.disY > 20){
+						updateProp(target,pointNum);
+					}else if(d.disY < -20){
+						if(target.getAttribute("type") == 3){
+							forever = true;
+							g("carFeature").src = "./images/car-sep.png?201407110132";
+							setTimeout(function(){
+								g("carFeature").src = "./images/car.png?201407110132";
+								forever = false;
+							},3000);
+						}
+							if(!forever){
+								if(target.getAttribute("type") == 1){
+									//console.log(car.switchOver + " OVER");
+									car.up();
+									updateProp(target,pointNum);
+									clearTimeout(statusTimer);
+									g("carStatus").style.opacity = 1;
+									g("carText").innerHTML =  target.getAttribute("tip");
+
+									//console.log(target);
+									statusTimer = setTimeout(function(){
+										g("carStatus").style.opacity = 0;
+									},3000);
+									g("carStatus").className = "car-laugh";
+
+
+								}
+								else{
+
+									//console.log(car.switchOver + " OVER");
+									car.down();
+									updateProp(target,pointNum);
+									clearTimeout(statusTimer);
+									g("carStatus").style.opacity = 1;
+
+									g("carText").innerHTML =  target.getAttribute("tip");
+
+									statusTimer = setTimeout(function(){
+										g("carStatus").style.opacity = 0;
+									},3000);
+									g("carStatus").className = "car-cry";
+
+
+								}
+							}else{
+								if(target.getAttribute("type") == 1){
+									car.up();
+									updateProp(target,pointNum);
+									clearTimeout(statusTimer);
+									g("carStatus").style.opacity = 1;
+
+									g("carText").innerHTML =  target.getAttribute("tip");
+
+
+									statusTimer = setTimeout(function(){
+										g("carStatus").style.opacity = 0;
+									},3000);
+									g("carStatus").className = "car-laugh";
+								}
+								else{
+									updateProp(target,pointNum);
+								}
+							}	
+					}
+				}
+				d = {};
+				// g("oils").style.webkitTransform = "scale(1)";
+		  //   	g("miless").style.webkitTransform = "scale(1)";
+		  //   	g("hours").style.webkitTransform = "scale(1)";
+		  //   	g("car").style.webkitTransform = "scale(1)";
+			}
+ 		}
+}
+
+// loadjs("http://pingjs.qq.com/ping_tcss_ied.js",function(){
+// 	if(typeof(pgvMain)=='function') pgvMain();
+// },"");
+
+// var wxData = {
+//     url : 'http://ttfc.qq.com/act/a20140711modifyracing/index.htm',
+//     desc :"【天天飞车·全新超级配件版本上线】最炫科技风",
+//     img_url :  "./images/wx.png?201407110132"
+// }
+
+// function onBridgeReady() {
+//     //转发朋友圈
+//     WeixinJSBridge.on("menu:share:timeline", function(e) {
+//         var data = {
+//             img_url: wxData.img_url,
+//             img_width: "120",
+//             img_height: "120",
+//             link: wxData.url,
+//             desc:wxData.desc,
+//             title: '我改装的赛车跑了'+kilo+'km,'+'打败了全国'+  (per > 99 ? 99 : per)+'%的人，期待在超级配件版本一展身手！'
+
+//         };
+//         WeixinJSBridge.invoke("shareTimeline", data, function(res) {
+//             WeixinJSBridge.log(res.err_msg)
+//         });
+//     });
+//     //同步到微博
+//     WeixinJSBridge.on("menu:share:weibo", function() {
+//         WeixinJSBridge.invoke("shareWeibo", {
+//             "content":'我改装的赛车跑了'+kilo+'km,'+'打败了全国'+  (per > 99 ? 99 : per)+'%的人，期待在超级配件版本一展身手！',
+//             "url": wxData.url
+//         }, function(res) {
+//             WeixinJSBridge.log(res.err_msg);
+//         });
+//     });
+//     //分享给朋友
+//     WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+//         WeixinJSBridge.invoke("sendAppMessage", {
+//             img_url: wxData.img_url,
+//             img_width: "120",
+//             img_height: "120",
+//             link: wxData.url,
+//             desc: wxData.desc,
+//             title: wxData.title
+//         }, function(res) {
+//             WeixinJSBridge.log(res.err_msg)
+//         });
+//     });
+// };
+//执行
+// try{
+//     document.addEventListener('WeixinJSBridgeReady', function() {
+//         onBridgeReady();
+//         pgvSendClick({hottag:'a20140626painter.Navigator.wx'});
+//     });
+// }catch(e){}
+</script>
+</body>
+</html><!--[if !IE]>|xGv00|aa21a07cb0dd37bee4a3a06215663032<![endif]-->

@@ -1,0 +1,102 @@
+{"file": "assets/Pee.png", "frames": {
+    "GameTitle": {
+        "x": 2,
+        "y": 2,
+        "w": 452,
+        "h": 158
+    },
+    "TitleHead": {
+        "x": 386,
+        "y": 214,
+        "w": 372,
+        "h": 384
+    },
+    "arrow": {
+        "x": 846,
+        "y": 154,
+        "w": 130,
+        "h": 224
+    },
+    "btnStartNormal": {
+        "x": 456,
+        "y": 2,
+        "w": 390,
+        "h": 96
+    },
+    "btnStartTouched": {
+        "x": 2,
+        "y": 162,
+        "w": 382,
+        "h": 88,
+        "offX": 8,
+        "offY": 8,
+        "sourceW": 390,
+        "sourceH": 96
+    },
+    "btnWhiteReplayNormal": {
+        "x": 2,
+        "y": 338,
+        "w": 338,
+        "h": 84
+    },
+    "btnWhiteReplayTouched": {
+        "x": 2,
+        "y": 424,
+        "w": 330,
+        "h": 78,
+        "offX": 8,
+        "offY": 6,
+        "sourceW": 338,
+        "sourceH": 84
+    },
+    "btnWhiteShareNormal": {
+        "x": 2,
+        "y": 252,
+        "w": 338,
+        "h": 84
+    },
+    "btnWhiteShareTouched": {
+        "x": 2,
+        "y": 504,
+        "w": 330,
+        "h": 76,
+        "offX": 8,
+        "offY": 8,
+        "sourceW": 338,
+        "sourceH": 84
+    },
+    "dark": {
+        "x": 848,
+        "y": 2,
+        "w": 150,
+        "h": 150
+    },
+    "endFailed": {
+        "x": 2,
+        "y": 650,
+        "w": 290,
+        "h": 312
+    },
+    "endSuccess": {
+        "x": 294,
+        "y": 650,
+        "w": 308,
+        "h": 302
+    },
+    "shareIcon": {
+        "x": 760,
+        "y": 380,
+        "w": 256,
+        "h": 268,
+        "offX": 22,
+        "offY": 8,
+        "sourceW": 300,
+        "sourceH": 300
+    },
+    "words": {
+        "x": 456,
+        "y": 100,
+        "w": 388,
+        "h": 112
+    }
+}}

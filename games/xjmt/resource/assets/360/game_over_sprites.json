@@ -1,0 +1,14 @@
+{
+"file":"game_over_sprites.png","frames": {
+	"bg":  {"x":0, "y":0, "w":375, "h":300,"offX":0,"offY":0,"sourceW": 375,"sourceH":300},
+	"morePress":  {"x":352, "y":561, "w":158, "h":62,"offX":0,"offY":0,"sourceW": 158,"sourceH":64},
+	"more":  {"x":352, "y":496, "w":158, "h":64,"offX":0,"offY":0,"sourceW": 158,"sourceH":64},
+	"replay":  {"x":352, "y":366, "w":158, "h":64,"offX":0,"offY":0,"sourceW": 158,"sourceH":64},
+	"replayPress":  {"x":376, "y":0, "w":158, "h":64,"offX":0,"offY":0,"sourceW": 158,"sourceH":64},
+	"share":  {"x":352, "y":431, "w":158, "h":64,"offX":0,"offY":0,"sourceW": 158,"sourceH":64},
+	"sharePress":  {"x":352, "y":301, "w":158, "h":64,"offX":0,"offY":0,"sourceW": 158,"sourceH":64},
+	"title0":  {"x":0, "y":428, "w":351, "h":126,"offX":0,"offY":0,"sourceW": 351,"sourceH":126},
+	"title1":  {"x":0, "y":301, "w":351, "h":126,"offX":0,"offY":0,"sourceW": 351,"sourceH":126},
+	"title2":  {"x":0, "y":555, "w":351, "h":126,"offX":0,"offY":0,"sourceW": 351,"sourceH":126}
+
+}}

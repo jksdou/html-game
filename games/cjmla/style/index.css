@@ -1,0 +1,47 @@
+html, body, div, p, h1, h2, a, span, img{border:0;margin:0;}
+html, body{-webkit-tap-highlight-color: transparent;background:#fff; font-family:"Arial" "Microsoft YaHei" "黑体" "宋体" "sans-serif"; color:#0033cc; background:#ffffff;}
+
+/*.body {overflow: hidden; background: #222; color:#cccccc; margin: 0px; padding: 0px; border: 0px; } */
+a,a:hover{text-decoration:none;}
+
+/*#wrapper{width:100%; height:100%; position:relative; margin:0; padding:0;}*/
+#game_div{width:480px; height:680px; position:relative; -webkit-transform-origin:0 0; -webkit-transition:all 0.2s;}
+#ctrboard{text-align:center; position:relative; z-index:100;}
+
+#start{width:480px; height:660px; padding:20px 0 0 0; background:transparent;}
+#start .logo{background:url(img_d/logo.png) no-repeat; background-size:contain; width:150px; height:60px; margin:0 auto;}
+#start .title{width:480px; height:161px; background:url(img_d/title.png) no-repeat; font-size:24px; margin:15px auto 156px;}
+#start .startgame{width:200px; height:81px; background:url(img_d/btn_start.png) no-repeat; padding:0; margin:15px auto; display:block;}
+#start .moregame{width:200px; height:67px; background:url(img_d/btn_more.png) no-repeat; padding:0; margin:15px auto; display:block;}
+#start a{color:white; background:#00ccff; padding:6px 10px; border-radius:5px; display:inline-block;}
+
+#play{font-size:24px; width:480px; height:500px; padding:180px 0 0 0; background:transparent;}
+#play .score_title{}
+#play .score{}
+
+#end {font-size:32px; width:480px; height:600px; padding:80px 0 0 0; color:#fbd500; transition: all 0.2s;}
+#end .gameover{font-size:24px; background:url(img_d/gameover.png) no-repeat 50% 50%; background-size:contain; width:100%; height:54px;}
+#end .tips{font-size:14px; background:url(img_d/continue.png) no-repeat; background-size:contain; width:165px; height:26px; margin:26px auto 0;}
+#end .score{margin:30px auto 20px;}
+#end .history{font-size:24px; margin-bottom:20px;}
+
+
+#gamescene{position:absolute; background:#373737; width:100%; height:100%; left:0; top:0;}
+#mask{position:absolute; width:100%; height:100%; left:0; top:0; background:rgba(0, 0, 0, 0.8);}
+#cover{position:absolute; width:100%; height:100%; left:0; top:0; background:url(img_d/background_start.png) no-repeat 50% bottom #71caf2; background-size:contain;}
+
+#footer{position:absolute; bottom:30px; font-size:20px; background:url(img_d/doudou_play.png) no-repeat; background-size:contain; height:20px; width:161px; left:50%; margin-left:-80.5px;}
+#footer.end{background:url(img_d/doudou_end.png) no-repeat; background-size:contain; height:18px; width:165px; left:50%; margin-left:-82.5px;}
+/*#footer span{text-align:center; display:inline-block; width:100%;}*/
+
+
+#game_div.horizontal{width:680px; height:480px;}
+.horizontal #start{background:transparent; width:680px; height:460px;}
+.horizontal #start .title{margin:15px auto 15px;}
+.horizontal #play{background:transparent; width:680px; height:300px;}
+.horizontal #end{width:680px; height:400px;}
+.horizontal #footer{bottom:0;}
+
+.hide{display:none;}
+
+

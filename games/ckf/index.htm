@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="Content-Language" content="zh-CN"><meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><title>不查不知道，一查吓一跳</title><link media="all" type="text/css" rel="stylesheet" href="images/all.css"><script src="images/data.js"></script><script src="images/utils.js"></script><script src="images/utils-ajax.js"></script><script>
+    var _hmt = _hmt || [];
+    </script></head><body><script type="text/javascript">
+        var type = {
+            pwd: {
+                info: "悄悄滴查密码滴“不要”！",
+                placeholder: "输入上网账号",
+                search: "查密码",
+                result: "密码泄露，如下：",
+                total: 197180953
+            },
+            room: {
+                info: "开房信息再不查就没有机会啦！",
+                placeholder: "姓名",
+                search: "查开房",
+                result: "开房泄露。",
+                total: 20022641
+            }
+        }
+    </script><div style="height:4%;overflow:hidden;"></div><div id="main"><div id="main_pl"><div style="width:90%;height:100%;margin:0 auto;"><div class="mp1 vline"><div id="divHead" style="height: 15px; width: 100%; display: block;"></div><div style="display: block;" id="blockIndex"><div style="height:24px;overflow:hidden"></div><div style="width:88%;margin:0 auto;overflow:hidden;text-align:center"><img src="images/banner.gif" class="banner"></div><div style="height:8px;overflow:hidden"></div><div class="ipt" style="margin:10px auto 8px;"><input id="input" placeholder="输入好友姓名" type="text"></div><a id="search" class="btn">查开房</a></div><div id="blockSearch" style="display:none"><div style="height:24px;overflow:hidden"></div><div style="width:88%;margin:0 auto;overflow:hidden;text-align:center"><img src="images/loadding.gif" class="load_icon"></div><div style="height:24px;overflow:hidden"></div><div class="p_pl"><div style="color:Black;" class="p_info"><div id="connecting">连接中...</div><div style="color: black;" id="running">正在查询：<span id="total">0</span>条</div></div><div id="bar" class="p_bar"></div></div></div><div id="blockResult" style="display:none"><div style="height:10px;overflow:hidden"></div><div style="width:88%;margin:0 auto;overflow:hidden;text-align:center"><img src="images/result.gif" class="result_icon"></div><div class="re"><div class="re_pl"><p style="display: block;" id="resultFirst"><span id="resultName"></span>查到<span id="resultCount"></span>条<text id="resultInfo">开房泄露。</text></p><p style="display: block;" id="resultValue">谁又没有风流过？！只是在外过个夜，或是旅个游啥的，有什么大惊小怪！</p><b id="resultShare" style="display:none;">逗逗朋友还可查看<span id="resultName2"></span>被谁查过…</b><p id="resultHidden" style="display:none;"><span id="resultName3"></span>已经被身边的好友查过<span id="resultTimes"></span>次了，你也快查查他们吧</p></div></div><!-- <div style="height:10px;overflow:hidden"></div><div class="re"><div class="re_pl"><b>分享显示的信息如下</b><p id="resultShareShow">【xxx】是五好青年，击败所有开房用户，你敢来挑战</p></div></div> --><div class="btnpl"><a onClick="showShare()" class="btnm fl" id="doudou">逗朋友玩</a><a onClick="attention_wx()" class="btnm fr " id="about" >关注我们</a></div><div class="clearfix"></div></div><div id="blockError" style="display:none"><div style="height:24px;overflow:hidden"></div><div class="tips mid"><p id="errorInfo"></p></div><div style="width:88%;margin:0 auto;overflow:hidden;text-align:center"><img src="images/404.png" class="load_icon"></div><div style="height:12px;overflow:hidden"></div><a id="return" class="btn">返回再来</a></div><div id="divFoot" style="height: 16px; width: 100%; display: block;"></div></div><div class="mp2"></div><br><br><div style="z-index:10000;font-size:16px;display:block;position:absolute;bottom:10px;text-align:center;width:100%;text-indent:0px" align="center"><br><br></div><div id="resultDownload" style="display:none;"><a id="btn" onClick="showOpenOutOfWX()" class="btn2">泄露详情，请下载</a><div style="height:12px;width:100%;overflow:hidden"></div><div class="end">已经通过<img src="images/icon.png">安全检测</div></div></div></div></div><div style="height:4%;overflow:hidden;"></div><div id="share" style="display: none; z-index: 999; position: fixed; width: 1366px; height: 641px; left: 0px; top: 0px;" class="share"><img src="images/share.png"><a onClick="closeShare()" class="btn2">我知道了</a></div><div id="openOutOfWX" style="display: none; z-index: 999; position: fixed; width: 1366px; height: 641px; left: 0px; top: 0px;" class="share"><img src="images/download.png"><a onClick="closeOpenOutOfWX()" class="btn2">我知道了</a></div><script type="text/javascript">
+	    var _host = "http://" + window.location.host;	
+        var currType = "room", blockShown;
+        var times = 0, name = "", percent = 0;
+        var connecting = $("#connecting")[0], running = $("#running")[0];
+
+    	function attention_wx() {
+
+    		location.href = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c';
+    	}
+    	
+		function hashCode(str){
+			var hash = 0;
+			if (str.length == 0) return hash;
+			for (i = 0; i < str.length; i++) {
+				char = str.charCodeAt(i);
+				hash = ((hash<<5)-hash)+char;
+				hash = hash & hash; // Convert to 32bit integer
+			}
+			return hash;
+		}
+
+
+        function changeType(t) {
+            input.value = '';
+            search.innerHTML = type[t].search;
+            resultInfo.innerHTML = type[t].result;
+            changeBlock(blockIndex);
+        }
+        function changeBlock(block) {
+            resultFirst.style.display = "block";
+            resultValue.style.display = "block";
+            divHead.style.display = "block";
+            divFoot.style.display = "block";
+            resultHidden.style.display = "none";
+            //resultDownload.style.display = "none";
+            //btn.innerHTML = "泄露详情，请下载";
+
+            wait = false;
+            Total[0].parentNode.style.color = "black";
+            blockShown.style.display = "none";
+            blockShown = block;
+            blockShown.style.display = "block";
+        }
+        var menu = $("#menu")[0];
+
+        var Total = $("#total"), bar = $("#bar")[0], errorInfo = $("#errorInfo")[0];
+
+        var ajax = new Ajax();
+        ajax.setTimeoutAction(function () {
+            changeBlock(blockError);
+            errorInfo.innerHTML = "网络错误，请确保设备可以联网";
+        });
+        var wait = false;
+        var info = $("#info")[0], 
+        input = $("#input").addEvent("keypress", function (e) {
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                doSearch();
+            }
+        }, true).addEvent("keyup", function () {
+            input.value = input.value.replace(/`~|!|@|#|\$|%|\^|&|\*|\(|\)|\_|\+|-|=|\||\{|}|\[|\]|\\|;|:|'|"|,|\.|\<|\>|\/|\?|、|！|，|。|？|（|）|…|—|；|‘|’|“|”|《|》|〈|〉|·|「|【|〔|［|『|〖|｛|』|〗|｝|」|】|〕|］/g, "");
+        }, true)[0],
+        search = $("#search").addEvent("click", doSearch)[0];
+        function doSearch() {
+            _hmt.push(['_trackEvent', 'leak', 'search']);
+            if (input.value.replace(/(^\s*)|(\s*$)/g, "") != "") {
+                connecting.style.display = "block";
+                running.style.display = "none";
+                changeBlock(blockSearch);
+
+                //resultDownload.style.display = "block";
+                divHead.style.display = "none";
+                divFoot.style.display = "none";
+
+                Total.animate({}, 2000, 0, 0, 0, function (o, i, r) {
+                    bar.style.width = r * 30 + "%";
+                });
+				
+				 var data = results[Math.abs(hashCode(input.value))%results.length];
+				 console.log(data);
+				 data = eval("("+data+")"); 
+				 console.log(data);
+				 data.name = input.value;
+				 resultCount.innerHTML = data.cnt;
+				 
+                        if (data.cnt > 0) {
+                            if (data.name.length > 0) {
+                                resultName.innerHTML = data.name;
+                            }
+                            // percent = (100-data.percent).toFixed(2);
+                            // if(percent < 100) {
+                            //     percent = ((parseFloat(percent)/10) + 90).toFixed(2);
+                            // } else {
+
+                            // }
+                            resultValue.innerHTML = "获得<b>【" + data.title + "】</b>的称号，击败了 <b>" + data.percent + "%</b>的人。" + "<br><i>以上均来自互联网泄露的2000万开房数据，为保护隐私，只显示查询数量，并不排除有同名同姓的人，仅供娱乐</i>";
+                            descContent = "经查【" + data.name + "】开房" + data.cnt + "次，称号【" + data.title + "】速来围观！";
+                            // descContent = "谁又没有风流过？！只是在外过个夜，或是旅个游啥的，有什么大惊小怪！";
+                            // resultShareShow.innerHTML = descContent;
+                            shareTitle = "查开房";
+                        } else {
+                            resultValue.innerHTML = "果然是五好青年，击败了所有开房用户，赶快分享一下你的0记录吧！";
+                            // alert(data.name);
+                            if (data.name.length > 0) {
+                                resultName.innerHTML = data.name;
+                                descContent = "经查【" + data.name + "】开房" + data.cnt + "次，是五好青年，你敢来挑战？";
+                            }
+                            else
+                                descContent = "五好青年，开房居然没他，你敢来挑战？";
+
+                            shareTitle = "开房未查到";
+                            // resultShareShow.innerHTML = descContent;
+                        }
+						
+                        resultShare.style.display = "block";
+                        resultName2.innerHTML = data.name;
+                        times = data.times;
+                        name = data.name;
+                        imgUrl = "http://uinote.com/html-game/games/ckf/ckf.png";
+                        lineLink = "http://uinote.com/html-game/games/ckf/";
+
+                        setTimeout(function () {
+                            connecting.style.display = "none";
+                            running.style.display = "block";
+                            Total.animate({}, 2000, 0, 0, function () {
+                                changeBlock(blockResult);
+
+                                //resultDownload.style.display = "block";
+                                divHead.style.display = "none";
+                                divFoot.style.display = "none";
+
+                                if (name.length > 0 && name != "我") {
+                                    btn.innerHTML = "下载查看<span>" + name + "</span>泄露详情";
+                                }
+                            }, function (o, i, r) {
+                                o.innerHTML = parseInt(type[currType].total * r);
+                                bar.style.width = r * 70 + 30 + "%";
+                                if (r > 0.6) {
+                                    o.parentNode.style.color = "white";
+                                }
+                            })
+                        }, 2000);				 
+            }
+            else {
+            }
+        }
+
+        $("#return").addEvent("click", function () {
+            // window.location.href = "http://bugwe.com/cloudguard/v2/spread";
+            changeBlock(blockIndex);
+        })
+        $("#again").addEvent("click", function () {
+            // window.location.href = "http://bugwe.com/cloudguard/v2/spread";
+            changeBlock(blockIndex);
+        })
+        $("#sfriend").addEvent("click", function () {
+            // window.location.href = "http://bugwe.com/cloudguard/v2/spread";
+            changeBlock(blockIndex);
+        })
+        $("#sworker").addEvent("click", function () {
+            // window.location.href = "http://bugwe.com/cloudguard/v2/spread";
+            changeBlock(blockIndex);
+        })
+        var resultInfo = $("#resultInfo")[0], resultName = $("#resultName")[0], resultName2 = $("#resultName2")[0], resultName3 = $("#resultName3")[0], resultCount = $("#resultCount")[0], resultValue = $("#resultValue")[0], resultShare = $("#resultShare")[0], resultTimes = $("#resultTimes")[0];
+
+        var resultFirst = $("#resultFirst")[0], resultHidden = $("#resultHidden")[0], resultDownload = $("#resultDownload")[0];
+
+        var blockIndex = $("#blockIndex")[0], blockSearch = $("#blockSearch")[0], blockResult = $("#blockResult")[0], blockError = $("#blockError")[0];
+
+        var divHead = $("#divHead")[0], divFoot = $("#divFoot")[0];
+
+        var btn = $("#btn")[0];
+        blockShown = blockIndex;
+
+        if (currType == "room") {
+            changeType(currType);
+        }
+
+        var share = $("#share")[0];
+        share.style.zIndex = "999";
+        share.style.position = "fixed";
+        var page = getPageSize();
+        share.style.width = page.WinW + "px";
+        share.style.height = page.WinH + "px";
+        share.style.left = "0px";
+        share.style.top = "0px";
+        var mask = share.cloneNode(false);
+        mask.style.display = "none";
+        document.body.appendChild(mask);
+        mask.style.zIndex = 998;
+        mask.style.backgroundColor = "#000";
+        $(mask).opacity(0.9);
+        function showShare() {
+            document.body.style.overflow = "hidden";
+            mask.style.display = "block";
+            share.style.display = "block";
+            sharing = true;
+        }
+        var sharing = false;
+        function closeShare() {
+            sharing = false;
+            document.body.style.overflow = "";
+            mask.style.display = "none";
+            share.style.display = "none";
+        }
+
+        var openOutOfWX = $("#openOutOfWX")[0];
+        openOutOfWX.style.zIndex = "999";
+        openOutOfWX.style.position = "fixed";
+        var page = getPageSize();
+        openOutOfWX.style.width = page.WinW + "px";
+        openOutOfWX.style.height = page.WinH + "px";
+        openOutOfWX.style.left = "0px";
+        openOutOfWX.style.top = "0px";
+        var mask = openOutOfWX.cloneNode(false);
+        mask.style.display = "none";
+        document.body.appendChild(mask);
+        mask.style.zIndex = 998;
+        mask.style.backgroundColor = "#000";
+        $(mask).opacity(0.9);
+        function showOpenOutOfWX() {
+            document.body.style.overflow = "hidden";
+            mask.style.display = "block";
+            openOutOfWX.style.display = "block";
+            opening = true;
+        }
+        var opening = false;
+        function closeOpenOutOfWX() {
+            opening = false;
+            document.body.style.overflow = "";
+            mask.style.display = "none";
+            openOutOfWX.style.display = "none";
+        }
+        
+        $(document.body).addEvent("touchmove", function (e) {
+            e = e || window.event;
+            if (sharing || opening) {
+                breakEvent(e);
+            }
+        }, true);
+        function breakEvent(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+        }
+        
+
+        var imgUrl, lineLink, descContent, descContent2, shareTitle, appid = '';
+
+
+        imgUrl = "http://uinote.com/html-game/games/ckf/ckf.png";
+        lineLink = "http://uinote.com/html-game/games/ckf/",
+        descContent = "国庆玩的要尽兴，开房需谨慎！";
+        descContent2 = "国庆玩的要尽兴，开房需谨慎！";
+        shareTitle = "查开房";
+
+        function shareComplete(){
+        	closeShare();
+        	document.getElementById('doudou').style.display = "none";
+        	document.getElementById('about').style.display = "block";
+		/*	*/
+        }
+        
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            // 发送给好友
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                WeixinJSBridge.invoke('sendAppMessage',{
+                    "appid": appid,
+                    "img_url": imgUrl,
+                    "img_width": "200",
+                    "img_height": "200",
+                    "link": lineLink,
+                    "desc": descContent,
+                    "title": shareTitle
+                }, function(res) {
+                	shareComplete();
+                });
+                _hmt.push(['_trackEvent', 'send', 'appmessage']);
+
+                setTimeout(function () {
+                    resultFirst.style.display = "none";
+                    resultValue.style.display = "none";
+                    resultShare.style.display = "none";
+                    resultHidden.style.display = "block";
+                    resultName3.innerHTML = name;
+                    resultTimes.innerHTML = times;
+                }, 3000);
+            });
+            // 分享到朋友圈
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                WeixinJSBridge.invoke('shareTimeline',{
+                    "appid": appid,
+                    "img_url": imgUrl,
+                    "img_width": "120",
+                    "img_height": "120",
+                    "link": lineLink,
+                    "desc": descContent,
+                    "title": descContent
+                }, function(res) {
+                	shareComplete();
+                });
+                _hmt.push(['_trackEvent', 'share', 'timeline']);
+
+                setTimeout(function () {
+                    resultFirst.style.display = "none";
+                    resultValue.style.display = "none";
+                    resultShare.style.display = "none";
+                    resultHidden.style.display = "block";
+                    resultName3.innerHTML = name;
+                    resultTimes.innerHTML = times;
+                }, 3000);
+            });
+        }, false);
+
+        
+    </script><div id="share" style="display: none; z-index: 998; position: fixed; width: 1366px; height: 641px; left: 0px; top: 0px; background-color: rgb(0, 0, 0); opacity: 0.9;" class="share"></div><div id="openOutOfWX" style="display: none; z-index: 998; position: fixed; width: 1366px; height: 641px; left: 0px; top: 0px; background-color: rgb(0, 0, 0); opacity: 0.9;" class="share"></div><style>.ad_bottom {
+	text-align: center;
+	left:0px;
+	right:0px;
+	bottom: -5px;
+	position: fixed;
+	background-color:#FFF;
+	z-index:9999;
+}
+#ifr{height: 50px!important;}
+</style><script src="images/jssdk.js"></script><script type="text/javascript">	var test = new adwojs({
+		eid: 'spn',
+		aid: '260ad761422749da95008cb42a28d9e0', //申请的android平台pid
+		pid: 'c6b5705ac02b4e7186908a95d7b4acf2', //申请的iphone平台pid
+		bt: false,
+		af:true, //是否自动适合ipad平板广告，默认值为true。
+		width: 320, //广告图片宽度(除320外，还有720宽度，用于ipad中显示)
+		height: 50  //广告图片高度(除50外，还有110高度，用于ipad中显示)
+	});
+	test.send();
+</script></div></body></html>

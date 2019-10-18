@@ -1,0 +1,132 @@
+{
+	"language": [
+		{
+			"code": "en",
+			"data":[
+				"完美过关",
+				"普通过关",
+				"过关!",
+				"重新开始？",
+				"退出？",
+				"你本关卡的进度将会丢失",
+				"必须填满每个格子才能过关!",
+				"选择 关卡",
+				"点击一\n个动物",
+				"连到另一\n个动物",
+				"必须填满每个格子\n才能过关"
+			]
+		},
+		{
+			"code": "de",
+			"data":[
+				"Perfekt gelöst!",
+				"Normal gelöst",
+				"Level gelöst",
+				"Neu starten?",
+				"Beenden?",
+				"Dein Fortschritt in diesem Level wird zurückgesetzt",
+				"DU MUSST ALLE BLÖCKE FÜLLEN!",
+				"LEVEL WÄHLEN",
+				"Klick auf\nTier und",
+				"zieh es auf\ngleiche Tiere",
+				"Du musst alle\nBlöcke füllen"
+			]
+		},
+		{
+			"code": "es",
+			"data":[
+				"Fin perfecto",
+				"Fin normal",
+				"¡Fase finalizada!",
+				"¿Volver a empezar?",
+				"¿Salir?",
+				"Perderás tu progreso en este nivel",
+				"¡DEBES LLENAR TODOS LOS BLOQUES!",
+				"SELECCIONAR NIVEL",
+				"Haz clic en un\nanimal\ny",
+				"arrástralo\nal mismo\nanimal",
+				"Debes llenar todos\nlos bloques para finalizar"
+			]
+		},
+		{
+			"code": "it",
+			"data":[
+				"Perfetto Completo",
+				"Normale Completo",
+				"Livello Completo!",
+				"Riprendi?",
+				"Esci?",
+				"I tuoi progressi in questo livello saranno perduti",
+				"DEVI RIEMPIRE TUTTI I BLOCCHI!",
+				"SELEZIONA LIVELLO",
+				"Click su un\nanimale\ne ",
+				"trascinalo allo\nstesso\nanimale",
+				"Devi riempire tutti\ni blocchi per\ncompletare"
+			]
+		},
+		{
+			"code": "fr",
+			"data":[
+				"Parfaitement effacé",
+				"Normalement effacé",
+				"Étape effacer !",
+				"Recommencer ?",
+				"Sortir ?",
+				"Vos acquis à ce niveau seront perdus !",
+				"VOUS DEVEZ REMPLIR TOUTES LES CASES !",
+				"SÉLECTIONNER NIVEAU",
+				"Cliquer un\nanimal\net",
+				"Le faire glisser vers\nle même\nanimal",
+				"Vous devez remplir\ntoutes\nles cases pour effacer"
+			]
+		},
+		{
+			"code": "pt",
+			"data":[
+				"Completado Perfeitamente",
+				"Completado Normalmente",
+				"Nível Completo!",
+				"Reiniciar?",
+				"Sair?",
+				"O teu progresso neste nível será perdido",
+				"TENS DE PREENCHER TODOS OS BLOCOS!",
+				"SELECIONAR NÍVEL",
+				"Clica num\nanimal\ne",
+				"arrasta-o\npara o mesmo\nanimal",
+				"Tens de preencher\ntodos os blocos para completares"
+			]
+		},
+		{
+			"code": "tr",
+			"data":[
+				"Mükemmel Tamamlama",
+				"Normal Tamamlama",
+				"Aşama Tamamlandı!",
+				"Yeniden Başla?",
+				"Çıkış?",
+				"Bu aşamadaki ilerlemeniz kaybolacak",
+				"TÜM BLOKLARI DOLDURMANIZ GEREKİYOR!",
+				"AŞAMA SEÇ",
+				"Bir \nhayvana\ntıkla ve",
+				"aynı\nhayvana\nsürükle",
+				"Tamamlamak için tüm\nblokları doldurmalısınız"
+			]
+		},
+		{
+			"code": "ru",
+			"data":[
+				"Пройдено отлично",
+				"Пройдено хорошо",
+				"Этап чист!",
+				"Начать заново?",
+				"Выйти?",
+				"Твои достижения на этом уровне будут потеряны",
+				"ТЫ ДОЛЖЕН ЗАПОЛНИТЬ ВСЕ БЛОКИ!",
+				"ВЫБЕРИ УРОВЕНЬ",
+				"Нажми на\nживотное\nи",
+				"Перетащи его на\nто же самое\nживотное",
+				"Ты должен заполнить\nвсе блоки для прохождения этапа"
+			]
+		}
+	]
+}

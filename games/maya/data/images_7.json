@@ -1,0 +1,40 @@
+{"frames": {
+"game_res_4":
+{
+	"frame": {"x":0,"y":0,"w":480,"h":659},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":480,"h":659},
+	"sourceSize": {"w":480,"h":659}
+}
+,"game_res_5":
+{
+	"frame": {"x":481,"y":0,"w":480,"h":659},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":480,"h":659},
+	"sourceSize": {"w":480,"h":659}
+}
+,"game_head_4":
+{
+	"frame": {"x":0,"y":660,"w":110,"h":245},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":112,"h":249},
+	"sourceSize": {"w":112,"h":249}
+}
+,"game_head_5":
+{
+	"frame": {"x":111,"y":660,"w":92,"h":202},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":93,"h":203},
+	"sourceSize": {"w":93,"h":203}
+}
+},"meta": {
+	"app": "AVK_tools",
+	"version": "1.0",
+	"image": "pics/images_7.png",
+	"format": "RGBA8888",
+	"scale": "1"
+}}

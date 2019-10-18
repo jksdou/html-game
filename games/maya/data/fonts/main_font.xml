@@ -1,0 +1,23 @@
+<font>
+  <info face="AVK_FNT_main" size="48" bold="0" italic="0" charset="" unicode="" stretchH="100" smooth="1" aa="1" padding="2, 2, 2, 2" spacing="0, 0" outline="0"/>
+  <common lineHeight="55" base="43" scaleW="57" scaleH="274" pages="1" packed="0"/>
+  <pages>
+    <page id="0" file="c.png"/>
+  </pages>
+  <chars count="10">
+    <char id="48" x="0" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="49" x="82" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="50" x="164" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="51" x="246" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="52" x="328" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="53" x="410" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="54" x="492" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="55" x="574" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="56" x="656" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="57" x="738" y="0" width="82" height="100" xoffset="0" yoffset="0" xadvance="82" page="0" chnl="15"/>
+    <char id="32" x="0" y="0" width="1" height="100" xoffset="0" yoffset="0" xadvance="42" page="0" chnl="15"/>
+  </chars>
+  <kernings count="1">
+    <kerning first="49" second="49" amount="-4"/>
+  </kernings>
+</font>

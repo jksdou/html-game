@@ -1,0 +1,872 @@
+<Parametrs>
+<Parametr n="alien_1_mc" >
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_die_mc" >
+<info x="-34" y="-33"   />
+<info x="-29" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-23" y="-26"   />
+<info x="-26" y="-34"   />
+<info x="-29" y="-36"   />
+<info x="-31" y="-38"   />
+<info x="-33" y="-39"   />
+<info x="-32" y="-40"   />
+</Parametr>
+<Parametr n="alien_1_idle_mc" >
+<info x="-34" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_idleEye_mc" >
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_tap_mc" >
+<info x="-34" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-29" y="-33"   />
+<info x="-28" y="-33"   />
+<info x="-26" y="-33"   />
+<info x="-28" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-38" y="-32"   />
+<info x="-41" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_happy_mc" >
+<info x="-34" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_teleportBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-29" y="-27"   />
+<info x="-24" y="-20"   />
+<info x="-24" y="-20"   />
+<info x="-24" y="-15"   />
+<info x="-24" y="-10"   />
+</Parametr>
+<Parametr n="alien_1_teleportEnd_mc" >
+<info x="-24" y="-10"   />
+<info x="-24" y="-15"   />
+<info x="-24" y="-20"   />
+<info x="-24" y="-20"   />
+<info x="-29" y="-27"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_goDownBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-28" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_goDownEnd_mc" >
+<info x="-28" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-42" y="-33"   />
+<info x="-49" y="-33"   />
+<info x="-44" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_goLeftBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-32" y="-33"   />
+<info x="-29" y="-32"   />
+</Parametr>
+<Parametr n="alien_1_goLeftEnd_mc" >
+<info x="-27" y="-32"   />
+<info x="-30" y="-33"   />
+<info x="-33" y="-34"   />
+<info x="-41" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-30" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_goRightBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-49" y="-32"   />
+</Parametr>
+<Parametr n="alien_1_goRightEnd_mc" >
+<info x="-49" y="-32"   />
+<info x="-38" y="-34"   />
+<info x="-34" y="-34"   />
+<info x="-30" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_goUpBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+</Parametr>
+<Parametr n="alien_1_goUpEnd_mc" >
+<info x="-35" y="-33"   />
+<info x="-39" y="-28"   />
+<info x="-44" y="-23"   />
+<info x="-49" y="-18"   />
+<info x="-48" y="-27"   />
+<info x="-46" y="-34"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_2_mc" >
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_die_mc" >
+<info x="-33" y="-32"   />
+<info x="-28" y="-32"   />
+<info x="-23" y="-32"   />
+<info x="-23" y="-32"   />
+<info x="-23" y="-32"   />
+<info x="-24" y="-33"   />
+<info x="-23" y="-26"   />
+<info x="-26" y="-34"   />
+<info x="-29" y="-36"   />
+<info x="-31" y="-38"   />
+<info x="-33" y="-39"   />
+<info x="-32" y="-40"   />
+</Parametr>
+<Parametr n="alien_2_idle_mc" >
+<info x="-33" y="-32"   />
+<info x="-34" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-36" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-34" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_idleEye_mc" >
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_tap_mc" >
+<info x="-33" y="-32"   />
+<info x="-32" y="-32"   />
+<info x="-30" y="-32"   />
+<info x="-29" y="-32"   />
+<info x="-27" y="-32"   />
+<info x="-25" y="-32"   />
+<info x="-28" y="-32"   />
+<info x="-30" y="-32"   />
+<info x="-32" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-37" y="-32"   />
+<info x="-40" y="-32"   />
+<info x="-38" y="-32"   />
+<info x="-37" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_happy_mc" >
+<info x="-33" y="-32"   />
+<info x="-34" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-36" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-35" y="-32"   />
+<info x="-34" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_teleportBegin_mc" >
+<info x="-33" y="-32"   />
+<info x="-28" y="-26"   />
+<info x="-23" y="-19"   />
+<info x="-23" y="-19"   />
+<info x="-23" y="-15"   />
+<info x="-24" y="-10"   />
+</Parametr>
+<Parametr n="alien_2_teleportEnd_mc" >
+<info x="-24" y="-10"   />
+<info x="-23" y="-15"   />
+<info x="-23" y="-19"   />
+<info x="-23" y="-19"   />
+<info x="-28" y="-26"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goDownBegin_mc" >
+<info x="-33" y="-32"   />
+<info x="-30" y="-32"   />
+<info x="-27" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goDownEnd_mc" >
+<info x="-27" y="-32"   />
+<info x="-34" y="-32"   />
+<info x="-41" y="-32"   />
+<info x="-48" y="-32"   />
+<info x="-43" y="-32"   />
+<info x="-38" y="-32"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goLeftBegin_mc" >
+<info x="-33" y="-32"   />
+<info x="-33" y="-32"   />
+<info x="-32" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goLeftEnd_mc" >
+<info x="-30" y="-32"   />
+<info x="-31" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-51" y="-32"   />
+<info x="-35" y="-33"   />
+<info x="-31" y="-32"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goRightBegin_mc" >
+<info x="-33" y="-32"   />
+<info x="-47" y="-32"   />
+<info x="-63" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goRightEnd_mc" >
+<info x="-63" y="-32"   />
+<info x="-45" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-33" y="-32"   />
+<info x="-33" y="-33"   />
+<info x="-42" y="-32"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goUpBegin_mc" >
+<info x="-33" y="-32"   />
+<info x="-34" y="-32"   />
+<info x="-34" y="-32"   />
+</Parametr>
+<Parametr n="alien_2_goUpEnd_mc" >
+<info x="-34" y="-32"   />
+<info x="-38" y="-27"   />
+<info x="-43" y="-23"   />
+<info x="-48" y="-18"   />
+<info x="-46" y="-26"   />
+<info x="-45" y="-34"   />
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="alien_3_mc" >
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_die_mc" >
+<info x="-34" y="-33"   />
+<info x="-29" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-24" y="-33"   />
+<info x="-23" y="-26"   />
+<info x="-26" y="-34"   />
+<info x="-29" y="-36"   />
+<info x="-31" y="-38"   />
+<info x="-33" y="-39"   />
+<info x="-32" y="-40"   />
+</Parametr>
+<Parametr n="alien_3_idle_mc" >
+<info x="-34" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_idleEye_mc" >
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_tap_mc" >
+<info x="-34" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-29" y="-33"   />
+<info x="-28" y="-33"   />
+<info x="-26" y="-33"   />
+<info x="-28" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-38" y="-32"   />
+<info x="-41" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_happy_mc" >
+<info x="-34" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_teleportBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-29" y="-27"   />
+<info x="-24" y="-20"   />
+<info x="-24" y="-20"   />
+<info x="-24" y="-15"   />
+<info x="-24" y="-10"   />
+</Parametr>
+<Parametr n="alien_3_teleportEnd_mc" >
+<info x="-24" y="-10"   />
+<info x="-24" y="-15"   />
+<info x="-24" y="-20"   />
+<info x="-24" y="-20"   />
+<info x="-29" y="-27"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_goDownBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-28" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_goDownEnd_mc" >
+<info x="-28" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-42" y="-33"   />
+<info x="-49" y="-33"   />
+<info x="-44" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_goLeftBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-32" y="-33"   />
+<info x="-29" y="-32"   />
+</Parametr>
+<Parametr n="alien_3_goLeftEnd_mc" >
+<info x="-27" y="-32"   />
+<info x="-30" y="-33"   />
+<info x="-33" y="-34"   />
+<info x="-48" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-30" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_goRightBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-45" y="-33"   />
+<info x="-59" y="-32"   />
+</Parametr>
+<Parametr n="alien_3_goRightEnd_mc" >
+<info x="-59" y="-32"   />
+<info x="-43" y="-34"   />
+<info x="-34" y="-34"   />
+<info x="-30" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-40" y="-33"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_goUpBegin_mc" >
+<info x="-34" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-35" y="-33"   />
+</Parametr>
+<Parametr n="alien_3_goUpEnd_mc" >
+<info x="-35" y="-33"   />
+<info x="-39" y="-28"   />
+<info x="-44" y="-23"   />
+<info x="-49" y="-18"   />
+<info x="-48" y="-27"   />
+<info x="-46" y="-34"   />
+<info x="-34" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_mc" >
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_die_mc" >
+<info x="-37" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-26" y="-33"   />
+<info x="-26" y="-33"   />
+<info x="-26" y="-33"   />
+<info x="-26" y="-33"   />
+<info x="-23" y="-26"   />
+<info x="-26" y="-34"   />
+<info x="-29" y="-36"   />
+<info x="-31" y="-38"   />
+<info x="-33" y="-39"   />
+<info x="-32" y="-40"   />
+</Parametr>
+<Parametr n="alien_4_idle_mc" >
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_idleEye_mc" >
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_tap_mc" >
+<info x="-37" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-31" y="-33"   />
+<info x="-30" y="-33"   />
+<info x="-28" y="-33"   />
+<info x="-30" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-41" y="-32"   />
+<info x="-43" y="-33"   />
+<info x="-42" y="-33"   />
+<info x="-40" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_happy_mc" >
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-38" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_teleportBegin_mc" >
+<info x="-37" y="-33"   />
+<info x="-31" y="-27"   />
+<info x="-26" y="-20"   />
+<info x="-26" y="-20"   />
+<info x="-26" y="-15"   />
+<info x="-26" y="-10"   />
+</Parametr>
+<Parametr n="alien_4_teleportEnd_mc" >
+<info x="-26" y="-10"   />
+<info x="-26" y="-15"   />
+<info x="-26" y="-20"   />
+<info x="-26" y="-20"   />
+<info x="-31" y="-27"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_goDownBegin_mc" >
+<info x="-37" y="-33"   />
+<info x="-33" y="-33"   />
+<info x="-30" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_goDownEnd_mc" >
+<info x="-30" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-45" y="-33"   />
+<info x="-52" y="-33"   />
+<info x="-47" y="-33"   />
+<info x="-42" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_goLeftBegin_mc" >
+<info x="-37" y="-33"   />
+<info x="-34" y="-33"   />
+<info x="-31" y="-32"   />
+</Parametr>
+<Parametr n="alien_4_goLeftEnd_mc" >
+<info x="-29" y="-32"   />
+<info x="-32" y="-33"   />
+<info x="-36" y="-34"   />
+<info x="-41" y="-33"   />
+<info x="-36" y="-33"   />
+<info x="-32" y="-33"   />
+<info x="-36" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_goRightBegin_mc" >
+<info x="-37" y="-33"   />
+<info x="-40" y="-33"   />
+<info x="-49" y="-32"   />
+</Parametr>
+<Parametr n="alien_4_goRightEnd_mc" >
+<info x="-49" y="-32"   />
+<info x="-40" y="-34"   />
+<info x="-36" y="-34"   />
+<info x="-33" y="-33"   />
+<info x="-35" y="-33"   />
+<info x="-39" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_goUpBegin_mc" >
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="alien_4_goUpEnd_mc" >
+<info x="-37" y="-33"   />
+<info x="-42" y="-28"   />
+<info x="-47" y="-23"   />
+<info x="-52" y="-18"   />
+<info x="-51" y="-27"   />
+<info x="-49" y="-34"   />
+<info x="-37" y="-33"   />
+</Parametr>
+<Parametr n="Cell_1_mc" >
+<info x="-30" y="-30"   />
+</Parametr>
+<Parametr n="Cell_2_mc" >
+<info x="-30" y="-30"   />
+</Parametr>
+<Parametr n="tile_black_0_0_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_0_1_0" >
+<info x="-1" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_1_0_0" >
+<info x="0" y="0"   />
+</Parametr>
+<Parametr n="tile_black_1_0_0_0" >
+<info x="-33" y="0"   />
+</Parametr>
+<Parametr n="tile_black_0_0_1_1" >
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="tile_black_0_1_0_1" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_0_0_1" >
+<info x="-32" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_0_1_1_0" >
+<info x="0" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_0_1_0" >
+<info x="-33" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_0_0" >
+<info x="-33" y="0"   />
+</Parametr>
+<Parametr n="tile_black_0_1_1_1" >
+<info x="-33" y="-32"   />
+</Parametr>
+<Parametr n="tile_black_1_0_1_1" >
+<info x="-32" y="-32"   />
+</Parametr>
+<Parametr n="tile_black_1_1_0_1" >
+<info x="-32" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_1_0" >
+<info x="-36" y="-33"   />
+</Parametr>
+<Parametr n="tile_black_1_1_1_1" >
+<info x="-32" y="-32"   />
+</Parametr>
+<Parametr n="Exit_1_mc" >
+<info x="-30" y="-29"   />
+</Parametr>
+<Parametr n="Exit_2_mc" >
+<info x="-30" y="-29"   />
+</Parametr>
+<Parametr n="Exit_3_mc" >
+<info x="-30" y="-29"   />
+</Parametr>
+<Parametr n="Exit_4_mc" >
+<info x="-30" y="-29"   />
+</Parametr>
+<Parametr n="arrow_1_mc" >
+<info x="-27" y="-27"   />
+</Parametr>
+<Parametr n="arrow_2_mc" >
+<info x="-27" y="-27"   />
+</Parametr>
+<Parametr n="arrow_3_mc" >
+<info x="-27" y="-27"   />
+</Parametr>
+<Parametr n="arrow_4_mc" >
+<info x="-27" y="-27"   />
+</Parametr>
+<Parametr n="spring_1_mc" >
+<info x="-35" y="-30"   />
+<info x="-35" y="-39"   />
+<info x="-35" y="-48"   />
+<info x="-35" y="-42"   />
+<info x="-35" y="-36"   />
+<info x="-35" y="-30"   />
+</Parametr>
+<Parametr n="spring_2_mc" >
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+</Parametr>
+<Parametr n="spring_3_mc" >
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+<info x="-35" y="-30"   />
+</Parametr>
+<Parametr n="spring_4_mc" >
+<info x="-35" y="-30"   />
+<info x="-44" y="-30"   />
+<info x="-53" y="-30"   />
+<info x="-47" y="-30"   />
+<info x="-41" y="-30"   />
+<info x="-35" y="-30"   />
+</Parametr>
+<Parametr n="decor_1_mc" >
+<info x="-41" y="-45"   />
+</Parametr>
+<Parametr n="decor_2_mc" >
+<info x="-51" y="-54"   />
+</Parametr>
+<Parametr n="decor_3_mc" >
+<info x="-24" y="-29"   />
+</Parametr>
+<Parametr n="decor_4_mc" >
+<info x="-50" y="-50"   />
+</Parametr>
+<Parametr n="decor_5_mc" >
+<info x="-44" y="-68"   />
+</Parametr>
+<Parametr n="decor_6_mc" >
+<info x="-32" y="-30"   />
+</Parametr>
+<Parametr n="decor_7_mc" >
+<info x="-22" y="-34"   />
+</Parametr>
+<Parametr n="decor_8_mc" >
+<info x="-33" y="-34"   />
+</Parametr>
+<Parametr n="decor_9_mc" >
+<info x="-12" y="-12"   />
+</Parametr>
+<Parametr n="iceDetaills_1_mc" >
+<info x="-48" y="-51"   />
+<info x="-35" y="-56"   />
+<info x="-22" y="-61"   />
+<info x="-9" y="-66"   />
+<info x="4" y="-72"   />
+<info x="17" y="-77"   />
+<info x="30" y="-81"   />
+<info x="46" y="-83"   />
+</Parametr>
+<Parametr n="iceDetaills_2_mc" >
+<info x="-48" y="-51"   />
+<info x="-67" y="-58"   />
+<info x="-84" y="-67"   />
+<info x="-102" y="-75"   />
+<info x="-120" y="-83"   />
+<info x="-139" y="-91"   />
+<info x="-156" y="-97"   />
+<info x="-172" y="-102"   />
+</Parametr>
+<Parametr n="iceDetaills_3_mc" >
+<info x="-48" y="-51"   />
+<info x="-52" y="-43"   />
+<info x="-56" y="-35"   />
+<info x="-60" y="-27"   />
+<info x="-64" y="-20"   />
+<info x="-67" y="-12"   />
+<info x="-70" y="-2"   />
+<info x="-72" y="9"   />
+</Parametr>
+<Parametr n="iceDetaills_4_mc" >
+<info x="-48" y="-51"   />
+<info x="-52" y="-68"   />
+<info x="-55" y="-85"   />
+<info x="-59" y="-103"   />
+<info x="-63" y="-120"   />
+<info x="-67" y="-138"   />
+<info x="-70" y="-154"   />
+<info x="-71" y="-168"   />
+</Parametr>
+<Parametr n="ice_1_mc" >
+<info x="-50" y="-52"   />
+</Parametr>
+<Parametr n="Teleport_1_mc" >
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+</Parametr>
+<Parametr n="Teleport_2_mc" >
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+</Parametr>
+<Parametr n="Teleport_3_mc" >
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+</Parametr>
+<Parametr n="Teleport_4_mc" >
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+<info x="-29" y="-29"   />
+</Parametr>
+<Parametr n="buttonBase_mc" >
+<info x="-42" y="-42"   />
+</Parametr>
+<Parametr n="buttonRestart_mc" >
+<info x="-23" y="-28"   />
+</Parametr>
+<Parametr n="buttonPause_mc" >
+<info x="-22" y="-25"   />
+</Parametr>
+<Parametr n="MenuMiniButton_1_mc" >
+<info x="-18" y="-18"   />
+</Parametr>
+<Parametr n="scoreBar_1_mc" >
+<info x="-119" y="-13"   />
+</Parametr>
+<Parametr n="scoreBar_2_mc" >
+<info x="-119" y="-13"   />
+</Parametr>
+<Parametr n="scoreBar_3_mc" >
+<info x="-123" y="-17"   />
+</Parametr>
+<Parametr n="guiFrameDown_mc" >
+<info x="-320" y="-110"   />
+</Parametr>
+<Parametr n="buttonRestart_2_mc" >
+<info x="-54" y="-69"   />
+</Parametr>
+<Parametr n="MainMenuButton_1_mc" >
+<info x="-102" y="-102"   />
+</Parametr>
+<Parametr n="ButtonBack_mc" >
+<info x="-60" y="-57"   />
+</Parametr>
+<Parametr n="ButtonPlay_mc" >
+<info x="-38" y="-53"   />
+</Parametr>
+<Parametr n="ButtonMusic_mc" >
+<info x="-51" y="-54"   />
+<info x="-51" y="-54"   />
+</Parametr>
+<Parametr n="star_1_mc" >
+<info x="-14" y="-13"   />
+<info x="-14" y="-13"   />
+</Parametr>
+<Parametr n="star_2_mc" >
+<info x="-23" y="-14"   />
+<info x="-23" y="-14"   />
+</Parametr>
+<Parametr n="star_3_mc" >
+<info x="-24" y="-16"   />
+<info x="-24" y="-16"   />
+</Parametr>
+<Parametr n="StarLevelComplete_mc" >
+<info x="-80" y="-71"   />
+<info x="-80" y="-71"   />
+</Parametr>
+<Parametr n="ButtonMoreGames_mc" >
+<info x="-75" y="-36"   />
+</Parametr>
+<Parametr n="MenuTitle_1_mc" >
+<info x="-272" y="-177"   />
+</Parametr>
+<Parametr n="MenuBack_1_mc" >
+<info x="-320" y="-480"   />
+</Parametr>
+<Parametr n="ButtonLevel_mc" >
+<info x="-41" y="-60"   />
+<info x="-41" y="-60"   />
+</Parametr>
+<Parametr n="LevelSelectButton_mc" >
+<info x="-53" y="-53"   />
+<info x="-53" y="-53"   />
+</Parametr>
+<Parametr n="ButtonCredits_mc" >
+<info x="-13" y="-32"   />
+</Parametr>
+<Parametr n="LevelMenuStar_mc" >
+<info x="-13" y="-12"   />
+<info x="-13" y="-12"   />
+<info x="-13" y="-12"   />
+</Parametr>
+<Parametr n="helpHand_mc" >
+<info x="-32" y="-71"   />
+<info x="-57" y="-71"   />
+</Parametr>
+</Parametrs>

@@ -1,0 +1,50 @@
+{
+	"en": {
+        "FallNumber": "和他的第{N}次摔倒！",
+        "TutorialText": "点击换腿\n 看你能走多远！",
+        "TutorialFontSize": 27,
+        "M": "m"
+    },
+    "ru": {
+        "FallNumber": "его {N} падение",
+        "TutorialText": "Нажмите для смены\nноги. Пройдите\nкак можно дальше",
+        "TutorialFontSize": 16,
+        "M": "м"
+    },
+    "de": {
+        "FallNumber": "Dein {N} sturz",
+        "TutorialText": "Antippen, um einen\nSchritt zu machen.\nVersuch so weit wie\nmöglich zu kommen",
+        "TutorialFontSize": 16,
+        "M": "m"
+    },
+    "es": {
+        "FallNumber": "su {N} caída",
+        "TutorialText": "Toca para cambiar de\npierna. ¡Llega lo más\nlejos posible!",
+        "TutorialFontSize": 16,
+        "M": "m"
+    },
+    "fr": {
+        "FallNumber": "Sa/ses {N} chute(s)",
+        "TutorialText": "Tapez pour changer\nde jambe. Allez le\nplus loin possible!",
+        "TutorialFontSize": 18,
+        "M": "m"
+    },
+    "it": {
+        "FallNumber": "la sua {N} caduta",
+        "TutorialText": "Premi per cambiare\ngamba. Prendi ciò\nche puoi!",
+        "TutorialFontSize": 18,
+        "M": "m"
+    },
+    "pt": {
+        "FallNumber": "a queda {N} dele",
+        "TutorialText": "Toque para mudar de\nperna. Chegue o mais\nlonge que puder!",
+        "TutorialFontSize": 16,
+        "M": "m"
+    },
+    "tr": {
+        "FallNumber": "onun {N} Düşüşü",
+        "TutorialText": "Bacak değiştirmek için\ndokunun. Olabildiğince\nuzağa erişin!",
+        "TutorialFontSize": 15,
+        "M": "m"
+    }
+}

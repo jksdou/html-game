@@ -1,0 +1,88 @@
+{"frames": {
+"game_loose_wnd":
+{
+	"frame": {"x":0,"y":0,"w":464,"h":370},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":464,"h":370},
+	"sourceSize": {"w":464,"h":370}
+}
+,"game_win_wnd":
+{
+	"frame": {"x":0,"y":371,"w":452,"h":358},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":452,"h":358},
+	"sourceSize": {"w":452,"h":358}
+}
+,"game_wrays":
+{
+	"frame": {"x":0,"y":730,"w":106,"h":106},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":106},
+	"sourceSize": {"w":106,"h":106}
+}
+,"game_brays":
+{
+	"frame": {"x":107,"y":730,"w":106,"h":106},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":106,"h":106},
+	"sourceSize": {"w":106,"h":106}
+}
+,"game_star_2":
+{
+	"frame": {"x":214,"y":730,"w":114,"h":101},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":114,"h":101},
+	"sourceSize": {"w":114,"h":101}
+}
+,"game_win_wnd_back":
+{
+	"frame": {"x":0,"y":837,"w":326,"h":93},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":326,"h":93},
+	"sourceSize": {"w":326,"h":93}
+}
+,"game_star_1":
+{
+	"frame": {"x":329,"y":730,"w":95,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":95,"h":84},
+	"sourceSize": {"w":95,"h":84}
+}
+,"game_btn_more":
+{
+	"frame": {"x":425,"y":730,"w":78,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":78,"h":75},
+	"sourceSize": {"w":78,"h":75}
+}
+,"game_star_0":
+{
+	"frame": {"x":431,"y":806,"w":80,"h":71},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":71},
+	"sourceSize": {"w":80,"h":71}
+}
+,"game_zvezda_part":
+{
+	"frame": {"x":465,"y":0,"w":35,"h":31},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":31},
+	"sourceSize": {"w":35,"h":31}
+}
+},"meta": {
+	"app": "AVK_tools",
+	"version": "1.0",
+	"image": "pics/images_3.png",
+	"format": "RGBA8888",
+	"scale": "1"
+}}

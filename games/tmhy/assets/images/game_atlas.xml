@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4ae318dd8ac7815e61dda4f75a5a27d0:71ae1caf50ae21b354a354ffbb702603:4d87daccd1c6393a89afb36baba0c81d$ -->
+<TextureAtlas imagePath="game_atlas.png">
+    <SubTexture name="bg_over_left" x="4" y="10" width="4" height="700"/>
+    <SubTexture name="bg_over_top" x="4" y="4" width="540" height="4"/>
+    <SubTexture name="bubble_blue_0001" x="10" y="351" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0002" x="117" y="341" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0003" x="331" y="336" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0004" x="234" y="336" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0005" x="448" y="144" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0006" x="234" y="336" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0007" x="331" y="336" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0008" x="117" y="341" width="95" height="95"/>
+    <SubTexture name="bubble_blue_0009" x="10" y="351" width="95" height="95"/>
+    <SubTexture name="bubble_green_0001" x="184" y="517" width="85" height="85"/>
+    <SubTexture name="bubble_green_0002" x="97" y="604" width="85" height="85"/>
+    <SubTexture name="bubble_green_0003" x="97" y="517" width="85" height="85"/>
+    <SubTexture name="bubble_green_0004" x="10" y="604" width="85" height="85"/>
+    <SubTexture name="bubble_green_0005" x="10" y="517" width="85" height="85"/>
+    <SubTexture name="bubble_green_0006" x="10" y="604" width="85" height="85"/>
+    <SubTexture name="bubble_green_0007" x="428" y="430" width="85" height="85"/>
+    <SubTexture name="bubble_green_0008" x="428" y="343" width="85" height="85"/>
+    <SubTexture name="bubble_green_0009" x="184" y="517" width="85" height="85"/>
+    <SubTexture name="bubble_red_0001" x="10" y="127" width="115" height="115"/>
+    <SubTexture name="bubble_red_0002" x="361" y="10" width="115" height="115"/>
+    <SubTexture name="bubble_red_0003" x="10" y="127" width="115" height="115"/>
+    <SubTexture name="bubble_red_0004" x="244" y="10" width="115" height="115"/>
+    <SubTexture name="bubble_red_0005" x="127" y="10" width="115" height="115"/>
+    <SubTexture name="bubble_red_0006" x="10" y="10" width="115" height="115"/>
+    <SubTexture name="bubble_red_0007" x="127" y="10" width="115" height="115"/>
+    <SubTexture name="bubble_red_0008" x="361" y="10" width="115" height="115"/>
+    <SubTexture name="bubble_red_0009" x="10" y="127" width="115" height="115"/>
+    <SubTexture name="bubble_yellow_0001" x="10" y="244" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0002" x="127" y="234" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0003" x="341" y="127" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0004" x="234" y="127" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0005" x="127" y="127" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0006" x="234" y="127" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0007" x="341" y="127" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0008" x="127" y="234" width="105" height="105"/>
+    <SubTexture name="bubble_yellow_0009" x="10" y="244" width="105" height="105"/>
+    <SubTexture name="bullet" x="92" y="448" width="46" height="46"/>
+    <SubTexture name="button_100_down" x="438" y="241" width="100" height="100"/>
+    <SubTexture name="button_100_over" x="336" y="234" width="100" height="100"/>
+    <SubTexture name="button_100_up" x="234" y="234" width="100" height="100"/>
+    <SubTexture name="ico_info" x="298" y="433" width="40" height="70"/>
+    <SubTexture name="ico_menu" x="10" y="448" width="80" height="55"/>
+    <SubTexture name="ico_music" x="219" y="433" width="77" height="77"/>
+    <SubTexture name="ico_music_off" x="140" y="438" width="77" height="77"/>
+    <SubTexture name="ico_next" x="340" y="433" width="74" height="44"/>
+    <SubTexture name="ico_pause" x="256" y="604" width="70" height="70"/>
+    <SubTexture name="ico_play" x="478" y="10" width="64" height="60"/>
+    <SubTexture name="ico_reset" x="184" y="604" width="70" height="70"/>
+    <SubTexture name="ico_sound" x="271" y="517" width="58" height="70"/>
+    <SubTexture name="ico_sound_off" x="478" y="72" width="58" height="70"/>
+</TextureAtlas>
