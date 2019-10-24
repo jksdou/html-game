@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 
 <head>
     <meta charset="UTF-8" />
@@ -206,7 +206,7 @@
             cursorY = 0,
             canvas ? context.clearRect(0, 0, gameW, gameH) : (canvas = document.createElement("canvas"), context =
                 canvas.getContext("2d"), canvas.width = gameW, canvas.height = gameH, document.body.appendChild(canvas)
-                ),
+            ),
             checkForTouch() ? (canvas.addEventListener("touchmove", touchMove, !1), canvas.addEventListener(
                 "touchstart", touchStart, !1), canvas.addEventListener("touchend", touchEnd, !1)) : (canvas
                 .addEventListener("mousemove", mouseMove, !1), canvas.addEventListener("mousedown", mouseDown, !1),
@@ -285,7 +285,8 @@
             for (b = a; b < level[1].length; b++) a !== b && (c = checkCollision(level[1][a], level[1][b]), c && (B = !
                 0, collisions[0][level[1][a][0]] += c, collisions[0][level[1][b][0]] += c, collisions[0][level[
                     1][a][1]] += c, collisions[0][level[1][b][1]] += c, collisions[1][a] += c, collisions[1][
-                b] += c));
+                    b
+                ] += c));
         setTimeout(function () {
                 B ? step || finishLevel() : finishLevel(!0),
                     $step.innerHTML = Math.max(0, step)
@@ -1226,15 +1227,7 @@
             !1),
         init();
 </script>
-<div style="display:none;">
-    <script type="text/javascript">
-        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-        document.write(unescape("%3Cscript src='" + _bdhmProtocol +
-                    "hm.baidu.com/h.js%3F2eac95e2df0ea5d2b0aaa92e3dbbe419' 
 
-                    type = 'text/javascript' % 3 E % 3 C / script % 3 E "));
-    </script>
-</div>
 
 </html>
 

