@@ -11,57 +11,57 @@ if (match) {
 }
 
 
-"undefined" == typeof window.define && (window.define = function() {}, window.define.amd = 1),
+"undefined" == typeof window.define && (window.define = function () { }, window.define.amd = 1),
     "undefined" == typeof window.$AJB && (window.$AJB = {}),
     $AJB.lib = {},
     $AJB.general = {},
     $AJB.page = {},
-    $AJB.lib.stopEvent = function() {
+    $AJB.lib.stopEvent = function () {
         "use strict";
-        return function(a) {
+        return function (a) {
             a && (a.preventDefault ? (a.preventDefault(), a.stopPropagation()) : (a.returnValue = !1, a.cancelBubble = !0))
         }
     },
-    $AJB.lib.Storage = function() {
+    $AJB.lib.Storage = function () {
         "use strict";
         var a = {
-            setValue: function(a, b) {
+            setValue: function (a, b) {
                 window.localStorage && (window.localStorage[a] = b)
             },
-            getValue: function(a) {
+            getValue: function (a) {
                 return window.localStorage ? window.localStorage[a] : void 0
             }
         };
         return a
     },
-    $AJB.general.BeginStage = function() {
+    $AJB.general.BeginStage = function () {
         "use strict";
 
         function a(a) {
             function c() {
-                b(h, "click", function() {
-                        e.fire(g, f)
-                    }),
+                b(h, "click", function () {
+                    e.fire(g, f)
+                }),
                     j.innerHTML = d.isAndroid ? "GO" : "▶"
             }
             var h = a.getElementsByClassName("button")[0],
                 i = a.getElementsByClassName("text")[0],
                 j = document.getElementById("txtAr"),
                 k = {
-                    show: function() {
+                    show: function () {
                         a.style.display = ""
                     },
-                    hide: function() {
+                    hide: function () {
                         a.style.display = "none"
                     },
-                    level: function(a) {
+                    level: function (a) {
                         f = a,
                             i.innerHTML = "level " + a
                     },
-                    on: function(a, b) {
+                    on: function (a, b) {
                         e.add(a, b)
                     },
-                    off: function(a, b) {
+                    off: function (a, b) {
                         e.remove(a, b)
                     }
                 };
@@ -76,7 +76,7 @@ if (match) {
             g = "start";
         return a
     },
-    $AJB.general.Switcher = function() {
+    $AJB.general.Switcher = function () {
         "use strict";
 
         function a(a, b, c) {
@@ -86,16 +86,16 @@ if (match) {
                     point: [0, 0],
                     enabled: !1,
                     color: "#c8c8c8",
-                    update: function() {
+                    update: function () {
                         var a = h.point,
                             c = 30;
                         h.enabled && (0 === e ? (d = h.color, a[0] < b / 2 ? (a[0] = Math.min(a[0] + c, b / 2), h.point = a) : (h.point = a, g = !0)) : 1 === e && (d = "#000", a[0] > b / 2 ? (a[0] = Math.max(a[0] - c, b / 2), h.point = a) : (h.point = a, g = !0)))
                     },
-                    render: function() {
+                    render: function () {
                         var e = h.point;
                         h.enabled && (a.fillStyle = d, a.fillRect(e[0] - b / 2, e[1] - c / 2, b, c), g && (h.enabled = !1, f && f()))
                     },
-                    switchStage: function(d, i) {
+                    switchStage: function (d, i) {
                         0 === d ? h.point = [-b / 2, c / 2] : 1 === d && (a.fillStyle = h.color, a.fillRect(0, 0, b, c), h.point = [b + b / 2, c / 2]),
                             h.enabled = !0,
                             g = !1,
@@ -107,35 +107,35 @@ if (match) {
         }
         return a
     },
-    $AJB.lib.addEvent = function() {
+    $AJB.lib.addEvent = function () {
         var a = $AJB.lib.util(),
             b = {
                 click: "touchstart",
                 mousedown: "touchstart",
                 mouseup: "touchend"
             };
-        return function(c, d, e, f) {
+        return function (c, d, e, f) {
             c.addEventListener ? c.addEventListener(a.isMobile ? b[d] || d : d, e, f) : c.attachEvent ? c.attachEvent("on" + d, e) : c["on" + d] = e
         }
     },
-    $AJB.general.Levels = function() {
+    $AJB.general.Levels = function () {
         "use strict";
 
         function a(a, b) {
-            return function() {
+            return function () {
                 var c = 0;
-                return function() {
+                return function () {
                     return c += a * b % 360
                 }
             }
         }
 
         function b(a, b) {
-            return function() {
+            return function () {
                 var c = 0,
                     d = 1,
                     e = +new Date;
-                return function() {
+                return function () {
                     var f = +new Date;
                     return f - e > b && (d = -d, e = f),
                         c += d * a % 360
@@ -144,10 +144,10 @@ if (match) {
         }
 
         function c(a, b, c, d) {
-            return function() {
+            return function () {
                 var e = 0,
                     f = +new Date;
-                return function() {
+                return function () {
                     var g = +new Date;
                     return g - f > c && (a = b - a, f = g),
                         e += a * d % 360
@@ -157,29 +157,29 @@ if (match) {
 
         function d(a) {
             var b = 1;
-            return h(document.body, "mousedown", function() {
-                    b = -b
-                }),
+            return h(document.body, "mousedown", function () {
+                b = -b
+            }),
 
 
-                function() {
+                function () {
                     var c = 0;
-                    return function() {
+                    return function () {
                         return c += a * b % 360
                     }
                 }
         }
 
         function e(a, b, c, d) {
-            return h(document.body, "mousedown", function() {
-                    d = -d
-                }),
+            return h(document.body, "mousedown", function () {
+                d = -d
+            }),
 
 
-                function() {
+                function () {
                     var e = 0,
                         f = +new Date;
-                    return function() {
+                    return function () {
                         var g = +new Date;
                         return g - f > c && (a = b - a, f = g),
                             e += a * d % 360
@@ -295,11 +295,11 @@ if (match) {
         for (g in l) f(g, l[g][0], l[g][1], l[g][2]);
         return i
     },
-    $AJB.general.Collide = function() {
+    $AJB.general.Collide = function () {
         "use strict";
         var a = $AJB.lib.util(),
             b = {
-                check: function(b, c, d) {
+                check: function (b, c, d) {
                     var e = b.childs(),
                         f = e.length,
                         g = Math.ceil(2 * c.rad());
@@ -310,10 +310,10 @@ if (match) {
             };
         return b
     },
-    $AJB.general.Tween = function() {
+    $AJB.general.Tween = function () {
         "use strict";
         var a = {
-            simple: function(b, c, d, e) {
+            simple: function (b, c, d, e) {
                 var f = (c - b) / e,
                     g = +new Date;
                 return e > g - d ? (a.isEnd = !1, b + (g - d) * f) : (a.isEnd = !0, c)
@@ -322,7 +322,7 @@ if (match) {
         };
         return a
     },
-    $AJB.general.BallQueue = function() {
+    $AJB.general.BallQueue = function () {
         "use strict";
 
         function a(a, f, g, h, i) {
@@ -344,23 +344,23 @@ if (match) {
             return i = i || 1,
                 l = {
                     ballList: m,
-                    add: function() {},
-                    remove: function(a) {
+                    add: function () { },
+                    remove: function (a) {
                         var b = m[a];
                         return m.splice(a, 1),
                             b
                     },
-                    clear: function() {
+                    clear: function () {
                         n = [],
                             m = []
                     },
-                    popup: function() {
+                    popup: function () {
                         var a = m.shift();
                         a.st = +new Date,
                             a.sv = a.pos().y,
                             n.push(a)
                     },
-                    update: function() {
+                    update: function () {
                         var a, b, c, h = n.length,
                             i = m.length;
                         if (h) {
@@ -370,17 +370,17 @@ if (match) {
                             for (; i--;) m[i].pos(f, c + 3 * b * (i + 1))
                         }
                     },
-                    render: function() {
+                    render: function () {
                         for (var a = m.length, b = n.length; a--;) m[a].render();
                         for (; b--;) n[b].render()
                     },
-                    on: function(a, b) {
+                    on: function (a, b) {
                         o.add(a, b)
                     },
-                    off: function(a, b) {
+                    off: function (a, b) {
                         o.remove(a, b)
                     },
-                    destroy: function() {
+                    destroy: function () {
                         for (var a = m.length; a--;) m[a].destroy();
                         o.destroy()
                     }
@@ -394,7 +394,7 @@ if (match) {
             e = "popup";
         return a
     },
-    $AJB.general.Ball = function() {
+    $AJB.general.Ball = function () {
         "use strict";
 
         function a(a, c, d, e, f) {
@@ -408,26 +408,26 @@ if (match) {
                 c = (c || 12) * f,
                 e = (e || 15) * f,
                 h = {
-                    pos: function(a, b) {
+                    pos: function (a, b) {
                         return "undefined" != typeof a && (i = a),
                             "undefined" != typeof b && (j = b), {
                                 x: i,
                                 y: j
                             }
                     },
-                    scale: function(a) {
+                    scale: function (a) {
                         return "undefined" != typeof a && (f = a),
                             f
                     },
-                    rad: function(a) {
+                    rad: function (a) {
                         return "undefined" != typeof a && (c = a),
                             c
                     },
-                    render: function(e) {
+                    render: function (e) {
                         b.drawCircle(a, i, j, c, "#ffffff"),
                             "undefined" != typeof d ? g(d) : "undefined" != typeof e && g(e)
                     },
-                    destroy: function() {
+                    destroy: function () {
                         h = null
                     }
                 }
@@ -435,16 +435,16 @@ if (match) {
         var b = $AJB.lib.util();
         return a
     },
-    $AJB.lib.util = function() {
+    $AJB.lib.util = function () {
         "use strict";
         return {
-            drawCircle: function(a, b, c, d, e) {
+            drawCircle: function (a, b, c, d, e) {
                 a.beginPath(),
                     a.arc(b, c, d, 0, 2 * Math.PI, !1),
                     a.fillStyle = e || "red",
                     a.fill()
             },
-            drawLine: function(a, b, c, d, e, f, g) {
+            drawLine: function (a, b, c, d, e, f, g) {
                 a.strokeStyle = f || "red",
                     a.lineWidth = g || 1,
                     a.beginPath(),
@@ -452,17 +452,17 @@ if (match) {
                     a.lineTo(d, e),
                     a.stroke()
             },
-            drawText: function(a, b, c, d, e, f) {
+            drawText: function (a, b, c, d, e, f) {
                 a.font = e + "px Verdana",
                     a.fillStyle = f || "red",
                     a.fillText(d, b, c)
             },
-            getTextWidth: function(a, b, c, d, e, f) {
+            getTextWidth: function (a, b, c, d, e, f) {
                 return a.font = e + "px Verdana",
                     a.fillStyle = f || "red",
                     a.measureText(d).width
             },
-            getPointDistance: function(a, b) {
+            getPointDistance: function (a, b) {
                 return Math.floor(Math.sqrt(Math.floor(Math.pow(a.x - b.x, 2)) + Math.floor(Math.pow(a.y - b.y, 2))))
             },
             isMobile: /(mobile|iphone|ipod|ipad|ios|android|windows phone)/i.test(navigator.userAgent),
@@ -470,7 +470,7 @@ if (match) {
             isWeixin: /MicroMessenger/i.test(navigator.userAgent)
         }
     },
-    $AJB.general.Core = function() {
+    $AJB.general.Core = function () {
         "use strict";
 
         function a(a, d, e, f, g) {
@@ -493,26 +493,26 @@ if (match) {
                     pos: i.pos,
                     scale: i.scale,
                     rad: i.rad,
-                    angle: function(a) {
+                    angle: function (a) {
                         return "undefined" != typeof a && (k = a),
                             k
                     },
-                    addChild: function(a, b) {
+                    addChild: function (a, b) {
                         l.push({
                             angle: a,
                             ball: b
                         })
                     },
-                    clear: function() {
+                    clear: function () {
                         l = []
                     },
-                    childs: function() {
+                    childs: function () {
                         return l
                     },
-                    update: function() {
+                    update: function () {
                         h()
                     },
-                    render: function() {
+                    render: function () {
                         var c, e = l.length,
                             f = a.width,
                             h = a.height;
@@ -520,7 +520,7 @@ if (match) {
                             l[c].ball.render();
                         i.render()
                     },
-                    destroy: function() {
+                    destroy: function () {
                         j.clear(),
                             i = null,
                             j = null
@@ -531,38 +531,38 @@ if (match) {
             c = $AJB.general.Ball();
         return a
     },
-    $AJB.lib.CustEvent = function() {
-        return function(a) {
+    $AJB.lib.CustEvent = function () {
+        return function (a) {
             function b(a) {
                 return Object.prototype.toString.call(a).slice(8, -1).toLowerCase()
             }
             var c = {};
             return !a && (a = {}), {
-                add: function(a, d) {
+                add: function (a, d) {
                     if ("function" === b(d)) {
                         var e = c;
                         a = a.toLowerCase(), !e[a] && (e[a] = []),
                             e[a].push(d)
                     }
                 },
-                remove: function(a, d) {
+                remove: function (a, d) {
                     var e, f = c[a];
                     if (a = a.toLowerCase(), "function" === b(d) && f && f.length)
                         for (e = f.length - 1; e >= 0; e--) f[e] === d && f.splice(e, 1)
                 },
-                fire: function(b) {
+                fire: function (b) {
                     var d, e, f, g;
                     if (b = b.toLowerCase(), d = c[b], d && d.length)
                         for (e = Array.prototype.slice.call(arguments, 1), g = d.length, f = 0; g > f; f++) d[f].apply(a, e)
                 },
-                destroy: function() {
+                destroy: function () {
                     var a, b = c.length - 1;
                     for (a = b; a >= 0; a--) evts.splice(a, 1)
                 }
             }
         }
     },
-    $AJB.general.Scene = function() {
+    $AJB.general.Scene = function () {
         "use strict";
 
         function a(a, b, l, m) {
@@ -572,7 +572,7 @@ if (match) {
                 for (y = a.round(), w && w.destroy(), w = c(b, l, B, 50, m); h--;) w.addChild(g[h], d(l, null, "", null, m));
                 x && x.destroy(),
                     x = e(a.queueCount, b.width / 2, w.pos().y + 4 * w.rad(), l, m),
-                    x.on("popup", function(a) {
+                    x.on("popup", function (a) {
                         w.addChild(90 - w.angle(), a),
                             f.check(w, a, m) ? (z = a, s()) : !x.ballList.length && r()
                     })
@@ -618,25 +618,25 @@ if (match) {
                 B = 1;
             return u = {
                 enabled: !1,
-                run: function(b) {
+                run: function (b) {
                     var c = g[b];
                     B = b,
                         c ? (u.enabled = !0, n(c), a.style.backgroundColor = "#000", A = "run") : t()
                 },
-                shot: function() {
+                shot: function () {
                     x && x.ballList.length && x.popup()
                 },
-                update: function() {
+                update: function () {
                     var a;
                     u.enabled && ("run" === A ? o() : "pass" === A ? (p(), +new Date - v > 1e3 && (A = "", k.fire(i))) : "fail" === A && (a = +new Date - v, q(a), a > 1e3 && (A = "", k.fire(j))))
                 },
-                render: function() {
+                render: function () {
                     u.enabled && (w.render(), x.render())
                 },
-                on: function(a, b) {
+                on: function (a, b) {
                     k.add(a, b)
                 },
-                off: function(a, b) {
+                off: function (a, b) {
                     k.remove(a, b)
                 }
             }
@@ -653,7 +653,7 @@ if (match) {
             k = b();
         return a
     },
-    $AJB.general.Game = function() {
+    $AJB.general.Game = function () {
         "use strict";
 
         function a() {
@@ -673,7 +673,7 @@ if (match) {
         }
 
         function c() {
-            p.isWeixin ? n(u, "mousedown", function() {
+            p.isWeixin ? n(u, "mousedown", function () {
                 w.style.display = ""
             }) : p.isMobile && b()
         }
@@ -687,24 +687,24 @@ if (match) {
         }
 
         function e() {
-            n(document.body, "mousedown", function(a) {
-                    var b;
-                    if (a && a.changedTouches)
-                        for (b = a.changedTouches.length; b--;) h.shot();
-                    else h.shot();
-                    "1" != a.target.getAttribute("data-capture") && q(a)
-                }),
-                n(w, "mousedown", function() {
+            n(document.body, "mousedown", function (a) {
+                var b;
+                if (a && a.changedTouches)
+                    for (b = a.changedTouches.length; b--;) h.shot();
+                else h.shot();
+                "1" != a.target.getAttribute("data-capture") && q(a)
+            }),
+                n(w, "mousedown", function () {
                     w.style.display = "none"
                 }),
-                n(v, "mousedown", function() {
-                    E || (E = !0, t.style.display = "", d(1), setTimeout(function() {
+                n(v, "mousedown", function () {
+                    E || (E = !0, t.style.display = "", d(1), setTimeout(function () {
                         t.style.display = "none",
                             E = !1
                     }, 1e3))
                 }),
-                h.on("passed", function() {
-                    i.switchStage(0, function() {
+                h.on("passed", function () {
+                    i.switchStage(0, function () {
                         h.enabled = !1,
                             d(D + 1),
                             r.style.display = "none",
@@ -717,11 +717,11 @@ if (match) {
                                 desc: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
                                 link: gameurl,
                                 imgUrl: imgUrl,
-                                trigger: function(res) {
+                                trigger: function (res) {
                                     // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
                                     // alert('用户点击发送给朋友');
                                 },
-                                success: function(res) {
+                                success: function (res) {
                                     var UserInfo = new Object();
                                     UserInfo.openid = openid;
                                     UserInfo.shareLevel = D;
@@ -734,10 +734,10 @@ if (match) {
                                         'eventValue': 1
                                     });
                                 },
-                                cancel: function(res) {
+                                cancel: function (res) {
                                     // alert('已取消');
                                 },
-                                fail: function(res) {
+                                fail: function (res) {
                                     // alert(JSON.stringify(res));
                                 }
                             }),
@@ -747,11 +747,11 @@ if (match) {
                                 title: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
                                 link: gameurl,
                                 imgUrl: imgUrl,
-                                trigger: function(res) {
+                                trigger: function (res) {
                                     // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
                                     // alert('用户点击分享到朋友圈');
                                 },
-                                success: function(res) {
+                                success: function (res) {
                                     // alert('已分享');
                                     var UserInfo = new Object();
                                     UserInfo.openid = openid;
@@ -765,10 +765,10 @@ if (match) {
                                         'eventValue': 1
                                     });
                                 },
-                                cancel: function(res) {
+                                cancel: function (res) {
                                     // alert('已取消');
                                 },
-                                fail: function(res) {
+                                fail: function (res) {
                                     // alert(JSON.stringify(res));
                                 }
                             }),
@@ -779,13 +779,13 @@ if (match) {
                                 desc: "Core Ball，我已玩到第" + D + "关了，你也来试试吧！",
                                 link: gameurl,
                                 imgUrl: imgUrl,
-                                trigger: function(res) {
+                                trigger: function (res) {
                                     // alert('用户点击分享到QQ');
                                 },
-                                complete: function(res) {
+                                complete: function (res) {
                                     // alert(JSON.stringify(res));
                                 },
-                                success: function(res) {
+                                success: function (res) {
                                     // alert('已分享');
                                     var UserInfo = new Object();
                                     UserInfo.openid = openid;
@@ -799,35 +799,35 @@ if (match) {
                                         'eventValue': 1
                                     });
                                 },
-                                cancel: function(res) {
+                                cancel: function (res) {
                                     // alert('已取消');
                                 },
-                                fail: function(res) {
+                                fail: function (res) {
                                     // alert(JSON.stringify(res));
                                 }
                             })
                     })
                 }),
-                h.on("failed", function() {
-                    i.switchStage(0, function() {
+                h.on("failed", function () {
+                    i.switchStage(0, function () {
                         h.enabled = !1,
                             r.style.display = "none",
                             C.level(D),
                             C.show()
                     })
                 }),
-                C.on("start", function() {
+                C.on("start", function () {
                     r.style.display = "",
                         C.hide(),
-                        i.switchStage(1, function() {
+                        i.switchStage(1, function () {
                             h.run(D)
-                                // ga('send', {
-                                //     'hitType': 'event', // Required.
-                                //     'eventCategory': 'click', // Required.
-                                //     'eventAction': 'start_' + openid, // Required.
-                                //     'eventLabel': 'other',
-                                //     'eventValue': 1
-                                // })
+                            // ga('send', {
+                            //     'hitType': 'event', // Required.
+                            //     'eventCategory': 'click', // Required.
+                            //     'eventAction': 'start_' + openid, // Required.
+                            //     'eventLabel': 'other',
+                            //     'eventValue': 1
+                            // })
                         })
                 })
         }
@@ -879,7 +879,7 @@ if (match) {
             };
         return G;
     },
-    $AJB.page.index = function() {
+    $AJB.page.index = function () {
         "use strict";
         var a = $AJB.general.Game();
         a.start();
@@ -891,7 +891,7 @@ if (match) {
 GlobalLevel = $AJB.general.Game().shareLevel;
 
 var ajax = {};
-ajax.x = function() {
+ajax.x = function () {
     if (typeof XMLHttpRequest !== 'undefined') {
         return new XMLHttpRequest();
     }
@@ -908,15 +908,15 @@ ajax.x = function() {
         try {
             xhr = new ActiveXObject(versions[i]);
             break;
-        } catch (e) {}
+        } catch (e) { }
     }
     return xhr;
 };
 
-ajax.send = function(url, callback, method, data, sync) {
+ajax.send = function (url, callback, method, data, sync) {
     var x = ajax.x();
     x.open(method, url, sync);
-    x.onreadystatechange = function() {
+    x.onreadystatechange = function () {
         if (x.readyState == 4) {
             callback(x.responseText)
         }
@@ -927,7 +927,7 @@ ajax.send = function(url, callback, method, data, sync) {
     x.send(data)
 };
 
-ajax.get = function(url, data, callback, sync) {
+ajax.get = function (url, data, callback, sync) {
     var query = [];
     for (var key in data) {
         query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
@@ -935,7 +935,7 @@ ajax.get = function(url, data, callback, sync) {
     ajax.send(url + '?' + query.join('&'), callback, 'GET', null, sync)
 };
 
-ajax.post = function(url, data, callback, sync) {
+ajax.post = function (url, data, callback, sync) {
     var query = [];
     for (var key in data) {
         query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));

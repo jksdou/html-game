@@ -1000,10 +1000,10 @@ function continueMode2(){
 }
 
 function baiducnzz() {
-    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cdiv%20style%3D%27display%3Anone%27%3E%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
-    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E%3C/div%3E"));
+    // var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    // document.write(unescape("%3Cdiv%20style%3D%27display%3Anone%27%3E%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0ae524064813b8dc07ece5ce724a7b04' type='text/javascript'%3E%3C/script%3E"));
+    // var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    // document.write(unescape("%3Cspan id='cnzz_stat_icon_2947366'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s5.cnzz.com/stat.php%3Fid%3D2947366' type='text/javascript'%3E%3C/script%3E%3C/div%3E"));
 }
 
 function dp_share() {

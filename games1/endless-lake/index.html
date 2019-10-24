@@ -8,7 +8,7 @@
     <title>穿越无尽的河流</title>
     <script type="text/javascript" src="./js/game.js"></script>
     <script type="text/javascript" src="./js/developer.js"></script>
-    <script type="text/javascript" src="game.min.js"></script>
+    <script type="text/javascript" src="./game.min.js"></script>
 </head>
 
 <body>
@@ -47,29 +47,29 @@
             //         e.preventDefault();
             //     }
             // }, false);
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 if (game.device.iOS) {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         game.system._onWindowResize();
                     }, 500);
-                    setTimeout(function() {
+                    setTimeout(function () {
                         game.system._onWindowResize();
                     }, 800);
-                    setTimeout(function() {
+                    setTimeout(function () {
                         game.system.checkOrientation();
                     }, 1000);
 
                 }
             });
 
-            window.onclick = function() {
+            window.onclick = function () {
 
                 this.focus();
 
             };
 
 
-            GameAPI.loadAPI(function(apiInstance) {
+            GameAPI.loadAPI(function (apiInstance) {
                 // The API is ready for use.
                 Api = apiInstance;
                 //if (window.console && window.console.log) {

@@ -1,22 +1,22 @@
-﻿var link, jsGame;
+var link, jsGame;
 
-(function() {
+(function () {
     var e = window.eval,
-        t = function(e, t, n) {
+        t = function (e, t, n) {
             var r = n || {};
             if (t) {
-                var i = function() {};
+                var i = function () { };
                 i.prototype = t.prototype, e.prototype = new i, e.prototype.constructor = e, e.prototype.superClass = t.prototype, i = null
             }
             for (var s in r)
                 e.prototype[s] = r[s];
             return r = null, e
         };
-    window.requestAnimationFrame = function() {
+    window.requestAnimationFrame = function () {
         return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || window.setTimeout
-    }(), window.cancelAnimationFrame = function() {
+    }(), window.cancelAnimationFrame = function () {
         return window.cancelAnimationFrame || window.webkitCancelAnimationFrame || window.mozCancelAnimationFrame || window.oCancelAnimationFrame || window.msCancelAnimationFrame || window.clearTimeout
-    }(), String || (String = {}), String.format || (String.format = function() {
+    }(), String || (String = {}), String.format || (String.format = function () {
         if (arguments.length == 0)
             return null;
         var e = arguments[0] || "",
@@ -24,7 +24,7 @@
         for (var n = 1, r = arguments.length; n < r; n++)
             t = new RegExp("\\{" + (n - 1) + "\\}", "gm"), e = e.replace(t, arguments[n]);
         return t = null, e
-    }), String.getByteLength || (String.getByteLength = function(e) {
+    }), String.getByteLength || (String.getByteLength = function (e) {
         var t, n = 0,
             r = e || "",
             i = r.length;
@@ -34,7 +34,7 @@
     });
     if (!Array || !Array.prototype)
         Array.prototype = {};
-    Array.prototype.indexOfAttr = function(e, t) {
+    Array.prototype.indexOfAttr = function (e, t) {
         var n = (typeof e).toLowerCase(),
             r = -1;
         for (var i = 0, s = this.length; i < s; i++)
@@ -45,205 +45,205 @@
         return n = null, r
     };
     var n = {
-            canvas: {
-                id: "linkScreen",
-                defaultId: "linkScreen",
-                defaultFont: "12px Arial",
-                defaultWidth: 240,
-                defaultHeight: 320,
-                defaultColor: "rgb(0, 0, 0)",
-                bgColor: "#000",
-                cavansDoms: [],
-                ctxs: [],
-                device: "",
-                fps: 1,
-                touch: !1,
-                zoom: 1
+        canvas: {
+            id: "linkScreen",
+            defaultId: "linkScreen",
+            defaultFont: "12px Arial",
+            defaultWidth: 240,
+            defaultHeight: 320,
+            defaultColor: "rgb(0, 0, 0)",
+            bgColor: "#000",
+            cavansDoms: [],
+            ctxs: [],
+            device: "",
+            fps: 1,
+            touch: !1,
+            zoom: 1
+        },
+        system: {
+            loadRes: null,
+            pageLoad: null,
+            menu: null,
+            run: null,
+            runFn: function () { },
+            rafRun: null,
+            stop: null,
+            over: null,
+            zone: null,
+            active: null,
+            lastDate: Date.now(),
+            timeout: 30,
+            isPause: !1,
+            gameFlow: -1,
+            loadedImageToGameFlow: -1,
+            zoneArgs: null,
+            activeArgs: null,
+            spendTime: 0,
+            loadResTimer: null,
+            playTimer: null
+        },
+        event: {
+            key: 0,
+            keys: {
+                up: !1,
+                down: !1,
+                left: !1,
+                right: !1,
+                a: !1,
+                b: !1,
+                c: !1,
+                menu: !1,
+                quit: !1
             },
-            system: {
-                loadRes: null,
-                pageLoad: null,
-                menu: null,
-                run: null,
-                runFn: function() {},
-                rafRun: null,
-                stop: null,
-                over: null,
-                zone: null,
-                active: null,
-                lastDate: Date.now(),
-                timeout: 30,
-                isPause: !1,
-                gameFlow: -1,
-                loadedImageToGameFlow: -1,
-                zoneArgs: null,
-                activeArgs: null,
-                spendTime: 0,
-                loadResTimer: null,
-                playTimer: null
+            lastKey: {
+                up: !1,
+                down: !1,
+                left: !1,
+                right: !1,
+                a: !1,
+                b: !1,
+                c: !1,
+                menu: !1,
+                quit: !1
             },
-            event: {
-                key: 0,
-                keys: {
-                    up: !1,
-                    down: !1,
-                    left: !1,
-                    right: !1,
-                    a: !1,
-                    b: !1,
-                    c: !1,
-                    menu: !1,
-                    quit: !1
-                },
-                lastKey: {
-                    up: !1,
-                    down: !1,
-                    left: !1,
-                    right: !1,
-                    a: !1,
-                    b: !1,
-                    c: !1,
-                    menu: !1,
-                    quit: !1
-                },
-                pressedKey: {
-                    up: !1,
-                    down: !1,
-                    left: !1,
-                    right: !1,
-                    a: !1,
-                    b: !1,
-                    c: !1,
-                    menu: !1,
-                    quit: !1
-                },
-                keyPressCtrl: {
-                    up: !0,
-                    down: !0,
-                    left: !0,
-                    right: !0,
-                    a: !0,
-                    b: !0,
-                    c: !0,
-                    menu: !0,
-                    quit: !0
-                },
-                keyDownGo: !1,
-                keyUpGo: !1,
-                keyPressedGo: !1,
-                keyDownCallBack: null,
-                keyUpCallBack: null,
-                orientationChange: null,
-                touchStart: null,
-                touchEnd: null,
-                touchMove: null,
-                touchCancel: null,
-                clickCallBack: null,
-                mouseDownCallBack: null,
-                mouseUpCallBack: null,
-                mouseMoveCallBack: null,
-                focused: !1,
-                pageFocusCallBack: null,
-                pageUnFocusCallBack: null,
-                swipeCallBack: null,
-                pageOffX: 0,
-                pageOffY: 0,
-                pageStarOffX: 0,
-                pageStarOffY: 0,
-                swipeDate: null,
-                swipeTimeout: 200,
-                swipeRange: 50
+            pressedKey: {
+                up: !1,
+                down: !1,
+                left: !1,
+                right: !1,
+                a: !1,
+                b: !1,
+                c: !1,
+                menu: !1,
+                quit: !1
             },
-            image: {
-                imgs: {},
-                imgObjs: [],
-                initImgs: {},
-                asyncImgObjs: {},
-                imgCount: 0,
-                countLoaded: 0,
-                version: "",
-                inited: !1
+            keyPressCtrl: {
+                up: !0,
+                down: !0,
+                left: !0,
+                right: !0,
+                a: !0,
+                b: !0,
+                c: !0,
+                menu: !0,
+                quit: !0
             },
-            audio: {
-                audios: {}
-            },
-            ajax: {
-                xhrObj: null,
-                pool: [],
-                poolLength: 5,
-                date: null,
-                isTimeout: !1,
-                param: {
-                    type: "get",
-                    data: null,
-                    dataType: "json",
-                    url: "",
-                    xhr: null,
-                    timeout: 5e3,
-                    before: function(e) {},
-                    success: function(e, t) {},
-                    error: function(e, t) {},
-                    complete: function(e) {}
-                }
-            },
-            request: {
-                gets: []
-            },
-            buttonLayout: {
-                buttons: [],
-                Button: t(function(e) {
-                    this.id = e.id, this.value = e.value, this.x = e.x, this.y = e.y, this.width = e.width, this.height = e.height, this.bgColor = e.bgColor, this.bgStroke = e.bgStroke, this.stroke = e.stroke, this.font = e.font, this.imageId = e.imageId, this.sx = e.sx, this.sy = e.sy, this.color = e.color, this.hx = e.hx, this.hy = e.hy, this.hColor = e.hColor, this.dex = e.dex, this.dey = e.dey, this.deColor = e.deColor, this.hided = e.hided, this.disabled = e.disabled, this.path = e.path, this.hovered = !1, this.repeated = !1, this.pressed = !1, this.released = !1, this.goned = !1, this.cacheId = "buttonLayoutCache_" + this.id, this.setDelay(e.delay).refresh()
-                }, null, {
-                    refresh: function() {
-                        m.canvas.pass(this.cacheId, this.width * 3, this.height), this.imageId == "" ? (this.bgColor != "" && m.canvas.fillStyle(this.bgColor).fillRect(0, 0, this.width, this.height).fillRect(this.width, 0, this.width, this.height).fillRect(this.width * 2, 0, this.width, this.height), this.bgStroke != "" && m.canvas.strokeStyle(this.bgStroke).strokeRect(1, 1, this.width - 2, this.height - 2).strokeRect(this.width + 1, 1, this.width - 2, this.height - 2).strokeRect(this.width * 2 + 1, 1, this.width - 2, this.height - 2)) : m.canvas.drawImage(this.imageId, this.sx, this.sy, this.width, this.height, 0, 0, this.width, this.height).drawImage(this.imageId, this.hx, this.hy, this.width, this.height, this.width, 0, this.width, this.height).drawImage(this.imageId, this.dex, this.dey, this.width * 2, this.height, this.width * 2, 0, this.width, this.height);
-                        if (this.value != "") {
-                            var e = m.canvas.font(this.font).measureText(this.value),
-                                t = this.width - e.width >> 1,
-                                n = (this.height - e.height >> 1) + parseInt(this.font) - 2;
-                            this.stroke != "" && m.canvas.fillStyle(this.stroke).fillText(this.value, t - 1, n).fillText(this.value, t, n - 1).fillText(this.value, t + 1, n).fillText(this.value, t, n + 1).fillText(this.value, t + this.width - 1, n).fillText(this.value, t + this.width, n - 1).fillText(this.value, t + this.width + 1, n).fillText(this.value, t + this.width, n + 1).fillText(this.value, t + this.width * 2 - 1, n).fillText(this.value, t + this.width * 2, n - 1).fillText(this.value, t + this.width * 2 + 1, n).fillText(this.value, t + this.width * 2, n + 1), m.canvas.fillStyle(this.color).fillText(this.value, t, n).fillStyle(this.hColor).fillText(this.value, t + this.width, n).fillStyle(this.deColor).fillText(this.value, t + this.width * 2, n), e = t = n = null
-                        }
-                        return m.canvas.pass(), this
-                    },
-                    show: function() {
-                        return this.hided = !1, this
-                    },
-                    hide: function() {
-                        return this.hided = !0, this
-                    },
-                    disable: function(e) {
-                        return this.disabled = e, this
-                    },
-                    setPath: function(e, t) {
-                        return this.setDelay(t).path = e || [], this
-                    },
-                    endPath: function() {
-                        return this.path.length == 0
-                    },
-                    gone: function(e, t) {
-                        return this.setPath(e, t).goned = !0, this
-                    },
-                    setDelay: function(e) {
-                        return this.delay = e || 0, this.delayDate = null, this.delay > 0 && (this.delayDate = Date.now()), this
-                    },
-                    action: function() {
-                        if (this.hided)
-                            return this;
-                        this.delayDate && Date.now() - this.delayDate >= this.delay && (this.delayDate = null);
-                        if (!this.delayDate && this.path.length > 0) {
-                            var e = this.path.shift();
-                            this.x += e[0], this.y += e[1], e = null
-                        }
-                        return this
-                    },
-                    render: function() {
-                        return this.hided ? this : (m.canvas.drawCache(this.cacheId, this.hovered ? this.width : this.disabled ? this.width * 2 : 0, 0, this.width, this.height, this.x, this.y, this.width, this.height), this)
-                    },
-                    disposed: function() {
-                        return this
-                    }
-                })
+            keyDownGo: !1,
+            keyUpGo: !1,
+            keyPressedGo: !1,
+            keyDownCallBack: null,
+            keyUpCallBack: null,
+            orientationChange: null,
+            touchStart: null,
+            touchEnd: null,
+            touchMove: null,
+            touchCancel: null,
+            clickCallBack: null,
+            mouseDownCallBack: null,
+            mouseUpCallBack: null,
+            mouseMoveCallBack: null,
+            focused: !1,
+            pageFocusCallBack: null,
+            pageUnFocusCallBack: null,
+            swipeCallBack: null,
+            pageOffX: 0,
+            pageOffY: 0,
+            pageStarOffX: 0,
+            pageStarOffY: 0,
+            swipeDate: null,
+            swipeTimeout: 200,
+            swipeRange: 50
+        },
+        image: {
+            imgs: {},
+            imgObjs: [],
+            initImgs: {},
+            asyncImgObjs: {},
+            imgCount: 0,
+            countLoaded: 0,
+            version: "",
+            inited: !1
+        },
+        audio: {
+            audios: {}
+        },
+        ajax: {
+            xhrObj: null,
+            pool: [],
+            poolLength: 5,
+            date: null,
+            isTimeout: !1,
+            param: {
+                type: "get",
+                data: null,
+                dataType: "json",
+                url: "",
+                xhr: null,
+                timeout: 5e3,
+                before: function (e) { },
+                success: function (e, t) { },
+                error: function (e, t) { },
+                complete: function (e) { }
             }
         },
+        request: {
+            gets: []
+        },
+        buttonLayout: {
+            buttons: [],
+            Button: t(function (e) {
+                this.id = e.id, this.value = e.value, this.x = e.x, this.y = e.y, this.width = e.width, this.height = e.height, this.bgColor = e.bgColor, this.bgStroke = e.bgStroke, this.stroke = e.stroke, this.font = e.font, this.imageId = e.imageId, this.sx = e.sx, this.sy = e.sy, this.color = e.color, this.hx = e.hx, this.hy = e.hy, this.hColor = e.hColor, this.dex = e.dex, this.dey = e.dey, this.deColor = e.deColor, this.hided = e.hided, this.disabled = e.disabled, this.path = e.path, this.hovered = !1, this.repeated = !1, this.pressed = !1, this.released = !1, this.goned = !1, this.cacheId = "buttonLayoutCache_" + this.id, this.setDelay(e.delay).refresh()
+            }, null, {
+                refresh: function () {
+                    m.canvas.pass(this.cacheId, this.width * 3, this.height), this.imageId == "" ? (this.bgColor != "" && m.canvas.fillStyle(this.bgColor).fillRect(0, 0, this.width, this.height).fillRect(this.width, 0, this.width, this.height).fillRect(this.width * 2, 0, this.width, this.height), this.bgStroke != "" && m.canvas.strokeStyle(this.bgStroke).strokeRect(1, 1, this.width - 2, this.height - 2).strokeRect(this.width + 1, 1, this.width - 2, this.height - 2).strokeRect(this.width * 2 + 1, 1, this.width - 2, this.height - 2)) : m.canvas.drawImage(this.imageId, this.sx, this.sy, this.width, this.height, 0, 0, this.width, this.height).drawImage(this.imageId, this.hx, this.hy, this.width, this.height, this.width, 0, this.width, this.height).drawImage(this.imageId, this.dex, this.dey, this.width * 2, this.height, this.width * 2, 0, this.width, this.height);
+                    if (this.value != "") {
+                        var e = m.canvas.font(this.font).measureText(this.value),
+                            t = this.width - e.width >> 1,
+                            n = (this.height - e.height >> 1) + parseInt(this.font) - 2;
+                        this.stroke != "" && m.canvas.fillStyle(this.stroke).fillText(this.value, t - 1, n).fillText(this.value, t, n - 1).fillText(this.value, t + 1, n).fillText(this.value, t, n + 1).fillText(this.value, t + this.width - 1, n).fillText(this.value, t + this.width, n - 1).fillText(this.value, t + this.width + 1, n).fillText(this.value, t + this.width, n + 1).fillText(this.value, t + this.width * 2 - 1, n).fillText(this.value, t + this.width * 2, n - 1).fillText(this.value, t + this.width * 2 + 1, n).fillText(this.value, t + this.width * 2, n + 1), m.canvas.fillStyle(this.color).fillText(this.value, t, n).fillStyle(this.hColor).fillText(this.value, t + this.width, n).fillStyle(this.deColor).fillText(this.value, t + this.width * 2, n), e = t = n = null
+                    }
+                    return m.canvas.pass(), this
+                },
+                show: function () {
+                    return this.hided = !1, this
+                },
+                hide: function () {
+                    return this.hided = !0, this
+                },
+                disable: function (e) {
+                    return this.disabled = e, this
+                },
+                setPath: function (e, t) {
+                    return this.setDelay(t).path = e || [], this
+                },
+                endPath: function () {
+                    return this.path.length == 0
+                },
+                gone: function (e, t) {
+                    return this.setPath(e, t).goned = !0, this
+                },
+                setDelay: function (e) {
+                    return this.delay = e || 0, this.delayDate = null, this.delay > 0 && (this.delayDate = Date.now()), this
+                },
+                action: function () {
+                    if (this.hided)
+                        return this;
+                    this.delayDate && Date.now() - this.delayDate >= this.delay && (this.delayDate = null);
+                    if (!this.delayDate && this.path.length > 0) {
+                        var e = this.path.shift();
+                        this.x += e[0], this.y += e[1], e = null
+                    }
+                    return this
+                },
+                render: function () {
+                    return this.hided ? this : (m.canvas.drawCache(this.cacheId, this.hovered ? this.width : this.disabled ? this.width * 2 : 0, 0, this.width, this.height, this.x, this.y, this.width, this.height), this)
+                },
+                disposed: function () {
+                    return this
+                }
+            })
+        }
+    },
         r = {
             canvas: {
                 context: {
@@ -304,33 +304,33 @@
             }
         },
         i = {
-            getCanvasDom: function() {
+            getCanvasDom: function () {
                 var e;
-                return function() {
+                return function () {
                     return e || (e = m.getDom(n.canvas.defaultId)), e
                 }
             }(),
-            getOffsetX: function(e) {
+            getOffsetX: function (e) {
                 return e.offsetX || (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX - i.getCanvasDom().offsetLeft : e.clientX - i.getCanvasDom().offsetLeft) || 0
             },
-            getOffsetY: function(e) {
+            getOffsetY: function (e) {
                 return e.offsetY || (e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientY - i.getCanvasDom().offsetTop : e.clientY - i.getCanvasDom().offsetTop) || 0
             },
-            keydown: function(e) {
+            keydown: function (e) {
                 var t = i.checkKey(e.keyCode);
                 n.event.keyDownGo && n.event.keys[t] != undefined && (n.event.keys[t] = !0), n.event.keyUpGo && n.event.lastKey[t] != undefined && (n.event.lastKey[t] = !1), n.event.keyPressCtrl[t] && n.event.keyPressedGo && (n.event.pressedKey[t] != undefined && (n.event.pressedKey[t] = !0), n.event.keyPressCtrl[t] = !1), n.event.keyDownCallBack != null && n.event.keyDownCallBack(e), t = null
             },
-            keyup: function(e) {
+            keyup: function (e) {
                 var t = i.checkKey(e.keyCode);
                 n.event.keyDownGo && n.event.keys[t] != undefined && (n.event.keys[t] = !1), n.event.keyUpGo && n.event.lastKey[t] != undefined && (n.event.lastKey[t] = !0), n.event.keyPressedGo && (n.event.pressedKey[t] != undefined && (n.event.pressedKey[t] = !1), n.event.keyPressCtrl[t] = !0), n.event.keyUpCallBack != null && n.event.keyUpCallBack(e), t = null
             },
-            orientationchange: function(e) {
+            orientationchange: function (e) {
                 n.event.orientationChange != null && n.event.orientationChange(e)
             },
-            swipeStart: function(e, t) {
+            swipeStart: function (e, t) {
                 n.event.swipeCallBack != null && (n.event.swipeDate = Date.now(), n.event.pageStarOffX = e, n.event.pageStarOffY = t)
             },
-            swipeSuccess: function(e, t) {
+            swipeSuccess: function (e, t) {
                 if (n.event.swipeDate) {
                     if (Date.now() - n.event.swipeDate < n.event.swipeTimeout)
                         if (Math.abs(e - n.event.pageStarOffX) >= n.event.swipeRange || Math.abs(t - n.event.pageStarOffY) >= n.event.swipeRange)
@@ -339,13 +339,13 @@
                 }
                 return !1
             },
-            touchstart: function(e) {
+            touchstart: function (e) {
                 e.preventDefault(), n.event.pageOffX = i.getOffsetX(e), n.event.pageOffY = i.getOffsetY(e), n.event.touchStart != null && n.event.touchStart(e, n.event.pageOffX, n.event.pageOffY);
                 if (i.buttonLayoutEventHandler(e.type, n.event.pageOffX, n.event.pageOffY))
                     return !1;
                 i.swipeStart(n.event.pageOffX, n.event.pageOffY)
             },
-            touchend: function(e) {
+            touchend: function (e) {
                 e.preventDefault();
                 if (i.swipeSuccess(n.event.pageOffX, n.event.pageOffY))
                     return !1;
@@ -353,23 +353,23 @@
                     return !1;
                 n.event.touchEnd != null && n.event.touchEnd(e, n.event.pageOffX, n.event.pageOffY)
             },
-            touchmove: function(e) {
+            touchmove: function (e) {
                 e.preventDefault(), n.event.pageOffX = i.getOffsetX(e), n.event.pageOffY = i.getOffsetY(e), n.event.touchMove != null && n.event.touchMove(e, n.event.pageOffX, n.event.pageOffY)
             },
-            touchcancel: function(e) {
+            touchcancel: function (e) {
                 n.event.pageOffX = i.getOffsetX(e), n.event.pageOffY = i.getOffsetY(e), n.event.touchCancel != null && n.event.touchCancel(e, n.event.pageOffX, n.event.pageOffY)
             },
-            click: function(e) {
+            click: function (e) {
                 n.event.clickCallBack != null && n.event.clickCallBack(e, i.getOffsetX(e), i.getOffsetY(e))
             },
-            mouseDown: function(e) {
+            mouseDown: function (e) {
                 var t = i.getOffsetX(e),
                     r = i.getOffsetY(e);
                 if (i.buttonLayoutEventHandler(e.type, t, r))
                     return !1;
                 n.event.mouseDownCallBack != null && n.event.mouseDownCallBack(e, t, r), i.swipeStart(t, r), t = r = null
             },
-            mouseUp: function(e) {
+            mouseUp: function (e) {
                 var t = i.getOffsetX(e),
                     r = i.getOffsetY(e);
                 if (i.buttonLayoutEventHandler(e.type, t, r))
@@ -378,18 +378,18 @@
                     return !1;
                 n.event.mouseUpCallBack != null && n.event.mouseUpCallBack(e, t, r), t = r = null
             },
-            mouseMove: function(e) {
+            mouseMove: function (e) {
                 n.event.mouseMoveCallBack != null && n.event.mouseMoveCallBack(e, i.getOffsetX(e), i.getOffsetY(e))
             },
-            pageFocus: function(e) {
+            pageFocus: function (e) {
                 if (n.event.focused)
                     return n.event.focused = !1, !1;
                 n.event.pageFocusCallBack != null && n.event.pageFocusCallBack(e)
             },
-            pageUnFocus: function(e) {
+            pageUnFocus: function (e) {
                 n.event.pageUnFocusCallBack != null && n.event.pageUnFocusCallBack(e)
             },
-            checkKey: function(e) {
+            checkKey: function (e) {
                 var t = "0";
                 for (var n in r.event.key)
                     if (r.event.key[n] == e) {
@@ -398,7 +398,7 @@
                     }
                 return t
             },
-            getDeviceConfig: function() {
+            getDeviceConfig: function () {
                 var e = navigator.userAgent.toLowerCase();
                 return e.indexOf("duopaosafari") != -1 ? {
                     device: "duopaoSafari",
@@ -497,14 +497,14 @@
                     zoom: 1
                 }
             },
-            setImage: function(e, t, r, i, s) {
+            setImage: function (e, t, r, i, s) {
                 if (!e || !t)
                     return !1;
-                n.image.imgs[e] || (n.image.imgs[e] = new Image, n.image.imgs[e].onload = function() {
-                    n.image.countLoaded++, this.loaded = !0, this.cache && m.canvas.pass(this.id, this.width, this.height).drawImage(this.id, 0, 0).pass().base().delImage(this.id, !0)
+                n.image.imgs[e] || (n.image.imgs[e] = new Image, n.image.imgs[e].onload = function () {
+                    n.image.countLoaded++ , this.loaded = !0, this.cache && m.canvas.pass(this.id, this.width, this.height).drawImage(this.id, 0, 0).pass().base().delImage(this.id, !0)
                 }, n.image.imgs[e].src = t + (n.image.version != "" ? "?v=" + n.image.version : ""), n.image.imgs[e].id = e, n.image.imgs[e].url = t, n.image.imgs[e].benchId = r, n.image.imgs[e].bench = i, n.image.imgs[e].cache = s, n.image.imgs[e].refreshed = !1)
             },
-            setAudio: function(e, t, r, i, s, o) {
+            setAudio: function (e, t, r, i, s, o) {
                 if (!e || !t)
                     return !1;
                 if (!n.audio.audios[e]) {
@@ -512,7 +512,7 @@
                     u.id = e, u.autoplay = i, u.preload = s, u.autobuffer = o, u.loop = r, n.audio.audios[u.id] = u, u = null
                 }
             },
-            loadingCallBack: function(e, t, r) {
+            loadingCallBack: function (e, t, r) {
                 var i = m.canvas.screen.getWidth(),
                     s = m.canvas.screen.getHeight(),
                     o = i,
@@ -524,7 +524,7 @@
                 m.canvas.fillStyle(n.canvas.bgColor).fillRect(0, 0, i, s).fillStyle("#00FFFF").fillRect(a, f, parseInt(e / t * o), u).fillStyle("#FFF").fillText("loading " + r, 5, s - 10).fillText(l, i - m.canvas.measureText(l).width - 5, s - 10), i = s = o = u = a = f = l = null
             },
             loadingEndCallBack: null,
-            getAnchor: function(e, t, n, i, s) {
+            getAnchor: function (e, t, n, i, s) {
                 var o = e,
                     u = t;
                 switch (s) {
@@ -561,7 +561,7 @@
                     y: u
                 }
             },
-            initUrlParams: function(e) {
+            initUrlParams: function (e) {
                 if (e.indexOf("?") >= 0) {
                     var t = e.split("?"),
                         r = [];
@@ -572,13 +572,13 @@
                     i = null, r = null, t = null
                 }
             },
-            audioEnded: function() {
+            audioEnded: function () {
                 m.audio.replay(this.id)
             },
-            pageLoaded: function() {
+            pageLoaded: function () {
                 n.image.inited = !0, n.system.pageLoad(m)
             },
-            buttonLayoutAction: function() {
+            buttonLayoutAction: function () {
                 var e = n.buttonLayout.buttons,
                     t;
                 for (var r = e.length - 1; r >= 0; r--)
@@ -586,7 +586,7 @@
                         t.action().render(), t.goned && t.endPath() && e.splice(r, 1);
                 e = t = null
             },
-            buttonLayoutEventHandler: function(e, t, r) {
+            buttonLayoutEventHandler: function (e, t, r) {
                 var i = n.buttonLayout.buttons,
                     s, o = !1;
                 for (var u = i.length - 1; u >= 0; u--)
@@ -605,7 +605,7 @@
                             }
                             o = !0
                         } else if (e == "mouseup" || e == "touchend")
-                    s.hovered = !1, s.repeated = !1;
+                            s.hovered = !1, s.repeated = !1;
                 return i = s = null, o
             }
         },
@@ -615,7 +615,7 @@
             v: 0
         };
     link = {
-        init: function(e, t) {
+        init: function (e, t) {
             return !e && !t ? (this.version = 1,
                 this.request.init(),
                 this.canvas.initDevice(),
@@ -623,42 +623,42 @@
                 this.sessionStorage.init()) : (n.canvas.defaultWidth = e, n.canvas.defaultHeight = t), this
         },
         extend: t,
-        setAjax: function(e) {
+        setAjax: function (e) {
             return n.ajax.param = this.objExtend(n.ajax.param, e || {}), this
         },
-        ajax: function(e) {
+        ajax: function (e) {
             e && n.ajax.pool.length < n.ajax.poolLength && n.ajax.pool.push(e),
-            e && e.clear && (n.ajax.pool = []),
-            n.ajax.xhr || (n.ajax.xhr = new XMLHttpRequest,
-                n.ajax.xhr.onreadystatechange = function() {
-                    if (n.ajax.isTimeout)
-                        return !1;
-                    var e = n.ajax.xhr,
-                        t = n.ajax.xhrObj;
-                    if (t && e.readyState == 4) {
-                        n.ajax.date && (clearTimeout(n.ajax.date), n.ajax.date = null);
-                        if (e.status == 200) {
-                            var r;
-                            switch (t.dataType) {
-                                case "HTML":
-                                case "SCRIPT":
-                                case "XML":
-                                    r = e.responseText;
-                                    break;
-                                case "TEXT":
-                                default:
-                                    r = e.responseText.replace(/<[^>].*?>/g, "");
-                                    break;
-                                case "JSON":
-                                    r = m.getJson(e.responseText)
-                            }
-                            t.success(r, t), t.complete(t)
-                        } else
-                            t.error(t, "error");
-                        n.ajax.xhrObj = null, m.ajax()
-                    }
-                    e = t = null
-                });
+                e && e.clear && (n.ajax.pool = []),
+                n.ajax.xhr || (n.ajax.xhr = new XMLHttpRequest,
+                    n.ajax.xhr.onreadystatechange = function () {
+                        if (n.ajax.isTimeout)
+                            return !1;
+                        var e = n.ajax.xhr,
+                            t = n.ajax.xhrObj;
+                        if (t && e.readyState == 4) {
+                            n.ajax.date && (clearTimeout(n.ajax.date), n.ajax.date = null);
+                            if (e.status == 200) {
+                                var r;
+                                switch (t.dataType) {
+                                    case "HTML":
+                                    case "SCRIPT":
+                                    case "XML":
+                                        r = e.responseText;
+                                        break;
+                                    case "TEXT":
+                                    default:
+                                        r = e.responseText.replace(/<[^>].*?>/g, "");
+                                        break;
+                                    case "JSON":
+                                        r = m.getJson(e.responseText)
+                                }
+                                t.success(r, t), t.complete(t)
+                            } else
+                                t.error(t, "error");
+                            n.ajax.xhrObj = null, m.ajax()
+                        }
+                        e = t = null
+                    });
             if (n.ajax.xhrObj == null && n.ajax.pool.length > 0) {
                 n.ajax.xhrObj = this.objExtend(n.ajax.param, n.ajax.pool.shift() || {});
                 var t = n.ajax.xhr,
@@ -675,7 +675,7 @@
                         s.push(u + "=" + o[u]);
                     s = s.join("&")
                 }
-                r.type == "GET" && (i += "?" + s), t.open(r.type, i, !0), r.before(n.ajax.xhrObj), r.type == "POST" && t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8"), t.send(s), t = r = s = o = i = null, n.ajax.date = setTimeout(function() {
+                r.type == "GET" && (i += "?" + s), t.open(r.type, i, !0), r.before(n.ajax.xhrObj), r.type == "POST" && t.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8"), t.send(s), t = r = s = o = i = null, n.ajax.date = setTimeout(function () {
                     m.ajax({
                         clear: !0
                     }), n.ajax.isTimeout = !0, n.ajax.xhrObj && (n.ajax.xhrObj.error(n.ajax.xhrObj, "timeout"), n.ajax.xhrObj = null)
@@ -683,14 +683,14 @@
             }
             return this
         },
-        getDom: function(e) {
+        getDom: function (e) {
             try {
                 return document.getElementById(e)
             } catch (t) {
                 return document.all[e]
             }
         },
-        objExtend: function() {
+        objExtend: function () {
             var e = this.clone(arguments[0]) || {},
                 t = 1,
                 n = arguments.length,
@@ -710,14 +710,14 @@
                     }
             return e
         },
-        getJson: function(t) {
+        getJson: function (t) {
             var n = {};
             try {
                 window.JSON ? n = JSON.parse(t) : n = e("(" + t + ")")
-            } catch (r) {}
+            } catch (r) { }
             return n
         },
-        clone: function() {
+        clone: function () {
             var e = arguments[0],
                 t = e || [];
             if (typeof t == "object")
@@ -740,21 +740,21 @@
         },
         classes: {},
         comm: {
-            registerNotify: function(e, t) {
+            registerNotify: function (e, t) {
                 e != null && e.register(t)
             },
-            rangeRegisterNotify: function(e, t) {
+            rangeRegisterNotify: function (e, t) {
                 for (var n = 0; n < t.length; n++)
                     m.commandFuns.registerNotify(e, t[n])
             },
-            unRegisterNotify: function(e, t) {
+            unRegisterNotify: function (e, t) {
                 e != null && e.unregister(t)
             },
-            rangeUnRegisterNotify: function(e, t) {
+            rangeUnRegisterNotify: function (e, t) {
                 for (var n = 0; n < t.length; n++)
                     m.commandFuns.unRegisterNotify(e, t[n])
             },
-            getRandom: function(e, t) {
+            getRandom: function (e, t) {
                 if (!t) {
                     var n = e;
                     if (!n || n < 0)
@@ -763,35 +763,35 @@
                 }
                 return Math.round(Math.random() * (t - e) + e)
             },
-            getArray: function(e, t) {
+            getArray: function (e, t) {
                 v.arr = [], v.len = e.toString().length, v.v = e;
                 for (var n = 0; n < v.len; n++)
                     v.arr.push(v.v % 10), v.v = parseInt(v.v / 10);
                 return t || v.arr.reverse(), v.arr
             },
-            inArray: function(e, t) {
+            inArray: function (e, t) {
                 var n, r = t.length;
                 for (n = 0; n < r; n++)
                     if (e == t[n])
                         return n;
                 return -1
             },
-            collision: function(e, t, n, r, i, s, o, u) {
+            collision: function (e, t, n, r, i, s, o, u) {
                 return o && Math.abs(e + (n >> 1) - (i + (o >> 1))) < n + o >> 1 && Math.abs(t + (r >> 1) - (s + (u >> 1))) < r + u >> 1 ? !0 : !1
             },
-            circleCollision: function(e, t, n, r, i, s) {
+            circleCollision: function (e, t, n, r, i, s) {
                 var o = Math.abs(e - r),
                     u = Math.abs(t - i);
                 return Math.sqrt(o * o + u * u) < n + s ? !0 : !1
             },
-            rect2CircleCollision: function(e, t, n, r, i, s, o) {
+            rect2CircleCollision: function (e, t, n, r, i, s, o) {
                 var u = !1;
                 return (u = this.circleCollision(e, t, 1, i, s, o)) || (u = this.circleCollision(e + n, t, 1, i, s, o)) || (u = this.circleCollision(e + n, t + r, 1, i, s, o)) || (u = this.circleCollision(e, t + r, 1, i, s, o)) || (u = this.collision(e, t, n, r, i - (o >> 1), s - (o >> 1), o, o)), u
             },
-            polygonCollision: function(e, t, n, r, i, s, o, u) {
+            polygonCollision: function (e, t, n, r, i, s, o, u) {
                 return this.polygonSAT(e, t, n, r, i, s, o, u) && this.polygonSAT(t, e, i, s, n, r, u, o)
             },
-            polygonSAT: function(e, t, n, r, i, s, o, u) {
+            polygonSAT: function (e, t, n, r, i, s, o, u) {
                 var a = e.length,
                     f = t.length,
                     l = n || 0,
@@ -830,7 +830,7 @@
                 }
                 return !0
             },
-            setMatrixRotate: function(e, t) {
+            setMatrixRotate: function (e, t) {
                 if (!e || !e[0])
                     return null;
                 var n = 50,
@@ -842,7 +842,7 @@
                     i = e[f][0], s = e[f][1], e[f][0] = a * i - u * s, e[f][1] = u * i + a * s;
                 return this
             },
-            createPath: function(e, t, n, r, i) {
+            createPath: function (e, t, n, r, i) {
                 var s = [],
                     o = e || 0,
                     u = t || 0,
@@ -862,58 +862,58 @@
                 return s.angle = b + 90, o = u = a = f = l = c = h = p = d = b = null, s
             }
         },
-        localStorage: function() {
-            var e, t, n = function() {
+        localStorage: function () {
+            var e, t, n = function () {
                 var e;
                 try {
-                    e = window.localStorage, e.getItem || (e.getItem = function() {
+                    e = window.localStorage, e.getItem || (e.getItem = function () {
                         return null
                     }),
-                    e.setItem || (e.setItem = function() {})
+                        e.setItem || (e.setItem = function () { })
                 } catch (t) {
                     e = {
-                        getItem: function() {
+                        getItem: function () {
                             return null
                         },
-                        setItem: function() {}
+                        setItem: function () { }
                     }
                 }
                 return e
             };
             return {
-                init: function() {
+                init: function () {
                     return e = this, t || (t = n()), e
                 },
-                setItem: function(n, r) {
+                setItem: function (n, r) {
                     try {
                         t.setItem(n, r)
-                    } catch (i) {}
+                    } catch (i) { }
                     return e
                 },
-                getItem: function(e) {
+                getItem: function (e) {
                     return t.getItem(e)
                 },
-                removeItem: function(n) {
+                removeItem: function (n) {
                     return t.removeItem(n), e
                 },
-                clear: function() {
+                clear: function () {
                     return t.clear(), e
                 },
-                key: function(e) {
+                key: function (e) {
                     return t.key(e)
                 },
-                getLength: function() {
+                getLength: function () {
                     return t.length
                 },
-                base: function() {
+                base: function () {
                     return m
                 }
             }
         }(),
-        sessionStorage: function() {
+        sessionStorage: function () {
             var e,
                 t,
-                n = function() {
+                n = function () {
                     var e;
                     try {
                         //e={},
@@ -921,79 +921,79 @@
                         //e.setItem=function(){}
 
                         e = window.sessionStorage,
-                        e.getItem || (e.getItem = function() {
-                            return null
-                        }),
-                        e.setItem || (e.setItem = function() {})
+                            e.getItem || (e.getItem = function () {
+                                return null
+                            }),
+                            e.setItem || (e.setItem = function () { })
                     } catch (t) {
                         e = {
-                            getItem: function() {
+                            getItem: function () {
                                 return null
                             },
-                            setItem: function() {}
+                            setItem: function () { }
                         }
                     }
                     return e
                 };
             return {
-                init: function() {
+                init: function () {
                     return e = this, t || (t = n()), e
                 },
-                setItem: function(n, r) {
+                setItem: function (n, r) {
                     return t.setItem(n, r), e
                 },
-                getItem: function(e) {
+                getItem: function (e) {
                     return t.getItem(e)
                 },
-                removeItem: function(n) {
+                removeItem: function (n) {
                     return t.removeItem(n), e
                 },
-                clear: function() {
+                clear: function () {
                     return t.clear(), e
                 },
-                key: function(e) {
+                key: function (e) {
                     return t.key(e)
                 },
-                getLength: function() {
+                getLength: function () {
                     return t.length
                 },
-                base: function() {
+                base: function () {
                     return m
                 }
             }
         }(),
-        pageLoad: function(e) {
-            return n.system.pageLoad == null && (n.system.pageLoad = e, window.addEventListener("load", function() {
+        pageLoad: function (e) {
+            return n.system.pageLoad == null && (n.system.pageLoad = e, window.addEventListener("load", function () {
                 m.main(n.system.pageLoad)
             }, !1)), m
         },
-        main: function(e) {
+        main: function (e) {
             n.system.pageLoad == null && (n.system.pageLoad = e), this.canvas.init(), this.graphics.ANCHOR_LT = r.canvas.graphics.ANCHOR_LT, this.graphics.ANCHOR_LV = r.canvas.graphics.ANCHOR_LV, this.graphics.ANCHOR_LB = r.canvas.graphics.ANCHOR_LB, this.graphics.ANCHOR_HT = r.canvas.graphics.ANCHOR_HT, this.graphics.ANCHOR_HV = r.canvas.graphics.ANCHOR_HV, this.graphics.ANCHOR_HB = r.canvas.graphics.ANCHOR_HB, this.graphics.ANCHOR_RT = r.canvas.graphics.ANCHOR_RT, this.graphics.ANCHOR_RV = r.canvas.graphics.ANCHOR_RV, this.graphics.ANCHOR_RB = r.canvas.graphics.ANCHOR_RB;
             var t = this.getDom(n.canvas.defaultId);
             t && (this.canvas.screen.getTouch() ? (window.addEventListener("orientationchange", i.orientationchange, !1), t.addEventListener("touchstart", i.touchstart, !1), t.addEventListener("touchend", i.touchend, !1), t.addEventListener("touchmove", i.touchmove, !1), t.addEventListener("touchcancel", i.touchcancel, !1)) : (document.onkeydown = i.keydown, document.onkeyup = i.keyup, t.addEventListener("click", i.click, !1), t.addEventListener("mousedown", i.mouseDown, !1), t.addEventListener("mouseup", i.mouseUp, !1), t.addEventListener("mousemove", i.mouseMove, !1))), t = null;
             var s = this.canvas.screen.getDevice();
             return s == "ipad" || s == "iphone" ? (n.event.focused = !0, window.addEventListener("pageshow", i.pageFocus, !1), window.addEventListener("pagehide", i.pageUnFocus, !1)) : (s == "firefox" && (n.event.focused = !0), window.addEventListener("focus", i.pageFocus, !1), window.addEventListener("blur", i.pageUnFocus, !1)), this.canvas.fillStyle(n.canvas.bgColor).fillRect(0, 0, this.canvas.screen.getWidth(), this.canvas.screen.getHeight()), n.image.inited = !1, this.gameFlow.run().base().play(), n.image.imgObjs.length > 0 ? this.loadImage(n.image.imgObjs) : i.pageLoaded(), this
         },
-        menu: function(e) {
+        menu: function (e) {
             return typeof e == "function" && (n.system.menu = e), this
         },
-        run: function(e) {
+        run: function (e) {
             return typeof e == "function" && (n.system.runFn = e), this
         },
-        stop: function(e) {
+        stop: function (e) {
             return typeof e == "function" && (n.system.stop = e), this
         },
-        over: function(e) {
+        over: function (e) {
             return typeof e == "function" && (n.system.over = e), this
         },
-        zone: function(e) {
+        zone: function (e) {
             return typeof e == "function" && (n.system.zone = e), this
         },
-        active: function(e) {
+        active: function (e) {
             return typeof e == "function" && (n.system.active = e), this
         },
-        play: function() {
-            return n.system.run || (n.system.run = function() {
+        play: function () {
+            return n.system.run || (n.system.run = function () {
                 var e = Date.now();
                 switch (n.system.gameFlow) {
                     case r.system.gameFlowType.menu:
@@ -1027,57 +1027,57 @@
                     default:
                 }
                 i.buttonLayoutAction(), n.system.spendTime = Date.now() - e, e = null
-            }), n.system.playTimer || (n.system.isPause = !1, (n.system.rafRun = function() {
+            }), n.system.playTimer || (n.system.isPause = !1, (n.system.rafRun = function () {
                 var e = Date.now();
                 e - n.system.lastDate >= n.system.timeout - n.system.spendTime && (n.system.lastDate = e, n.system.isPause || n.system.run()), e = null, n.system.rafRun && (n.system.playTimer = requestAnimationFrame(n.system.rafRun))
             })()), this
         },
-        pause: function() {
+        pause: function () {
             return n.system.playTimer && (n.system.isPause = !0, n.system.rafRun = null, cancelAnimationFrame(n.system.playTimer), n.system.playTimer = null), this
         },
         gameFlow: {
-            menu: function() {
+            menu: function () {
                 return n.system.menu != null && (n.system.gameFlow = r.system.gameFlowType.menu, m.resetKeys()), this
             },
-            run: function() {
+            run: function () {
                 return n.system.runFn != null && (n.system.gameFlow = r.system.gameFlowType.run, m.resetKeys()), this
             },
-            stop: function() {
+            stop: function () {
                 return n.system.stop != null && (n.system.gameFlow = r.system.gameFlowType.stop, m.resetKeys()), this
             },
-            over: function() {
+            over: function () {
                 return n.system.over != null && (n.system.gameFlow = r.system.gameFlowType.over, m.resetKeys()), this
             },
-            zone: function(e) {
+            zone: function (e) {
                 return n.system.zone != null && (n.system.gameFlow = r.system.gameFlowType.zone, n.system.zoneArgs = e, m.resetKeys()), this
             },
-            active: function(e) {
+            active: function (e) {
                 return n.system.active != null && (n.system.gameFlow = r.system.gameFlowType.active, n.system.activeArgs = e, m.resetKeys()), this
             },
-            isIn: function(e) {
+            isIn: function (e) {
                 return n.system.gameFlow == r.system.gameFlowType[e]
             },
-            base: function() {
+            base: function () {
                 return m
             }
         },
-        keyRepeated: function(e) {
+        keyRepeated: function (e) {
             return n.event.keyDownGo || (n.event.keyDownGo = !0), n.event.keys[e]
         },
-        keyPressed: function(e) {
+        keyPressed: function (e) {
             n.event.keyPressedGo || (n.event.keyPressedGo = !0);
             var t = n.event.pressedKey[e];
             return n.event.pressedKey[e] = !1, t
         },
-        keyReleased: function(e) {
+        keyReleased: function (e) {
             n.event.keyUpGo || (n.event.keyUpGo = !0);
             var t = n.event.lastKey[e];
             return n.event.lastKey[e] = !1, t
         },
-        setKeyCode: function(e, t) {
+        setKeyCode: function (e, t) {
             return n.event.keys[e] = !1, n.event.lastKey[e] = !1, n.event.pressedKey[e] = !1, n.event.keyPressCtrl[e] = !0, r.event.key[e] = t, this
         },
-        resetKeys: function() {
+        resetKeys: function () {
             for (var e in n.event.keys)
                 n.event.keys[e] = !1;
             for (var e in n.event.lastKey)
@@ -1089,7 +1089,7 @@
             return this
         },
         canvas: {
-            init: function() {
+            init: function () {
                 return o = {
                     x: 0,
                     y: 0
@@ -1109,91 +1109,91 @@
                     strokeStyle: "#CCCCCC"
                 }, this.pass()
             },
-            initDevice: function() {
+            initDevice: function () {
                 return h = i.getDeviceConfig(), n.canvas.device = h.device, n.canvas.fps = h.fps, n.canvas.touch = h.touch, n.canvas.zoom = h.zoom, this
             },
-            pass: function(e, t, r) {
+            pass: function (e, t, r) {
                 var i, o;
                 return !e || e == "" ? i = n.canvas.defaultId : i = e, n.canvas.ctxs[i] || (o = this.base().getDom(i) || document.createElement("canvas"), n.canvas.ctxs[i] = null, delete n.canvas.ctxs[i], n.canvas.ctxs[i] = o.getContext("2d"), o.width = t ? t : n.canvas.defaultWidth, o.style.width = parseInt(o.width * n.canvas.zoom) + "px", o.height = r ? r : n.canvas.defaultHeight, o.style.height = parseInt(o.height * n.canvas.zoom) + "px", n.canvas.cavansDoms[i] = null, delete n.canvas.cavansDoms[i], n.canvas.cavansDoms[i] = o), s = n.canvas.ctxs[i], s.font = n.canvas.defaultFont, c = n.canvas.cavansDoms[i], p = parseInt(c.width), d = parseInt(c.height), this.screen.setId(i), this
             },
-            font: function(e) {
+            font: function (e) {
                 return n.canvas.defaultFont = e, s.font = n.canvas.defaultFont, this
             },
-            del: function(e) {
+            del: function (e) {
                 return n.canvas.ctxs[e] && (n.canvas.ctxs[e] = null, delete n.canvas.ctxs[e], n.canvas.cavansDoms[e] = null, delete n.canvas.cavansDoms[e]), this
             },
-            setCurrent: function(e) {
+            setCurrent: function (e) {
                 return _canvas.pass(e)
             },
             screen: {
-                setId: function(e) {
+                setId: function (e) {
                     return n.canvas.ctxs[e] && (n.canvas.id = e), this
                 },
-                getId: function() {
+                getId: function () {
                     return n.canvas.id
                 },
-                getWidth: function() {
+                getWidth: function () {
                     return p
                 },
-                setWidth: function(e) {
+                setWidth: function (e) {
                     return n.canvas.defaultWidth = e, c && (c.width = n.canvas.defaultWidth, c.style.width = c.width + "px", p = parseInt(c.width)), this
                 },
-                getHeight: function() {
+                getHeight: function () {
                     return d
                 },
-                setHeight: function(e) {
+                setHeight: function (e) {
                     return n.canvas.defaultHeight = e, c && (c.height = n.canvas.defaultHeight, c.style.height = c.height + "px", d = parseInt(c.height)), this
                 },
-                getDevice: function() {
+                getDevice: function () {
                     return n.canvas.device
                 },
-                getFps: function() {
+                getFps: function () {
                     return n.canvas.fps
                 },
-                setFps: function(e) {
+                setFps: function (e) {
                     return e > 0 && (n.canvas.fps = e), this
                 },
-                getTouch: function() {
+                getTouch: function () {
                     return n.canvas.touch
                 },
-                getZoom: function() {
+                getZoom: function () {
                     return n.canvas.zoom
                 }
             },
-            fillStyle: function(e) {
+            fillStyle: function (e) {
                 return s.fillStyle = e, this
             },
-            fillRect: function(e, t, n, r, o) {
+            fillRect: function (e, t, n, r, o) {
                 return n = n ? n : 0, r = r ? r : 0, o ? f = i.getAnchor(e, t, n, r, o) : (f.x = e, f.y = t), s.fillRect(f.x, f.y, n, r), this
             },
-            fillText: function(e, t, r, i) {
+            fillText: function (e, t, r, i) {
                 return s.font = i || n.canvas.defaultFont, s.fillText(e, t, r), this
             },
-            clearRect: function(e, t, n, r) {
+            clearRect: function (e, t, n, r) {
                 return s.clearRect(e, t, n, r), this
             },
-            clearScreen: function() {
+            clearScreen: function () {
                 return this.clearRect(0, 0, p, d)
             },
-            fillScreen: function() {
+            fillScreen: function () {
                 return this.fillRect(0, 0, p, d)
             },
-            strokeStyle: function(e) {
+            strokeStyle: function (e) {
                 return s.strokeStyle = e, this
             },
-            lineWidth: function(e) {
+            lineWidth: function (e) {
                 return s.lineWidth = e || 1, this
             },
-            strokeRect: function(e, t, n, r, o) {
+            strokeRect: function (e, t, n, r, o) {
                 return o ? a = i.getAnchor(e, t, n, r, o) : (a.x = e, a.y = t), s.strokeRect(a.x, a.y, n, r), this
             },
-            strokeText: function(e, t, r, i) {
+            strokeText: function (e, t, r, i) {
                 return s.font = i || n.canvas.defaultFont, s.strokeText(e, t, r), this
             },
-            setColor: function(e, t, n) {
+            setColor: function (e, t, n) {
                 return n == null ? (u.fillColor = e, u.strokeColor = t ? t : e) : (u.fillColor = "rgb(" + e + ", " + t + ", " + n + ")", u.strokeColor = u.fillColor), this.fillStyle(u.fillColor).strokeStyle(u.strokeColor)
             },
-            drawImage: function(e, t, r, u, a, f, l, c, h, p) {
+            drawImage: function (e, t, r, u, a, f, l, c, h, p) {
                 var d = m.getImage(e);
                 if (d.refreshed)
                     this.drawCache(e, t, r, u, a, f, l, c, h, p);
@@ -1205,18 +1205,18 @@
                 }
                 return d = null, this
             },
-            drawRotate: function(e, t, r, i, o, u, a, f, l, c) {
+            drawRotate: function (e, t, r, i, o, u, a, f, l, c) {
                 var h = parseInt(f >> 1),
                     p = parseInt(l >> 1),
                     d = m.getImage(e),
                     v = d.src ? d : n.canvas.cavansDoms[e];
                 return u -= h, a -= p, s.save(), s.translate(u + h, a + p), s.rotate(c * Math.PI / 180), s.translate(-(u + h), -(a + p)), s.drawImage(v, t, r, i, o, u, a, f, l), s.restore(), v = null, d = null, p = null, h = null, this
             },
-            drawCache: function(e, t, r, u, a, f, l, c, h, p) {
+            drawCache: function (e, t, r, u, a, f, l, c, h, p) {
                 var d = n.canvas.cavansDoms[e];
                 return d && (c != null && (t = t < 0 ? 0 : t, c = c <= 0 ? .1 : c), h != null && (r = r < 0 ? 0 : r, h = h <= 0 ? .1 : h), u != null && c != null && (u = u <= 0 ? .1 : t + u <= d.width ? u : d.width - t), a != null && h != null && (a = a <= 0 ? .1 : r + a <= d.height ? a : d.height - r), u ? a ? p ? (o = i.getAnchor(f, l, c, h, p), s.drawImage(d, t, r, u, a, o.x, o.y, c, h)) : s.drawImage(d, t, r, u, a, f, l, c, h) : (o = i.getAnchor(t, r, d.width, d.height, u), s.drawImage(d, o.x, o.y)) : s.drawImage(d, t, r)), d = null, this
             },
-            drawRegion: function(e, t, n, i, o, u, a, f, l) {
+            drawRegion: function (e, t, n, i, o, u, a, f, l) {
                 switch (u) {
                     case r.canvas.trans.TRANS_NONE:
                     default:
@@ -1247,7 +1247,7 @@
                     h = c.cache ? this.drawCache : this.drawImage;
                 return h(e, t, n, i, o, 0, 0, i, o), s.setTransform(1, 0, 0, 1, 0, 0), h = null, c = null, this
             },
-            drawRegionAndZoom: function(e, t, n, i, o, u, a, f, l, c, h) {
+            drawRegionAndZoom: function (e, t, n, i, o, u, a, f, l, c, h) {
                 switch (u) {
                     case r.canvas.trans.TRANS_NONE:
                     default:
@@ -1278,7 +1278,7 @@
                     d = p.cache ? this.drawCache : this.drawImage;
                 return d(e, t, n, i, o, 0, 0, c, h), s.setTransform(1, 0, 0, 1, 0, 0), d = null, p = null, this
             },
-            drawNumber: function(e, t, n, r, i, s, o, u, a) {
+            drawNumber: function (e, t, n, r, i, s, o, u, a) {
                 var f = e.toString(),
                     l = f.length,
                     c = u ? u : n,
@@ -1296,34 +1296,34 @@
                         this.drawImage(t, parseInt(f.charAt(v)) * n, 0, n, r, i - (l - 1 - v) * c, s, c, h, m.graphics.ANCHOR_RT);
                 return h = null, c = null, l = null, f = null, this
             },
-            moveTo: function(e, t) {
+            moveTo: function (e, t) {
                 return s.moveTo(e, t), this
             },
-            lineTo: function(e, t) {
+            lineTo: function (e, t) {
                 return s.lineTo(e, t), this
             },
-            stroke: function() {
+            stroke: function () {
                 return s.stroke(), this
             },
-            fill: function() {
+            fill: function () {
                 return s.fill(), this
             },
-            beginPath: function() {
+            beginPath: function () {
                 return s.beginPath(), this
             },
-            closePath: function() {
+            closePath: function () {
                 return s.closePath(), this
             },
-            arc: function(e, t, n, r, i, o) {
+            arc: function (e, t, n, r, i, o) {
                 return s.arc(e, t, n, r, i, o), this
             },
-            quadraticCurveTo: function(e, t, n, r) {
+            quadraticCurveTo: function (e, t, n, r) {
                 return s.quadraticCurveTo(e, t, n, r), this
             },
-            bezierCurveTo: function(e, t, n, r, i, o) {
+            bezierCurveTo: function (e, t, n, r, i, o) {
                 return s.bezierCurveTo(e, t, n, r, i, o), this
             },
-            measureText: function(e) {
+            measureText: function (e) {
                 var t = s.measureText(e),
                     n = t.width,
                     r = t.height ? t.height : parseInt(s.font);
@@ -1332,16 +1332,16 @@
                     height: r
                 }
             },
-            translate: function(e, t) {
+            translate: function (e, t) {
                 return s.translate(e, t), this
             },
-            drawLine: function(e, t, n, r) {
+            drawLine: function (e, t, n, r) {
                 return this.beginPath().moveTo(e, t).lineTo(n, r).closePath().stroke()
             },
-            drawRect: function(e, t, n, r, i) {
+            drawRect: function (e, t, n, r, i) {
                 return this.strokeRect(e, t, n, r, i)
             },
-            drawString: function(e, t, i, o, u, a, f, c) {
+            drawString: function (e, t, i, o, u, a, f, c) {
                 l.x = t, l.y = i, s.font = c || n.canvas.defaultFont;
                 if (o)
                     switch (o) {
@@ -1358,41 +1358,41 @@
                     }
                 return u && (a ? l.fillStyle = a : l.fillStyle = "#000000", f ? l.strokeStyle = f : l.strokeStyle = "#CCCCCC", this.fillStyle(l.strokeStyle).fillText(e, l.x + 1, l.y + 1, c).fillStyle(l.fillStyle)), this.fillText(e, l.x, l.y, c).fillStyle(n.canvas.defaultColor)
             },
-            drawSubstring: function(e, t, n, r, i, s, o, u, a, f) {
+            drawSubstring: function (e, t, n, r, i, s, o, u, a, f) {
                 return this.drawString(e.substring(t, t + n), r, i, s, o, u, a, f)
             },
-            clip: function() {
+            clip: function () {
                 return s.clip(), this
             },
-            save: function() {
+            save: function () {
                 return s.save(), this
             },
-            restore: function() {
+            restore: function () {
                 return s.restore(), this
             },
-            rect: function(e, t, n, r) {
+            rect: function (e, t, n, r) {
                 return s.rect(e, t, n, r), this
             },
-            rotate: function(e) {
+            rotate: function (e) {
                 return s.rotate(e), this
             },
-            setTransform: function(e, t, n, r, i, o) {
+            setTransform: function (e, t, n, r, i, o) {
                 return s.setTransform(e, t, n, r, i, o), this
             },
-            scale: function(e, t) {
+            scale: function (e, t) {
                 return s.scale(e, t), this
             },
-            globalAlpha: function(e) {
+            globalAlpha: function (e) {
                 return s.globalAlpha = e, this
             },
-            getContext: function() {
+            getContext: function () {
                 return s
             },
-            base: function() {
+            base: function () {
                 return m
             }
         },
-        pushImage: function(e, t) {
+        pushImage: function (e, t) {
             if (n.image.inited)
                 return this;
             var r;
@@ -1400,7 +1400,7 @@
                 r = e[i], r && !n.image.initImgs[r.id] && (n.image.initImgs[r.id] = !0, n.image.imgObjs.push(e[i]));
             return this.loadingEndCallBack(t), r = null, this
         },
-        loadImage: function(e, t) {
+        loadImage: function (e, t) {
             if (n.system.gameFlow != r.system.gameFlowType.loadImage && e.length > 0) {
                 n.system.loadedImageToGameFlow = n.system.gameFlow, n.system.gameFlow = r.system.gameFlowType.loadImage, n.image.imgObjs = e, n.image.imgCount = n.image.imgObjs.length, n.image.countLoaded = 0;
                 for (var s = 0, o; o = n.image.imgObjs[s]; s++)
@@ -1409,30 +1409,30 @@
             }
             return this
         },
-        asyncImage: function(e) {
+        asyncImage: function (e) {
             var t;
             for (var r = 0, i = e.length; r < i; r++)
                 t = e[r] || {}, n.image.asyncImgObjs[t.id] || (n.image.asyncImgObjs[t.id] = t);
             return t = null, this
         },
-        verImage: function(e) {
+        verImage: function (e) {
             return n.image.version == "" && (n.image.version = e), this
         },
-        loadingCallBack: function(e) {
+        loadingCallBack: function (e) {
             return typeof e == "function" && (i.loadingCallBack = e), this
         },
-        loadingEndCallBack: function(e) {
+        loadingEndCallBack: function (e) {
             return typeof e == "function" && (i.loadingEndCallBack = e), this
         },
-        addImage: function(e, t) {
+        addImage: function (e, t) {
             return e && t && !n.image.imgs[e] && (n.image.imgs[e] = t), this
         },
-        getImage: function(e) {
+        getImage: function (e) {
             return n.image.imgs[e] ? n.image.imgs[e] : {
                 src: null
             }
         },
-        delImage: function(e, t) {
+        delImage: function (e, t) {
             return n.image.imgs[e] && (n.image.imgs[e] = null, delete n.image.imgs[e], t && (n.image.imgs[e] = {
                 id: e,
                 loaded: !0,
@@ -1440,95 +1440,95 @@
                 refreshed: !0
             })), this
         },
-        getAsyncImage: function(e) {
+        getAsyncImage: function (e) {
             return n.image.asyncImgObjs[e] ? n.image.asyncImgObjs[e] : {
                 src: null
             }
         },
-        clearAsyncImageCache: function() {
+        clearAsyncImageCache: function () {
             try {
                 var e = n.image.imgs,
                     t, r;
                 for (var i in e)
                     t = e[i], t && (r = n.image.asyncImgObjs[i], r && (r.inited = !1, this.delImage(i).canvas.del(i)));
                 e = t = r = null
-            } catch (s) {}
+            } catch (s) { }
             return this
         },
         audio: {
-            play: function(e) {
+            play: function (e) {
                 var t = n.audio.audios[e];
                 if (t)
                     try {
                         t.currentTime >= t.duration ? this.replay(e) : t.paused && t.play()
-                    } catch (r) {}
+                    } catch (r) { }
                 return t = null, this
             },
-            playRange: function(e, t, r) {
+            playRange: function (e, t, r) {
                 var i = n.audio.audios[e];
                 if (i)
                     try {
-                        i.__timeupdateCallBack__ || i.addEventListener("timeupdate", i.__timeupdateCallBack__ = function() {
+                        i.__timeupdateCallBack__ || i.addEventListener("timeupdate", i.__timeupdateCallBack__ = function () {
                             this.currentTime >= this.__to__ && (this.loop ? this.currentTime = this.__from__ : this.pause())
                         }, !1), i.__from__ = t == null ? 0 : t, i.__to__ = r == null ? i.duration : r, this.setCurrentTime(i.id, i.__from__).play(i.id)
-                    } catch (s) {}
+                    } catch (s) { }
                 return i = null, this
             },
-            pause: function(e) {
+            pause: function (e) {
                 if (n.audio.audios[e])
                     try {
                         n.audio.audios[e].pause()
-                    } catch (t) {}
+                    } catch (t) { }
                 return this
             },
-            pauseAll: function() {
+            pauseAll: function () {
                 for (var e in n.audio.audios)
                     this.pause(e);
                 return this
             },
-            mute: function(e, t) {
+            mute: function (e, t) {
                 if (n.audio.audios[e])
                     try {
                         n.audio.audios[e].muted = t
-                    } catch (r) {}
+                    } catch (r) { }
             },
-            vol: function(e, t) {
+            vol: function (e, t) {
                 if (n.audio.audios[e])
                     try {
                         n.audio.audios[e].volume = t
-                    } catch (r) {}
+                    } catch (r) { }
                 return this
             },
-            loop: function(e, t) {
+            loop: function (e, t) {
                 if (n.audio.audios[e])
                     try {
                         n.audio.audios[e].loop = t
-                    } catch (r) {}
+                    } catch (r) { }
                 return this
             },
-            replay: function(e) {
+            replay: function (e) {
                 return this.setCurrentTime(e, 0).play(e), this
             },
-            setCurrentTime: function(e, t) {
+            setCurrentTime: function (e, t) {
                 var r = n.audio.audios[e];
                 if (r)
                     try {
                         t < 0 ? t = 0 : t > r.duration && (t = r.duration), r.currentTime = t || 0
-                    } catch (i) {}
+                    } catch (i) { }
                 return r = null, this
             },
-            getAudio: function(e) {
+            getAudio: function (e) {
                 return n.audio.audios[e]
             },
-            del: function(e) {
+            del: function (e) {
                 var t = n.audio.audios[e];
                 return t && t.__timeupdateCallBack__ && (t.pause(), t.removeEventListener("timeupdate", t.__timeupdateCallBack__, !1), n.audio.audios[e] = null, delete n.audio.audios[e]), t = null, this
             },
-            base: function() {
+            base: function () {
                 return m
             }
         },
-        initAudio: function(e) {
+        initAudio: function (e) {
             if (!window.Audio)
                 return this;
             if (e.length > 0) {
@@ -1540,44 +1540,44 @@
             }
             return this
         },
-        setRunFrequency: function(e) {
+        setRunFrequency: function (e) {
             return n.system.timeout = e, this
         },
         events: {
-            keyDown: function(e) {
+            keyDown: function (e) {
                 return n.event.keyDownGo || (n.event.keyDownGo = !0), n.event.keyUpGo || (n.event.keyUpGo = !0), n.event.keyPressedGo || (n.event.keyPressedGo = !0), n.event.keyDownCallBack = e, this
             },
-            keyUp: function(e) {
+            keyUp: function (e) {
                 return n.event.keyDownGo || (n.event.keyDownGo = !0), n.event.keyUpGo || (n.event.keyUpGo = !0), n.event.keyPressedGo || (n.event.keyPressedGo = !0), n.event.keyUpCallBack = e, this
             },
-            orientationChange: function(e) {
+            orientationChange: function (e) {
                 return n.event.orientationChange = e, this
             },
-            touchStart: function(e) {
+            touchStart: function (e) {
                 return n.event.touchStart = e, this
             },
-            touchEnd: function(e) {
+            touchEnd: function (e) {
                 return n.event.touchEnd = e, this
             },
-            touchMove: function(e) {
+            touchMove: function (e) {
                 return n.event.touchMove = e, this
             },
-            touchCancel: function(e) {
+            touchCancel: function (e) {
                 return n.event.touchCancel = e, this
             },
-            click: function(e) {
+            click: function (e) {
                 return n.event.clickCallBack = e, this
             },
-            mouseDown: function(e) {
+            mouseDown: function (e) {
                 return n.event.mouseDownCallBack = e, this
             },
-            mouseUp: function(e) {
+            mouseUp: function (e) {
                 return n.event.mouseUpCallBack = e, this
             },
-            mouseMove: function(e) {
+            mouseMove: function (e) {
                 return n.event.mouseMoveCallBack = e, this
             },
-            createEvent: function(e, t) {
+            createEvent: function (e, t) {
                 var n = document.getElementById(e);
                 if (n) {
                     var r = document.createEvent("HTMLEvents");
@@ -1585,16 +1585,16 @@
                 }
                 n = null
             },
-            pageFocus: function(e) {
+            pageFocus: function (e) {
                 return n.event.pageFocusCallBack = e, this
             },
-            pageUnFocus: function(e) {
+            pageUnFocus: function (e) {
                 return n.event.pageUnFocusCallBack = e, this
             },
-            swipe: function(e, t, r) {
+            swipe: function (e, t, r) {
                 n.event.swipeCallBack = e, t != null && (n.event.swipeTimeout = t), r != null && (n.event.swipeRange = r)
             },
-            base: function() {
+            base: function () {
                 return m
             }
         },
@@ -1618,15 +1618,15 @@
             TRANS_MIRROR_ROT270: r.canvas.trans.TRANS_MIRROR_ROT270
         },
         request: {
-            init: function() {
+            init: function () {
                 i.initUrlParams(location.href)
             },
-            get: function(e) {
+            get: function (e) {
                 return n.request.gets[e] ? n.request.gets[e] : ""
             }
         },
         buttonLayout: {
-            create: function(e) {
+            create: function (e) {
                 var t = this.base().objExtend({
                     id: "",
                     value: "",
@@ -1654,7 +1654,7 @@
                 }, e || {});
                 return this.get(t.id) || n.buttonLayout.buttons.push(new n.buttonLayout.Button(t)), t = null, this
             },
-            destroy: function(e) {
+            destroy: function (e) {
                 var t = n.buttonLayout.buttons,
                     r;
                 for (var i = t.length - 1; i >= 0; i--)
@@ -1665,7 +1665,7 @@
                         }
                 return t = r = null, this
             },
-            clear: function() {
+            clear: function () {
                 var e = n.buttonLayout.buttons,
                     t;
                 for (var r = e.length - 1; r >= 0; r--)
@@ -1673,7 +1673,7 @@
                         t.disposed(), e.splice(r, 1);
                 return e = t = null, this
             },
-            gone: function(e, t, n) {
+            gone: function (e, t, n) {
                 var r = this.get(e);
                 if (r) {
                     var i = t || [];
@@ -1681,42 +1681,42 @@
                 }
                 return r = null, this
             },
-            get: function(e) {
+            get: function (e) {
                 var t = n.buttonLayout.buttons;
                 return t[t.indexOfAttr("id", e)]
             },
-            show: function(e) {
+            show: function (e) {
                 var t = this.get(e);
                 return t && t.show(), t = null, this
             },
-            hide: function(e) {
+            hide: function (e) {
                 var t = this.get(e);
                 return t && t.hide(), t = null, this
             },
-            disable: function(e, t) {
+            disable: function (e, t) {
                 var n = this.get(e);
                 return n && n.disable(t), n = null, this
             },
-            repeated: function(e) {
+            repeated: function (e) {
                 var t = this.get(e);
                 if (t)
                     return t.repeated
             },
-            pressed: function(e) {
+            pressed: function (e) {
                 var t = this.get(e);
                 if (t) {
                     var n = t.pressed;
                     return t.pressed = !1, n
                 }
             },
-            released: function(e) {
+            released: function (e) {
                 var t = this.get(e);
                 if (t) {
                     var n = t.released;
                     return t.released = !1, n
                 }
             },
-            base: function() {
+            base: function () {
                 return m
             }
         }
@@ -1727,74 +1727,74 @@
         b = null,
         w = null,
         E = null,
-        S = function() {
+        S = function () {
             b && (clearTimeout(b), b = null)
         };
-    link.getScript = function(e) {
+    link.getScript = function (e) {
         if (!g || y)
             return !1;
         var t = m.objExtend({
             url: "",
-            before: function() {},
-            success: function() {},
-            error: function(e) {},
+            before: function () { },
+            success: function () { },
+            error: function (e) { },
             timeout: 5e3,
             contentType: "text/javascript",
             destroyed: !0
         }, e || {});
-        return t.url != "" && (t.before(), y = document.createElement("script"), y.type = t.contentType, y.async = !0, y.src = t.url, y.destroyed = t.destroyed, w = t.success, E = t.error, y.onload = function() {
+        return t.url != "" && (t.before(), y = document.createElement("script"), y.type = t.contentType, y.async = !0, y.src = t.url, y.destroyed = t.destroyed, w = t.success, E = t.error, y.onload = function () {
             S(), w && (w(), w = null), this.destroyed && g.removeChild(this), y = null
-        }, g.appendChild(y), S(), b = setTimeout(function() {
+        }, g.appendChild(y), S(), b = setTimeout(function () {
             S(), E && (E("timeout"), E = null), y && y.destroyed && g.removeChild(y), y = null
         }, t.timeout)), t = null, m
     };
-    var x = function() {
+    var x = function () {
         return ((1 + Math.random()) * 65536 | 0).toString(16).substring(1)
     };
-    link.getNewGuid = function() {
+    link.getNewGuid = function () {
         return x() + x() + "-" + x() + "-" + x() + "-" + x() + "-" + x() + x() + x()
-    }, link.classes.Observer = function() {
+    }, link.classes.Observer = function () {
         this.group = []
-    }, link.classes.Observer.prototype.register = function(e) {
+    }, link.classes.Observer.prototype.register = function (e) {
         if (e == null)
             return this;
         var t = m.comm.inArray(e, this.group);
         return t == -1 && this.group.push(e), this
-    }, link.classes.Observer.prototype.unregister = function(e) {
+    }, link.classes.Observer.prototype.unregister = function (e) {
         if (e == null)
             return this;
         var t = m.commandFuns.inArray(e, this.group);
         return t > -1 && this.group.splice(t, 1), this
-    }, link.classes.Observer.prototype.notify = function(e) {
+    }, link.classes.Observer.prototype.notify = function (e) {
         for (var t = 0; t < this.group.length; t++)
             this.group[t] != null && this.group[t](e);
         return this
-    }, link.classes.Observer.prototype.clear = function() {
+    }, link.classes.Observer.prototype.clear = function () {
         return this.group.length > 0 && this.group.splice(0, this.group.length), this
-    }, link.classes.Timer = function(e, t, n, r, i) {
+    }, link.classes.Timer = function (e, t, n, r, i) {
         this.id = e, this._initTime = t, this._dateTime = Date.now(), this.time = this._initTime, this.callBack = n, this.millisec = r || 1e3, this.data = i, this.timeout = null
-    }, link.classes.Timer.prototype.stop = function() {
+    }, link.classes.Timer.prototype.stop = function () {
         this.timeout && (clearTimeout(this.timeout), this.timeout = null)
-    }, link.classes.Timer.prototype.start = function(e) {
-        e && (this.time = this._initTime, this._dateTime = Date.now()), this.stop(), this.timeout = setTimeout(function(e) {
+    }, link.classes.Timer.prototype.start = function (e) {
+        e && (this.time = this._initTime, this._dateTime = Date.now()), this.stop(), this.timeout = setTimeout(function (e) {
             var t = Date.now(),
                 n = parseInt(Math.round((t - e._dateTime) / e.millisec));
             e._dateTime = t, e.time -= n, e.callBack ? e.callBack(e) : e.stop(), e.time >= 0 ? e.start() : (e.stop(), e.time = 0), t = n = null
         }, this.millisec, this)
-    }, link.classes.WebSocket = function(e, t, n, r, i) {
+    }, link.classes.WebSocket = function (e, t, n, r, i) {
         this.ipPort = e || "", this.socket = new WebSocket(this.ipPort), this.socket.onopen = t, this.socket.onmessage = n, this.socket.onclose = r, this.socket.onerror = i
-    }, link.classes.WebSocket.prototype.send = function(e) {
+    }, link.classes.WebSocket.prototype.send = function (e) {
         this.socket.send(e)
-    }, link.classes.WebSocket.prototype.close = function() {
+    }, link.classes.WebSocket.prototype.close = function () {
         this.socket.close()
-    }, link.classes.observer = link.classes.Observer, link.classes.timer = link.classes.Timer, link.classes.webSocket = link.classes.websocket = link.classes.WebSocket, link.commandFuns = link.comm, link.commandFuns.collisionCheck = link.commandFuns.collision, link.commandFuns.circleCollisionCheck = link.commandFuns.circleCollision, link.initImage = link.pushImage, typeof define == "function" && define("lib/link", [], function() {
+    }, link.classes.observer = link.classes.Observer, link.classes.timer = link.classes.Timer, link.classes.webSocket = link.classes.websocket = link.classes.WebSocket, link.commandFuns = link.comm, link.commandFuns.collisionCheck = link.commandFuns.collision, link.commandFuns.circleCollisionCheck = link.commandFuns.circleCollision, link.initImage = link.pushImage, typeof define == "function" && define("lib/link", [], function () {
         return link
     })
-})(), define("lib/action", ["lib/link"], function(e) {
-    var t = function(e, t) {
-            return e == 0 && t == 0 ? 0 : e > 0 && t < 0 ? 1 : e > 0 && t == 0 ? 2 : e > 0 && t > 0 ? 3 : e == 0 && t > 0 ? 4 : e < 0 && t > 0 ? 5 : e < 0 && t == 0 ? 6 : e < 0 && t < 0 ? 7 : 0
-        },
-        n = function(t, n, r, i, s) {
+})(), define("lib/action", ["lib/link"], function (e) {
+    var t = function (e, t) {
+        return e == 0 && t == 0 ? 0 : e > 0 && t < 0 ? 1 : e > 0 && t == 0 ? 2 : e > 0 && t > 0 ? 3 : e == 0 && t > 0 ? 4 : e < 0 && t > 0 ? 5 : e < 0 && t == 0 ? 6 : e < 0 && t < 0 ? 7 : 0
+    },
+        n = function (t, n, r, i, s) {
             var o = [];
             if (s.length > 0) {
                 var i, u;
@@ -1811,7 +1811,7 @@
             }
             return t
         };
-    e.action = {}, e.action.Role = function(e, t, r, i, s, o, u, a) {
+    e.action = {}, e.action.Role = function (e, t, r, i, s, o, u, a) {
         this.imageNames = s || [], this.rects = o || [], this.frames = u || [], this.actions = a || [], this.sprites = n(e, this.imageNames, this.rects, this.frames, this.actions) || [], this.x = t || 0, this.y = r || 0, this.dx = 0, this.dy = 0, this.step = 0, this.id = "", this.mapOffx = this.x, this.mapOffy = this.y, this.svx = null, this.svy = null, this.current = i || 0, this._cr = this.current, this.zoom = 1, this.angle = 0, this._zooms = [], this._angles = [], this._moveDs = [4, 7, 5, 5, 6, -5, -5, -7], this._stopDs = [0, -3, 1, 1, 2, -1, -1, -3], this.dsIndex = 4, this._path = [];
         var f = this.getSprite(),
             l = f.getFrame(),
@@ -1837,7 +1837,7 @@
             [0, 0],
             [0, 0]
         ]
-    }, e.action.Role.prototype.setSprite = function(t, n, r) {
+    }, e.action.Role.prototype.setSprite = function (t, n, r) {
         if (this._locked)
             return this;
         var i = t != undefined ? t : 0,
@@ -1847,24 +1847,24 @@
         for (var a = 0, f; f = this.links[a]; a++)
             f.setSprite(t, n, r);
         return i = trans = o = u = null, this
-    }, e.action.Role.prototype.addLinks = function(t) {
+    }, e.action.Role.prototype.addLinks = function (t) {
         this.links = t || [];
         for (var n = 0, r; r = this.links[n]; n++)
             r.setSprite(this.getSprite().trans == e.trans.TRANS_NONE ? this.current : -this.current).setStep(this.step);
         return this
-    }, e.action.Role.prototype.clearLinks = function() {
+    }, e.action.Role.prototype.clearLinks = function () {
         return this.links = [], this
-    }, e.action.Role.prototype.lockSprite = function() {
+    }, e.action.Role.prototype.lockSprite = function () {
         return this._locked = !0, this
-    }, e.action.Role.prototype.unlockSprite = function() {
+    }, e.action.Role.prototype.unlockSprite = function () {
         return this._locked = !1, this
-    }, e.action.Role.prototype.setTrans = function(e) {
+    }, e.action.Role.prototype.setTrans = function (e) {
         return this.getSprite().trans = e, this
-    }, e.action.Role.prototype.getSprite = function(e) {
+    }, e.action.Role.prototype.getSprite = function (e) {
         return this.sprites[e == null ? this.current : e]
-    }, e.action.Role.prototype.getFrame = function(e) {
+    }, e.action.Role.prototype.getFrame = function (e) {
         return this.frames[e == null ? this.getSprite().getFrame().args[0] : e]
-    }, e.action.Role.prototype.updateFrameParam = function(t) {
+    }, e.action.Role.prototype.updateFrameParam = function (t) {
         var n = this.getSprite();
         if (!n)
             return n = null, this;
@@ -1891,7 +1891,7 @@
                 s = o = u = a = f = l = null
             }
         return n = r = i = null, this
-    }, e.action.Role.prototype.action = function() {
+    }, e.action.Role.prototype.action = function () {
         var e = this.getSprite();
         if (!e)
             return this;
@@ -1907,11 +1907,11 @@
                 this.svx != null && this.svy != null && (this._skipMoveDs || (this.setSprite(this._stopedAction || this._stopDs[this.dsIndex = t(this.svx, this.svy)]), this._stopedAction = null), this.onend && this.onend(this), this._skipMoveDs = !1, this.svx = null, this.svy = null);
             if (this._zooms.length > 0) {
                 var o = this._zooms.shift();
-                typeof~~ o == "number" && this.setZoom(o), o = null
+                typeof ~~o == "number" && this.setZoom(o), o = null
             }
             if (this._angles.length > 0) {
                 var u = this._angles.shift();
-                typeof~~ u == "number" && this.setRotate(u), o = null
+                typeof ~~u == "number" && this.setRotate(u), o = null
             }
             this.x += n.args[1] + r, this.y += n.args[2] + i;
             var a;
@@ -1920,7 +1920,7 @@
             a = null
         }
         return e.nextFrame(), e = r = i = n = null, this
-    }, e.action.Role.prototype.render = function(t) {
+    }, e.action.Role.prototype.render = function (t) {
         var n = this.getSprite();
         if (n && this._fA) {
             var r = this._fA,
@@ -1935,20 +1935,20 @@
                 e.canvas.save().translate(c, h).rotate(this.angle * Math.PI / 180).translate(-c, -h), l = c = h = null
             }
             for (var p = 0; p < i; p++)
-                u = this.rects[r[p][0]][r[p][1]], a = this.imageNames[r[p][0]], f = e.getImage(a), o == e.trans.TRANS_NONE ? s.drawImage(a, u[0], u[1], u[2], u[3], this.zoom == 1 ? ~~(this.x + this.dx + r[p][2] * this.zoom) : this.x + this.dx + r[p][2] * this.zoom, this.zoom == 1 ? ~~(this.y + this.dy + r[p][3] * this.zoom) : this.y + this.dy + r[p][3] * this.zoom, u[2] * this.zoom, u[3] * this.zoom) : this.zoom == 1 ? s.drawRegion(a, u[0], u[1], u[2], u[3], o, ~~ (this.x + this.dx - (r[p][2] + u[2])), ~~ (this.y + this.dy + r[p][3])) : s.drawRegionAndZoom(a, u[0], u[1], u[2], u[3], o, this.x + this.dx - (r[p][2] + u[2]) * this.zoom, this.y + this.dy + r[p][3] * this.zoom, null, u[2] * this.zoom, u[3] * this.zoom), !f.loaded && f.bench && s.drawImage(f.bench.id || f.benchId, f.bench.sx || 0, f.bench.sy || 0, f.bench.sw || f.bench.w, f.bench.sh || f.bench.h, ~~ (this.x + this.dx - (f.bench.w * this.zoom >> 1)), ~~ (this.y + this.dy - f.bench.h * this.zoom), f.bench.w * this.zoom, f.bench.h * this.zoom);
+                u = this.rects[r[p][0]][r[p][1]], a = this.imageNames[r[p][0]], f = e.getImage(a), o == e.trans.TRANS_NONE ? s.drawImage(a, u[0], u[1], u[2], u[3], this.zoom == 1 ? ~~(this.x + this.dx + r[p][2] * this.zoom) : this.x + this.dx + r[p][2] * this.zoom, this.zoom == 1 ? ~~(this.y + this.dy + r[p][3] * this.zoom) : this.y + this.dy + r[p][3] * this.zoom, u[2] * this.zoom, u[3] * this.zoom) : this.zoom == 1 ? s.drawRegion(a, u[0], u[1], u[2], u[3], o, ~~(this.x + this.dx - (r[p][2] + u[2])), ~~(this.y + this.dy + r[p][3])) : s.drawRegionAndZoom(a, u[0], u[1], u[2], u[3], o, this.x + this.dx - (r[p][2] + u[2]) * this.zoom, this.y + this.dy + r[p][3] * this.zoom, null, u[2] * this.zoom, u[3] * this.zoom), !f.loaded && f.bench && s.drawImage(f.bench.id || f.benchId, f.bench.sx || 0, f.bench.sy || 0, f.bench.sw || f.bench.w, f.bench.sh || f.bench.h, ~~(this.x + this.dx - (f.bench.w * this.zoom >> 1)), ~~(this.y + this.dy - f.bench.h * this.zoom), f.bench.w * this.zoom, f.bench.h * this.zoom);
             this.angle > 0 && e.canvas.restore();
             for (var d = 0, v; v = this.links[d]; d++)
                 v.render();
             s = i = r = o = u = a = f = null
         }
         return n = null, this
-    }, e.action.Role.prototype.setZoom = function(e) {
+    }, e.action.Role.prototype.setZoom = function (e) {
         return this.zoom = e, this
-    }, e.action.Role.prototype.setZoomTransition = function(e) {
+    }, e.action.Role.prototype.setZoomTransition = function (e) {
         return e && e.length > 0 && (this._zooms = e), this
-    }, e.action.Role.prototype.endZoomTransition = function() {
+    }, e.action.Role.prototype.endZoomTransition = function () {
         return this._zooms.length == 0
-    }, e.action.Role.prototype.getBodyRect = function(t, n) {
+    }, e.action.Role.prototype.getBodyRect = function (t, n) {
         var r = this.getSprite(t != null ? Math.abs(t) : null);
         if (!r)
             return null;
@@ -1962,12 +1962,12 @@
             width: s[2] * this.zoom,
             height: s[3] * this.zoom
         } : {
-            x: s[0] * this.zoom,
-            y: s[1] * this.zoom,
-            width: s[2] * this.zoom,
-            height: s[3] * this.zoom
-        }
-    }, e.action.Role.prototype.getAttackRect = function(t, n) {
+                x: s[0] * this.zoom,
+                y: s[1] * this.zoom,
+                width: s[2] * this.zoom,
+                height: s[3] * this.zoom
+            }
+    }, e.action.Role.prototype.getAttackRect = function (t, n) {
         var r = this.getSprite(t != null ? Math.abs(t) : null);
         if (!r)
             return null;
@@ -1982,13 +1982,13 @@
             width: s[2] * this.zoom,
             height: s[3] * this.zoom
         } : {
-            id: this.id,
-            x: s[0] * this.zoom,
-            y: s[1] * this.zoom,
-            width: s[2] * this.zoom,
-            height: s[3] * this.zoom
-        }
-    }, e.action.Role.prototype.getAABBBodyRect = function() {
+                id: this.id,
+                x: s[0] * this.zoom,
+                y: s[1] * this.zoom,
+                width: s[2] * this.zoom,
+                height: s[3] * this.zoom
+            }
+    }, e.action.Role.prototype.getAABBBodyRect = function () {
         return {
             id: this.id,
             x: this.aabbBR[0][0],
@@ -1996,7 +1996,7 @@
             width: Math.abs(this.aabbBR[1][0] - this.aabbBR[0][0]),
             height: Math.abs(this.aabbBR[2][1] - this.aabbBR[1][1])
         }
-    }, e.action.Role.prototype.getAABBAttackRect = function() {
+    }, e.action.Role.prototype.getAABBAttackRect = function () {
         return {
             id: this.id,
             x: this.aabbAR[0][0],
@@ -2004,108 +2004,108 @@
             width: Math.abs(this.aabbAR[1][0] - this.aabbAR[0][0]),
             height: Math.abs(this.aabbAR[2][1] - this.aabbAR[1][1])
         }
-    }, e.action.Role.prototype.setStep = function(e) {
+    }, e.action.Role.prototype.setStep = function (e) {
         this.step = e || 0;
         for (var t = 0, n = this.sprites.length; t < n; t++)
             this.sprites[t].setStep(e);
         for (var r = 0, i; i = this.links[r]; r++)
             i.setStep(this.step);
         return this
-    }, e.action.Role.prototype.collision = function(t, n, r) {
+    }, e.action.Role.prototype.collision = function (t, n, r) {
         if (!t)
             return !1;
         var i = n || "aR",
             s = r || "aR",
             o, u;
-        return i == "aR" ? o = this.getAttackRect() : i == "bR" && (o = this.getBodyRect()), s == "aR" ? u = t.getAttackRect() : s == "bR" && (u = t.getBodyRect()), o && u ? e.comm.collision(~~(this.x + this.dx + o.x), ~~ (this.y + this.dy + o.y), ~~o.width, ~~o.height, ~~ (t.x + t.dx + u.x), ~~ (t.y + t.dy + u.y), ~~u.width, ~~u.height) : !1
-    }, e.action.Role.prototype.collisionInput = function(t, n, r, i, s) {
+        return i == "aR" ? o = this.getAttackRect() : i == "bR" && (o = this.getBodyRect()), s == "aR" ? u = t.getAttackRect() : s == "bR" && (u = t.getBodyRect()), o && u ? e.comm.collision(~~(this.x + this.dx + o.x), ~~(this.y + this.dy + o.y), ~~o.width, ~~o.height, ~~(t.x + t.dx + u.x), ~~(t.y + t.dy + u.y), ~~u.width, ~~u.height) : !1
+    }, e.action.Role.prototype.collisionInput = function (t, n, r, i, s) {
         var o = s || "aR",
             u;
-        return o == "aR" ? u = this.getAttackRect() : o == "bR" && (u = this.getBodyRect()), u ? e.comm.collision(~~(this.x + this.dx + u.x), ~~ (this.y + this.dy + u.y), ~~u.width, ~~u.height, t, n, r, i) : !1
-    }, e.action.Role.prototype.circleCollisionInput = function(t, n, r, i) {
+        return o == "aR" ? u = this.getAttackRect() : o == "bR" && (u = this.getBodyRect()), u ? e.comm.collision(~~(this.x + this.dx + u.x), ~~(this.y + this.dy + u.y), ~~u.width, ~~u.height, t, n, r, i) : !1
+    }, e.action.Role.prototype.circleCollisionInput = function (t, n, r, i) {
         var s = i || "aR",
             o;
-        return s == "aR" ? o = this.getAttackRect() : s == "bR" && (o = this.getBodyRect()), o ? e.comm.rect2CircleCollision(~~(this.x + this.dx + o.x), ~~ (this.y + this.dy + o.y), ~~o.width, ~~o.height, t, n, r) : !1
-    }, e.action.Role.prototype.polygonSATCollision = function(t, n, r) {
+        return s == "aR" ? o = this.getAttackRect() : s == "bR" && (o = this.getBodyRect()), o ? e.comm.rect2CircleCollision(~~(this.x + this.dx + o.x), ~~(this.y + this.dy + o.y), ~~o.width, ~~o.height, t, n, r) : !1
+    }, e.action.Role.prototype.polygonSATCollision = function (t, n, r) {
         if (!t)
             return !1;
         var i = n || "aR",
             s = r || "aR",
             o, u;
         return i == "aR" ? o = this.polyAR : i == "bR" && (o = this.polyBR), s == "aR" ? u = t.polyAR : s == "bR" && (u = t.polyBR), o && u ? e.comm.polygonCollision(o, u, this.x + this.dx, this.y + this.dy, t.x + t.dx, t.y + t.dy) : !1
-    }, e.action.Role.prototype.setLoop = function(e) {
+    }, e.action.Role.prototype.setLoop = function (e) {
         for (var t = 0, n = this.sprites.length; t < n; t++)
             this.sprites[t].setLoop(e);
         return this
-    }, e.action.Role.prototype.setPath = function(e, t) {
+    }, e.action.Role.prototype.setPath = function (e, t) {
         return this._path = e || [], this._path.length > 0 && this.onstart && this.onstart(this), t && (this._skipMoveDs = !0), this
-    }, e.action.Role.prototype.concatPath = function(e) {
+    }, e.action.Role.prototype.concatPath = function (e) {
         return this._path = this._path.concat(e || []), this
-    }, e.action.Role.prototype.endPath = function() {
+    }, e.action.Role.prototype.endPath = function () {
         return this._path.length == 0
-    }, e.action.Role.prototype.clearPath = function() {
+    }, e.action.Role.prototype.clearPath = function () {
         return this._path = [], this
-    }, e.action.Role.prototype.getPathCount = function() {
+    }, e.action.Role.prototype.getPathCount = function () {
         return this._path.length
-    }, e.action.Role.prototype.getFirstPath = function() {
+    }, e.action.Role.prototype.getFirstPath = function () {
         return this._path.length > 0 ? this._path[0] : [0, 0]
-    }, e.action.Role.prototype.moveTo = function(t, n, r) {
+    }, e.action.Role.prototype.moveTo = function (t, n, r) {
         return r && (this.speed = Math.abs(r)), this.setPath(e.comm.createPath(this.mapOffx, this.mapOffy, t, n, this.speed)), this
-    }, e.action.Role.prototype.setMoveDs = function(e) {
+    }, e.action.Role.prototype.setMoveDs = function (e) {
         return this._moveDs = e || [4, 7, 5, 5, 6, -5, -5, -7], this
-    }, e.action.Role.prototype.setStopDs = function(e) {
+    }, e.action.Role.prototype.setStopDs = function (e) {
         return this._stopDs = e || [0, -3, 1, 1, 2, -1, -1, -3], this
-    }, e.action.Role.prototype.doMoveDs = function(e) {
+    }, e.action.Role.prototype.doMoveDs = function (e) {
         return e != null && e >= 0 && e < 8 && (this.dsIndex = e), this.setSprite(this._moveDs[this.dsIndex]), this
-    }, e.action.Role.prototype.doStopDs = function(e) {
+    }, e.action.Role.prototype.doStopDs = function (e) {
         return e != null && e >= 0 && e < 8 && (this.dsIndex = e), this.setSprite(this._stopDs[this.dsIndex]), this
-    }, e.action.Role.prototype.mark = function(e, t, n, r) {
+    }, e.action.Role.prototype.mark = function (e, t, n, r) {
         return e != null && (this.x = e), t != null && (this.y = t), n != null && (this.mapOffx = n), r != null && (this.mapOffy = r), this
-    }, e.action.Role.prototype.setSpeed = function(e, t) {
+    }, e.action.Role.prototype.setSpeed = function (e, t) {
         return e && (this.speed = Math.abs(e)), this.nodeXStep = e, this.nodeYStep = t, this
-    }, e.action.Role.prototype.setRotate = function(e) {
+    }, e.action.Role.prototype.setRotate = function (e) {
         return e != this.angle && (Math.abs(e) > 360 && (e %= 360), this.angle = e < 0 ? 360 + e : e), this
-    }, e.action.Role.prototype.setRotateTransition = function(e) {
+    }, e.action.Role.prototype.setRotateTransition = function (e) {
         return e && e.length > 0 && (this._angles = e), this
-    }, e.action.Role.prototype.endRotateTransition = function() {
+    }, e.action.Role.prototype.endRotateTransition = function () {
         return this._angles.length == 0
-    }, e.action.Role.prototype.move = function(e, t) {
+    }, e.action.Role.prototype.move = function (e, t) {
         return e != null && (this.x += e), t != null && (this.y += t), this
-    }, e.action.Role.prototype.rotate = function(e) {
+    }, e.action.Role.prototype.rotate = function (e) {
         return e != null && this.setRotate(this.angle + e), this
-    }, e.action.Role.prototype.stoped = function() {
+    }, e.action.Role.prototype.stoped = function () {
         return this.svx == null
-    }, e.action.Role.prototype.getCurrent = function() {
+    }, e.action.Role.prototype.getCurrent = function () {
         return this.current * (this.getSprite().trans == e.trans.TRANS_NONE ? 1 : -1)
-    }, e.action.Sprite = function(t, n, r, i) {
+    }, e.action.Sprite = function (t, n, r, i) {
         this.frames = t || [], this.loop = n, this.current = r || 0, this.step = i || 0, this.trans = e.trans.TRANS_NONE, this.setFrame(r), this.runStep = this.getFrame().step || this.step
-    }, e.action.Sprite.prototype.setFrame = function(e) {
+    }, e.action.Sprite.prototype.setFrame = function (e) {
         return this.current = e >= this.frames.length ? this.frames.length - 1 : e > 0 ? e : 0, this.getFrame().step && (this.runStep = this.getFrame().step), this
-    }, e.action.Sprite.prototype.getFrame = function(e) {
+    }, e.action.Sprite.prototype.getFrame = function (e) {
         return this.frames[e == null ? this.current : e]
-    }, e.action.Sprite.prototype.nextFrame = function() {
-        return !this.loop && this.endFrame() ? this : (this.frames.length > 0 && (this.runStep <= 0 ? (this.loop ? (this.current++, this.current %= this.frames.length) : this.current < this.frames.length - 1 && this.current++, this.getFrame().step ? this.runStep = this.getFrame().step : this.runStep = this.step) : this.runStep--), this)
-    }, e.action.Sprite.prototype.preFrame = function() {
-        return this.frames.length > 0 && (this.runStep <= 0 ? (this.loop ? (this.current--, this.current < 0 && (this.current = this.frames.length - 1)) : this.current > 0 && this.current--, this.getFrame().step ? this.runStep = this.getFrame().step : this.runStep = this.step) : this.runStep--), this
-    }, e.action.Sprite.prototype.endFrame = function(e) {
+    }, e.action.Sprite.prototype.nextFrame = function () {
+        return !this.loop && this.endFrame() ? this : (this.frames.length > 0 && (this.runStep <= 0 ? (this.loop ? (this.current++ , this.current %= this.frames.length) : this.current < this.frames.length - 1 && this.current++ , this.getFrame().step ? this.runStep = this.getFrame().step : this.runStep = this.step) : this.runStep--), this)
+    }, e.action.Sprite.prototype.preFrame = function () {
+        return this.frames.length > 0 && (this.runStep <= 0 ? (this.loop ? (this.current-- , this.current < 0 && (this.current = this.frames.length - 1)) : this.current > 0 && this.current-- , this.getFrame().step ? this.runStep = this.getFrame().step : this.runStep = this.step) : this.runStep--), this
+    }, e.action.Sprite.prototype.endFrame = function (e) {
         var t = this.frames.length - 1;
         return e != null && e >= 0 && e <= this.frames.length - 1 && (t = e), this.current >= t && this.runStep == 0
-    }, e.action.Sprite.prototype.firstFrame = function() {
+    }, e.action.Sprite.prototype.firstFrame = function () {
         return this.current == 0 && this.runStep == 0
-    }, e.action.Sprite.prototype.setStep = function(e) {
+    }, e.action.Sprite.prototype.setStep = function (e) {
         return this.step = e || 0, this.runStep = this.getFrame().step || this.step, this
-    }, e.action.Sprite.prototype.setLoop = function(e) {
+    }, e.action.Sprite.prototype.setLoop = function (e) {
         return this.loop = e, this
     };
-    var r, i = function(e) {
+    var r, i = function (e) {
         return e.sprites.length > 0 ? e.sprites[0].frames.length > 0 && (e.sprites[0].runStep <= 0 ? (e.sprites[0].runStep = e.sprites[0].step, r = e.sprites[0].frames.shift(), e.sprites[0].frames.length == 0 && e.sprites.shift()) : (r = e.sprites[0].getFrame(), e.sprites[0].runStep--)) : r = null, r
     };
-    return e.action.Fragment = function(e) {
+    return e.action.Fragment = function (e) {
         this.sprites = e || []
-    }, e.action.Fragment.prototype.queue = function() {
+    }, e.action.Fragment.prototype.queue = function () {
         return i(this)
     }, e.action.role = e.action.Role, e.action.sprite = e.action.Sprite, e.action.fragment = e.action.Fragment, link.action
-}), define("host0", ["lib/link"], function(e) {
+}), define("host0", ["lib/link"], function (e) {
     e.asyncImage([{
         id: "host0",
         src: "images/man.png"
@@ -2147,12 +2147,12 @@
             ]
         }];
     return {
-        get: function(s, o) {
+        get: function (s, o) {
             var u = s >= 0 && i[s] ? [i[s]] : i;
             return new e.action.role([], 0, 0, 0, o ? o : t, n, r, u || i)
         }
     }
-}), define("host1", ["lib/link"], function(e) {
+}), define("host1", ["lib/link"], function (e) {
     e.asyncImage([{
         id: "host1",
         src: "images/woman.png"
@@ -2194,12 +2194,12 @@
             ]
         }];
     return {
-        get: function(s, o) {
+        get: function (s, o) {
             var u = s >= 0 && i[s] ? [i[s]] : i;
             return new e.action.role([], 0, 0, 0, o ? o : t, n, r, u || i)
         }
     }
-}), define("shine", ["lib/link"], function(e) {
+}), define("shine", ["lib/link"], function (e) {
     e.asyncImage([{
         id: "shine",
         src: "images/die.png"
@@ -2248,28 +2248,28 @@
             ]
         }];
     return {
-        get: function(s, o) {
+        get: function (s, o) {
             var u = s >= 0 && i[s] ? [i[s]] : i;
             return new e.action.role([], 0, 0, 0, o ? o : t, n, r, u || i)
         }
     }
-}), define("index", ["lib/link", "lib/action", "host0", "host1", "shine"], function(e, t, n1, n2, r) {
+}), define("index", ["lib/link", "lib/action", "host0", "host1", "shine"], function (e, t, n1, n2, r) {
     return {
-        init: function() {
+        init: function () {
             var t = Date.now(),
                 i, s, o = 640,
                 u;
-            e.canvas.screen.getTouch() ? (i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1) : (window.onresize = function() {
+            e.canvas.screen.getTouch() ? (i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1) : (window.onresize = function () {
                 i = window.innerWidth, s = window.innerHeight, e.canvas.screen.setWidth(i).setHeight(s), u = s - o >> 1
             }, window.onresize());
-            var a = function(e, t) {
-                var n = ~~ (e / 1e3 % 1 * 1e3);
-                return n == 0 ? n = "000" : n < 100 && (n += "0"), ~~ (e / 1e3) + "." + n + (t || '"')
+            var a = function (e, t) {
+                var n = ~~(e / 1e3 % 1 * 1e3);
+                return n == 0 ? n = "000" : n < 100 && (n += "0"), ~~(e / 1e3) + "." + n + (t || '"')
             };
-            e.run(function() {
+            e.run(function () {
                 var t = Date.now();
                 e.canvas.fillStyle("#FFF").fillScreen();
-                var n = ~~ (o / l.scenes.length - 60);
+                var n = ~~(o / l.scenes.length - 60);
                 if (!l.died) {
                     l.time = t - l.date;
                     for (var s = 0, f; f = l.scenes[s]; s++) {
@@ -2286,64 +2286,64 @@
                 }
                 var c = a(l.time);
                 e.canvas.fillStyle("#000").font("30px Arial").fillText(c, i - e.canvas.measureText(c).width - 20, 50), t = null
-            }).menu(function() {
+            }).menu(function () {
                 //click Event
                 e.canvas.fillStyle("#FFF").
-                fillScreen().drawImage("logo", i - 480 >> 1, u)
-                .drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 280, 480, 7)
-                .drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 540, 480, 7);
-                
-                if(e.buttonLayout.released("difficulty1")) {
+                    fillScreen().drawImage("logo", i - 480 >> 1, u)
+                    .drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 280, 480, 7)
+                    .drawImage("btns1", 0, 99, 480, 7, i - 480 >> 1, u + 540, 480, 7);
+
+                if (e.buttonLayout.released("difficulty1")) {
                     l.moduleName = "我的成绩", hideAd(), c(2);
                 }
 
-                if(e.buttonLayout.released("moregame")) {
-                    location.href="http://bbs.heirui.cn";
+                if (e.buttonLayout.released("moregame")) {
+                    location.href = "http://uinote.com/html-game/";
                 }
 
-                if(e.buttonLayout.released("difficulty2")) {
+                if (e.buttonLayout.released("difficulty2")) {
                     l.moduleName = "噩梦模式", c(3);
                 }
 
-                if(e.buttonLayout.released("difficulty3")) {
+                if (e.buttonLayout.released("difficulty3")) {
                     l.moduleName = "地狱模式", c(4);
                 }
 
-                if(e.buttonLayout.released("difficulty4")) {
+                if (e.buttonLayout.released("difficulty4")) {
                     l.moduleName = "炼狱模式", c(5);
                 }
 
-                if(e.buttonLayout.released("shareButton")) {
+                if (e.buttonLayout.released("shareButton")) {
                     shareGame();
                 }
 
-            }).zone(function() {
+            }).zone(function () {
                 e.canvas.fillStyle("#F00").
-                fillScreen().
-                fillStyle("#FFF").
-                drawString(l.moduleName, 0, u + 110, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑")
-                .drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 140, 480, 7)
-                .drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 555, 480, 7)
-                .fillStyle("#000")
-                .drawString(a(l.time, "秒"), 0, u + 340, e.graphics.VCENTER, !1, null, null, "60px 微软雅黑")
-                .fillStyle("#000")
-                .drawString("最佳:" + a(l.bestTime, "秒"), 0, u + 400, e.graphics.VCENTER, !1, null, null, "30px 微软雅黑"), l.time > l.bestTime && e.canvas.fillStyle("#FF0").drawString("新纪录", 0, u + 240, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑"), e.buttonLayout.released("return") ? f() : e.buttonLayout.released("wxshare") && shareGame(l.time / 1000);
-            }).events.mouseDown(function(e, t, n) {
+                    fillScreen().
+                    fillStyle("#FFF").
+                    drawString(l.moduleName, 0, u + 110, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑")
+                    .drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 140, 480, 7)
+                    .drawImage("btns1", 0, 106, 480, 7, i - 480 >> 1, u + 555, 480, 7)
+                    .fillStyle("#000")
+                    .drawString(a(l.time, "秒"), 0, u + 340, e.graphics.VCENTER, !1, null, null, "60px 微软雅黑")
+                    .fillStyle("#000")
+                    .drawString("最佳:" + a(l.bestTime, "秒"), 0, u + 400, e.graphics.VCENTER, !1, null, null, "30px 微软雅黑"), l.time > l.bestTime && e.canvas.fillStyle("#FF0").drawString("新纪录", 0, u + 240, e.graphics.VCENTER, !1, null, null, "50px 微软雅黑"), e.buttonLayout.released("return") ? f() : e.buttonLayout.released("wxshare") && shareGame(l.time / 1000);
+            }).events.mouseDown(function (e, t, n) {
                 if (l.died)
                     return !1;
                 for (var r = 0, i; i = l.scenes[r]; r++)
                     i.touchStart(t, n)
-            }).touchStart(function(e, t, n) {
+            }).touchStart(function (e, t, n) {
                 if (l.died)
                     return !1;
                 for (var r = 0, i; i = l.scenes[r]; r++)
                     i.touchStart(t, n)
             });
-            var f = function() {
+            var f = function () {
                 showAd();
                 e.buttonLayout.clear();
                 var buttonX = 360;
-                if(product == 'baidubrowser') {
+                if (product == 'baidubrowser') {
                     buttonX = 320;
                     e.buttonLayout.create({
                         id: "shareButton",
@@ -2408,78 +2408,78 @@
             };
             f();
             var l = {
-                    moduleName: "",
-                    module: 0,
-                    time: 0,
-                    bestTime: 0,
-                    date: null,
-                    died: !1,
-                    dieTimeout: 1e3,
-                    dieDate: null,
-                    scenes: [],
-                    shine: null,
-                    Scene: e.extend(function(t) {
-                        var n = t%2 ? n2 : n1;
-                        this.id = t, this.x = 0, this.baseY = 0, this.width = 0, this.height = 0, this.host = n.get().setStep(2), this.hostDied = !1, this.boxes = [], this.displayDate = Date.now(), this.displayTimeout = e.comm.getRandom(1e3, 2e3)
-                    }, null, {
-                        render: function() {
-                            e.canvas.fillStyle("#000").fillRect(this.x, this.baseY - 5, this.width, 5);
-                            for (var t = this.boxes.length - 1, n; n = this.boxes[t]; t--)
-                                e.canvas.fillRect(n.x, n.y, n.width, n.height);
-                            return this.host.render(), this
-                        },
-                        action: function(t, n, r, i, s) {
-                            this.x = t, this.baseY = n, this.width = r, this.height = i;
-                            if (!this.hostDied) {
-                                this.host.endPath() && this.host.mark(this.x + 100, this.baseY - 5);
-                                var o = Date.now();
-                                if (o - this.displayDate >= this.displayTimeout) {
-                                    this.displayDate = o;
-                                    var u = e.comm.getRandom(5, 30),
-                                        a = e.comm.getRandom(10, 50);
-                                    this.boxes.unshift({
-                                        x: this.width,
-                                        y: 0,
-                                        width: u,
-                                        height: a
-                                    }), this.displayTimeout = e.comm.getRandom(1e3, 3e3), u = a = null
-                                }
-                                for (var f = this.boxes.length - 1, l; l = this.boxes[f]; f--)
-                                    l.x += s, l.y = this.baseY - 5 - l.height, this.host.collisionInput(l.x, l.y, l.width, l.height, "bR") && (this.hostDied = !0, this.host.clearPath()), (l.x <= -l.width || l.x >= this.width) && this.boxes.splice(f, 1);
-                                o = null
+                moduleName: "",
+                module: 0,
+                time: 0,
+                bestTime: 0,
+                date: null,
+                died: !1,
+                dieTimeout: 1e3,
+                dieDate: null,
+                scenes: [],
+                shine: null,
+                Scene: e.extend(function (t) {
+                    var n = t % 2 ? n2 : n1;
+                    this.id = t, this.x = 0, this.baseY = 0, this.width = 0, this.height = 0, this.host = n.get().setStep(2), this.hostDied = !1, this.boxes = [], this.displayDate = Date.now(), this.displayTimeout = e.comm.getRandom(1e3, 2e3)
+                }, null, {
+                    render: function () {
+                        e.canvas.fillStyle("#000").fillRect(this.x, this.baseY - 5, this.width, 5);
+                        for (var t = this.boxes.length - 1, n; n = this.boxes[t]; t--)
+                            e.canvas.fillRect(n.x, n.y, n.width, n.height);
+                        return this.host.render(), this
+                    },
+                    action: function (t, n, r, i, s) {
+                        this.x = t, this.baseY = n, this.width = r, this.height = i;
+                        if (!this.hostDied) {
+                            this.host.endPath() && this.host.mark(this.x + 100, this.baseY - 5);
+                            var o = Date.now();
+                            if (o - this.displayDate >= this.displayTimeout) {
+                                this.displayDate = o;
+                                var u = e.comm.getRandom(5, 30),
+                                    a = e.comm.getRandom(10, 50);
+                                this.boxes.unshift({
+                                    x: this.width,
+                                    y: 0,
+                                    width: u,
+                                    height: a
+                                }), this.displayTimeout = e.comm.getRandom(1e3, 3e3), u = a = null
                             }
-                            return this.host.action(), this
-                        },
-                        touchStart: function(t, n) {
-                            return this.host.endPath() ? (e.comm.collision(t, n, 1, 1, this.x, this.baseY - this.height, this.width, this.height) && this.host.setPath([
-                                [0, -20],
-                                [0, -20],
-                                [0, -20],
-                                [0, -10],
-                                [0, -10],
-                                [0, -10],
-                                [0, -5],
-                                [0, -5],
-                                [0, -5],
-                                [0, 5],
-                                [0, 5],
-                                [0, 5],
-                                [0, 10],
-                                [0, 10],
-                                [0, 10],
-                                [0, 20],
-                                [0, 20],
-                                [0, 20]
-                            ]), this) : this
+                            for (var f = this.boxes.length - 1, l; l = this.boxes[f]; f--)
+                                l.x += s, l.y = this.baseY - 5 - l.height, this.host.collisionInput(l.x, l.y, l.width, l.height, "bR") && (this.hostDied = !0, this.host.clearPath()), (l.x <= -l.width || l.x >= this.width) && this.boxes.splice(f, 1);
+                            o = null
                         }
-                    })
-                },
-                c = function(t) {
+                        return this.host.action(), this
+                    },
+                    touchStart: function (t, n) {
+                        return this.host.endPath() ? (e.comm.collision(t, n, 1, 1, this.x, this.baseY - this.height, this.width, this.height) && this.host.setPath([
+                            [0, -20],
+                            [0, -20],
+                            [0, -20],
+                            [0, -10],
+                            [0, -10],
+                            [0, -10],
+                            [0, -5],
+                            [0, -5],
+                            [0, -5],
+                            [0, 5],
+                            [0, 5],
+                            [0, 5],
+                            [0, 10],
+                            [0, 10],
+                            [0, 10],
+                            [0, 20],
+                            [0, 20],
+                            [0, 20]
+                        ]), this) : this
+                    }
+                })
+            },
+                c = function (t) {
                     e.buttonLayout.clear().base().gameFlow.run(), l.died = !1, l.scenes = [], l.time = 0, l.date = Date.now(), l.shine = null, l.module = t;
                     for (var n = 0; n < t; n++)
                         l.scenes.push(new l.Scene(n))
                 },
-                h = function() {
+                h = function () {
                     var t = i - 480 >> 1;
                     var gameTime = l.time / 1000;
                     if (l.time > 10000) {
@@ -2488,7 +2488,7 @@
                     document.title = "我帮牛郎坚持了" + gameTime + "秒，织女没见到…你能超过我吗？";
                     e.buttonLayout.clear();
                     var buttonX = 190;
-                    if(product == 'baidubrowser') {
+                    if (product == 'baidubrowser') {
                         buttonX = 100;
                         e.buttonLayout.create({
                             id: "shareGame",
@@ -2567,18 +2567,18 @@
     }
 }), require.config({
     baseUrl: "js"
-}), require(["lib/link", "index"], function(e, t) {
+}), require(["lib/link", "index"], function (e, t) {
     e.init(window.innerWidth, window.innerHeight).pushImage([{
         id: "logo",
         src: "images/logo.jpg"
     }, {
         id: "btns1",
         src: "images/btn.png"
-    }], function(e, t, n) {}).initAudio([{
+    }], function (e, t, n) { }).initAudio([{
         id: "1",
         src: "sound/1.mp3",
         preload: !0
-    }]).loadingCallBack(function(e, t) {}).main(function() {
+    }]).loadingCallBack(function (e, t) { }).main(function () {
         t.init()
     })
-}), define("main", function() {});
+}), define("main", function () { });

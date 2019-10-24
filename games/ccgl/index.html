@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,15 +20,15 @@
         var result;
         var result_message;
         var result_messages;
-        $(document).ready(function() {
+        $(document).ready(function () {
             result = parseInt(getParameter("result"));
-            $("#beginG").click(function() {
+            $("#beginG").click(function () {
                 $("#toptop").hide();
                 $("#toptops").hide();
                 $("#firstQ").removeAttr("class");
                 $("#firstQ").attr("class", "question current");
             });
-            $(".options ul li").click(function() {
+            $(".options ul li").click(function () {
                 var node = $(this).parent().parent().parent();
                 var next_node = $(node).next();
 
@@ -41,7 +41,7 @@
                 }
             });
 
-            $(".prev a").click(function() {
+            $(".prev a").click(function () {
                 var node = $(this).parent().parent();
                 var prev_node = $(node).prev();
 
@@ -108,11 +108,12 @@
             }
 
         });
-        var mask = function() {
-                document.getElementById('sharediv').style.display = '';
-            }
-            //resultPath='http://game.9g.com/cscg/game.html?result='+resrand;
-        resultPath = 'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c' + resrand;
+        var mask = function () {
+            document.getElementById('sharediv').style.display = '';
+        }
+        resultPath =
+            'https://mp.weixin.qq.com/s?__biz=MzUzOTY4Njc1MQ==&mid=2247483654&idx=1&sn=d078ec9b801fb071f0c5053c9bb8215c' +
+            resrand;
         var mebtnopenurl = 'http://uinote.com/html-game/games/';
         window.shareData = {
             "imgUrl": "http://uinote.com/html-game/icon/cggl.jpg",
@@ -132,18 +133,18 @@
         }
         document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
-            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
                 WeixinJSBridge.invoke('sendAppMessage', {
                     "img_url": window.shareData.imgUrl,
                     "link": window.shareData.timeLineLink,
                     "desc": window.shareData.tContent,
                     "title": window.shareData.tTitle
-                }, function(res) {
+                }, function (res) {
                     document.location.href = resultPath;
                 })
             });
 
-            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+            WeixinJSBridge.on('menu:share:timeline', function (argv) {
                 WeixinJSBridge.invoke('shareTimeline', {
                     "img_url": window.shareData.imgUrl,
                     "img_width": "640",
@@ -151,7 +152,7 @@
                     "link": window.shareData.timeLineLink,
                     "desc": window.shareData.tContent,
                     "title": window.shareData.tTitle
-                }, function(res) {
+                }, function (res) {
                     document.location.href = resultPath;
                 });
             });
@@ -166,18 +167,18 @@
             margin: 0 auto;
             height: 100%;
         }
-        
+
         #ad {
             margin: 0 auto;
             text-align: center;
             overflow: hidden;
         }
-        
+
         .title {
             margin: 0 auto;
             width: 80%;
         }
-        
+
         .title h2 {
             background: #90ab8b;
             color: #fff;
@@ -190,7 +191,7 @@
             margin-bottom: 0;
             margin-top: 10px;
         }
-        
+
         .title-sub {
             padding: 10px 20px;
             color: #fff;
@@ -205,11 +206,11 @@
             filter: Alpha(opacity=20);
             font-size: 24px;
         }
-        
+
         .aside {
             padding: 50px 20px;
         }
-        
+
         .question {
             width: 80%;
             margin: 0 auto;
@@ -217,32 +218,32 @@
             display: none;
             font-size: 24px;
         }
-        
+
         .box {
             width: 80%;
             margin: 20px auto;
             overflow: hidden;
             display: none;
         }
-        
+
         .box ul {
             padding: 0;
             margin: 20px auto 0;
             width: 138px;
             overflow: hidden;
         }
-        
+
         .box li {
             padding: 5px 15px;
             list-style-type: none;
         }
-        
+
         .box li div {
             padding-left: 20px;
             padding-right: 20px;
             font-size: 24px;
         }
-        
+
         .box li {
             border: 1px solid #8760a3;
             border-bottom-left-radius: 10px;
@@ -255,44 +256,44 @@
             background: #8e63a7;
             filter: Alpha(opacity=60);
         }
-        
+
         .box li {
             padding: 5px 0;
         }
-        
+
         .box li.selected {
             background: #cf6271 !important;
         }
-        
+
         .question-title {
             text-align: center;
             color: #fff;
         }
-        
+
         .question:first-child,
         .question.current,
         .box.current {
             display: block;
         }
-        
+
         .result {
             display: none;
         }
-        
+
         .options ul {
             padding: 0;
         }
-        
+
         .options li {
             margin: 20px 0;
             padding: 5px 15px;
             list-style-type: none;
         }
-        
+
         .options li div {
             padding-left: 20px;
         }
-        
+
         .options.button li {
             border: 1px solid #8760a3;
             border-bottom-left-radius: 10px;
@@ -305,15 +306,15 @@
             background: #8e63a7;
             filter: Alpha(opacity=60);
         }
-        
+
         .options.button li {
             padding: 5px 0;
         }
-        
+
         .options li.selected {
             background: #cf6271 !important;
         }
-        
+
         .prev {
             margin-top: 0;
             font-weight: 300;
@@ -321,12 +322,12 @@
             float: right;
             padding-bottom: 20px;
         }
-        
+
         .prev a:link {
             color: #fff;
             font-size: 20px;
         }
-        
+
         .tools-button {
             padding: 10px 0;
             color: #fff;
@@ -344,25 +345,25 @@
             margin-top: 30px;
             margin-bottom: 30px;
         }
-        
+
         .share {
             background: rgba(49, 126, 172, 0.6) none repeat scroll 0 0;
             background: #317eac;
             filter: Alpha(opacity=60);
         }
-        
+
         #tip {
             display: none;
             position: absolute;
             top: 0;
             left: 0;
         }
-        
+
         #tip img {
             width: 100%;
             display: inline;
         }
-        
+
         #mask {
             position: absolute;
             top: 0;
@@ -374,7 +375,7 @@
             -moz-opacity: 0.9;
             opacity: 0.9;
         }
-        
+
         .game {
             display: inlineblock;
             margin: 5px 0px;
@@ -404,12 +405,15 @@
                 <div>开始测试</div>
             </li>
         </ul>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:10px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:10px;">更多测试</a>
 
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question " id="firstQ">
         <div class="question-title">
@@ -431,12 +435,15 @@
         <div class="prev">
             <!--{<a href="javascript:void(0)">返回上一题</a>}-->
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:20px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:20px;">更多测试</a>
 
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -458,13 +465,17 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
-        <a style="font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:20px;text-decoration:none" href="http://uinote.com/html-game/games/gzh">狙击手专用眼力测试，你能闯到第几关？</a> --&gt;
+        <a style="font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:20px;text-decoration:none"
+            href="http://uinote.com/html-game/games/gzh">狙击手专用眼力测试，你能闯到第几关？</a> --&gt;
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -486,11 +497,14 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -512,11 +526,14 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -538,12 +555,15 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -565,12 +585,15 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:60px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:60px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -592,12 +615,15 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -619,12 +645,15 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -646,11 +675,14 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
     <div class="question ">
         <div class="question-title">
@@ -672,11 +704,14 @@
         <div class="prev">
             <a href="javascript:void(0)">返回上一题</a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
 
     <div class="question ">
@@ -691,13 +726,17 @@
             </ul>
         </div>
         <div class="title-sub">
-            <a href="http://uinote.com/html-game/games/cggl/" style="text-decoration:none"><button style="font-size:25px">重新测试</button></a>
+            <a href="http://uinote.com/html-game/games/cggl/" style="text-decoration:none"><button
+                    style="font-size:25px">重新测试</button></a>
         </div>
-        <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+        <a href="#" onclick="clickMore();"
+            style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
-        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+        <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                src="images/more.jpg" width="100%"></a>
 
-        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+        <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+            href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
     </div>
 
     <div class="result">
@@ -709,14 +748,19 @@
 
             </div>
             <div class="title-sub">
-                <a href="http://uinote.com/html-game/games/cggl/" style="text-decoration:none"><button style="font-size:25px">测测我的出轨率</button></a>&nbsp;&nbsp;&nbsp;<a href="#" onclick="clickMore();" style="text-decoration:none"><button style="font-size:25px">更多测试</button></a>
+                <a href="http://uinote.com/html-game/games/cggl/" style="text-decoration:none"><button
+                        style="font-size:25px">测测我的出轨率</button></a>&nbsp;&nbsp;&nbsp;<a href="#" onclick="clickMore();"
+                    style="text-decoration:none"><button style="font-size:25px">更多测试</button></a>
             </div>
-            <a href="#" onclick="clickMore();" style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
+            <a href="#" onclick="clickMore();"
+                style="text-decoration:none;font-size: 25px;color: #f00;font-weight: bold;display: block;margin-top:30px;">更多测试</a>
 
 
-            <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img src="images/more.jpg" width="100%"></a>
+            <a href="#" onclick="clickMore();" style="display: block;margin-top:80px;text-decoration:none"><img
+                    src="images/more.jpg" width="100%"></a>
 
-            <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none" href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
+            <a style="font-size: 30px;color: #f00;font-weight: bold;display: block;margin-top:35px;text-decoration:none"
+                href="#" onclick="clickMore();">猛戳我，奥巴马和金正恩都惊呆了！！！</a>
         </div>
 
         <!-- <div class="share tools-button" onclick="mask();">分享</div> -->
@@ -727,7 +771,8 @@
         </div>
     </div>
     <div id="sharediv" style="display: none">
-        <img src="images/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: " ontouchstart="document.getElementById('sharediv').style.display='none';" width="100%">
+        <img src="images/share.png" style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+            ontouchstart="document.getElementById('sharediv').style.display='none';" width="100%">
     </div>
 
 </body>

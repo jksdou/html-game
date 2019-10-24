@@ -1,28 +1,15 @@
-﻿<html>
+<html>
 
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-    <link rel="prerender" href="./img/start_page.jpg?2">
-    <link rel="prerender" href="./img/game_bg.jpg?1">
-    <link rel="prerender" href="./img/score_bg.png?3">
-    <link rel="prerender" href="./img/lovers_0.png">
-    <link rel="prerender" href="./img/lovers_1.png">
-    <link rel="prerender" href="./img/lovers_2.png">
-    <link rel="prerender" href="./img/lovers_3.png">
-    <link rel="prerender" href="./img/blood.png">
-    <link rel="prerender" href="./img/single_0.png">
-    <link rel="prerender" href="./img/single_1.png">
-    <link rel="prerender" href="./img/single_2.png">
-    <link rel="prerender" href="./img/single_3.png">
-    <link rel="prerender" href="./img/time_over.png">
-    <link rel="prerender" href="./img/share.png?2">
-    <link rel="prerender" href="./img/music.mp3">
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        name="viewport">
+    <script type="text/javascript" src="img/jquery.min.js"></script>
     <script type="text/javascript" src="createjs.js"></script>
     <script type="text/javascript">
         var isDesktop = navigator['userAgent'].match(/(ipad|iphone|ipod|android|windows phone)/i) ? false : true;
-        var fontunit = isDesktop ? 20 : ((window.innerWidth > window.innerHeight ? window.innerHeight : window.innerWidth) / 320) * 10;
+        var fontunit = isDesktop ? 20 : ((window.innerWidth > window.innerHeight ? window.innerHeight : window
+            .innerWidth) / 320) * 10;
         document.write('<style type="text/css">' +
             'html,body {font-size:' + (fontunit < 30 ? fontunit : '30') + 'px;}' +
             (isDesktop ? '#welcome,#GameLayerBG,#GameScoreLayer.SHADE{position: absolute;}' :
@@ -38,31 +25,31 @@
             margin: 0 auto;
             position: relative;
         }
-        
+
         @media screen and (min-width:640px) {
             body {
                 font-size: 36px;
             }
         }
-        
+
         @media screen and (min-width:540px) and (max-width:639px) {
             body {
                 font-size: 32px;
             }
         }
-        
+
         @media screen and (min-width:480px) and (max-width:539px) {
             body {
                 font-size: 28px;
             }
         }
-        
+
         @media screen and (min-width:320px) and (max-width:479px) {
             body {
                 font-size: 20px;
             }
         }
-        
+
         #ready-btn,
         .loading {
             height: 12.5%;
@@ -84,7 +71,7 @@
             -ms-flex-pack: center;
             letter-spacing: 6px;
         }
-        
+
         .SHADE {
             top: 0;
             left: 0;
@@ -93,13 +80,13 @@
             bottom: 0;
             z-index: 11;
         }
-        
+
         #welcome {
             background: url(./img/start_page.jpg?2) no-repeat;
             overflow: hidden;
             background-size: 100% 100%;
         }
-        
+
         .welcome-bg {
             position: absolute;
             top: 0;
@@ -107,7 +94,7 @@
             right: 0;
             bottom: 0;
         }
-        
+
         #GameLayerBG {
             top: 0;
             left: 0;
@@ -117,7 +104,7 @@
             background: url(./img/game_bg.jpg?1) no-repeat;
             background-size: 100% 100%;
         }
-        
+
         .GameLayer {
             position: absolute;
             bottom: 0;
@@ -125,7 +112,7 @@
             height: 100%;
             width: 91%;
         }
-        
+
         .block {
             position: absolute;
             background-repeat: no-repeat;
@@ -133,87 +120,91 @@
             background-size: auto 90%;
             background-image: none;
         }
-        
+
         .t0 {
             background-image: url(./img/lovers_0.png);
         }
-        
+
         .t1 {
             background-image: url(./img/lovers_1.png);
         }
-        
+
         .t2 {
             background-image: url(./img/lovers_2.png);
         }
-        
+
         .t3 {
             background-image: url(./img/lovers_3.png);
         }
-        
+
         .tt0 {
             background-image: url(./img/blood.png);
             background-size: 100% auto;
         }
-        
+
         .s0 {
             background-image: url(./img/single_0.png);
         }
-        
+
         .s1 {
             background-image: url(./img/single_1.png);
         }
-        
+
         .s2 {
             background-image: url(./img/single_2.png);
         }
-        
+
         .s3 {
             background-image: url(./img/single_3.png);
         }
-        
+
         @-ms-keyframes flash {
             0% {
                 opacity: 1;
             }
+
             50% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
         }
-        
+
         @-webkit-keyframes flash {
             0% {
                 opacity: 1;
             }
+
             50% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
         }
-        
+
         .flash {
             -webkit-animation: flash .2s 3;
             animation: flash .2s 3;
         }
-        
+
         .bad {
             -webkit-animation: flash .2s 3;
             animation: flash .2s 3;
             background-image: url(./img/blood.png);
             background-size: 100% auto;
         }
-        
+
         * {
             -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
             -ms-tap-highlight-color: rgba(0, 0, 0, 0);
             tap-highlight-color: rgba(0, 0, 0, 0);
             -ms-user-select: none;
         }
-        
+
         #GameScoreLayer {
             background-position: center .5em;
             background-size: auto 4em;
@@ -224,7 +215,7 @@
             background: url(./img/score_bg.png?3) no-repeat #191a1e;
             background-size: 100% 100%;
         }
-        
+
         #GameScoreLayer-btn {
             position: absolute;
             bottom: 5%;
@@ -234,7 +225,7 @@
             color: #b67f76;
             overflow: hidden;
         }
-        
+
         .btn {
             display: box;
             display: -webkit-box;
@@ -252,15 +243,15 @@
             font-weight: normal;
             cursor: pointer;
         }
-        
+
         .btn:nth-child(2) {
             float: right;
         }
-        
+
         #landscape {
             display: none;
         }
-        
+
         #GameScoreLayer-adv {
             position: absolute;
             bottom: 0;
@@ -270,14 +261,14 @@
             color: #b67f76;
             overflow: hidden;
         }
-        
+
         #gameBody {
             position: relative;
             width: 100%;
             margin: 0 auto;
             height: 100%;
         }
-        
+
         #share-wx {
             background: #191a1e;
             position: absolute;
@@ -288,11 +279,11 @@
             z-index: 10000;
             display: none;
         }
-        
+
         #share-wx-img {
             width: 100%;
         }
-        
+
         #scoreTotal {
             max-width: 640px;
             padding-left: 4%;
@@ -307,7 +298,7 @@
             box-sizing: border-box;
             display: none;
         }
-        
+
         #titleBg {
             float: left;
             margin-right: 20px;
@@ -315,7 +306,7 @@
             z-index: 3;
             margin-top: 5px;
         }
-        
+
         #number,
         #GameTimeLayer {
             line-height: 50px;
@@ -323,24 +314,24 @@
             color: #850101;
             height: 100%;
         }
-        
+
         #number {
             float: left;
         }
-        
+
         #GameTimeLayer {
             text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
             position: absolute;
             right: 85px;
         }
-        
+
         #photo {
             height: 100%;
             float: right;
             border: none;
             display: block;
         }
-        
+
         #GameScoreLayer-text {
             color: #191a1e;
             text-align: center;
@@ -349,7 +340,7 @@
             padding: 20px 5%;
             display: none;
         }
-        
+
         #scoreLoading {
             height: 232px;
             line-height: 232px;
@@ -358,36 +349,36 @@
             letter-spacing: 6px;
             color: #b67f76;
         }
-        
+
         #GameScoreLayer-text p {
             padding: 0;
             margin: 0;
         }
-        
+
         #GameScoreLayer-text .text0 {
             text-align: left;
         }
-        
+
         #GameScoreLayer-text .text1 {
             position: relative;
             width: 100%;
         }
-        
+
         #GameScoreLayer-text .text2 {
             font-size: 30px;
         }
-        
+
         #scoreAll {
             color: #b12813;
             font-size: 74px;
         }
-        
+
         .positonP {
             position: absolute;
             right: 0;
             bottom: 16px;
         }
-        
+
         #timeOver {
             width: 0%;
             position: absolute;
@@ -435,7 +426,8 @@
             }
             body = document.getElementById('gameBody') || document.body;
             body.style.height = window.innerHeight + 'px';
-            transform = typeof(body.style.webkitTransform) != 'undefined' ? 'webkitTransform' : (typeof(body.style.msTransform) != 'undefined' ? 'msTransform' : 'transform');
+            transform = typeof (body.style.webkitTransform) != 'undefined' ? 'webkitTransform' : (typeof (body.style
+                .msTransform) != 'undefined' ? 'msTransform' : 'transform');
             transitionDuration = transform.replace(/ransform/g, 'ransitionDuration');
 
             GameTimeLayer = document.getElementById('GameTimeLayer');
@@ -454,12 +446,12 @@
 
             var rtnMsg = "true";
 
-            setTimeout(function() {
+            setTimeout(function () {
                 if (rtnMsg) {
                     var btn = document.getElementById('ready-btn');
                     btn.className = 'btn';
                     btn.innerHTML = '点击开始游戏'
-                    btn.onclick = function() {
+                    btn.onclick = function () {
                         closeWelcomeLayer();
                     }
                 }
@@ -548,7 +540,7 @@
         function gameOver() {
             _gameOver = true;
             clearInterval(_gameTime);
-            setTimeout(function() {
+            setTimeout(function () {
                 GameLayerBG.className = '';
                 showGameScoreLayer();
             }, 1000);
@@ -601,14 +593,16 @@
                         var x = j % 4;
                         if (random1 != x) {
                             var endNum = Math.floor(j / 4) * 4 + random1;
-                            box.children[endNum].className = box.children[endNum].className + ' s' + Math.floor((Math.random() * 1234) % 4);
+                            box.children[endNum].className = box.children[endNum].className + ' s' + Math.floor((Math
+                                .random() * 1234) % 4);
                         }
                     } else {
                         if (j > 7) {
                             var x = j % 4;
                             if (random1 != x) {
                                 var endNum = Math.floor(j / 4) * 4 + random1;
-                                box.children[endNum].className = box.children[endNum].className + ' s' + Math.floor((Math.random() * 1234) % 4);
+                                box.children[endNum].className = box.children[endNum].className + ' s' + Math.floor((
+                                    Math.random() * 1234) % 4);
                             }
                         }
                     }
@@ -623,9 +617,9 @@
                 box.style.webkitTransitionDuration = '0ms';
                 box.style.display = 'none';
                 box.y = -blockSize * (Math.floor(box.children.length / 4) + (offset || 0)) * loop;
-                setTimeout(function() {
+                setTimeout(function () {
                     box.style[transform] = 'translate3D(0,' + box.y + 'px,0)';
-                    setTimeout(function() {
+                    setTimeout(function () {
                         box.style.display = 'block';
                     }, 100);
                 }, 200);
@@ -661,7 +655,9 @@
             if (y > touchArea[0] || y < touchArea[1]) {
                 return false;
             }
-            if ((p.id == tar.id && tar.notEmpty) || (p.cell == 0 && x < blockSize + cha) || (p.cell == 1 && x > blockSize + cha && x < 2 * blockSize + cha) || (p.cell == 2 && x > 2 * blockSize + cha && x < 3 * blockSize + cha) || (p.cell == 3 && x > 3 * blockSize + cha)) {
+            if ((p.id == tar.id && tar.notEmpty) || (p.cell == 0 && x < blockSize + cha) || (p.cell == 1 && x >
+                    blockSize + cha && x < 2 * blockSize + cha) || (p.cell == 2 && x > 2 * blockSize + cha && x < 3 *
+                    blockSize + cha) || (p.cell == 3 && x > 3 * blockSize + cha)) {
                 if (!_gameStart) {
                     gameStart();
                 }
@@ -687,7 +683,8 @@
                 html += '<div id="' + id + '" class="GameLayer">';
                 for (var j = 0; j < 10; j++) {
                     for (var k = 0; k < 4; k++) {
-                        html += '<div id="' + id + '-' + (k + j * 4) + '" num="' + (k + j * 4) + '" class="block"></div>';
+                        html += '<div id="' + id + '-' + (k + j * 4) + '" num="' + (k + j * 4) +
+                            '" class="block"></div>';
                     }
                 }
                 html += '</div>';
@@ -742,13 +739,17 @@
 
         function shareText(data, score) {
             if (score <= 50)
-                return "<p class='text0'>太少了太少了！隔壁老奶奶手一抖都比你多！你只摁死了</p><p class='text1'><span id='scoreAll'>" + score + "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
+                return "<p class='text0'>太少了太少了！隔壁老奶奶手一抖都比你多！你只摁死了</p><p class='text1'><span id='scoreAll'>" + score +
+                    "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
             else if (score <= 100)
-                return "<p class='text0'>手指蛮厉害啊，不过这就是你所有的撸劲了吗？！你摁死了</p><p class='text1'><span id='scoreAll'>" + score + "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
+                return "<p class='text0'>手指蛮厉害啊，不过这就是你所有的撸劲了吗？！你摁死了</p><p class='text1'><span id='scoreAll'>" + score +
+                    "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
             else if (score <= 150)
-                return "<p class='text0'>单身贱圣的狂欢，让我们在七夕夜把所有情侣的温床都摁塌吧！你居然摁死了</p><p class='text1'><span id='scoreAll'>" + score + "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
+                return "<p class='text0'>单身贱圣的狂欢，让我们在七夕夜把所有情侣的温床都摁塌吧！你居然摁死了</p><p class='text1'><span id='scoreAll'>" +
+                    score + "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
             else
-                return "<p class='text0'>传奇！什么最牛逼？单身最牛逼！你TMD摁死了</p><p class='text1'><span id='scoreAll'>" + score + "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
+                return "<p class='text0'>传奇！什么最牛逼？单身最牛逼！你TMD摁死了</p><p class='text1'><span id='scoreAll'>" + score +
+                    "</span><span class='positonP'>对情侣</span></p><p class='text2'></p>";
         }
 
         function toStr(obj) {
@@ -767,20 +768,25 @@
                         var date = new Date();
                         date.setTime(date.getTime() + 864e5 * time), time = date.toGMTString();
                     }
-                    return document.cookie = name + "=" + escape(toStr(value)) + (time ? "; expires=" + time + (arguments[3] ? "; domain=" + arguments[3] + (arguments[4] ? "; path=" + arguments[4] + (arguments[5] ? "; secure" : "") : "") : "") : ""), !0;
+                    return document.cookie = name + "=" + escape(toStr(value)) + (time ? "; expires=" + time + (
+                        arguments[3] ? "; domain=" + arguments[3] + (arguments[4] ? "; path=" + arguments[4] + (
+                            arguments[5] ? "; secure" : "") : "") : "") : ""), !0;
                 }
-                return value = document.cookie.match("(?:^|;)\\s*" + name.replace(/([-.*+?^${}()|[\]\/\\])/g, "\\$1") + "=([^;]*)"), value = value && "string" == typeof value[1] ? unescape(value[1]) : !1, (/^(\{|\[).+\}|\]$/.test(value) || /^[0-9]+$/g.test(value)) && eval("value=" + value), value;
+                return value = document.cookie.match("(?:^|;)\\s*" + name.replace(/([-.*+?^${}()|[\]\/\\])/g, "\\$1") +
+                    "=([^;]*)"), value = value && "string" == typeof value[1] ? unescape(value[1]) : !1, (
+                    /^(\{|\[).+\}|\]$/.test(value) || /^[0-9]+$/g.test(value)) && eval("value=" + value), value;
             }
             var data = {};
             value = document.cookie.replace(/\s/g, "").split(";");
-            for (var i = 0; value.length > i; i++) name = value[i].split("="), name[1] && (data[name[0]] = unescape(name[1]));
+            for (var i = 0; value.length > i; i++) name = value[i].split("="), name[1] && (data[name[0]] = unescape(
+                name[1]));
             return data;
         }
         document.write(createGameLayer());
 
         function share() {
             document.getElementById('share-wx').style.display = 'block';
-            document.getElementById('share-wx').onclick = function() {
+            document.getElementById('share-wx').onclick = function () {
                 this.style.display = 'none';
             };
         }
@@ -795,18 +801,18 @@
 
         document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 
-            WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+            WeixinJSBridge.on('menu:share:appmessage', function (argv) {
                 WeixinJSBridge.invoke('sendAppMessage', {
                     "img_url": window.shareData.imgUrl,
                     "link": window.shareData.timeLineLink,
                     "desc": window.shareData.tContent,
                     "title": window.shareData.tTitle
-                }, function(res) {
+                }, function (res) {
                     document.location.href = mebtnopenurl;
                 })
             });
 
-            WeixinJSBridge.on('menu:share:timeline', function(argv) {
+            WeixinJSBridge.on('menu:share:timeline', function (argv) {
                 WeixinJSBridge.invoke('shareTimeline', {
                     "img_url": window.shareData.imgUrl,
                     "img_width": "120",
@@ -814,7 +820,7 @@
                     "link": window.shareData.timeLineLink,
                     "desc": window.shareData.tContent,
                     "title": window.shareData.tTitle
-                }, function(res) {
+                }, function (res) {
                     document.location.href = mebtnopenurl;
                 });
             });
@@ -826,11 +832,12 @@
         <div id='scoreLoading'>加载中...</div>
         <div id="GameScoreLayer-btn">
             <div class="btn">
-                <a onclick="javascript:replayBtn()" style="color:yellow; font-size:24; z-index:99999">再来一次</a><br/><br/>
+                <a onclick="javascript:replayBtn()"
+                    style="color:yellow; font-size:24; z-index:99999">再来一次</a><br /><br />
                 <a onclick="javascript:more()" style="color:yellow; font-size:24; z-index:99999">更多游戏</a>
             </div>
             <div class="btn">
-                <a onClick="javascript:share()" style="color:yellow; font-size:24; z-index:99999">分享好友</a><br/><br/>
+                <a onClick="javascript:share()" style="color:yellow; font-size:24; z-index:99999">分享好友</a><br /><br />
                 <a onClick="javascript:about()" style="color:yellow; font-size:24; z-index:99999">关注我们</a>
             </div>
         </div>
@@ -838,7 +845,8 @@
             <!--广告-->
         </div>
     </div>
-    <div id='scoreTotal'><img src='./img/title_bg.png' id='titleBg'><span id='number'>=&nbsp;<span id='score'>0</span></span><img src='./img/photo_bg.png' id='photo'>
+    <div id='scoreTotal'><img src='./img/title_bg.png' id='titleBg'><span id='number'>=&nbsp;<span
+                id='score'>0</span></span><img src='./img/photo_bg.png' id='photo'>
         <div id="GameTimeLayer"></div>
     </div>
     <div id="welcome" class="SHADE BOX-M">
@@ -851,9 +859,6 @@
         if (isDesktop)
             document.write('</div>');
     </script>
-    <div style="display:none">
-
-    </div>
 </body>
 
 </html>
